@@ -1,0 +1,6 @@
+{
+	"name": "hexposition.category.scrying",
+	"icon": "minecraft:spyglass",
+	"parent": "hexcasting:patterns",
+	"description": "hexposition.category.scrying.desc"
+}

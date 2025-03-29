@@ -1,0 +1,88 @@
+{
+	"name": "hexposition.page.world.title",
+	"icon": "minecraft:compass",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_light",
+			"anchor": "hexposition:get_light",
+			"input": "vector",
+			"output": "number",
+			"text": "hexposition.page.get_light.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_weather",
+			"anchor": "hexposition:get_weather",
+			"input": "",
+			"output": "number",
+			"text": "hexposition.page.get_weather.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_power",
+			"anchor": "hexposition:get_power",
+			"input": "vector",
+			"output": "number",
+			"text": "hexposition.page.get_power.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_comparator",
+			"anchor": "hexposition:get_comparator",
+			"input": "vector",
+			"output": "number/null",
+			"text": "hexposition.page.get_comparator.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_day",
+			"anchor": "hexposition:get_day",
+			"input": "",
+			"output": "number",
+			"text": "hexposition.page.get_day.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_time",
+			"anchor": "hexposition:get_time",
+			"input": "",
+			"output": "number",
+			"text": "hexposition.page.get_time.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_biome",
+			"anchor": "hexposition:get_biome",
+			"input": "",
+			"output": "identifier",
+			"text": "hexposition.page.get_biome.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_dimension",
+			"anchor": "hexposition:get_dimension",
+			"input": "",
+			"output": "identifier",
+			"text": "hexposition.page.get_dimension.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_moon",
+			"anchor": "hexposition:get_moon",
+			"input": "",
+			"output": "number",
+			"text": "hexposition.page.get_moon.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_einstein",
+			"anchor": "hexposition:get_einstein",
+			"input": "",
+			"output": "boolean",
+			"text": "hexposition.page.get_einstein.summary"
+		}
+	]
+}

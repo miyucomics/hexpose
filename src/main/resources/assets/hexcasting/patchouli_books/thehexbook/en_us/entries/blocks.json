@@ -1,0 +1,88 @@
+{
+	"name": "hexposition.page.blocks.title",
+	"icon": "minecraft:grass_block",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:block_hardness",
+			"anchor": "hexposition:block_hardness",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexposition.page.block_hardness.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:block_blast_resistance",
+			"anchor": "hexposition:block_blast_resistance",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexposition.page.block_blast_resistance.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_waterlogged",
+			"anchor": "hexposition:blockstate_waterlogged",
+			"input": "vector",
+			"output": "boolean/null",
+			"text": "hexposition.page.blockstate_waterlogged.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_rotation",
+			"anchor": "hexposition:blockstate_rotation",
+			"input": "vector",
+			"output": "vector/null",
+			"text": "hexposition.page.blockstate_rotation.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_crop",
+			"anchor": "hexposition:blockstate_crop",
+			"input": "vector",
+			"output": "number/null",
+			"text": "hexposition.page.blockstate_crop.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_glow",
+			"anchor": "hexposition:blockstate_glow",
+			"input": "vector",
+			"output": "boolean/null",
+			"text": "hexposition.page.blockstate_glow.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_lock",
+			"anchor": "hexposition:blockstate_lock",
+			"input": "vector",
+			"output": "boolean/null",
+			"text": "hexposition.page.blockstate_lock.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_turn",
+			"anchor": "hexposition:blockstate_turn",
+			"input": "vector",
+			"output": "number/null",
+			"text": "hexposition.page.blockstate_turn.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_bunch",
+			"anchor": "hexposition:blockstate_bunch",
+			"input": "vector",
+			"output": "number/null",
+			"text": "hexposition.page.blockstate_bunch.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_book",
+			"anchor": "hexposition:blockstate_book",
+			"input": "vector",
+			"output": "boolean/null",
+			"text": "hexposition.page.blockstate_book.summary"
+		}
+	]
+}

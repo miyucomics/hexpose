@@ -1,0 +1,128 @@
+{
+	"name": "hexposition.page.entities.title",
+	"icon": "minecraft:egg",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:entity_width",
+			"anchor": "hexposition:entity_width",
+			"input": "entity",
+			"output": "number",
+			"text": "hexposition.page.entity_width.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:theodolite",
+			"anchor": "hexposition:theodolite",
+			"input": "entity",
+			"output": "vector",
+			"text": "hexposition.page.theodolite.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_health",
+			"anchor": "hexposition:get_health",
+			"input": "entity",
+			"output": "number",
+			"text": "hexposition.page.get_health.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_max_health",
+			"anchor": "hexposition:get_max_health",
+			"input": "entity",
+			"output": "number",
+			"text": "hexposition.page.get_max_health.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_air",
+			"anchor": "hexposition:get_air",
+			"input": "entity",
+			"output": "number",
+			"text": "hexposition.page.get_air.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_max_air",
+			"anchor": "hexposition:get_max_air",
+			"input": "entity",
+			"output": "number",
+			"text": "hexposition.page.get_max_air.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_player_hunger",
+			"anchor": "hexposition:get_player_hunger",
+			"input": "player entity",
+			"output": "number",
+			"text": "hexposition.page.get_player_hunger.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_player_saturation",
+			"anchor": "hexposition:get_player_saturation",
+			"input": "entity entity",
+			"output": "number",
+			"text": "hexposition.page.get_player_saturation.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:is_burning",
+			"anchor": "hexposition:is_burning",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexposition.page.is_burning.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:burning_time",
+			"anchor": "hexposition:burning_time",
+			"input": "entity",
+			"output": "number",
+			"text": "hexposition.page.burning_time.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:is_wet",
+			"anchor": "hexposition:is_wet",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexposition.page.is_wet.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:is_baby",
+			"anchor": "hexposition:is_baby",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexposition.page.is_baby.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:breedable",
+			"anchor": "hexposition:breedable",
+			"input": "entity",
+			"output": "boolean/null",
+			"text": "hexposition.page.breedable.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:is_sleeping",
+			"anchor": "hexposition:is_sleeping",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexposition.page.is_sleeping.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:is_sprinting",
+			"anchor": "hexposition:is_sprinting",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexposition.page.is_sprinting.summary"
+		}
+	]
+}

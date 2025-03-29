@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "hexposition",
+	"version": "${version}",
+	"name": "Hexposition",
+	"description": "A Hexcasting addon all about getting information about the world!",
+	"authors": [
+		"miyucomics"
+	],
+	"contact": {
+		"homepage": "https://github.com/miyucomics/hexposition",
+		"sources": "https://github.com/miyucomics/hexposition"
+	},
+	"license": "MIT",
+	"icon": "assets/hexposition/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"adapter": "kotlin",
+				"value": "miyucomics.hexposition.HexpositionMain"
+			}
+		]
+	},
+	"depends": {
+		"minecraft": "1.20.1",
+		"fabricloader": ">=0.16.7",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.10.10+kotlin.1.9.10",
+		"hexcasting": ">=0.11.1-7-pre-646"
+	}
+}

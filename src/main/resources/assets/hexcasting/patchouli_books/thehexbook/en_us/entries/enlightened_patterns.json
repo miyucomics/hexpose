@@ -1,0 +1,30 @@
+{
+	"name": "hexposition.page.enlightened_patterns.title",
+	"icon": "minecraft:golden_sword",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:enlightenment",
+	"entry_color": "54398a",
+	"sortnum": 0,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "hexposition.page.enlightened_patterns.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:am_enlightened",
+			"anchor": "hexposition:am_enlightened",
+			"input": "player entity",
+			"output": "boolean",
+			"text": "hexposition.page.am_enlightened.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:is_brainswept",
+			"anchor": "hexposition:is_brainswept",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexposition.page.is_brainswept.summary"
+		}
+	]
+}

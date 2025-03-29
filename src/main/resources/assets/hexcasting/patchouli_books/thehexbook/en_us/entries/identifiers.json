@@ -1,0 +1,56 @@
+{
+	"name": "hexposition.page.identifiers.title",
+	"icon": "hexcasting:lens",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "hexposition.page.identifiers.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:identify",
+			"anchor": "hexposition:identify",
+			"input": "identifiable",
+			"output": "identifier",
+			"text": "hexposition.page.identify.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "hexposition.page.identifiers.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:recognize",
+			"anchor": "hexposition:recognize",
+			"input": "entity",
+			"output": "identifier",
+			"text": "hexposition.page.recognize.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:classify",
+			"anchor": "hexposition:classify",
+			"input": "any",
+			"output": "identifier",
+			"text": "hexposition.page.classify.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_mainhand_stack",
+			"anchor": "hexposition:get_mainhand_stack",
+			"input": "player entity",
+			"output": "identifier",
+			"text": "hexposition.page.get_mainhand_stack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_offhand_stack",
+			"anchor": "hexposition:get_offhand_stack",
+			"input": "player entity",
+			"output": "identifier",
+			"text": "hexposition.page.get_offhand_stack.summary"
+		}
+	]
+}

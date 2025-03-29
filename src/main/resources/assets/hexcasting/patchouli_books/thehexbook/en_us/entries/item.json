@@ -1,0 +1,48 @@
+{
+	"name": "hexposition.page.item.title",
+	"icon": "minecraft:glow_berries",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:count_stack",
+			"anchor": "hexposition:count_stack",
+			"input": "item entity",
+			"output": "number",
+			"text": "hexposition.page.count_stack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:count_max_stack",
+			"anchor": "hexposition:count_max_stack",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexposition.page.count_max_stack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:damage_stack",
+			"anchor": "hexposition:damage_stack",
+			"input": "item entity",
+			"output": "number",
+			"text": "hexposition.page.damage_stack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:damage_max_stack",
+			"anchor": "hexposition:damage_max_stack",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexposition.page.damage_max_stack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:media_max_stack",
+			"anchor": "hexposition:media_max_stack",
+			"input": "entity",
+			"output": "number/null",
+			"text": "hexposition.page.media_max_stack.summary"
+		}
+	]
+}
