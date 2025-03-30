@@ -5,10 +5,82 @@
 	"advancement": "hexcasting:root",
 	"pages": [
 		{
+			"type": "patchouli:text",
+			"text": "hexposition.page.item.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "hexposition.page.item.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_stack",
+			"anchor": "hexposition:get_stack",
+			"input": "entity",
+			"output": "item",
+			"text": "hexposition.page.get_stack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:create_stack",
+			"anchor": "hexposition:create_stack",
+			"input": "identifier, number",
+			"output": "item",
+			"text": "hexposition.page.create_stack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_mainhand",
+			"anchor": "hexposition:get_mainhand",
+			"input": "entity",
+			"output": "item",
+			"text": "hexposition.page.get_mainhand.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_offhand",
+			"anchor": "hexposition:get_offhand",
+			"input": "entity",
+			"output": "item",
+			"text": "hexposition.page.get_offhand.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_inventory",
+			"anchor": "hexposition:get_inventory",
+			"input": "entity",
+			"output": "list of items | null",
+			"text": "hexposition.page.get_inventory.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_block_inventory",
+			"anchor": "hexposition:get_block_inventory",
+			"input": "vector",
+			"output": "list of items | null",
+			"text": "hexposition.page.get_block_inventory.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_armor",
+			"anchor": "hexposition:get_armor",
+			"input": "entity",
+			"output": "list of items",
+			"text": "hexposition.page.get_armor.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_ender_chest",
+			"anchor": "hexposition:get_ender_chest",
+			"input": "",
+			"output": "list of items",
+			"text": "hexposition.page.get_ender_chest.summary"
+		},
+		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexposition:count_stack",
 			"anchor": "hexposition:count_stack",
-			"input": "item entity",
+			"input": "item",
 			"output": "number",
 			"text": "hexposition.page.count_stack.summary"
 		},
@@ -24,7 +96,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexposition:damage_stack",
 			"anchor": "hexposition:damage_stack",
-			"input": "item entity",
+			"input": "item",
 			"output": "number",
 			"text": "hexposition.page.damage_stack.summary"
 		},
@@ -38,11 +110,27 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:media_max_stack",
-			"anchor": "hexposition:media_max_stack",
-			"input": "entity",
-			"output": "number/null",
-			"text": "hexposition.page.media_max_stack.summary"
+			"op_id": "hexposition:get_enchantments",
+			"anchor": "hexposition:get_enchantments",
+			"input": "item",
+			"output": "list of identifiers",
+			"text": "hexposition.page.get_enchantments.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_enchantment_strength",
+			"anchor": "hexposition:get_enchantment_strength",
+			"input": "item, identifier",
+			"output": "number",
+			"text": "hexposition.page.get_enchantment_strength.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:rarity",
+			"anchor": "hexposition:rarity",
+			"input": "item",
+			"output": "number",
+			"text": "hexposition.page.rarity.summary"
 		}
 	]
 }

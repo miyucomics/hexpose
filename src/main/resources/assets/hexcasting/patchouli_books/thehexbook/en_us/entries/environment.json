@@ -1,6 +1,6 @@
 {
 	"name": "hexposition.page.environment.title",
-	"icon": "hexcasting:staff/cherry",
+	"icon": "hexcasting:staff/mangrove",
 	"category": "hexcasting:scrying",
 	"advancement": "hexcasting:root",
 	"pages": [
@@ -31,14 +31,6 @@
 			"input": "",
 			"output": "boolean",
 			"text": "hexposition.page.env_offhand.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "hexposition:env_media",
-			"anchor": "hexposition:env_media",
-			"input": "",
-			"output": "number",
-			"text": "hexposition.page.env_media.summary"
 		},
 		{
 			"type": "hexcasting:pattern",

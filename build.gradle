@@ -70,3 +70,15 @@ java {
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
 }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            groupId = 'miyucomics'
+            artifactId = 'hexposition'
+            version = '1.0.0'
+        }
+    }
+}

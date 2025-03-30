@@ -16,7 +16,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexposition:get_effects_item",
 			"anchor": "hexposition:get_effects_item",
-			"input": "item entity",
+			"input": "item",
 			"output": "list of identifiers",
 			"text": "hexposition.page.get_effects_item.summary"
 		},

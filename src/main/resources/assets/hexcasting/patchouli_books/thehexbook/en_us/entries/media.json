@@ -1,0 +1,32 @@
+{
+	"name": "hexposition.page.media.title",
+	"icon": "hexcasting:charged_amethyst",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:env_media",
+			"anchor": "hexposition:env_media",
+			"input": "",
+			"output": "number",
+			"text": "hexposition.page.env_media.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:get_media",
+			"anchor": "hexposition:get_media",
+			"input": "entity | item | vector",
+			"output": "number",
+			"text": "hexposition.page.get_media.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:media_max_stack",
+			"anchor": "hexposition:media_max_stack",
+			"input": "item",
+			"output": "number/null",
+			"text": "hexposition.page.media_max_stack.summary"
+		}
+	]
+}

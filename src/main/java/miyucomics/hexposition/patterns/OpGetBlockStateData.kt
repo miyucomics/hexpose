@@ -11,7 +11,6 @@ class OpGetBlockStateData(private val process: (BlockState) -> List<Iota>) : Con
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val position = args.getBlockPos(0, argc)
 		env.assertPosInRange(position)
-		val state = env.world.getBlockState(position)
-		return process(state)
+		return process(env.world.getBlockState(position))
 	}
 }

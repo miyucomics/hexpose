@@ -12,6 +12,8 @@ import at.petrak.hexcasting.api.mod.HexConfig
 import at.petrak.hexcasting.api.utils.extractMedia
 import at.petrak.hexcasting.api.utils.scanPlayerForMediaStuff
 import at.petrak.hexcasting.xplat.IXplatAbstractions
+import miyucomics.hexposition.iotas.ItemStackIota
+import miyucomics.hexposition.iotas.getItemStack
 import net.minecraft.entity.ItemEntity
 import net.minecraft.entity.passive.AllayEntity
 import net.minecraft.server.network.ServerPlayerEntity
@@ -67,7 +69,15 @@ class OpGetMedia : ConstMediaAction {
 				else
 					DoubleIota(blockEntity.media.toDouble() / MediaConstants.DUST_UNIT.toDouble())
 			}
-			else -> throw MishapInvalidIota.of(args[0], 0, "entity_or_vector")
+			is ItemStackIota -> {
+				val stack = args.getItemStack(0, argc)
+				val holder = IXplatAbstractions.INSTANCE.findMediaHolder(stack)
+				if (holder == null)
+					NullIota()
+				else
+					DoubleIota(holder.media.toDouble() / MediaConstants.DUST_UNIT.toDouble())
+			}
+			else -> throw MishapInvalidIota.of(args[0], 0, "media_holding")
 		})
 	}
 }

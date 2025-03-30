@@ -19,7 +19,7 @@ import miyucomics.hexposition.iotas.asActionResult
 import miyucomics.hexposition.patterns.*
 import miyucomics.hexposition.patterns.identifier.OpClassify
 import miyucomics.hexposition.patterns.identifier.OpIdentify
-import miyucomics.hexposition.patterns.identifier.OpRecognize
+import miyucomics.hexposition.patterns.item_stack.*
 import miyucomics.hexposition.patterns.types.OpGetBlockTypeData
 import miyucomics.hexposition.patterns.types.OpGetFoodTypeData
 import miyucomics.hexposition.patterns.types.OpGetItemTypeData
@@ -34,8 +34,6 @@ import net.minecraft.registry.Registry
 import net.minecraft.state.property.Properties
 import net.minecraft.util.Hand
 import net.minecraft.util.math.Direction
-import net.minecraft.util.math.MathHelper
-import net.minecraft.util.math.Vec3d
 
 object HexpositionPatterns {
 	@JvmStatic
@@ -123,17 +121,6 @@ object HexpositionPatterns {
 		register("get_enchantment_strength", "waqwwqaweede", HexDir.WEST, OpGetEnchantmentStrength())
 
 		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityData { entity -> entity.width.asActionResult })
-		register("theodolite", "wqaa", HexDir.EAST, OpGetEntityData { entity ->
-			val upPitch = (-entity.pitch + 90) * (Math.PI.toFloat() / 180)
-			val yaw = -entity.headYaw * (Math.PI.toFloat() / 180)
-			val h = MathHelper.cos(yaw).toDouble()
-			val j = MathHelper.cos(upPitch).toDouble()
-			Vec3d(
-				MathHelper.sin(yaw).toDouble() * j,
-				MathHelper.sin(upPitch).toDouble(),
-				h * j
-			).asActionResult
-		})
 		register("is_burning", "qqwaqda", HexDir.EAST, OpGetEntityData { entity -> entity.isOnFire.asActionResult })
 		register("burning_time", "eewdead", HexDir.WEST, OpGetEntityData { entity -> (entity.fireTicks.toDouble() / 20).asActionResult })
 		register("is_wet", "qqqqwaadq", HexDir.SOUTH_WEST, OpGetEntityData { entity -> entity.isWet.asActionResult })
@@ -151,7 +138,6 @@ object HexpositionPatterns {
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit())
 		register("env_staff", "waaq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is StaffCastEnv).asActionResult })
 		register("env_offhand", "qaqqqwaaq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env.castingHand == Hand.MAIN_HAND).asActionResult })
-		register("env_media", "dde", HexDir.WEST, OpGetEnvData { env -> ((Long.MAX_VALUE - env.extractMedia(Long.MAX_VALUE, true)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult })
 		register("env_packaged_hex", "waaqwwaqqqqq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is PackagedItemCastEnv).asActionResult })
 		register("env_circle", "waaqdeaqwqae", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is CircleCastEnv).asActionResult })
 
@@ -162,18 +148,21 @@ object HexpositionPatterns {
 		register("is_snack", "adaqqqddaq", HexDir.WEST, OpGetFoodTypeData { food -> food.isSnack.asActionResult })
 
 		register("identify", "qqqqqe", HexDir.NORTH_EAST, OpIdentify())
-		register("recognize", "eeeeeq", HexDir.WEST, OpRecognize())
 		register("classify", "edqdeq", HexDir.WEST, OpClassify())
-		register("get_mainhand_stack", "qaqqqq", HexDir.NORTH_EAST, OpGetPlayerData { player -> listOf(if (player.mainHandStack.isEmpty) NullIota() else IdentifierIota(
-			Registries.ITEM.getId(player.mainHandStack.item))) })
-		register("get_offhand_stack", "edeeee", HexDir.NORTH_WEST, OpGetPlayerData { player -> listOf(if (player.offHandStack.isEmpty) NullIota() else IdentifierIota(
-			Registries.ITEM.getId(player.offHandStack.item))) })
 
+		register("get_stack", "edeedq", HexDir.WEST, OpItemIota())
+		register("create_stack", "qaqqae", HexDir.EAST, OpCreateStack())
+		register("get_mainhand", "qaqqqq", HexDir.NORTH_EAST, OpGetHeldStack(Hand.MAIN_HAND))
+		register("get_offhand", "edeeee", HexDir.NORTH_WEST, OpGetHeldStack(Hand.OFF_HAND))
+		register("get_armor", "qaqddqeeeeqd", HexDir.NORTH_EAST, OpGetArmor())
+		register("get_ender_chest", "qaqdqaqdeeewedw", HexDir.NORTH_EAST, OpGetEnderInventory())
+		register("get_inventory", "edeeeeeqdee", HexDir.WEST, OpGetInventory())
+		register("get_block_inventory", "qaqqqqqeaqq", HexDir.EAST, OpGetContainer())
 		register("count_stack", "qaqqwqqqw", HexDir.EAST, OpGetItemStackData { stack -> stack.count.asActionResult })
 		register("count_max_stack", "edeeweeew", HexDir.WEST, OpGetItemTypeData { item -> item.maxCount.asActionResult })
 		register("damage_stack", "eeweeewdeq", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.damage.asActionResult })
 		register("damage_max_stack", "qqwqqqwaqe", HexDir.NORTH_WEST, OpGetItemTypeData { item -> item.maxDamage.asActionResult })
-		register("media_max_stack", "ddeaq", HexDir.EAST, OpGetMaxMedia())
+		register("rarity", "wqqed", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.rarity.ordinal.asActionResult })
 
 		register("get_effects_entity", "wqqq", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity ->
 			val list = mutableListOf<Iota>()
@@ -185,6 +174,10 @@ object HexpositionPatterns {
 		register("get_effect_category", "wqqqaawd", HexDir.SOUTH_WEST, OpGetStatusEffectCategory())
 		register("get_effect_amplifier", "wqqqaqwa", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { instance -> instance.amplifier.asActionResult })
 		register("get_effect_duration", "wqqqaqwdd", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { instance -> (instance.duration.toDouble() / 20.0).asActionResult })
+
+		register("get_media", "ddew", HexDir.WEST, OpGetMedia())
+		register("env_media", "dde", HexDir.WEST, OpGetEnvData { env -> ((Long.MAX_VALUE - env.extractMedia(Long.MAX_VALUE, true)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult })
+		register("media_max_stack", "ddeaq", HexDir.EAST, OpGetMaxMedia())
 
 		register("get_weather", "eweweweweweeeaedqdqde", HexDir.WEST, OpGetWorldData { world -> (
 				if (world.isThundering) 2.0
@@ -205,7 +198,6 @@ object HexpositionPatterns {
 		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { world -> world.moonSize.asActionResult })
 		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult() })
 		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult() })
-		register("get_media", "ddew", HexDir.WEST, OpGetMedia())
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 	}
 
