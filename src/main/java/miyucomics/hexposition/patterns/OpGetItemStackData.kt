@@ -2,7 +2,6 @@ package miyucomics.hexposition.patterns
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
-import at.petrak.hexcasting.api.casting.getItemEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
 import miyucomics.hexposition.iotas.getItemStack
 import net.minecraft.item.ItemStack

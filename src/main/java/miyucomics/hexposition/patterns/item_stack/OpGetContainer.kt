@@ -4,13 +4,10 @@ import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getBlockPos
-import at.petrak.hexcasting.api.casting.getVec3
-import at.petrak.hexcasting.api.casting.iota.DoubleIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import miyucomics.hexposition.iotas.ItemStackIota
 import net.minecraft.inventory.Inventory
-import net.minecraft.util.math.Vec3d
 
 class OpGetContainer : ConstMediaAction {
 	override val argc = 1
