@@ -20,6 +20,8 @@
 	"hexcasting.action.book.hexposition:get_enchantments": "Thaumaturgist's Purif.",
 	"hexcasting.action.book.hexposition:breedable": "Reproduction Purif.",
 	"hexcasting.action.book.hexposition:theodolite": "Theodolite Purif.",
+	"hexcasting.action.book.hexposition:get_air": "Suffocation Purif.",
+	"hexcasting.action.book.hexposition:is_wet": "Enderman's Purif.",
 	"hexcasting.action.book.hexposition:identify": "Detective's Purif.",
 	"hexcasting.action.book.hexposition:damage_stack": "Deterioration Purif.",
 	"hexcasting.action.book.hexposition:classify": "Modicum Purif.",

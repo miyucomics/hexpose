@@ -34,6 +34,8 @@ import net.minecraft.registry.Registry
 import net.minecraft.state.property.Properties
 import net.minecraft.util.Hand
 import net.minecraft.util.math.Direction
+import net.minecraft.util.math.MathHelper
+import net.minecraft.util.math.Vec3d
 
 object HexpositionPatterns {
 	@JvmStatic
@@ -121,19 +123,30 @@ object HexpositionPatterns {
 		register("get_enchantment_strength", "waqwwqaweede", HexDir.WEST, OpGetEnchantmentStrength())
 
 		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityData { entity -> entity.width.asActionResult })
-		register("is_burning", "qqwaqda", HexDir.EAST, OpGetEntityData { entity -> entity.isOnFire.asActionResult })
-		register("burning_time", "eewdead", HexDir.WEST, OpGetEntityData { entity -> (entity.fireTicks.toDouble() / 20).asActionResult })
-		register("is_wet", "qqqqwaadq", HexDir.SOUTH_WEST, OpGetEntityData { entity -> entity.isWet.asActionResult })
+		register("theodolite", "wqaa", HexDir.EAST, OpGetEntityData { entity ->
+			val upPitch = (-entity.pitch + 90) * (Math.PI.toFloat() / 180)
+			val yaw = -entity.headYaw * (Math.PI.toFloat() / 180)
+			val h = MathHelper.cos(yaw).toDouble()
+			val j = MathHelper.cos(upPitch).toDouble()
+			Vec3d(
+				MathHelper.sin(yaw).toDouble() * j,
+				MathHelper.sin(upPitch).toDouble(),
+				h * j
+			).asActionResult
+		})
 		register("get_health", "wddwaqqwawq", HexDir.SOUTH_EAST, OpGetLivingEntityData { entity -> entity.health.asActionResult })
 		register("get_max_health", "wddwwawaeqwawq", HexDir.SOUTH_EAST, OpGetLivingEntityData { entity -> entity.maxHealth.asActionResult })
+		register("is_burning", "qqwaqda", HexDir.EAST, OpGetEntityData { entity -> entity.isOnFire.asActionResult })
+		register("burning_time", "eewdead", HexDir.WEST, OpGetEntityData { entity -> (entity.fireTicks.toDouble() / 20).asActionResult })
 		register("get_air", "wwaade", HexDir.EAST, OpGetLivingEntityData { entity -> entity.air.asActionResult })
 		register("get_max_air", "wwaadee", HexDir.EAST, OpGetLivingEntityData { entity -> entity.maxAir.asActionResult })
 		register("is_sleeping", "aqaew", HexDir.NORTH_WEST, OpGetLivingEntityData { entity -> entity.isSleeping.asActionResult })
 		register("is_sprinting", "eaq", HexDir.WEST, OpGetLivingEntityData { entity -> entity.isSprinting.asActionResult })
 		register("is_baby", "awaqdwaaw", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity -> entity.isBaby.asActionResult })
-		register("breedable", "awaaqdqaawa", HexDir.EAST, OpGetWillingness())
+		register("breedable", "awaaqdqaawa", HexDir.EAST, OpBreedable())
 		register("get_player_hunger", "qqqadaddw", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.foodLevel.asActionResult })
 		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
+		register("is_wet", "qqqqwaadq", HexDir.SOUTH_WEST, OpGetEntityData { entity -> entity.isWet.asActionResult })
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit())
 		register("env_staff", "waaq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is StaffCastEnv).asActionResult })
