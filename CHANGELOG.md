@@ -1,5 +1,8 @@
 # Hexposition
 
+## 1.3.0
+- technical changes
+
 ## 1.2.0
 - added piercing raycasts from Hexical
 - fixed typos, grammatical errors, and inconsistencies
