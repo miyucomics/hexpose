@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexposition/tree/2de67b580e9d072a4794b77a24783764f2ab590e"
+      href="https://github.com/miyucomics/hexposition/tree/c92997f2b4917392b1c226834df2b5db481928e7"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -146,20 +146,27 @@
       class="item-texture  texture "
     > 图案</a></summary>
       <ul>
-          <li><a href="#patterns/scrying/enlightened_patterns" class="toc-elem spoilered"><img
+          <li><a href="#patterns/enlightened_patterns" class="toc-elem spoilered"><img
       title="金剑"
       alt="金剑"
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/golden_sword.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 启迪后图案</a></li>
-          <li><a href="#patterns/scrying/perlin" class="toc-elem "><img
+          <li><a href="#patterns/perlin" class="toc-elem "><img
       title="指南针"
       alt="指南针"
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/compass_16.png"
       loading="lazy"
       class="item-texture  texture pixelated"
     > 准随机</a></li>
+          <li><a href="#patterns/special_raycasts" class="toc-elem "><img
+      title="光灵箭"
+      alt="光灵箭"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/spectral_arrow.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Special Raycasts</a></li>
       </ul>
     </details>
     <details class="toc-category">
@@ -256,7 +263,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
     <p>我所发现的各式图案，和它们的功用。</p>
-<div id="patterns/scrying/enlightened_patterns" class="entry">
+<div id="patterns/enlightened_patterns" class="entry">
     <div class="spoilered">
       <h3 class="entry-title page-header">
     <img
@@ -270,15 +277,15 @@
     class="permalink small"
     title="Jump to top"
   ><i class="bi bi-box-arrow-up"></i></a><a
-    href="#patterns/scrying/enlightened_patterns"
+    href="#patterns/enlightened_patterns"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
     <p>在经过启迪之后，我敏锐地意识到，世上真的存在协助我感知和操纵<span style="color: #74b3f2">媒质</span>的图案。这些图案并无其他更进一步的需求，也许我一直都能运行它们，但也一直浑然不觉。这也意味着，我可以给未经启迪的玩家带有这些图案的<a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#items/hexcasting"><span style="color: #b0b">施法物品</span></a>，他们在施放过程中不会受到阻碍。</p>
 <br />
-  <div id="patterns/scrying/enlightened_patterns@hexposition:am_enlightened" class="">
+  <div id="patterns/enlightened_patterns@hexposition:am_enlightened" class="">
 <h4 class="pattern-title">显圣之纯化 (player entity → boolean)<a
-    href="#patterns/scrying/enlightened_patterns@hexposition:am_enlightened"
+    href="#patterns/enlightened_patterns@hexposition:am_enlightened"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -332,9 +339,9 @@
       <p>检验所给玩家是否和我一样经过启迪。</p>
   </div>
 <br />
-  <div id="patterns/scrying/enlightened_patterns@hexposition:is_brainswept" class="">
+  <div id="patterns/enlightened_patterns@hexposition:is_brainswept" class="">
 <h4 class="pattern-title">感知之纯化 (entity → boolean)<a
-    href="#patterns/scrying/enlightened_patterns@hexposition:is_brainswept"
+    href="#patterns/enlightened_patterns@hexposition:is_brainswept"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -390,7 +397,7 @@
 <br />
     </div>
 </div>
-<div id="patterns/scrying/perlin" class="entry">
+<div id="patterns/perlin" class="entry">
     <h3 class="entry-title page-header">
     <img
       title="指南针"
@@ -403,15 +410,15 @@
     class="permalink small"
     title="Jump to top"
   ><i class="bi bi-box-arrow-up"></i></a><a
-    href="#patterns/scrying/perlin"
+    href="#patterns/perlin"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
     <p>某些地点的环境<span style="color: #74b3f2">媒质</span>密度比其他位置高。这种密度可以测量；甚至能在时间上回溯或前进，以获取与该位置和该时间对应的、在 0 到 1 之间的准随机数。时间和空间上距离较近的点得到的结果也相近。</p>
 <br />
-  <div id="patterns/scrying/perlin@hexposition:perlin" class="">
+  <div id="patterns/perlin@hexposition:perlin" class="">
 <h4 class="pattern-title">柏林之馏化 (vector, number → number)<a
-    href="#patterns/scrying/perlin@hexposition:perlin"
+    href="#patterns/perlin@hexposition:perlin"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -463,6 +470,248 @@
       >浏览器不支持图案的可视化。图案代码见此：qawedqdq</canvas>
   </details>
       <p>测量所给空间和时间的环境<span style="color: #74b3f2">媒质</span>密度，结果在 0 到 1 之间。</p>
+  </div>
+<br />
+</div>
+<div id="patterns/special_raycasts" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="光灵箭"
+      alt="光灵箭"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/spectral_arrow.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Special Raycasts<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/special_raycasts"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/special_raycasts@hexposition:fluid_raycast" class="">
+<h4 class="pattern-title">Naval Distillation (vector, vector → vector/null)<a
+    href="#patterns/special_raycasts@hexposition:fluid_raycast"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="wqqaqwede"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：wqqaqwede</canvas>
+  </details>
+      <p>Works similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:raycast"><span style="color: #fc77be">Archer&#39;s Distillation</span></a> but targets only liquids, piercing through all other blocks.</p>
+  </div>
+<br />
+  <div id="patterns/special_raycasts@hexposition:fluid_surface_raycast" class="">
+<h4 class="pattern-title">Lilypad Distillation (vector, vector → vector/null)<a
+    href="#patterns/special_raycasts@hexposition:fluid_surface_raycast"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="weedewqaq"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：weedewqaq</canvas>
+  </details>
+      <p>Works similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:raycast/axis"><span style="color: #fc77be">Architect&#39;s Distillation</span></a> but targets only liquids, piercing through all other blocks.</p>
+  </div>
+<br />
+  <div id="patterns/special_raycasts@hexposition:piercing_raycast" class="">
+<h4 class="pattern-title">Railgun Exaltation (vec, vec, id → vec/null)<a
+    href="#patterns/special_raycasts@hexposition:piercing_raycast"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="wqqddqeqddq"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：wqqddqeqddq</canvas>
+  </details>
+      <p>Works similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:raycast"><span style="color: #fc77be">Archer&#39;s Distillation</span></a> but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier.</p>
+  </div>
+<br />
+  <div id="patterns/special_raycasts@hexposition:piercing_surface_raycast" class="">
+<h4 class="pattern-title">Laser Exaltation (vec, vec, id → vec/null)<a
+    href="#patterns/special_raycasts@hexposition:piercing_surface_raycast"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="weeaaeqeaae"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：weeaaeqeaae</canvas>
+  </details>
+      <p>Works similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:raycast/axis"><span style="color: #fc77be">Architect&#39;s Distillation</span></a> but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier.</p>
   </div>
 <br />
 </div>
@@ -1655,7 +1904,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：eewdead</canvas>
   </details>
-      <p>Pushes how long in twentieths of a second the entity will continue burning if not put out.</p>
+      <p>Pushes the number of seconds the burning entity will continue burning if not put out. -1 if the entity is not burning currently.</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexposition:is_wet" class="">
@@ -1939,7 +2188,7 @@
   </div>
 <br />
   <div id="patterns/scrying/entities@hexposition:entity_vehicle" class="">
-<h4 class="pattern-title">Vehicle Purification (entity → entity | null)<a
+<h4 class="pattern-title">Vehicle Purification (entity → entity/null)<a
     href="#patterns/scrying/entities@hexposition:entity_vehicle"
     class="permalink small"
     title="Permalink"
@@ -1991,7 +2240,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：eqqedwewew</canvas>
   </details>
-      <p>Pushes the entity the given entity is riding or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it is not riding in any vehicle.</p>
+      <p>Pushes the entity the given entity is riding or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it is not riding in or on anything.</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexposition:entity_passengers" class="">
@@ -2047,11 +2296,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qeeqawqwqw</canvas>
   </details>
-      <p>Pushes a list of entities the given entity is supporting.</p>
+      <p>Pushes a list of entities that are riding the given entity.</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexposition:shooter" class="">
-<h4 class="pattern-title">Shooter Purification (entity → entity | null)<a
+<h4 class="pattern-title">Shooter Purification (entity → entity/null)<a
     href="#patterns/scrying/entities@hexposition:shooter"
     class="permalink small"
     title="Permalink"
@@ -2236,62 +2485,6 @@
       <p>压入给定方块对爆炸的抗性。</p>
   </div>
 <br />
-  <div id="patterns/scrying/blocks@hexposition:blockstate_waterlogged" class="">
-<h4 class="pattern-title">管道工之纯化 (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexposition:blockstate_waterlogged"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="edeeeeeqwqqqqw"
-        data-start="south_east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：edeeeeeqwqqqqw</canvas>
-  </details>
-      <p>检验方块是否含水。若方块无法含水，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
-  </div>
-<br />
   <div id="patterns/scrying/blocks@hexposition:blockstate_rotation" class="">
 <h4 class="pattern-title">方向之纯化 (vector → vector/null)<a
     href="#patterns/scrying/blocks@hexposition:blockstate_rotation"
@@ -2348,6 +2541,62 @@
       <p>压入方块的朝向向量。若方块无朝向向量，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
+  <div id="patterns/scrying/blocks@hexposition:blockstate_turn" class="">
+<h4 class="pattern-title">角度之纯化 (vector → number/null)<a
+    href="#patterns/scrying/blocks@hexposition:blockstate_turn"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaqqqqqwqqwqd"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qaqqqqqwqqwqd</canvas>
+  </details>
+      <p>压入一个数，对应告示牌、头颅、旗帜的旋转方向。</p>
+  </div>
+<br />
   <div id="patterns/scrying/blocks@hexposition:blockstate_crop" class="">
 <h4 class="pattern-title">农夫之纯化 (vector → number/null)<a
     href="#patterns/scrying/blocks@hexposition:blockstate_crop"
@@ -2402,6 +2651,62 @@
       >浏览器不支持图案的可视化。图案代码见此：qaqqqqqwaea</canvas>
   </details>
       <p>压入一个 0 到 1 的数，对应农作物的成熟程度，对蜂巢、堆肥桶、炼药锅同样有效。奇怪的是，对蛋糕也有效。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/blocks@hexposition:blockstate_waterlogged" class="">
+<h4 class="pattern-title">管道工之纯化 (vector → boolean/null)<a
+    href="#patterns/scrying/blocks@hexposition:blockstate_waterlogged"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="edeeeeeqwqqqqw"
+        data-start="south_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：edeeeeeqwqqqqw</canvas>
+  </details>
+      <p>检验方块是否含水。若方块无法含水，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexposition:blockstate_glow" class="">
@@ -2514,62 +2819,6 @@
       >浏览器不支持图案的可视化。图案代码见此：qaqqqeaqwdewd</canvas>
   </details>
       <p>检验方块是否处于“打开”状态，有效方块有门、活板门、栅栏门、木桶等。</p>
-  </div>
-<br />
-  <div id="patterns/scrying/blocks@hexposition:blockstate_turn" class="">
-<h4 class="pattern-title">角度之纯化 (vector → number/null)<a
-    href="#patterns/scrying/blocks@hexposition:blockstate_turn"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaqqqqqwqqwqd"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qaqqqqqwqqwqd</canvas>
-  </details>
-      <p>压入一个数，对应告示牌、头颅、旗帜的旋转方向。</p>
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexposition:blockstate_bunch" class="">
