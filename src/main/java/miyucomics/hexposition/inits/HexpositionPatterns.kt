@@ -21,6 +21,10 @@ import miyucomics.hexposition.patterns.*
 import miyucomics.hexposition.patterns.identifier.OpClassify
 import miyucomics.hexposition.patterns.identifier.OpIdentify
 import miyucomics.hexposition.patterns.item_stack.*
+import miyucomics.hexposition.patterns.raycast.OpFluidRaycast
+import miyucomics.hexposition.patterns.raycast.OpFluidSurfaceRaycast
+import miyucomics.hexposition.patterns.raycast.OpPiercingRaycast
+import miyucomics.hexposition.patterns.raycast.OpPiercingSurfaceRaycast
 import miyucomics.hexposition.patterns.types.OpGetBlockTypeData
 import miyucomics.hexposition.patterns.types.OpGetFoodTypeData
 import miyucomics.hexposition.patterns.types.OpGetItemTypeData
@@ -45,6 +49,11 @@ object HexpositionPatterns {
 		register("is_brainswept", "qqqaqqq", HexDir.SOUTH_EAST, OpBrainswept())
 
 		register("perlin", "qawedqdq", HexDir.WEST, OpPerlin())
+
+		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast())
+		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast())
+		register("piercing_raycast", "wqqddqeqddq", HexDir.EAST, OpPiercingRaycast())
+		register("piercing_surface_raycast", "weeaaeqeaae", HexDir.EAST, OpPiercingSurfaceRaycast())
 
 		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
 		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
@@ -139,8 +148,8 @@ object HexpositionPatterns {
 		register("get_max_health", "wddwwawaeqwawq", HexDir.SOUTH_EAST, OpGetLivingEntityData { entity -> entity.maxHealth.asActionResult })
 		register("burning", "eewdead", HexDir.WEST, OpGetEntityData { entity -> (entity.fireTicks.toDouble() / 20).asActionResult })
 		register("is_wet", "qqqqwaadq", HexDir.SOUTH_WEST, OpGetEntityData { entity -> entity.isWet.asActionResult })
-		register("get_air", "wwaade", HexDir.EAST, OpGetLivingEntityData { entity -> entity.air.asActionResult })
-		register("get_max_air", "wwaadee", HexDir.EAST, OpGetLivingEntityData { entity -> entity.maxAir.asActionResult })
+		register("get_air", "wwaade", HexDir.EAST, OpGetLivingEntityData { entity -> (entity.air.toDouble() / 20).asActionResult })
+		register("get_max_air", "wwaadee", HexDir.EAST, OpGetLivingEntityData { entity -> (entity.maxAir.toDouble() / 20).asActionResult })
 		register("is_sleeping", "aqaew", HexDir.NORTH_WEST, OpGetLivingEntityData { entity -> entity.isSleeping.asActionResult })
 		register("is_sprinting", "eaq", HexDir.WEST, OpGetLivingEntityData { entity -> entity.isSprinting.asActionResult })
 		register("is_baby", "awaqdwaaw", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity -> entity.isBaby.asActionResult })

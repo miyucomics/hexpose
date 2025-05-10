@@ -1,0 +1,41 @@
+{
+	"name": "hexposition.page.special_raycasts.title",
+	"icon": "minecraft:spectral_arrow",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 6,
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:fluid_raycast",
+			"anchor": "hexposition:fluid_raycast",
+			"input": "vector, vector",
+			"output": "vector/null",
+			"text": "hexposition.page.fluid_raycast.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:fluid_surface_raycast",
+			"anchor": "hexposition:fluid_surface_raycast",
+			"input": "vector, vector",
+			"output": "vector/null",
+			"text": "hexposition.page.fluid_surface_raycast.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:piercing_raycast",
+			"anchor": "hexposition:piercing_raycast",
+			"input": "vec, vec, id",
+			"output": "vec/null",
+			"text": "hexposition.page.piercing_raycast.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:piercing_surface_raycast",
+			"anchor": "hexposition:piercing_surface_raycast",
+			"input": "vec, vec, id",
+			"output": "vec/null",
+			"text": "hexposition.page.piercing_surface_raycast.summary"
+		}
+	]
+}

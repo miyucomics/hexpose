@@ -1,5 +1,9 @@
 # Hexposition
 
+## 1.2.0
+- added piercing raycasts from Hexical
+- fixed typos, grammatical errors, and inconsistencies
+
 ## 1.1.0
 - added Jockey Purification - returns a list of entities riding a given entity
 - added Shooter Purification - returns shooter of a projectile if they are within ambit

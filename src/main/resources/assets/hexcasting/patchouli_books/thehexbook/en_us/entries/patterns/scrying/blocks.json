@@ -22,14 +22,6 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_waterlogged",
-			"anchor": "hexposition:blockstate_waterlogged",
-			"input": "vector",
-			"output": "boolean/null",
-			"text": "hexposition.page.blockstate_waterlogged.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
 			"op_id": "hexposition:blockstate_rotation",
 			"anchor": "hexposition:blockstate_rotation",
 			"input": "vector",
@@ -38,11 +30,27 @@
 		},
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_turn",
+			"anchor": "hexposition:blockstate_turn",
+			"input": "vector",
+			"output": "number/null",
+			"text": "hexposition.page.blockstate_turn.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "hexposition:blockstate_crop",
 			"anchor": "hexposition:blockstate_crop",
 			"input": "vector",
 			"output": "number/null",
 			"text": "hexposition.page.blockstate_crop.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexposition:blockstate_waterlogged",
+			"anchor": "hexposition:blockstate_waterlogged",
+			"input": "vector",
+			"output": "boolean/null",
+			"text": "hexposition.page.blockstate_waterlogged.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -59,14 +67,6 @@
 			"input": "vector",
 			"output": "boolean/null",
 			"text": "hexposition.page.blockstate_lock.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_turn",
-			"anchor": "hexposition:blockstate_turn",
-			"input": "vector",
-			"output": "number/null",
-			"text": "hexposition.page.blockstate_turn.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
