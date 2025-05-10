@@ -10,8 +10,8 @@ import net.minecraft.util.Identifier
 
 class HexpositionMain : ModInitializer {
 	override fun onInitialize() {
-		Registry.register(HexIotaTypes.REGISTRY, id("item_stack"), ItemStackIota.TYPE)
 		Registry.register(HexIotaTypes.REGISTRY, id("identifier"), IdentifierIota.TYPE)
+		Registry.register(HexIotaTypes.REGISTRY, id("item_stack"), ItemStackIota.TYPE)
 		HexpositionPatterns.init()
 	}
 

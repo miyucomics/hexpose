@@ -105,7 +105,7 @@
 			"op_id": "hexposition:entity_vehicle",
 			"anchor": "hexposition:entity_vehicle",
 			"input": "entity",
-			"output": "entity | null",
+			"output": "entity/null",
 			"text": "hexposition.page.entity_vehicle.summary"
 		},
 		{
@@ -121,7 +121,7 @@
 			"op_id": "hexposition:shooter",
 			"anchor": "hexposition:shooter",
 			"input": "entity",
-			"output": "entity | null",
+			"output": "entity/null",
 			"text": "hexposition.page.shooter.summary"
 		}
 	]
