@@ -1,48 +1,48 @@
 {
-	"name": "hexposition.page.status_effects.title",
+	"name": "hexpose.page.status_effects.title",
 	"icon": "minecraft:glass_bottle",
 	"category": "hexcasting:scrying",
 	"advancement": "hexcasting:root",
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_effects_entity",
-			"anchor": "hexposition:get_effects_entity",
+			"op_id": "hexpose:get_effects_entity",
+			"anchor": "hexpose:get_effects_entity",
 			"input": "entity",
 			"output": "list of identifiers",
-			"text": "hexposition.page.get_effects_entity.summary"
+			"text": "hexpose.page.get_effects_entity.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_effects_item",
-			"anchor": "hexposition:get_effects_item",
+			"op_id": "hexpose:get_effects_item",
+			"anchor": "hexpose:get_effects_item",
 			"input": "item",
 			"output": "list of identifiers",
-			"text": "hexposition.page.get_effects_item.summary"
+			"text": "hexpose.page.get_effects_item.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_effect_category",
-			"anchor": "hexposition:get_effect_category",
+			"op_id": "hexpose:get_effect_category",
+			"anchor": "hexpose:get_effect_category",
 			"input": "identifier",
 			"output": "number",
-			"text": "hexposition.page.get_effect_category.summary"
+			"text": "hexpose.page.get_effect_category.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_effect_amplifier",
-			"anchor": "hexposition:get_effect_amplifier",
+			"op_id": "hexpose:get_effect_amplifier",
+			"anchor": "hexpose:get_effect_amplifier",
 			"input": "entity, identifier",
 			"output": "number",
-			"text": "hexposition.page.get_effect_amplifier.summary"
+			"text": "hexpose.page.get_effect_amplifier.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_effect_duration",
-			"anchor": "hexposition:get_effect_duration",
+			"op_id": "hexpose:get_effect_duration",
+			"anchor": "hexpose:get_effect_duration",
 			"input": "entity, identifier",
 			"output": "number",
-			"text": "hexposition.page.get_effect_duration.summary"
+			"text": "hexpose.page.get_effect_duration.summary"
 		}
 	]
 }

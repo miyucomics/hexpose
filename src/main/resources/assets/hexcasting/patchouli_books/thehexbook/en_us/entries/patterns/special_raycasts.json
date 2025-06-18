@@ -1,5 +1,5 @@
 {
-	"name": "hexposition.page.special_raycasts.title",
+	"name": "hexpose.page.special_raycasts.title",
 	"icon": "minecraft:spectral_arrow",
 	"category": "hexcasting:patterns",
 	"advancement": "hexcasting:root",
@@ -7,35 +7,35 @@
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:fluid_raycast",
-			"anchor": "hexposition:fluid_raycast",
+			"op_id": "hexpose:fluid_raycast",
+			"anchor": "hexpose:fluid_raycast",
 			"input": "vector, vector",
 			"output": "vector/null",
-			"text": "hexposition.page.fluid_raycast.summary"
+			"text": "hexpose.page.fluid_raycast.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:fluid_surface_raycast",
-			"anchor": "hexposition:fluid_surface_raycast",
+			"op_id": "hexpose:fluid_surface_raycast",
+			"anchor": "hexpose:fluid_surface_raycast",
 			"input": "vector, vector",
 			"output": "vector/null",
-			"text": "hexposition.page.fluid_surface_raycast.summary"
+			"text": "hexpose.page.fluid_surface_raycast.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:piercing_raycast",
-			"anchor": "hexposition:piercing_raycast",
+			"op_id": "hexpose:piercing_raycast",
+			"anchor": "hexpose:piercing_raycast",
 			"input": "vec, vec, id",
 			"output": "vec/null",
-			"text": "hexposition.page.piercing_raycast.summary"
+			"text": "hexpose.page.piercing_raycast.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:piercing_surface_raycast",
-			"anchor": "hexposition:piercing_surface_raycast",
+			"op_id": "hexpose:piercing_surface_raycast",
+			"anchor": "hexpose:piercing_surface_raycast",
 			"input": "vec, vec, id",
 			"output": "vec/null",
-			"text": "hexposition.page.piercing_surface_raycast.summary"
+			"text": "hexpose.page.piercing_surface_raycast.summary"
 		}
 	]
 }

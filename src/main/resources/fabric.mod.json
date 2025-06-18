@@ -1,24 +1,24 @@
 {
 	"schemaVersion": 1,
-	"id": "hexposition",
+	"id": "hexpose",
 	"version": "${version}",
-	"name": "Hexposition",
+	"name": "Hexpose",
 	"description": "A Hexcasting addon all about getting information about the world!",
 	"authors": [
 		"miyucomics"
 	],
 	"contact": {
-		"homepage": "https://github.com/miyucomics/hexposition",
-		"sources": "https://github.com/miyucomics/hexposition"
+		"homepage": "https://github.com/miyucomics/hexpose",
+		"sources": "https://github.com/miyucomics/hexpose"
 	},
 	"license": "MIT",
-	"icon": "assets/hexposition/icon.png",
+	"icon": "assets/hexpose/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			{
 				"adapter": "kotlin",
-				"value": "miyucomics.hexposition.HexpositionMain"
+				"value": "miyucomics.hexpose.HexposeMain"
 			}
 		]
 	},

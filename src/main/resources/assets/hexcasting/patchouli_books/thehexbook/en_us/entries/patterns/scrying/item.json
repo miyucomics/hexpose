@@ -1,136 +1,136 @@
 {
-	"name": "hexposition.page.item.title",
+	"name": "hexpose.page.item.title",
 	"icon": "minecraft:glow_berries",
 	"category": "hexcasting:scrying",
 	"advancement": "hexcasting:root",
 	"pages": [
 		{
 			"type": "patchouli:text",
-			"text": "hexposition.page.item.0"
+			"text": "hexpose.page.item.0"
 		},
 		{
 			"type": "patchouli:text",
-			"text": "hexposition.page.item.1"
+			"text": "hexpose.page.item.1"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_stack",
-			"anchor": "hexposition:get_stack",
+			"op_id": "hexpose:get_stack",
+			"anchor": "hexpose:get_stack",
 			"input": "entity",
 			"output": "item",
-			"text": "hexposition.page.get_stack.summary"
+			"text": "hexpose.page.get_stack.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:create_stack",
-			"anchor": "hexposition:create_stack",
+			"op_id": "hexpose:create_stack",
+			"anchor": "hexpose:create_stack",
 			"input": "identifier, number",
 			"output": "item",
-			"text": "hexposition.page.create_stack.summary"
+			"text": "hexpose.page.create_stack.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_mainhand",
-			"anchor": "hexposition:get_mainhand",
+			"op_id": "hexpose:get_mainhand",
+			"anchor": "hexpose:get_mainhand",
 			"input": "entity",
 			"output": "item",
-			"text": "hexposition.page.get_mainhand.summary"
+			"text": "hexpose.page.get_mainhand.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_offhand",
-			"anchor": "hexposition:get_offhand",
+			"op_id": "hexpose:get_offhand",
+			"anchor": "hexpose:get_offhand",
 			"input": "entity",
 			"output": "item",
-			"text": "hexposition.page.get_offhand.summary"
+			"text": "hexpose.page.get_offhand.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_inventory",
-			"anchor": "hexposition:get_inventory",
+			"op_id": "hexpose:get_inventory",
+			"anchor": "hexpose:get_inventory",
 			"input": "entity",
 			"output": "list of items | null",
-			"text": "hexposition.page.get_inventory.summary"
+			"text": "hexpose.page.get_inventory.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_block_inventory",
-			"anchor": "hexposition:get_block_inventory",
+			"op_id": "hexpose:get_block_inventory",
+			"anchor": "hexpose:get_block_inventory",
 			"input": "vector",
 			"output": "list of items | null",
-			"text": "hexposition.page.get_block_inventory.summary"
+			"text": "hexpose.page.get_block_inventory.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_armor",
-			"anchor": "hexposition:get_armor",
+			"op_id": "hexpose:get_armor",
+			"anchor": "hexpose:get_armor",
 			"input": "entity",
 			"output": "list of items",
-			"text": "hexposition.page.get_armor.summary"
+			"text": "hexpose.page.get_armor.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_ender_chest",
-			"anchor": "hexposition:get_ender_chest",
+			"op_id": "hexpose:get_ender_chest",
+			"anchor": "hexpose:get_ender_chest",
 			"input": "",
 			"output": "list of items",
-			"text": "hexposition.page.get_ender_chest.summary"
+			"text": "hexpose.page.get_ender_chest.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:count_stack",
-			"anchor": "hexposition:count_stack",
+			"op_id": "hexpose:count_stack",
+			"anchor": "hexpose:count_stack",
 			"input": "item",
 			"output": "number",
-			"text": "hexposition.page.count_stack.summary"
+			"text": "hexpose.page.count_stack.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:count_max_stack",
-			"anchor": "hexposition:count_max_stack",
+			"op_id": "hexpose:count_max_stack",
+			"anchor": "hexpose:count_max_stack",
 			"input": "identifier",
 			"output": "number",
-			"text": "hexposition.page.count_max_stack.summary"
+			"text": "hexpose.page.count_max_stack.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:damage_stack",
-			"anchor": "hexposition:damage_stack",
+			"op_id": "hexpose:damage_stack",
+			"anchor": "hexpose:damage_stack",
 			"input": "item",
 			"output": "number",
-			"text": "hexposition.page.damage_stack.summary"
+			"text": "hexpose.page.damage_stack.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:damage_max_stack",
-			"anchor": "hexposition:damage_max_stack",
+			"op_id": "hexpose:damage_max_stack",
+			"anchor": "hexpose:damage_max_stack",
 			"input": "identifier",
 			"output": "number",
-			"text": "hexposition.page.damage_max_stack.summary"
+			"text": "hexpose.page.damage_max_stack.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_enchantments",
-			"anchor": "hexposition:get_enchantments",
+			"op_id": "hexpose:get_enchantments",
+			"anchor": "hexpose:get_enchantments",
 			"input": "item",
 			"output": "list of identifiers",
-			"text": "hexposition.page.get_enchantments.summary"
+			"text": "hexpose.page.get_enchantments.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_enchantment_strength",
-			"anchor": "hexposition:get_enchantment_strength",
+			"op_id": "hexpose:get_enchantment_strength",
+			"anchor": "hexpose:get_enchantment_strength",
 			"input": "item, identifier",
 			"output": "number",
-			"text": "hexposition.page.get_enchantment_strength.summary"
+			"text": "hexpose.page.get_enchantment_strength.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:rarity",
-			"anchor": "hexposition:rarity",
+			"op_id": "hexpose:rarity",
+			"anchor": "hexpose:rarity",
 			"input": "item",
 			"output": "number",
-			"text": "hexposition.page.rarity.summary"
+			"text": "hexpose.page.rarity.summary"
 		}
 	]
 }

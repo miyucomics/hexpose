@@ -1,5 +1,5 @@
 {
-	"name": "hexposition.page.food.title",
+	"name": "hexpose.page.food.title",
 	"icon": "minecraft:apple",
 	"category": "hexcasting:scrying",
 	"advancement": "hexcasting:root",
@@ -7,59 +7,59 @@
 
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_player_hunger",
-			"anchor": "hexposition:get_player_hunger",
+			"op_id": "hexpose:get_player_hunger",
+			"anchor": "hexpose:get_player_hunger",
 			"input": "player entity",
 			"output": "number",
-			"text": "hexposition.page.get_player_hunger.summary"
+			"text": "hexpose.page.get_player_hunger.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_player_saturation",
-			"anchor": "hexposition:get_player_saturation",
+			"op_id": "hexpose:get_player_saturation",
+			"anchor": "hexpose:get_player_saturation",
 			"input": "entity entity",
 			"output": "number",
-			"text": "hexposition.page.get_player_saturation.summary"
+			"text": "hexpose.page.get_player_saturation.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:edible",
-			"anchor": "hexposition:edible",
+			"op_id": "hexpose:edible",
+			"anchor": "hexpose:edible",
 			"input": "identifier",
 			"output": "boolean",
-			"text": "hexposition.page.edible.summary"
+			"text": "hexpose.page.edible.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_hunger",
-			"anchor": "hexposition:get_hunger",
+			"op_id": "hexpose:get_hunger",
+			"anchor": "hexpose:get_hunger",
 			"input": "identifier",
 			"output": "number",
-			"text": "hexposition.page.get_hunger.summary"
+			"text": "hexpose.page.get_hunger.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_saturation",
-			"anchor": "hexposition:get_saturation",
+			"op_id": "hexpose:get_saturation",
+			"anchor": "hexpose:get_saturation",
 			"input": "identifier",
 			"output": "number",
-			"text": "hexposition.page.get_saturation.summary"
+			"text": "hexpose.page.get_saturation.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:is_meat",
-			"anchor": "hexposition:is_meat",
+			"op_id": "hexpose:is_meat",
+			"anchor": "hexpose:is_meat",
 			"input": "identifier",
 			"output": "boolean",
-			"text": "hexposition.page.is_meat.summary"
+			"text": "hexpose.page.is_meat.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:is_snack",
-			"anchor": "hexposition:is_snack",
+			"op_id": "hexpose:is_snack",
+			"anchor": "hexpose:is_snack",
 			"input": "identifier",
 			"output": "boolean",
-			"text": "hexposition.page.is_snack.summary"
+			"text": "hexpose.page.is_snack.summary"
 		}
 	]
 }
