@@ -1,88 +1,88 @@
 {
-	"name": "hexposition.page.world.title",
+	"name": "hexpose.page.world.title",
 	"icon": "minecraft:compass",
 	"category": "hexcasting:scrying",
 	"advancement": "hexcasting:root",
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_light",
-			"anchor": "hexposition:get_light",
+			"op_id": "hexpose:get_light",
+			"anchor": "hexpose:get_light",
 			"input": "vector",
 			"output": "number",
-			"text": "hexposition.page.get_light.summary"
+			"text": "hexpose.page.get_light.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_weather",
-			"anchor": "hexposition:get_weather",
+			"op_id": "hexpose:get_weather",
+			"anchor": "hexpose:get_weather",
 			"input": "",
 			"output": "number",
-			"text": "hexposition.page.get_weather.summary"
+			"text": "hexpose.page.get_weather.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_power",
-			"anchor": "hexposition:get_power",
+			"op_id": "hexpose:get_power",
+			"anchor": "hexpose:get_power",
 			"input": "vector",
 			"output": "number",
-			"text": "hexposition.page.get_power.summary"
+			"text": "hexpose.page.get_power.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_comparator",
-			"anchor": "hexposition:get_comparator",
+			"op_id": "hexpose:get_comparator",
+			"anchor": "hexpose:get_comparator",
 			"input": "vector",
 			"output": "number/null",
-			"text": "hexposition.page.get_comparator.summary"
+			"text": "hexpose.page.get_comparator.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_day",
-			"anchor": "hexposition:get_day",
+			"op_id": "hexpose:get_day",
+			"anchor": "hexpose:get_day",
 			"input": "",
 			"output": "number",
-			"text": "hexposition.page.get_day.summary"
+			"text": "hexpose.page.get_day.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_time",
-			"anchor": "hexposition:get_time",
+			"op_id": "hexpose:get_time",
+			"anchor": "hexpose:get_time",
 			"input": "",
 			"output": "number",
-			"text": "hexposition.page.get_time.summary"
+			"text": "hexpose.page.get_time.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_biome",
-			"anchor": "hexposition:get_biome",
+			"op_id": "hexpose:get_biome",
+			"anchor": "hexpose:get_biome",
 			"input": "",
 			"output": "identifier",
-			"text": "hexposition.page.get_biome.summary"
+			"text": "hexpose.page.get_biome.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_dimension",
-			"anchor": "hexposition:get_dimension",
+			"op_id": "hexpose:get_dimension",
+			"anchor": "hexpose:get_dimension",
 			"input": "",
 			"output": "identifier",
-			"text": "hexposition.page.get_dimension.summary"
+			"text": "hexpose.page.get_dimension.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_moon",
-			"anchor": "hexposition:get_moon",
+			"op_id": "hexpose:get_moon",
+			"anchor": "hexpose:get_moon",
 			"input": "",
 			"output": "number",
-			"text": "hexposition.page.get_moon.summary"
+			"text": "hexpose.page.get_moon.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:get_einstein",
-			"anchor": "hexposition:get_einstein",
+			"op_id": "hexpose:get_einstein",
+			"anchor": "hexpose:get_einstein",
 			"input": "",
 			"output": "boolean",
-			"text": "hexposition.page.get_einstein.summary"
+			"text": "hexpose.page.get_einstein.summary"
 		}
 	]
 }

@@ -1,6 +1,6 @@
-# hexdoc-hexposition
+# hexdoc-hexpose
 
-Python web book docgen and [hexdoc](https://pypi.org/project/hexdoc) plugin for Hexposition.
+Python web book docgen and [hexdoc](https://pypi.org/project/hexdoc) plugin for Hexpose.
 
 ## Version scheme
 
@@ -32,9 +32,9 @@ pip install -e .[dev]
 
 For local testing, create a file called `.env` in the repo root following this template:
 ```sh
-GITHUB_REPOSITORY=miyucomics/hexposition
+GITHUB_REPOSITORY=miyucomics/hexpose
 GITHUB_SHA=main
-GITHUB_PAGES_URL=https://miyucomics.github.io/hexposition/
+GITHUB_PAGES_URL=https://miyucomics.github.io/hexpose/
 ```
 
 Useful commands:

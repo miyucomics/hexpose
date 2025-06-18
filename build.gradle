@@ -14,7 +14,7 @@ base {
 }
 
 loom {
-	accessWidenerPath = file("src/main/resources/hexposition.accesswidener")
+	accessWidenerPath = file("src/main/resources/hexpose.accesswidener")
 }
 
 repositories {

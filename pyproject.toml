@@ -8,8 +8,8 @@ build-backend = "hatchling.build"
 # project metadata
 
 [project]
-name = "hexdoc-hexposition"
-description = "Python web book docgen and hexdoc plugin for Hexposition."
+name = "hexdoc-hexpose"
+description = "Python web book docgen and hexdoc plugin for Hexpose."
 readme = "doc/README.md"
 authors = [
     { name="miyucomics" },
@@ -19,15 +19,15 @@ requires-python = ">=3.11"
 dynamic = ["version", "dependencies", "optional-dependencies"]
 
 [project.urls]
-Homepage = "https://miyucomics.github.io/hexposition/"
-Source = "https://github.com/miyucomics/hexposition"
+Homepage = "https://miyucomics.github.io/hexpose/"
+Source = "https://github.com/miyucomics/hexpose"
 
 # Gradle version/deps
 
 [tool.hatch.version]
 scheme = "gradle"
 source = "gradle-properties"
-py-path = "doc/src/hexdoc_hexposition/__version__.py"
+py-path = "doc/src/hexdoc_hexpose/__version__.py"
 key = "mod_version"
 
 [tool.hatch.metadata.hooks.gradle-properties]
@@ -44,12 +44,12 @@ dev = [
 
 [tool.hatch.build]
 only-include = [
-    "doc/src/hexdoc_hexposition",
+    "doc/src/hexdoc_hexpose",
     "gradle.properties",
 ]
 artifacts = [
-    "/doc/src/hexdoc_hexposition/_export/generated",
-    "/doc/src/hexdoc_hexposition/__gradle_version__.py",
+    "/doc/src/hexdoc_hexpose/_export/generated",
+    "/doc/src/hexdoc_hexpose/__gradle_version__.py",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -58,7 +58,7 @@ sources = ["doc/src"]
 # hexdoc entry points
 
 [project.entry-points.hexdoc]
-hexposition = "hexdoc_hexposition._hooks:HexpositionPlugin"
+hexpose = "hexdoc_hexpose._hooks:HexposePlugin"
 
 # linting
 

@@ -1,88 +1,88 @@
 {
-	"name": "hexposition.page.blocks.title",
+	"name": "hexpose.page.blocks.title",
 	"icon": "minecraft:grass_block",
 	"category": "hexcasting:scrying",
 	"advancement": "hexcasting:root",
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:block_hardness",
-			"anchor": "hexposition:block_hardness",
+			"op_id": "hexpose:block_hardness",
+			"anchor": "hexpose:block_hardness",
 			"input": "identifier",
 			"output": "number",
-			"text": "hexposition.page.block_hardness.summary"
+			"text": "hexpose.page.block_hardness.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:block_blast_resistance",
-			"anchor": "hexposition:block_blast_resistance",
+			"op_id": "hexpose:block_blast_resistance",
+			"anchor": "hexpose:block_blast_resistance",
 			"input": "identifier",
 			"output": "number",
-			"text": "hexposition.page.block_blast_resistance.summary"
+			"text": "hexpose.page.block_blast_resistance.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_rotation",
-			"anchor": "hexposition:blockstate_rotation",
+			"op_id": "hexpose:blockstate_rotation",
+			"anchor": "hexpose:blockstate_rotation",
 			"input": "vector",
 			"output": "vector/null",
-			"text": "hexposition.page.blockstate_rotation.summary"
+			"text": "hexpose.page.blockstate_rotation.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_turn",
-			"anchor": "hexposition:blockstate_turn",
+			"op_id": "hexpose:blockstate_turn",
+			"anchor": "hexpose:blockstate_turn",
 			"input": "vector",
 			"output": "number/null",
-			"text": "hexposition.page.blockstate_turn.summary"
+			"text": "hexpose.page.blockstate_turn.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_crop",
-			"anchor": "hexposition:blockstate_crop",
+			"op_id": "hexpose:blockstate_crop",
+			"anchor": "hexpose:blockstate_crop",
 			"input": "vector",
 			"output": "number/null",
-			"text": "hexposition.page.blockstate_crop.summary"
+			"text": "hexpose.page.blockstate_crop.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_waterlogged",
-			"anchor": "hexposition:blockstate_waterlogged",
+			"op_id": "hexpose:blockstate_waterlogged",
+			"anchor": "hexpose:blockstate_waterlogged",
 			"input": "vector",
 			"output": "boolean/null",
-			"text": "hexposition.page.blockstate_waterlogged.summary"
+			"text": "hexpose.page.blockstate_waterlogged.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_glow",
-			"anchor": "hexposition:blockstate_glow",
+			"op_id": "hexpose:blockstate_glow",
+			"anchor": "hexpose:blockstate_glow",
 			"input": "vector",
 			"output": "boolean/null",
-			"text": "hexposition.page.blockstate_glow.summary"
+			"text": "hexpose.page.blockstate_glow.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_lock",
-			"anchor": "hexposition:blockstate_lock",
+			"op_id": "hexpose:blockstate_lock",
+			"anchor": "hexpose:blockstate_lock",
 			"input": "vector",
 			"output": "boolean/null",
-			"text": "hexposition.page.blockstate_lock.summary"
+			"text": "hexpose.page.blockstate_lock.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_bunch",
-			"anchor": "hexposition:blockstate_bunch",
+			"op_id": "hexpose:blockstate_bunch",
+			"anchor": "hexpose:blockstate_bunch",
 			"input": "vector",
 			"output": "number/null",
-			"text": "hexposition.page.blockstate_bunch.summary"
+			"text": "hexpose.page.blockstate_bunch.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexposition:blockstate_book",
-			"anchor": "hexposition:blockstate_book",
+			"op_id": "hexpose:blockstate_book",
+			"anchor": "hexpose:blockstate_book",
 			"input": "vector",
 			"output": "boolean/null",
-			"text": "hexposition.page.blockstate_book.summary"
+			"text": "hexpose.page.blockstate_book.summary"
 		}
 	]
 }
