@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexposition/tree/825ccf8edfcc60d1d25b119a93070eecb6a5e81c"
+      href="https://github.com/miyucomics/hexposition/tree/5a7e1021db6cecf334d78c9375323bc11b19efb9"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -919,62 +919,6 @@
       <p>Pushes the vector of the block&#39;s facing direction, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if blocks of its type do not have an orientation.</p>
   </div>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_turn" class="">
-<h4 class="pattern-title">Angle Purification (vector → number/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_turn"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaqqqqqwqqwqd"
-        data-start="east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaqqqqqwqqwqd</canvas>
-  </details>
-      <p>Pushes a number corresponding to the rotation of <span style="color: #b0b">Signs</span>, <span style="color: #b0b">Skulls</span>, and <span style="color: #b0b">Banners</span>.</p>
-  </div>
-<br />
   <div id="patterns/scrying/blocks@hexpose:blockstate_crop" class="">
 <h4 class="pattern-title">Farmer&#39;s Purification (vector → number/null)<a
     href="#patterns/scrying/blocks@hexpose:blockstate_crop"
@@ -1031,65 +975,11 @@
       <p>Pushes a number 0 to 1 corresponding to the growth progress of that block. Works for crops, <span style="color: #b0b">Beehives</span>, <span style="color: #b0b">Composters</span>, <span style="color: #b0b">Cauldrons</span>, and strangely <span style="color: #b0b">Cakes</span> too.</p>
   </div>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_waterlogged" class="">
-<h4 class="pattern-title">Plumber&#39;s Purification (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_waterlogged"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="edeeeeeqwqqqqw"
-        data-start="south_east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: edeeeeeqwqqqqw</canvas>
-  </details>
-      <p>Pushes whether the block is waterlogged, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if the blocks of its type can not be waterlogged.</p>
-  </div>
+    <p>Every block has a list of <i>facets</i>: simple aspects that distinguish them from other blocks of the same type. For example, orientation, how far along a crop is to growing, and whether a door is open or shut are all facets.</p><p>Nature provides two patterns that allow <span style="color: #b38ef3">Hexcasting</span> to read and analyze facets of any blocks within ambit.</p>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_glow" class="">
-<h4 class="pattern-title">Glowing Purification (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_glow"
+  <div id="patterns/scrying/blocks@hexpose:get_blockstates" class="">
+<h4 class="pattern-title">Facet Purification (vector → list of identifiers)<a
+    href="#patterns/scrying/blocks@hexpose:get_blockstates"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1135,129 +1025,17 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="qaqqqqqwaeaeaeaeaea"
+        data-string="qaqqqeqqqwqaww"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaqqqqqwaeaeaeaeaea</canvas>
+      >Your browser does not support visualizing patterns. Pattern code: qaqqqeqqqwqaww</canvas>
   </details>
-      <p>Pushes whether the block is in a &#34;lit&#34; state, for example <span style="color: #b0b">Furnaces</span>, <span style="color: #b0b">Redstone Torches</span>, <span style="color: #b0b">Redstone Lamps</span>, and <span style="color: #b0b">Campfires</span>.</p>
+      <p>Pushes a list of all facets of that block.</p>
   </div>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_lock" class="">
-<h4 class="pattern-title">Lock Purification (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_lock"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaqqqeaqwdewd"
-        data-start="east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaqqqeaqwdewd</canvas>
-  </details>
-      <p>Pushes whether the block is currently in a &#34;open&#34; state, for example <span style="color: #b0b">Doors</span>, <span style="color: #b0b">Trapdoors</span>, <span style="color: #b0b">Fence Gates</span>, and <span style="color: #b0b">Barrels</span>.</p>
-  </div>
-<br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_bunch" class="">
-<h4 class="pattern-title">Bunching Purification (vector → number/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_bunch"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaqqqqqweeeeedeeqaqdeee"
-        data-start="east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaqqqqqweeeeedeeqaqdeee</canvas>
-  </details>
-      <p>Pushes how many parts are in a block that contains a bunch, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it is not such a block. Useful only for <span style="color: #b0b">Candles</span>, <span style="color: #b0b">Sea Pickles</span>, and <span style="color: #b0b">Turtle Eggs</span>.</p>
-  </div>
-<br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_book" class="">
-<h4 class="pattern-title">Book Purification (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_book"
+  <div id="patterns/scrying/blocks@hexpose:query_blockstate" class="">
+<h4 class="pattern-title">Facet Distillation (vector, identifier → any)<a
+    href="#patterns/scrying/blocks@hexpose:query_blockstate"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1308,8 +1086,10 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: qaqqqqqeawa</canvas>
   </details>
-      <p>Pushes whether the <span style="color: #b0b">Lectern</span> or <span style="color: #b0b">Jukebox</span> contains a <span style="color: #b0b">Book</span> or <span style="color: #b0b">Music Disc</span> respectively. It may also work for some kind of bookshelf involved in a great work too.</p>
+      <p>Takes a block and a facet and pushes that facet&#39;s value.</p>
   </div>
+<br />
+    <p>If the block does not have the given facet, the pattern pushes <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>. For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, and integers, whichever matches the facet best.</p><p>For certain facets that deal with a state among a variety of them, it will produce a seemingly random yet consistent integer. If a facet is too alien, a senseless iota is produced.</p>
 <br />
 </div>
 <div id="patterns/scrying/entities" class="entry">

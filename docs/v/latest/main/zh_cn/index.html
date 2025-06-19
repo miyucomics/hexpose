@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexposition/tree/825ccf8edfcc60d1d25b119a93070eecb6a5e81c"
+      href="https://github.com/miyucomics/hexposition/tree/5a7e1021db6cecf334d78c9375323bc11b19efb9"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -2541,62 +2541,6 @@
       <p>压入方块的朝向向量。若该类方块不区分朝向，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_turn" class="">
-<h4 class="pattern-title">角度之纯化 (vector → number/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_turn"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaqqqqqwqqwqd"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qaqqqqqwqqwqd</canvas>
-  </details>
-      <p>压入一个数，对应<span style="color: #b0b">告示牌</span>、<span style="color: #b0b">头颅</span>、<span style="color: #b0b">旗帜</span>的旋转方向。</p>
-  </div>
-<br />
   <div id="patterns/scrying/blocks@hexpose:blockstate_crop" class="">
 <h4 class="pattern-title">农夫之纯化 (vector → number/null)<a
     href="#patterns/scrying/blocks@hexpose:blockstate_crop"
@@ -2653,65 +2597,11 @@
       <p>压入一个 0 到 1 的数，对应农作物的生长进度，对<span style="color: #b0b">蜂巢</span>、<span style="color: #b0b">堆肥桶</span>、<span style="color: #b0b">炼药锅</span>同样有效。奇怪的是，对<span style="color: #b0b">蛋糕</span>也有效。</p>
   </div>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_waterlogged" class="">
-<h4 class="pattern-title">管道工之纯化 (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_waterlogged"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="edeeeeeqwqqqqw"
-        data-start="south_east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：edeeeeeqwqqqqw</canvas>
-  </details>
-      <p>检验方块是否含水。若该类方块无法含水，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
-  </div>
+    <p>Every block has a list of <i>facets</i>: simple aspects that distinguish them from other blocks of the same type. For example, orientation, how far along a crop is to growing, and whether a door is open or shut are all facets.</p><p>Nature provides two patterns that allow <span style="color: #b38ef3">Hexcasting</span> to read and analyze facets of any blocks within ambit.</p>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_glow" class="">
-<h4 class="pattern-title">发光之纯化 (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_glow"
+  <div id="patterns/scrying/blocks@hexpose:get_blockstates" class="">
+<h4 class="pattern-title">Facet Purification (vector → list of identifiers)<a
+    href="#patterns/scrying/blocks@hexpose:get_blockstates"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -2757,129 +2647,17 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="qaqqqqqwaeaeaeaeaea"
+        data-string="qaqqqeqqqwqaww"
         data-start="east"
         data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qaqqqqqwaeaeaeaeaea</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaqqqeqqqwqaww</canvas>
   </details>
-      <p>检验方块是否处于“点燃”状态，有效方块有<span style="color: #b0b">熔炉</span>、<span style="color: #b0b">红石火把</span>、<span style="color: #b0b">灯笼</span>、<span style="color: #b0b">营火</span>等。</p>
+      <p>Pushes a list of all facets of that block.</p>
   </div>
 <br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_lock" class="">
-<h4 class="pattern-title">锁之纯化 (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_lock"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaqqqeaqwdewd"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qaqqqeaqwdewd</canvas>
-  </details>
-      <p>检验方块是否处于“打开”状态，有效方块有<span style="color: #b0b">门</span>、<span style="color: #b0b">活板门</span>、<span style="color: #b0b">栅栏门</span>、<span style="color: #b0b">木桶</span>等。</p>
-  </div>
-<br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_bunch" class="">
-<h4 class="pattern-title">叠放之纯化 (vector → number/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_bunch"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaqqqqqweeeeedeeqaqdeee"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qaqqqqqweeeeedeeqaqdeee</canvas>
-  </details>
-      <p>返回可叠放方块的叠放部件数，无法叠放则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。仅对<span style="color: #b0b">蜡烛</span>、<span style="color: #b0b">海泡菜</span>、<span style="color: #b0b">海龟蛋</span>有效。</p>
-  </div>
-<br />
-  <div id="patterns/scrying/blocks@hexpose:blockstate_book" class="">
-<h4 class="pattern-title">书之纯化 (vector → boolean/null)<a
-    href="#patterns/scrying/blocks@hexpose:blockstate_book"
+  <div id="patterns/scrying/blocks@hexpose:query_blockstate" class="">
+<h4 class="pattern-title">Facet Distillation (vector, identifier → any)<a
+    href="#patterns/scrying/blocks@hexpose:query_blockstate"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -2930,8 +2708,10 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqqqeawa</canvas>
   </details>
-      <p>检验<span style="color: #b0b">讲台</span>中是否有<span style="color: #b0b">书</span>，<span style="color: #b0b">唱片机</span>中是否有<span style="color: #b0b">唱片</span>。我读到过它可能对所谓“卓伟大作”中的某种奇妙书架也有效。</p>
+      <p>Takes a block and a facet and pushes that facet&#39;s value.</p>
   </div>
+<br />
+    <p>If the block does not have the given facet, the pattern pushes <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>. For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, and integers, whichever matches the facet best.</p><p>For certain facets that deal with a state among a variety of them, it will produce a seemingly random yet consistent integer. If a facet is too alien, a senseless iota is produced.</p>
 <br />
 </div>
 <div id="patterns/scrying/identifiers" class="entry">
