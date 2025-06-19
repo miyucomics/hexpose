@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexposition/tree/5a7e1021db6cecf334d78c9375323bc11b19efb9"
+      href="https://github.com/miyucomics/hexposition/tree/af6eef0f3f0836c2d64c02ab5f1308616f1a34c6"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -234,6 +234,13 @@
       loading="lazy"
       class="item-texture  texture pixelated"
     > Status Effects</a></li>
+          <li><a href="#patterns/scrying/villager" class="toc-elem "><img
+      title="Villager Spawn Egg"
+      alt="Villager Spawn Egg"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAATlBMVEVJoZQAAAD29vby8vLw8PDv7+/u7u7p6eno6Ojn5+fl5eXi4uLh4eHg4ODf39/d3d3b29vKysrJycnIyMjExMR/f39sbGxlZWVjY2NfX1/3AHxtAAAAAnRSTlMAAHaTzTgAAABpSURBVHjaZc9JDoAwDANAzL5TDAnw/49SpEbQkkvkOSRy5gffsfgDUYOwl1ViQLMmUAxQA3E+1yOpBkOVVx1gIIsPrQNIDTd61LNzJI8AU9ngAVx2dAbA963sjAGqJLfzW0WBMykbYnYDRrYE7DMIgdAAAAAASUVORK5CYII="
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Villagers</a></li>
           <li><a href="#patterns/scrying/world" class="toc-elem "><img
       title="Compass"
       alt="Compass"
@@ -733,7 +740,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
-    <p>I have stumbled upon a branch of manipulating <span style="color: #74b3f2">media</span> entirely focused around information about the world. While likely not useful for the majority of <span style="color: #b38ef3">Hexes</span>, these will be convenient to have, should I ever need them.</p>
+    <p>I have stumbled upon a branch of manipulating <span style="color: #74b3f2">media</span> entirely focused around information about the world.</p><p>While likely not useful for the majority of <span style="color: #b38ef3">Hexes</span>, these will be convenient to have, should I ever need them.</p>
 <div id="patterns/scrying/blocks" class="entry">
     <h3 class="entry-title page-header">
     <img
@@ -4078,7 +4085,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: wqqqaqwa</canvas>
   </details>
-      <p>Pushes the potency of the specific effect acting on the entity or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if the entity doesn&#39;t have it.</p>
+      <p>Pushes how potent the effect type is acting on the entity or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if the entity doesn&#39;t have it.</p>
   </div>
 <br />
   <div id="patterns/scrying/status_effects@hexpose:get_effect_duration" class="">
@@ -4134,7 +4141,249 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: wqqqaqwdd</canvas>
   </details>
-      <p>Pushes how long the effect will last in seconds or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if the entity doesn&#39;t have it.</p>
+      <p>Pushes how long the effect type will affect the entity in twentieths of a second or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if the entity doesn&#39;t have it.</p>
+  </div>
+<br />
+</div>
+<div id="patterns/scrying/villager" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Villager Spawn Egg"
+      alt="Villager Spawn Egg"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAATlBMVEVJoZQAAAD29vby8vLw8PDv7+/u7u7p6eno6Ojn5+fl5eXi4uLh4eHg4ODf39/d3d3b29vKysrJycnIyMjExMR/f39sbGxlZWVjY2NfX1/3AHxtAAAAAnRSTlMAAHaTzTgAAABpSURBVHjaZc9JDoAwDANAzL5TDAnw/49SpEbQkkvkOSRy5gffsfgDUYOwl1ViQLMmUAxQA3E+1yOpBkOVVx1gIIsPrQNIDTd61LNzJI8AU9ngAVx2dAbA963sjAGqJLfzW0WBMykbYnYDRrYE7DMIgdAAAAAASUVORK5CYII="
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Villagers<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/scrying/villager"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/scrying/villager@hexpose:villager_level" class="">
+<h4 class="pattern-title">Tier Purification (entity → number)<a
+    href="#patterns/scrying/villager@hexpose:villager_level"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqawdaeaeaeaeaea"
+        data-start="east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qeqwqwqwqwqeqawdaeaeaeaeaea</canvas>
+  </details>
+      <p>Pushes how advanced a villager is as a number, encoding mastery of their craft.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/villager@hexpose:villager_profession" class="">
+<h4 class="pattern-title">Professional Purif. (entity → identifier)<a
+    href="#patterns/scrying/villager@hexpose:villager_profession"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqawewawqwawadeeeee"
+        data-start="east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qeqwqwqwqwqeqawewawqwawadeeeee</canvas>
+  </details>
+      <p>Pushes the profession of a villager as an identifier</p>
+  </div>
+<br />
+  <div id="patterns/scrying/villager@hexpose:villager_type" class="">
+<h4 class="pattern-title">Culture Purification (entity → identifier)<a
+    href="#patterns/scrying/villager@hexpose:villager_type"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqaweqqqqq"
+        data-start="east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qeqwqwqwqwqeqaweqqqqq</canvas>
+  </details>
+      <p>Pushes the ambient cultural aspect tied to the villager’s origin, such as desert or taiga roots.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/villager@hexpose:biome_to_villager" class="">
+<h4 class="pattern-title">Nurture Purification (identifier → identifier/null)<a
+    href="#patterns/scrying/villager@hexpose:biome_to_villager"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqawewwqqwwqwwqqww"
+        data-start="east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qeqwqwqwqwqeqawewwqqwwqwwqqww</canvas>
+  </details>
+      <p>Projects the villager archetype most attuned to the essence of the specified biome, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if none can be drawn.</p>
   </div>
 <br />
 </div>
@@ -4488,7 +4737,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: wddwaqqwqaddaqqwddwaqqwqaddaq</canvas>
   </details>
-      <p>Pushes the age of the world for timekeeping, unaffected by events such as sleeping. Divided by 20, it returns seconds.</p>
+      <p>Pushes the twentieths of a second since the creation of the world, unaffected by events such as sleeping.</p>
   </div>
 <br />
   <div id="patterns/scrying/world@hexpose:get_biome" class="">
