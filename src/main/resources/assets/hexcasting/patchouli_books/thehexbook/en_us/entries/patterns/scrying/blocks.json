@@ -30,14 +30,6 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:blockstate_turn",
-			"anchor": "hexpose:blockstate_turn",
-			"input": "vector",
-			"output": "number/null",
-			"text": "hexpose.page.blockstate_turn.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
 			"op_id": "hexpose:blockstate_crop",
 			"anchor": "hexpose:blockstate_crop",
 			"input": "vector",
@@ -45,44 +37,28 @@
 			"text": "hexpose.page.blockstate_crop.summary"
 		},
 		{
-			"type": "hexcasting:pattern",
-			"op_id": "hexpose:blockstate_waterlogged",
-			"anchor": "hexpose:blockstate_waterlogged",
-			"input": "vector",
-			"output": "boolean/null",
-			"text": "hexpose.page.blockstate_waterlogged.summary"
+			"type": "patchouli:text",
+			"text": "hexpose.page.get_blockstates.description"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:blockstate_glow",
-			"anchor": "hexpose:blockstate_glow",
+			"op_id": "hexpose:get_blockstates",
+			"anchor": "hexpose:get_blockstates",
 			"input": "vector",
-			"output": "boolean/null",
-			"text": "hexpose.page.blockstate_glow.summary"
+			"output": "list of identifiers",
+			"text": "hexpose.page.get_blockstates.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:blockstate_lock",
-			"anchor": "hexpose:blockstate_lock",
-			"input": "vector",
-			"output": "boolean/null",
-			"text": "hexpose.page.blockstate_lock.summary"
+			"op_id": "hexpose:query_blockstate",
+			"anchor": "hexpose:query_blockstate",
+			"input": "vector, identifier",
+			"output": "any",
+			"text": "hexpose.page.query_blockstate.summary"
 		},
 		{
-			"type": "hexcasting:pattern",
-			"op_id": "hexpose:blockstate_bunch",
-			"anchor": "hexpose:blockstate_bunch",
-			"input": "vector",
-			"output": "number/null",
-			"text": "hexpose.page.blockstate_bunch.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "hexpose:blockstate_book",
-			"anchor": "hexpose:blockstate_book",
-			"input": "vector",
-			"output": "boolean/null",
-			"text": "hexpose.page.blockstate_book.summary"
+			"type": "patchouli:text",
+			"text": "hexpose.page.query_blockstate.description"
 		}
 	]
 }

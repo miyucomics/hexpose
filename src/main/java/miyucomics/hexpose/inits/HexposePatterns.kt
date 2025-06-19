@@ -18,6 +18,8 @@ import miyucomics.hexpose.HexposeMain
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.asActionResult
 import miyucomics.hexpose.patterns.*
+import miyucomics.hexpose.patterns.blockstates.OpGetBlockProperties
+import miyucomics.hexpose.patterns.blockstates.OpQueryBlockProperty
 import miyucomics.hexpose.patterns.identifier.OpClassify
 import miyucomics.hexpose.patterns.identifier.OpIdentify
 import miyucomics.hexpose.patterns.item_stack.*
@@ -58,18 +60,21 @@ object HexposePatterns {
 
 		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
 		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
-		register("blockstate_waterlogged", "edeeeeeqwqqqqw", HexDir.SOUTH_EAST, OpGetBlockStateData { state ->
-			state.entries[Properties.WATERLOGGED] ?: return@OpGetBlockStateData listOf(NullIota())
-			return@OpGetBlockStateData state.get(Properties.WATERLOGGED).asActionResult
-		})
 		register("blockstate_rotation", "qaqqqqqwadeeed", HexDir.EAST, OpGetBlockStateData { state ->
-			return@OpGetBlockStateData if (state.entries[Properties.FACING] != null) state.get(Properties.FACING).unitVector.asActionResult
-			else if (state.entries[Properties.HORIZONTAL_FACING] != null) state.get(Properties.HORIZONTAL_FACING).unitVector.asActionResult
-			else if (state.entries[Properties.VERTICAL_DIRECTION] != null) state.get(Properties.VERTICAL_DIRECTION).unitVector.asActionResult
-			else if (state.entries[Properties.AXIS] != null) Direction.from(state.get(Properties.AXIS), Direction.AxisDirection.POSITIVE).unitVector.asActionResult
-			else if (state.entries[Properties.HORIZONTAL_AXIS] != null) Direction.from(state.get(Properties.HORIZONTAL_AXIS), Direction.AxisDirection.POSITIVE).unitVector.asActionResult
-			else if (state.entries[Properties.HOPPER_FACING] != null) state.get(Properties.HOPPER_FACING).unitVector.asActionResult
-			else listOf(NullIota())
+			val candidates = listOf(
+				Properties.FACING to { state.get(Properties.FACING).unitVector },
+				Properties.HORIZONTAL_FACING to { state.get(Properties.HORIZONTAL_FACING).unitVector },
+				Properties.VERTICAL_DIRECTION to { state.get(Properties.VERTICAL_DIRECTION).unitVector },
+				Properties.AXIS to { Direction.from(state.get(Properties.AXIS), Direction.AxisDirection.POSITIVE).unitVector },
+				Properties.HORIZONTAL_AXIS to { Direction.from(state.get(Properties.HORIZONTAL_AXIS), Direction.AxisDirection.POSITIVE).unitVector },
+				Properties.HOPPER_FACING to { state.get(Properties.HOPPER_FACING).unitVector }
+			)
+
+			for ((prop, extractor) in candidates)
+				if (prop in state.entries)
+					return@OpGetBlockStateData extractor().asActionResult
+
+			return@OpGetBlockStateData listOf(NullIota())
 		})
 		register("blockstate_crop", "qaqqqqqwaea", HexDir.EAST, OpGetBlockStateData { state ->
 			return@OpGetBlockStateData if (state.entries[Properties.AGE_1] != null) (state.get(Properties.AGE_1)).asActionResult
@@ -86,43 +91,8 @@ object HexposePatterns {
 			else if (state.entries[Properties.BITES] != null) (state.get(Properties.BITES).toDouble() / 6.0).asActionResult
 			else listOf(NullIota())
 		})
-		register("blockstate_glow", "qaqqqqqwaeaeaeaeaea", HexDir.EAST, OpGetBlockStateData { state ->
-			state.entries[Properties.LIT] ?: return@OpGetBlockStateData listOf(NullIota())
-			return@OpGetBlockStateData state.get(Properties.LIT).asActionResult
-		})
-		register("blockstate_lock", "qaqqqeaqwdewd", HexDir.EAST, OpGetBlockStateData { state ->
-			state.entries[Properties.OPEN] ?: return@OpGetBlockStateData listOf(NullIota())
-			return@OpGetBlockStateData state.get(Properties.OPEN).asActionResult
-		})
-		register("blockstate_turn", "qaqqqqqwqqwqd", HexDir.EAST, OpGetBlockStateData{ state ->
-			state.entries[Properties.ROTATION] ?: return@OpGetBlockStateData listOf(NullIota())
-			return@OpGetBlockStateData state.get(Properties.ROTATION).asActionResult
-		})
-		register("blockstate_bunch", "qaqqqqqweeeeedeeqaqdeee", HexDir.EAST, OpGetBlockStateData { state ->
-			val propertyMap = mapOf(
-				CandleBlock::class to Properties.CANDLES,
-				FlowerbedBlock::class to Properties.FLOWER_AMOUNT,
-				SeaPickleBlock::class to Properties.PICKLES,
-				TurtleEggBlock::class to Properties.EGGS
-			)
-
-			for ((blockClass, property) in propertyMap) {
-				if (blockClass.isInstance(state.block)) {
-					return@OpGetBlockStateData state.entries[property]
-						?.let { state.get(property).asActionResult }
-						?: listOf(NullIota())
-				}
-			}
-
-			listOf(NullIota())
-		})
-		register("blockstate_book", "qaqqqqqeawa", HexDir.EAST, OpGetBlockStateData { state ->
-			return@OpGetBlockStateData if (state.entries[Properties.HAS_BOOK] != null) state.get(Properties.HAS_BOOK).asActionResult
-			else if (state.entries[Properties.HAS_RECORD] != null) state.get(Properties.HAS_RECORD).asActionResult
-			else if (state.entries[BlockAkashicBookshelf.HAS_BOOKS] != null) state.get(BlockAkashicBookshelf.HAS_BOOKS).asActionResult
-			else if (state.entries[Properties.EYE] != null) state.get(Properties.EYE).asActionResult
-			else listOf(NullIota())
-		})
+		register("get_blockstates", "qaqqqeqqqwqaww", HexDir.EAST, OpGetBlockProperties())
+		register("query_blockstate", "qaqqqqqeawa", HexDir.EAST, OpQueryBlockProperty())
 
 		register("get_enchantments", "waqeaeqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
 			var data = stack.enchantments
