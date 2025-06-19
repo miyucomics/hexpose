@@ -25,6 +25,7 @@
 	"hexcasting.action.book.hexpose:identify": "Detective's Purif.",
 	"hexcasting.action.book.hexpose:damage_stack": "Deterioration Purif.",
 	"hexcasting.action.book.hexpose:classify": "Modicum Purif.",
+	"hexcasting.action.book.hexpose:villager_profession": "Professional Purif.",
 	"hexcasting.action.book.hexpose:get_biome": "Geographical Purif.",
 	"hexcasting.action.book.hexpose:get_weather": "Meterologist's Refl.",
 
@@ -51,7 +52,7 @@
 	"hexpose.page.piercing_surface_raycast.summary": "Works similar to $(l:patterns/basics#hexcasting:raycast/axis)$(action)Architect's Distillation$() but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier.",
 
 	"hexpose.category.scrying": "Scrying",
-	"hexpose.category.scrying.desc": "I have stumbled upon a branch of manipulating _media entirely focused around information about the world. While likely not useful for the majority of _Hexes, these will be convenient to have, should I ever need them.",
+	"hexpose.category.scrying.desc": "I have stumbled upon a branch of manipulating _media entirely focused around information about the world.$(br2)While likely not useful for the majority of _Hexes, these will be convenient to have, should I ever need them.",
 
 	"hexpose.page.blocks.title": "Blocks",
 	"hexcasting.action.hexpose:block_hardness": "Miner's Purification",
@@ -188,9 +189,19 @@
 	"hexcasting.action.hexpose:get_effect_category": "Condition Purification",
 	"hexpose.page.get_effect_category.summary": "Pushes the general \"goodness\" of the effect towards the afflicted. -1 for harmful, 0 for neutral, and 1 for beneficial.",
 	"hexcasting.action.hexpose:get_effect_amplifier": "Concentration Distillation",
-	"hexpose.page.get_effect_amplifier.summary": "Pushes the potency of the specific effect acting on the entity or $(l:casting/influences)$(thing)Null$() if the entity doesn't have it.",
+	"hexpose.page.get_effect_amplifier.summary": "Pushes how potent the effect type is acting on the entity or $(l:casting/influences)$(thing)Null$() if the entity doesn't have it.",
 	"hexcasting.action.hexpose:get_effect_duration": "Clearance Distillation",
-	"hexpose.page.get_effect_duration.summary": "Pushes how long the effect will last in seconds or $(l:casting/influences)$(thing)Null$() if the entity doesn't have it.",
+	"hexpose.page.get_effect_duration.summary": "Pushes how long the effect type will affect the entity in twentieths of a second or $(l:casting/influences)$(thing)Null$() if the entity doesn't have it.",
+
+	"hexpose.page.villager.title": "Villagers",
+	"hexcasting.action.hexpose:villager_level": "Tier Purification",
+	"hexpose.page.villager_level.summary": "Pushes how advanced a villager is as a number, encoding mastery of their craft.",
+	"hexcasting.action.hexpose:villager_profession": "Professional Purification",
+	"hexpose.page.villager_profession.summary": "Pushes the profession of a villager as an identifier",
+	"hexcasting.action.hexpose:villager_type": "Culture Purification",
+	"hexpose.page.villager_type.summary": "Pushes the ambient cultural aspect tied to the villager’s origin, such as desert or taiga roots.",
+	"hexcasting.action.hexpose:biome_to_villager": "Nurture Purification",
+	"hexpose.page.biome_to_villager.summary": "Projects the villager archetype most attuned to the essence of the specified biome, or $(l:casting/influences)$(thing)Null$() if none can be drawn.",
 
 	"hexpose.page.world.title": "World",
 	"hexcasting.action.hexpose:get_light": "Luminance Purification",
@@ -204,7 +215,7 @@
 	"hexcasting.action.hexpose:get_day": "Circadian Reflection",
 	"hexpose.page.get_day.summary": "Pushes the progress of the day as a number between 0 (start) and 1 (end) of the day.",
 	"hexcasting.action.hexpose:get_time": "Temporal Reflection",
-	"hexpose.page.get_time.summary": "Pushes the age of the world for timekeeping, unaffected by events such as sleeping. Divided by 20, it returns seconds.",
+	"hexpose.page.get_time.summary": "Pushes the twentieths of a second since the creation of the world, unaffected by events such as sleeping.",
 	"hexcasting.action.hexpose:get_biome": "Geographical Purification",
 	"hexpose.page.get_biome.summary": "Pushes the identifier of the type of biome the vector is within.",
 	"hexcasting.action.hexpose:get_dimension": "Plane Reflection",
