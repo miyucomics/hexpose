@@ -12,17 +12,40 @@ import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.math.HexDir
 import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.api.misc.MediaConstants
-import at.petrak.hexcasting.common.blocks.akashic.BlockAkashicBookshelf
 import at.petrak.hexcasting.common.lib.hex.HexActions
 import miyucomics.hexpose.HexposeMain
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.asActionResult
-import miyucomics.hexpose.patterns.*
 import miyucomics.hexpose.patterns.blockstates.OpGetBlockProperties
 import miyucomics.hexpose.patterns.blockstates.OpQueryBlockProperty
 import miyucomics.hexpose.patterns.identifier.OpClassify
 import miyucomics.hexpose.patterns.identifier.OpIdentify
+import miyucomics.hexpose.patterns.instance_data.OpGetBlockStateData
+import miyucomics.hexpose.patterns.instance_data.OpGetEntityData
+import miyucomics.hexpose.patterns.instance_data.OpGetEnvData
+import miyucomics.hexpose.patterns.instance_data.OpGetItemStackData
+import miyucomics.hexpose.patterns.instance_data.OpGetLivingEntityData
+import miyucomics.hexpose.patterns.instance_data.OpGetPlayerData
+import miyucomics.hexpose.patterns.instance_data.OpGetPositionData
+import miyucomics.hexpose.patterns.instance_data.OpGetStatusEffectInstanceData
+import miyucomics.hexpose.patterns.instance_data.OpGetVillagerData
+import miyucomics.hexpose.patterns.instance_data.OpGetWorldData
 import miyucomics.hexpose.patterns.item_stack.*
+import miyucomics.hexpose.patterns.misc.OpBrainswept
+import miyucomics.hexpose.patterns.misc.OpBreedable
+import miyucomics.hexpose.patterns.misc.OpCatVariant
+import miyucomics.hexpose.patterns.misc.OpEnlightened
+import miyucomics.hexpose.patterns.misc.OpGetAmbit
+import miyucomics.hexpose.patterns.misc.OpGetEnchantmentStrength
+import miyucomics.hexpose.patterns.misc.OpGetMaxMedia
+import miyucomics.hexpose.patterns.misc.OpGetMedia
+import miyucomics.hexpose.patterns.misc.OpGetPrescription
+import miyucomics.hexpose.patterns.misc.OpGetStatusEffectCategory
+import miyucomics.hexpose.patterns.misc.OpPaintingVariant
+import miyucomics.hexpose.patterns.misc.OpPerlin
+import miyucomics.hexpose.patterns.misc.OpPetOwner
+import miyucomics.hexpose.patterns.misc.OpShooter
+import miyucomics.hexpose.patterns.misc.OpVillagerTypeFromBiome
 import miyucomics.hexpose.patterns.raycast.OpFluidRaycast
 import miyucomics.hexpose.patterns.raycast.OpFluidSurfaceRaycast
 import miyucomics.hexpose.patterns.raycast.OpPiercingRaycast
@@ -30,10 +53,6 @@ import miyucomics.hexpose.patterns.raycast.OpPiercingSurfaceRaycast
 import miyucomics.hexpose.patterns.types.OpGetBlockTypeData
 import miyucomics.hexpose.patterns.types.OpGetFoodTypeData
 import miyucomics.hexpose.patterns.types.OpGetItemTypeData
-import net.minecraft.block.CandleBlock
-import net.minecraft.block.FlowerbedBlock
-import net.minecraft.block.SeaPickleBlock
-import net.minecraft.block.TurtleEggBlock
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
@@ -77,19 +96,25 @@ object HexposePatterns {
 			return@OpGetBlockStateData listOf(NullIota())
 		})
 		register("blockstate_crop", "qaqqqqqwaea", HexDir.EAST, OpGetBlockStateData { state ->
-			return@OpGetBlockStateData if (state.entries[Properties.AGE_1] != null) (state.get(Properties.AGE_1)).asActionResult
-			else if (state.entries[Properties.AGE_2] != null) (state.get(Properties.AGE_2).toDouble() / 2.0).asActionResult
-			else if (state.entries[Properties.AGE_3] != null) (state.get(Properties.AGE_3).toDouble() / 3.0).asActionResult
-			else if (state.entries[Properties.AGE_4] != null) (state.get(Properties.AGE_4).toDouble() / 4.0).asActionResult
-			else if (state.entries[Properties.AGE_5] != null) (state.get(Properties.AGE_5).toDouble() / 5.0).asActionResult
-			else if (state.entries[Properties.AGE_7] != null) (state.get(Properties.AGE_7).toDouble() / 7.0).asActionResult
-			else if (state.entries[Properties.AGE_15] != null) (state.get(Properties.AGE_15).toDouble() / 15.0).asActionResult
-			else if (state.entries[Properties.AGE_25] != null) (state.get(Properties.AGE_25).toDouble() / 25.0).asActionResult
-			else if (state.entries[Properties.LEVEL_3] != null) (state.get(Properties.LEVEL_3).toDouble() / 3).asActionResult
-			else if (state.entries[Properties.LEVEL_8] != null) (state.get(Properties.LEVEL_8).toDouble() / 8).asActionResult
-			else if (state.entries[Properties.HONEY_LEVEL] != null) (state.get(Properties.HONEY_LEVEL).toDouble() / 15.0).asActionResult
-			else if (state.entries[Properties.BITES] != null) (state.get(Properties.BITES).toDouble() / 6.0).asActionResult
-			else listOf(NullIota())
+			val candidates = listOf(
+				Properties.AGE_1 to 1.0,
+				Properties.AGE_2 to 2.0,
+				Properties.AGE_3 to 3.0,
+				Properties.AGE_4 to 4.0,
+				Properties.AGE_5 to 5.0,
+				Properties.AGE_7 to 7.0,
+				Properties.AGE_15 to 15.0,
+				Properties.LEVEL_3 to 3.0,
+				Properties.LEVEL_8 to 8.0,
+				Properties.HONEY_LEVEL to 15.0,
+				Properties.BITES to 6.0
+			)
+
+			for ((prop, divisor) in candidates)
+				if (prop in state.entries)
+					return@OpGetBlockStateData (state.get(prop).toDouble() / divisor).asActionResult
+
+			return@OpGetBlockStateData listOf(NullIota())
 		})
 		register("get_blockstates", "qaqqqeqqqwqaww", HexDir.EAST, OpGetBlockProperties())
 		register("query_blockstate", "qaqqqqqeawa", HexDir.EAST, OpQueryBlockProperty())
@@ -132,6 +157,7 @@ object HexposePatterns {
 		register("entity_vehicle", "eqqedwewew", HexDir.EAST, OpGetEntityData { entity -> entity.vehicle.asActionResult })
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map { EntityIota(it) }.asActionResult })
 		register("shooter", "aadedade", HexDir.EAST, OpShooter())
+		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner())
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit())
 		register("env_staff", "waaq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is StaffCastEnv).asActionResult })
@@ -182,12 +208,7 @@ object HexposePatterns {
 		register("env_media", "dde", HexDir.WEST, OpGetEnvData { env -> ((Long.MAX_VALUE - env.extractMedia(Long.MAX_VALUE, true)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult })
 		register("media_max_stack", "ddeaq", HexDir.EAST, OpGetMaxMedia())
 
-		register("get_weather", "eweweweweweeeaedqdqde", HexDir.WEST, OpGetWorldData { world -> (
-				if (world.isThundering) 2.0
-				else if (world.isRaining) 1.0
-				else 0.0
-				).asActionResult
-		})
+		register("get_weather", "eweweweweweeeaedqdqde", HexDir.WEST, OpGetWorldData { world -> (if (world.isThundering) 2.0 else if (world.isRaining) 1.0 else 0.0).asActionResult })
 		register("get_light", "wqwqwqwqwqwaeqqqqaeqaeaeaeaw", HexDir.SOUTH_WEST, OpGetPositionData { world, position -> world.getLightLevel(position).asActionResult })
 		register("get_power", "qwqwqwqwqwqqwwaadwdaaww", HexDir.EAST, OpGetPositionData { world, position -> world.getReceivedRedstonePower(position).asActionResult })
 		register("get_comparator", "eweweweweweewwddawaddww", HexDir.WEST, OpGetPositionData { world, position ->
@@ -202,6 +223,9 @@ object HexposePatterns {
 		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult() })
 		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult() })
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
+
+		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpCatVariant())
+		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpPaintingVariant())
 	}
 
 	private fun register(name: String, signature: String, startDir: HexDir, action: Action) =

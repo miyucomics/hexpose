@@ -1,16 +1,19 @@
 {
-	"hexcasting.mishap.invalid_value.identifiable": "an identifiable target",
+	"hexcasting.mishap.invalid_value.cat": "a cat",
 	"hexcasting.mishap.invalid_value.class.identifier": "an identifier",
     "hexcasting.mishap.invalid_value.block_id": "an identifier of a block type",
 	"hexcasting.mishap.invalid_value.entity_id": "an identifier of an entity type",
 	"hexcasting.mishap.invalid_value.enchantment_id": "an identifier of an enchantment type",
 	"hexcasting.mishap.invalid_value.food_id": "an identifier of a food item type",
+	"hexcasting.mishap.invalid_value.identifiable": "an identifiable target",
 	"hexcasting.mishap.invalid_value.item_id": "an identifier of an item type",
 	"hexcasting.mishap.invalid_value.status_effect_id": "an identifier of a status effect type",
 	"hexcasting.mishap.invalid_value.entity_or_vector": "an entity or a vector",
 	"hexcasting.mishap.invalid_value.lenient_living": "a living entity or an armor stand",
 	"hexcasting.mishap.invalid_value.media_holding": "a media holding item or entity",
+	"hexcasting.mishap.invalid_value.painting": "a painting",
 	"hexcasting.mishap.invalid_value.potion_holding": "a potion holding item or entity",
+	"hexcasting.mishap.invalid_value.tamable": "a tameable entity",
 
 	"hexpose.item_stack.format": " | %s (%d)",
 	"hexpose.item_stack.null": "Null Item",
@@ -102,6 +105,8 @@
 	"hexpose.page.entity_passengers.summary": "Pushes a list of entities that are riding the given entity.",
 	"hexcasting.action.hexpose:shooter": "Shooter Purification",
 	"hexpose.page.shooter.summary": "Pushes the shooter of the given projectile entity or $(l:casting/influences)$(thing)Null$() if it has no shooter or isn't a projectile. It also pushes $(l:casting/influences)$(thing)Null$() if the shooter is outside my ambit.",
+	"hexcasting.action.hexpose:pet_owner": "Adoration Purification",
+	"hexpose.page.pet_owner.summary": "Pushes the player that has tamed this animal, or $(l:casting/influences)$(thing)Null$() if it is untamed or the player is out of ambit.",
 
 	"hexpose.page.environment.title": "Environment",
 	"hexpose.page.environment.0": "These patterns are meta: they concern properties of the magical environment they are cast in. Mostly useful in avoiding $(l:casting/mishaps)$(thing)mishaps$().",
@@ -223,5 +228,11 @@
 	"hexcasting.action.hexpose:get_moon": "Lunar Reflection",
 	"hexpose.page.get_moon.summary": "Pushes the current phase of the $(thing)Moon$() as a fraction of its size.",
 	"hexcasting.action.hexpose:get_einstein": "Distortion Reflection",
-	"hexpose.page.get_einstein.summary": "Pushes whether $(item)Compasses$() and $(item)Clocks$() will work in this dimension."
+	"hexpose.page.get_einstein.summary": "Pushes whether $(item)Compasses$() and $(item)Clocks$() will work in this dimension.",
+
+	"hexpose.page.misc.title": "Miscellaneous",
+	"hexcasting.action.hexpose:cat_variant": "Feline Purification",
+	"hexpose.page.cat_variant.summary": "Pushes the variant of the cat.",
+	"hexcasting.action.hexpose:painting_variant": "Artistic Purification",
+	"hexpose.page.painting_variant.summary": "Pushes the variant of the painting."
 }

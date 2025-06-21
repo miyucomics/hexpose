@@ -123,6 +123,14 @@
 			"input": "entity",
 			"output": "entity/null",
 			"text": "hexpose.page.shooter.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:pet_owner",
+			"anchor": "hexpose:pet_owner",
+			"input": "entity",
+			"output": "entity/null",
+			"text": "hexpose.page.pet_owner.summary"
 		}
 	]
 }
