@@ -1,16 +1,17 @@
-package miyucomics.hexpose.patterns
+package miyucomics.hexpose.patterns.misc
 
+import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getPlayer
 import at.petrak.hexcasting.api.casting.iota.Iota
-import net.minecraft.server.network.ServerPlayerEntity
+import miyucomics.hexpose.utils.CastingUtils
 
-class OpGetPlayerData(private val process: (ServerPlayerEntity) -> List<Iota>) : ConstMediaAction {
+class OpEnlightened : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val player = args.getPlayer(0, argc)
 		env.assertEntityInRange(player)
-		return process(player)
+		return CastingUtils.isEnlightened(player).asActionResult
 	}
 }

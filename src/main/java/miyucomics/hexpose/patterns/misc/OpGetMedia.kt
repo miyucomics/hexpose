@@ -1,4 +1,4 @@
-package miyucomics.hexpose.patterns
+package miyucomics.hexpose.patterns.misc
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.circles.BlockEntityAbstractImpetus

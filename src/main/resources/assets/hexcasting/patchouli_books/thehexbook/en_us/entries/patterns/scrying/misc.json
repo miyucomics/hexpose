@@ -1,0 +1,25 @@
+{
+	"name": "hexpose.page.misc.title",
+	"icon": "minecraft:suspicious_stew",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"sortnum": 10,
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:cat_variant",
+			"anchor": "hexpose:cat_variant",
+			"input": "entity",
+			"output": "identifier",
+			"text": "hexpose.page.cat_variant.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:painting_variant",
+			"anchor": "hexpose:painting_variant",
+			"input": "entity",
+			"output": "identifier",
+			"text": "hexpose.page.painting_variant.summary"
+		}
+	]
+}
