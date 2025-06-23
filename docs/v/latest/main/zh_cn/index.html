@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>Hexpose Book</title>
+      <title>Hexpose之书</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="The Hexpose Book, all in one place." />
+      <meta name="description" content="Hexpose之书，辑录合一。" />
       <meta name="author" content="miyucomics" />
         <link rel="None" type="image/ico" href="favicon.ico" />
         <link rel="icon" type="image/png" href="favicon-16x16.png" />
@@ -29,10 +29,10 @@
         <link rel="shortcut icon" type="image/png" href="favicon-196x196.png" />
       <link rel="mask-icon" href="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/main/media/safari-pinned-tab.svg" color="#332233">
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Hexpose Book" />
+<meta property="og:title" content="Hexpose之书" />
 <meta property="og:image" content="https://miyucomics.github.io/hexposition/v/latest/main/zh_cn/icon.png" />
 <meta property="og:url" content="https://miyucomics.github.io/hexposition/v/latest/main/zh_cn" />
-<meta property="og:description" content="The Hexpose Book, all in one place." />
+<meta property="og:description" content="Hexpose之书，辑录合一。" />
 <meta property="og:site_name" content="Hexpose (latest/main)" />
       <script src="https://code.jquery.com/jquery-1.12.4.min.js"
       integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
@@ -71,13 +71,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../../../..">Hexpose Book</a>
+      <a class="navbar-brand" href="../../../..">Hexpose之书</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexposition/tree/5a6ba89bbe830c2e6cd8c8ac95d9f4ca5a36fc49"
+      href="https://github.com/miyucomics/hexposition/tree/edf8ea9c72caad81f99ff418e9cd4ae8ee7f29fe"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -178,13 +178,6 @@
       class="item-texture  texture pixelated"
     > 探知</a></summary>
       <ul>
-          <li><a href="#patterns/scrying/villager" class="toc-elem "><img
-      title="村民刷怪蛋"
-      alt="村民刷怪蛋"
-      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAATlBMVEVJoZQAAAD29vby8vLw8PDv7+/u7u7p6eno6Ojn5+fl5eXi4uLh4eHg4ODf39/d3d3b29vKysrJycnIyMjExMR/f39sbGxlZWVjY2NfX1/3AHxtAAAAAnRSTlMAAHaTzTgAAABpSURBVHjaZc9JDoAwDANAzL5TDAnw/49SpEbQkkvkOSRy5gffsfgDUYOwl1ViQLMmUAxQA3E+1yOpBkOVVx1gIIsPrQNIDTd61LNzJI8AU9ngAVx2dAbA963sjAGqJLfzW0WBMykbYnYDRrYE7DMIgdAAAAAASUVORK5CYII="
-      loading="lazy"
-      class="item-texture  texture pixelated"
-    > Villagers</a></li>
           <li><a href="#patterns/scrying/world" class="toc-elem "><img
       title="指南针"
       alt="指南针"
@@ -213,6 +206,13 @@
       loading="lazy"
       class="item-texture  texture "
     > 方块</a></li>
+          <li><a href="#patterns/scrying/villager" class="toc-elem "><img
+      title="村民刷怪蛋"
+      alt="村民刷怪蛋"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAATlBMVEVJoZQAAAD29vby8vLw8PDv7+/u7u7p6eno6Ojn5+fl5eXi4uLh4eHg4ODf39/d3d3b29vKysrJycnIyMjExMR/f39sbGxlZWVjY2NfX1/3AHxtAAAAAnRSTlMAAHaTzTgAAABpSURBVHjaZc9JDoAwDANAzL5TDAnw/49SpEbQkkvkOSRy5gffsfgDUYOwl1ViQLMmUAxQA3E+1yOpBkOVVx1gIIsPrQNIDTd61LNzJI8AU9ngAVx2dAbA963sjAGqJLfzW0WBMykbYnYDRrYE7DMIgdAAAAAASUVORK5CYII="
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 村民</a></li>
           <li><a href="#patterns/scrying/identifiers" class="toc-elem "><img
       title="探知透镜"
       alt="探知透镜"
@@ -254,7 +254,7 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/suspicious_stew.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    > Miscellaneous</a></li>
+    > 杂项</a></li>
       </ul>
     </details>
 </nav>
@@ -505,7 +505,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/special_raycasts@hexpose:fluid_raycast" class="">
-<h4 class="pattern-title">海军之馏化 (vector, vector → vector/null)<a
+<h4 class="pattern-title">占水之馏化 (vector, vector → vector/null)<a
     href="#patterns/special_raycasts@hexpose:fluid_raycast"
     class="permalink small"
     title="Permalink"
@@ -747,249 +747,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
-    <p>我偶然间触及了一条完全将<span style="color: #74b3f2">媒质</span>用于获取和处理世界信息的学术分支。虽然这些操作在大多数<span style="color: #b38ef3">咒术</span>中没什么大用处，但有它们在也不错，我将来也许会用到。</p>
-<div id="patterns/scrying/villager" class="entry">
-    <h3 class="entry-title page-header">
-    <img
-      title="村民刷怪蛋"
-      alt="村民刷怪蛋"
-      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAATlBMVEVJoZQAAAD29vby8vLw8PDv7+/u7u7p6eno6Ojn5+fl5eXi4uLh4eHg4ODf39/d3d3b29vKysrJycnIyMjExMR/f39sbGxlZWVjY2NfX1/3AHxtAAAAAnRSTlMAAHaTzTgAAABpSURBVHjaZc9JDoAwDANAzL5TDAnw/49SpEbQkkvkOSRy5gffsfgDUYOwl1ViQLMmUAxQA3E+1yOpBkOVVx1gIIsPrQNIDTd61LNzJI8AU9ngAVx2dAbA963sjAGqJLfzW0WBMykbYnYDRrYE7DMIgdAAAAAASUVORK5CYII="
-      loading="lazy"
-      class="item-texture  texture pixelated"
-    >Villagers<a
-    href="#table-of-contents"
-    class="permalink small"
-    title="Jump to top"
-  ><i class="bi bi-box-arrow-up"></i></a><a
-    href="#patterns/scrying/villager"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h3>
-  <div id="patterns/scrying/villager@hexpose:villager_level" class="">
-<h4 class="pattern-title">Tier Purification (entity → number)<a
-    href="#patterns/scrying/villager@hexpose:villager_level"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qeqwqwqwqwqeqawdaeaeaeaeaea"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawdaeaeaeaeaea</canvas>
-  </details>
-      <p>Pushes how advanced a villager is as a number, encoding mastery of their craft.</p>
-  </div>
-<br />
-  <div id="patterns/scrying/villager@hexpose:villager_profession" class="">
-<h4 class="pattern-title">Professional Purif. (entity → identifier)<a
-    href="#patterns/scrying/villager@hexpose:villager_profession"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qeqwqwqwqwqeqawewawqwawadeeeee"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawewawqwawadeeeee</canvas>
-  </details>
-      <p>Pushes the profession of a villager as an identifier</p>
-  </div>
-<br />
-  <div id="patterns/scrying/villager@hexpose:villager_type" class="">
-<h4 class="pattern-title">Culture Purification (entity → identifier)<a
-    href="#patterns/scrying/villager@hexpose:villager_type"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qeqwqwqwqwqeqaweqqqqq"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqaweqqqqq</canvas>
-  </details>
-      <p>Pushes the ambient cultural aspect tied to the villager’s origin, such as desert or taiga roots.</p>
-  </div>
-<br />
-  <div id="patterns/scrying/villager@hexpose:biome_to_villager" class="">
-<h4 class="pattern-title">Nurture Purification (identifier → identifier/null)<a
-    href="#patterns/scrying/villager@hexpose:biome_to_villager"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qeqwqwqwqwqeqawewwqqwwqwwqqww"
-        data-start="east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawewwqqwwqwwqqww</canvas>
-  </details>
-      <p>Projects the villager archetype most attuned to the essence of the specified biome, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if none can be drawn.</p>
-  </div>
-<br />
-</div>
+    <p>我偶然间触及了一条完全将<span style="color: #74b3f2">媒质</span>用于获取和处理世界信息的学术分支。</p><p>虽然这些操作在大多数<span style="color: #b38ef3">咒术</span>中没什么大用处，但有它们在也不错，我将来也许会用到。</p>
 <div id="patterns/scrying/world" class="entry">
     <h3 class="entry-title page-header">
     <img
@@ -1340,7 +1098,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wddwaqqwqaddaqqwddwaqqwqaddaq</canvas>
   </details>
-      <p>压入世界经过的时间，主要用来计时，不受睡觉等事件的影响。除以 20 后即为秒数。</p>
+      <p>压入世界经过的时间，主要用来计时，不受睡觉等事件的影响。以 1/20 秒计。</p>
   </div>
 <br />
   <div id="patterns/scrying/world@hexpose:get_biome" class="">
@@ -2612,7 +2370,7 @@
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:pet_owner" class="">
-<h4 class="pattern-title">Adoration Purification (entity → entity/null)<a
+<h4 class="pattern-title">挚宠之纯化 (entity → entity/null)<a
     href="#patterns/scrying/entities@hexpose:pet_owner"
     class="permalink small"
     title="Permalink"
@@ -2664,7 +2422,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qdaqwawqeewde</canvas>
   </details>
-      <p>Pushes the player that has tamed this animal, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it is untamed or the player is out of ambit.</p>
+      <p>检验玩家是否驯服了所给动物，若未驯服或玩家在影响范围之外，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
 </div>
@@ -2909,10 +2667,10 @@
       <p>压入一个 0 到 1 的数，对应农作物的生长进度，对<span style="color: #b0b">蜂巢</span>、<span style="color: #b0b">堆肥桶</span>、<span style="color: #b0b">炼药锅</span>同样有效。奇怪的是，对<span style="color: #b0b">蛋糕</span>也有效。</p>
   </div>
 <br />
-    <p>Every block has a list of <i>facets</i>: simple aspects that distinguish them from other blocks of the same type. For example, orientation, how far along a crop is to growing, and whether a door is open or shut are all facets.</p><p>Nature provides two patterns that allow <span style="color: #b38ef3">Hexcasting</span> to read and analyze facets of any blocks within ambit.</p>
+    <p>每个方块都有很多<i>侧征</i>——将其与其他同种方块区分开来的简单特征，例如朝向、农作物的成熟度、门的开闭等。</p><p>自然提供了两个图案，允许<span style="color: #b38ef3">咒法学</span>读取和分析影响范围内各方块的侧征。</p>
 <br />
   <div id="patterns/scrying/blocks@hexpose:get_blockstates" class="">
-<h4 class="pattern-title">Facet Purification (vector → list of identifiers)<a
+<h4 class="pattern-title">侧征之纯化 (vector → list of identifiers)<a
     href="#patterns/scrying/blocks@hexpose:get_blockstates"
     class="permalink small"
     title="Permalink"
@@ -2964,11 +2722,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqeqqqwqaww</canvas>
   </details>
-      <p>Pushes a list of all facets of that block.</p>
+      <p>返回所给方块的侧征列表。</p>
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:query_blockstate" class="">
-<h4 class="pattern-title">Facet Distillation (vector, identifier → any)<a
+<h4 class="pattern-title">侧征之馏化 (vector, identifier → any)<a
     href="#patterns/scrying/blocks@hexpose:query_blockstate"
     class="permalink small"
     title="Permalink"
@@ -3020,10 +2778,252 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqqqeawa</canvas>
   </details>
-      <p>Takes a block and a facet and pushes that facet&#39;s value.</p>
+      <p>接收一个方块和一个侧征，返回该侧征的值。</p>
   </div>
 <br />
-    <p>If the block does not have the given facet, the pattern pushes <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>. For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, and integers, whichever matches the facet best.</p><p>For certain facets that deal with a state among a variety of them, it will produce a seemingly random yet consistent integer. If a facet is too alien, a senseless iota is produced.</p>
+    <p>若方块没有给定侧征，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。大多数情况下，返回的结果很好理解：布尔值、方向向量、整数，总之是最合乎侧征的 iota。</p><p>某些关系到状态等方面的侧征给出的是看似随机但恒定的整数。如果侧征太过生僻，即会返回无意义的 iota。</p>
+<br />
+</div>
+<div id="patterns/scrying/villager" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="村民刷怪蛋"
+      alt="村民刷怪蛋"
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAATlBMVEVJoZQAAAD29vby8vLw8PDv7+/u7u7p6eno6Ojn5+fl5eXi4uLh4eHg4ODf39/d3d3b29vKysrJycnIyMjExMR/f39sbGxlZWVjY2NfX1/3AHxtAAAAAnRSTlMAAHaTzTgAAABpSURBVHjaZc9JDoAwDANAzL5TDAnw/49SpEbQkkvkOSRy5gffsfgDUYOwl1ViQLMmUAxQA3E+1yOpBkOVVx1gIIsPrQNIDTd61LNzJI8AU9ngAVx2dAbA963sjAGqJLfzW0WBMykbYnYDRrYE7DMIgdAAAAAASUVORK5CYII="
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >村民<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/scrying/villager"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/scrying/villager@hexpose:villager_level" class="">
+<h4 class="pattern-title">职级之纯化 (entity → number)<a
+    href="#patterns/scrying/villager@hexpose:villager_level"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqawdaeaeaeaeaea"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawdaeaeaeaeaea</canvas>
+  </details>
+      <p>返回代表村民技艺功底和精通程度的数。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/villager@hexpose:villager_profession" class="">
+<h4 class="pattern-title">职业之纯化 (entity → identifier)<a
+    href="#patterns/scrying/villager@hexpose:villager_profession"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqawewawqwawadeeeee"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawewawqwawadeeeee</canvas>
+  </details>
+      <p>将村民的职业返回为标识。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/villager@hexpose:villager_type" class="">
+<h4 class="pattern-title">文化之纯化 (entity → identifier)<a
+    href="#patterns/scrying/villager@hexpose:villager_type"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqaweqqqqq"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqaweqqqqq</canvas>
+  </details>
+      <p>返回村民生长环境的文化类别，如沙漠、针叶林等。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/villager@hexpose:biome_to_villager" class="">
+<h4 class="pattern-title">养育之纯化 (identifier → identifier/null)<a
+    href="#patterns/scrying/villager@hexpose:biome_to_villager"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qeqwqwqwqwqeqawewwqqwwqwwqqww"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawewwqqwwqwwqqww</canvas>
+  </details>
+      <p>返回最适宜所给生物群系的村民文化类别，若无则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+  </div>
 <br />
 </div>
 <div id="patterns/scrying/identifiers" class="entry">
@@ -3043,7 +3043,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p>标识 iota是自然对“<span style="color: #b38ef3">咒术</span>如何指定类型”的解决方案。每一个实体类型、方块类型、状态效果类型、魔咒类型、声音类型等都拥有可被<span style="color: #b38ef3">咒术</span>识别的唯一标识，此标识可获取，也可比较。</p>
+    <p>标识 iota 是自然对“<span style="color: #b38ef3">咒术</span>如何指定类型”的解决方案。每一个实体类型、方块类型、状态效果类型、魔咒类型、声音类型等都拥有可被<span style="color: #b38ef3">咒术</span>识别的唯一标识，此标识可获取，也可比较。</p>
 <br />
   <div id="patterns/scrying/identifiers@hexpose:identify" class="">
 <h4 class="pattern-title">侦探之纯化 (identifiable → identifier)<a
@@ -4314,7 +4314,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wqqqaqwdd</canvas>
   </details>
-      <p>获取效果的持续时间，以秒计，无给定效果则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+      <p>获取效果的持续时间，以 1/20 秒计，无给定效果则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
 </div>
@@ -5036,7 +5036,7 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/suspicious_stew.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    >Miscellaneous<a
+    >杂项<a
     href="#table-of-contents"
     class="permalink small"
     title="Jump to top"
@@ -5046,7 +5046,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/scrying/misc@hexpose:cat_variant" class="">
-<h4 class="pattern-title">Feline Purification (entity → identifier)<a
+<h4 class="pattern-title">猫咪之纯化 (entity → identifier)<a
     href="#patterns/scrying/misc@hexpose:cat_variant"
     class="permalink small"
     title="Permalink"
@@ -5098,11 +5098,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wqwqqwqwawaaw</canvas>
   </details>
-      <p>Pushes the variant of the cat.</p>
+      <p>返回猫的外观。</p>
   </div>
 <br />
   <div id="patterns/scrying/misc@hexpose:painting_variant" class="">
-<h4 class="pattern-title">Artistic Purification (entity → identifier)<a
+<h4 class="pattern-title">艺术之纯化 (entity → identifier)<a
     href="#patterns/scrying/misc@hexpose:painting_variant"
     class="permalink small"
     title="Permalink"
@@ -5154,7 +5154,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wawwwqwwawwwqadaqeda</canvas>
   </details>
-      <p>Pushes the variant of the painting.</p>
+      <p>返回画的类型。</p>
   </div>
 <br />
 </div>
