@@ -15,7 +15,7 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.vehicle.VehicleInventory
 
 class OpGetInventory : ConstMediaAction {
-	override val argc = 0
+	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		return when (val entity = args.getEntity(0, argc)) {
 			is AbstractHorseEntity -> entity.items.stacks.map { ItemStackIota.createOptimized(it) }.asActionResult
