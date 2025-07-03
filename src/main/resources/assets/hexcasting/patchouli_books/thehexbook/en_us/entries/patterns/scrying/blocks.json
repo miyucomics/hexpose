@@ -59,6 +59,14 @@
 		{
 			"type": "patchouli:text",
 			"text": "hexpose.page.query_blockstate.description"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:block_map_color",
+			"anchor": "hexpose:block_map_color",
+			"input": "identifier",
+			"output": "vector",
+			"text": "hexpose.page.block_map_color.summary"
 		}
 	]
 }

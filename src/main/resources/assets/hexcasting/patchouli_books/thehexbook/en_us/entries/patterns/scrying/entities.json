@@ -131,6 +131,14 @@
 			"input": "entity",
 			"output": "entity/null",
 			"text": "hexpose.page.pet_owner.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:absorption_hearts",
+			"anchor": "hexpose:absorption_hearts",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.absorption_hearts.summary"
 		}
 	]
 }
