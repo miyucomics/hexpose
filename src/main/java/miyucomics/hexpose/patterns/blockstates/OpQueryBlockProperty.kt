@@ -6,13 +6,11 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getBlockPos
 import at.petrak.hexcasting.api.casting.iota.GarbageIota
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.getIdentifier
 import net.minecraft.state.property.BooleanProperty
 import net.minecraft.state.property.DirectionProperty
 import net.minecraft.state.property.EnumProperty
 import net.minecraft.state.property.IntProperty
-import net.minecraft.util.Identifier
 
 class OpQueryBlockProperty : ConstMediaAction {
 	override val argc = 2
