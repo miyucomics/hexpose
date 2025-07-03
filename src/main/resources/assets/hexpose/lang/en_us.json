@@ -1,5 +1,8 @@
 {
 	"hexcasting.mishap.invalid_value.cat": "a cat",
+	"hexcasting.mishap.invalid_value.creeper": "a creeper",
+	"hexcasting.mishap.invalid_value.painting": "a painting",
+	"hexcasting.mishap.invalid_value.item_frame": "an item frame",
 	"hexcasting.mishap.invalid_value.class.identifier": "an identifier",
     "hexcasting.mishap.invalid_value.block_id": "an identifier of a block type",
 	"hexcasting.mishap.invalid_value.entity_id": "an identifier of an entity type",
@@ -11,7 +14,6 @@
 	"hexcasting.mishap.invalid_value.entity_or_vector": "an entity or a vector",
 	"hexcasting.mishap.invalid_value.lenient_living": "a living entity or an armor stand",
 	"hexcasting.mishap.invalid_value.media_holding": "a media holding item or entity",
-	"hexcasting.mishap.invalid_value.painting": "a painting",
 	"hexcasting.mishap.invalid_value.potion_holding": "a potion holding item or entity",
 	"hexcasting.mishap.invalid_value.tamable": "a tameable entity",
 
@@ -73,6 +75,8 @@
 	"hexcasting.action.hexpose:query_blockstate": "Facet Distillation",
 	"hexpose.page.query_blockstate.summary": "Takes a block and a facet and pushes that facet's value.",
 	"hexpose.page.query_blockstate.description": "If the block does not have the given facet, the pattern pushes $(l:casting/influences)$(thing)Null$(). For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, and integers, whichever matches the facet best.$(br2)For certain facets that deal with a state among a variety of them, it will produce a seemingly random yet consistent integer. If a facet is too alien, a senseless iota is produced.",
+	"hexcasting.action.hexpose:block_map_color": "Cartographer's Purification",
+	"hexpose.page.block_map_color.summary": "Pushes the color blocks of this type appear as on a map.",
 
 	"hexpose.page.entities.title": "Entities",
 	"hexcasting.action.hexpose:entity_width": "Caliper's Purification",
@@ -107,6 +111,8 @@
 	"hexpose.page.shooter.summary": "Pushes the shooter of the given projectile entity or $(l:casting/influences)$(thing)Null$() if it has no shooter or isn't a projectile. It also pushes $(l:casting/influences)$(thing)Null$() if the shooter is outside my ambit.",
 	"hexcasting.action.hexpose:pet_owner": "Adoration Purification",
 	"hexpose.page.pet_owner.summary": "Pushes the player that has tamed this animal, or $(l:casting/influences)$(thing)Null$() if it is untamed or the player is out of ambit.",
+	"hexcasting.action.hexpose:absorption_hearts": "Absorption Purification",
+	"hexpose.page.absorption_hearts.summary": "Pushes the number of magical hearts this player has. I can think of these in terms of half-hearts.",
 
 	"hexpose.page.environment.title": "Environment",
 	"hexpose.page.environment.0": "These patterns are meta: they concern properties of the magical environment they are cast in. Mostly useful in avoiding $(l:casting/mishaps)$(thing)mishaps$().",
@@ -123,7 +129,7 @@
 
 	"hexpose.page.food.title": "Food",
 	"hexcasting.action.hexpose:get_player_hunger": "Hunger Purification",
-	"hexpose.page.get_player_hunger.summary": "Pushes how full a $(item)Player$() is. I can think of this in terms of half-hunger-hunches.",
+	"hexpose.page.get_player_hunger.summary": "Pushes how full a $(item)Player$() is. I can think of this in terms of half-hunches.",
 	"hexcasting.action.hexpose:get_player_saturation": "Stamina Purification",
 	"hexpose.page.get_player_saturation.summary": "Pushes a $(item)Player$()'s saturation, which roughly correlates to how long the $(item)Player$() will remain full.",
 	"hexcasting.action.hexpose:edible": "Edibility Purification",
@@ -232,7 +238,11 @@
 
 	"hexpose.page.misc.title": "Miscellaneous",
 	"hexcasting.action.hexpose:cat_variant": "Feline Purification",
-	"hexpose.page.cat_variant.summary": "Pushes the variant of the cat.",
+	"hexpose.page.cat_variant.summary": "Pushes the variant of the $(thing)Cat$().",
+	"hexcasting.action.hexpose:creeper_fuse": "Anger Purification",
+	"hexpose.page.creeper_fuse.summary": "Pushes the progress of a $(thing)Creeper$() to explosion.",
+	"hexcasting.action.hexpose:item_frame_rotation": "Showcase Purification",
+	"hexpose.page.item_frame_rotation.summary": "Pushes the rotation of an $(item)Item Frame$() as an integer 0 to 7.",
 	"hexcasting.action.hexpose:painting_variant": "Artistic Purification",
-	"hexpose.page.painting_variant.summary": "Pushes the variant of the painting."
+	"hexpose.page.painting_variant.summary": "Pushes the variant of the $(thing)Painting$()."
 }

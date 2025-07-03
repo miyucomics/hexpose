@@ -34,6 +34,7 @@ import miyucomics.hexpose.patterns.item_stack.*
 import miyucomics.hexpose.patterns.misc.OpBrainswept
 import miyucomics.hexpose.patterns.misc.OpBreedable
 import miyucomics.hexpose.patterns.misc.OpCatVariant
+import miyucomics.hexpose.patterns.misc.OpCreeperFuse
 import miyucomics.hexpose.patterns.misc.OpEnlightened
 import miyucomics.hexpose.patterns.misc.OpGetAmbit
 import miyucomics.hexpose.patterns.misc.OpGetEnchantmentStrength
@@ -41,6 +42,7 @@ import miyucomics.hexpose.patterns.misc.OpGetMaxMedia
 import miyucomics.hexpose.patterns.misc.OpGetMedia
 import miyucomics.hexpose.patterns.misc.OpGetPrescription
 import miyucomics.hexpose.patterns.misc.OpGetStatusEffectCategory
+import miyucomics.hexpose.patterns.misc.OpItemFrameRotation
 import miyucomics.hexpose.patterns.misc.OpPaintingVariant
 import miyucomics.hexpose.patterns.misc.OpPerlin
 import miyucomics.hexpose.patterns.misc.OpPetOwner
@@ -60,6 +62,7 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.state.property.Properties
 import net.minecraft.util.Hand
+import net.minecraft.util.math.ColorHelper
 import net.minecraft.util.math.Direction
 import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
@@ -118,6 +121,10 @@ object HexposePatterns {
 		})
 		register("get_blockstates", "qaqqqeqqqwqaww", HexDir.EAST, OpGetBlockProperties())
 		register("query_blockstate", "qaqqqqqeawa", HexDir.EAST, OpQueryBlockProperty())
+		register("block_map_color", "qwedewqqqqq", HexDir.EAST, OpGetBlockTypeData { block ->
+			val color = block.defaultMapColor.color
+			Vec3d(ColorHelper.Argb.getRed(color) / 255.0, ColorHelper.Argb.getGreen(color) / 255.0, ColorHelper.Argb.getBlue(color) / 255.0).asActionResult
+		})
 
 		register("get_enchantments", "waqeaeqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
 			var data = stack.enchantments
@@ -158,6 +165,7 @@ object HexposePatterns {
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map { EntityIota(it) }.asActionResult })
 		register("shooter", "aadedade", HexDir.EAST, OpShooter())
 		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner())
+		register("absorption_hearts", "waawedwdwd", HexDir.NORTH_EAST, OpGetLivingEntityData { entity -> entity.absorptionAmount.asActionResult })
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit())
 		register("env_staff", "waaq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is StaffCastEnv).asActionResult })
@@ -225,6 +233,8 @@ object HexposePatterns {
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 
 		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpCatVariant())
+		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpCreeperFuse())
+		register("item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, OpItemFrameRotation())
 		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpPaintingVariant())
 	}
 
