@@ -9,7 +9,7 @@ import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
 import net.minecraft.entity.Tameable
 
-class OpPetOwner : ConstMediaAction {
+object OpPetOwner : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val entity = args.getEntity(0, argc)

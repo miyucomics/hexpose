@@ -11,7 +11,7 @@ import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.village.VillagerType
 
-class OpVillagerTypeFromBiome : ConstMediaAction {
+object OpVillagerTypeFromBiome : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val identifier = args.getIdentifier(0, argc)

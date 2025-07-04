@@ -11,7 +11,7 @@ import miyucomics.hexpose.utils.DDAUtils
 import net.minecraft.registry.Registries
 import net.minecraft.util.math.Vec3d
 
-class OpPiercingSurfaceRaycast : ConstMediaAction {
+object OpPiercingSurfaceRaycast : ConstMediaAction {
 	override val argc = 3
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val start = args.getVec3(0, argc)

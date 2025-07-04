@@ -1,9 +1,9 @@
 package miyucomics.hexpose.utils
 
 import net.minecraft.text.LiteralTextContent
+import net.minecraft.text.MutableText
 import net.minecraft.text.Style
 import net.minecraft.text.Text
-import kotlin.text.forEach
 
 object TextUtils {
 	fun split(text: Text): MutableList<Text> {
@@ -22,4 +22,4 @@ object TextUtils {
 	}
 }
 
-fun List<Text>.mergeText() = this.fold(Text.empty()) { acc, text -> acc.append(text) }
+fun List<Text>.mergeText(): MutableText = this.fold(Text.empty()) { acc, text -> acc.append(text) }

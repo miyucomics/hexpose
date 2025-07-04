@@ -21,7 +21,7 @@ import net.minecraft.util.math.MathHelper
 import kotlin.math.max
 import kotlin.math.min
 
-class OpGetMedia : ConstMediaAction {
+object OpGetMedia : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		return listOf(when (args[0]) {
