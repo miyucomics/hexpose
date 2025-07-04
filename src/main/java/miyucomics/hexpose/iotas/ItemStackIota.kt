@@ -78,7 +78,7 @@ class ItemStackIota(stack: ItemStack) : Iota(TYPE, stack) {
 	}
 }
 
-fun ItemStack.asActionResult(): List<Iota> = listOf(ItemStackIota.createOptimized(this))
+inline val ItemStack.asActionResult get() = listOf(ItemStackIota.createOptimized(this))
 
 fun List<Iota>.getItemStack(idx: Int, argc: Int = 0): ItemStack {
 	val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }

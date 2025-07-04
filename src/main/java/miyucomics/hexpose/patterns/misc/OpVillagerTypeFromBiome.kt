@@ -16,6 +16,6 @@ class OpVillagerTypeFromBiome : ConstMediaAction {
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val identifier = args.getIdentifier(0, argc)
 		val type = VillagerType.BIOME_TO_TYPE[RegistryKey.of(RegistryKeys.BIOME, identifier)] ?: return listOf(NullIota())
-		return Registries.VILLAGER_TYPE.getId(type).asActionResult()
+		return Registries.VILLAGER_TYPE.getId(type).asActionResult
 	}
 }

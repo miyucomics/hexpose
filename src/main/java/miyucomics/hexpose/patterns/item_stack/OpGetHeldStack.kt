@@ -19,6 +19,6 @@ class OpGetHeldStack(private var hand: Hand) : ConstMediaAction {
 		env.assertEntityInRange(entity)
 		if (entity !is LivingEntity)
 			throw MishapInvalidIota.of(iota, 0, "lenient_living")
-		return entity.getStackInHand(hand).asActionResult()
+		return entity.getStackInHand(hand).asActionResult
 	}
 }

@@ -11,6 +11,6 @@ class OpItemIota : ConstMediaAction {
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val item = args.getItemEntity(0, argc)
 		env.assertEntityInRange(item)
-		return item.stack.asActionResult()
+		return item.stack.asActionResult
 	}
 }

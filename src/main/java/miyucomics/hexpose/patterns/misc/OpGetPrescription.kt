@@ -42,8 +42,8 @@ class OpGetPrescription : ConstMediaAction {
 							effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
 						effects
 					}
-					is ShulkerBulletEntity -> Registries.STATUS_EFFECT.getId(StatusEffects.LEVITATION)!!.asActionResult()
-					is WitherSkullEntity -> Registries.STATUS_EFFECT.getId(StatusEffects.WITHER)!!.asActionResult()
+					is ShulkerBulletEntity -> Registries.STATUS_EFFECT.getId(StatusEffects.LEVITATION)!!.asActionResult
+					is WitherSkullEntity -> Registries.STATUS_EFFECT.getId(StatusEffects.WITHER)!!.asActionResult
 					else -> listOf()
 				}.asActionResult
 			}

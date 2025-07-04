@@ -1,0 +1,69 @@
+{
+	"name": "hexpose.page.text.title",
+	"icon": "minecraft:writable_book",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 3,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.text.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:create_text",
+			"anchor": "hexpose:create_text",
+			"input": "any",
+			"output": "text",
+			"text": "hexpose.page.create_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_color",
+			"anchor": "hexpose:text_color",
+			"input": "text, vector",
+			"output": "text",
+			"text": "hexpose.page.text_color.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_bold",
+			"anchor": "hexpose:text_bold",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_bold.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_italics",
+			"anchor": "hexpose:text_italics",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_italics.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_underline",
+			"anchor": "hexpose:text_underline",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_underline.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_strikethrough",
+			"anchor": "hexpose:text_strikethrough",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_strikethrough.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_obfuscated",
+			"anchor": "hexpose:text_obfuscated",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_obfuscated.summary"
+		}
+	]
+}
