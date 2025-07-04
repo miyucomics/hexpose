@@ -20,7 +20,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:add",
-			"anchor": "hexpose:add_text",
+			"anchor": "hexcasting:add",
 			"input": "text, text",
 			"output": "text",
 			"text": "hexpose.page.add_text.summary"
@@ -28,7 +28,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:abs",
-			"anchor": "hexpose:abs_text",
+			"anchor": "hexcasting:abs",
 			"input": "text",
 			"output": "number",
 			"text": "hexpose.page.abs_text.summary"
@@ -52,7 +52,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:index",
-			"anchor": "hexpose:index_text",
+			"anchor": "hexcasting:index",
 			"input": "text, number",
 			"output": "text",
 			"text": "hexpose.page.index_text.summary"
@@ -60,7 +60,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:slice",
-			"anchor": "hexpose:slice_text",
+			"anchor": "hexcasting:slice",
 			"input": "text, number, number",
 			"output": "text",
 			"text": "hexpose.page.slice_text.summary"
@@ -68,7 +68,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:replace",
-			"anchor": "hexpose:replace_text",
+			"anchor": "hexcasting:replace",
 			"input": "text, number, text",
 			"output": "text",
 			"text": "hexpose.page.replace_text.summary"
@@ -76,7 +76,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:remove_from",
-			"anchor": "hexpose:remove_text",
+			"anchor": "hexcasting:remove_from",
 			"input": "text, number",
 			"output": "text",
 			"text": "hexpose.page.remove_text.summary"
@@ -84,7 +84,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:reverse",
-			"anchor": "hexpose:rev_text",
+			"anchor": "hexcasting:reverse",
 			"input": "text",
 			"output": "text",
 			"text": "hexpose.page.rev_text.summary"
@@ -92,7 +92,7 @@
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:unique",
-			"anchor": "hexpose:unique_text",
+			"anchor": "hexcasting:unique",
 			"input": "text",
 			"output": "text",
 			"text": "hexpose.page.unique_text.summary"
