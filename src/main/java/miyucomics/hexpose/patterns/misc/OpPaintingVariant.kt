@@ -16,6 +16,6 @@ class OpPaintingVariant : ConstMediaAction {
 		env.assertEntityInRange(entity)
 		if (entity !is PaintingEntity)
 			throw MishapBadEntity.of(entity, "painting")
-		return Registries.PAINTING_VARIANT.getId(entity.variant.comp_349()).asActionResult()
+		return Registries.PAINTING_VARIANT.getId(entity.variant.comp_349()).asActionResult
 	}
 }

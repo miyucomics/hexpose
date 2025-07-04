@@ -40,7 +40,7 @@ class IdentifierIota(identifier: Identifier) : Iota(TYPE, identifier) {
 	}
 }
 
-fun Identifier.asActionResult(): List<Iota> = listOf(IdentifierIota(this))
+inline val Identifier.asActionResult get() = listOf(IdentifierIota(this))
 
 fun List<Iota>.getIdentifier(idx: Int, argc: Int = 0): Identifier {
 	val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }

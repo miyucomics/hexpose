@@ -15,6 +15,6 @@ class OpCatVariant : ConstMediaAction {
 		env.assertEntityInRange(entity)
 		if (entity !is CatEntity)
 			throw MishapBadEntity.of(entity, "cat")
-		return entity.variant.comp_706.asActionResult()
+		return entity.variant.comp_706.asActionResult
 	}
 }

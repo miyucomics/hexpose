@@ -6,6 +6,8 @@ import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.env.CircleCastEnv
 import at.petrak.hexcasting.api.casting.eval.env.PackagedItemCastEnv
 import at.petrak.hexcasting.api.casting.eval.env.StaffCastEnv
+import at.petrak.hexcasting.api.casting.getBool
+import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
@@ -27,9 +29,12 @@ import miyucomics.hexpose.patterns.raycast.OpFluidRaycast
 import miyucomics.hexpose.patterns.raycast.OpFluidSurfaceRaycast
 import miyucomics.hexpose.patterns.raycast.OpPiercingRaycast
 import miyucomics.hexpose.patterns.raycast.OpPiercingSurfaceRaycast
+import miyucomics.hexpose.patterns.text.OpCreateText
+import miyucomics.hexpose.patterns.text.OpStyleText
 import miyucomics.hexpose.patterns.types.OpGetBlockTypeData
 import miyucomics.hexpose.patterns.types.OpGetFoodTypeData
 import miyucomics.hexpose.patterns.types.OpGetItemTypeData
+import net.minecraft.command.argument.ColorArgumentType.color
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
@@ -41,6 +46,8 @@ import net.minecraft.util.math.ColorHelper
 import net.minecraft.util.math.Direction
 import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
+import kotlin.math.max
+import kotlin.math.min
 
 object HexposePatterns {
 	@JvmStatic
@@ -49,6 +56,18 @@ object HexposePatterns {
 		register("is_brainswept", "qqqaqqq", HexDir.SOUTH_EAST, OpBrainswept())
 
 		register("perlin", "qawedqdq", HexDir.WEST, OpPerlin())
+
+		register("create_text", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateText())
+		register("text_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpStyleText(2) { args, style ->
+			val colorRaw = args.getVec3(1, 2)
+			val color = ((max(min(colorRaw.x, 1.0), 0.0) * 255).toInt() shl 16) or ((max(min(colorRaw.y, 1.0), 0.0) * 255).toInt() shl 8) or (max(min(colorRaw.z, 1.0), 0.0) * 255).toInt()
+			style.withColor(color)
+		})
+		register("text_bold", "awaqeeeeedd", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withBold(args.getBool(1, 2)) })
+		register("text_italics", "awaqeeeeede", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withItalic(args.getBool(1, 2)) })
+		register("text_underline", "awaqeeeeedw", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withUnderline(args.getBool(1, 2)) })
+		register("text_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withStrikethrough(args.getBool(1, 2)) })
+		register("text_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withObfuscated(args.getBool(1, 2)) })
 
 		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast())
 		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast())
@@ -183,8 +202,8 @@ object HexposePatterns {
 		register("get_effect_duration", "wqqqaqwdd", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.duration.asActionResult })
 
 		register("villager_level", "qeqwqwqwqwqeqawdaeaeaeaeaea", HexDir.EAST, OpGetVillagerData { villager -> villager.villagerData.level.asActionResult })
-		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult() })
-		register("villager_type", "qeqwqwqwqwqeqaweqqqqq", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult() })
+		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult })
+		register("villager_type", "qeqwqwqwqwqeqaweqqqqq", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
 		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome())
 
 		register("get_media", "ddew", HexDir.WEST, OpGetMedia())
@@ -203,8 +222,8 @@ object HexposePatterns {
 		register("get_day", "wwawwawwqqawwdwwdwwaqwqwqwqwq", HexDir.SOUTH_EAST, OpGetWorldData { world -> (world.timeOfDay.toDouble() / 24000.0).asActionResult })
 		register("get_time", "wddwaqqwqaddaqqwddwaqqwqaddaq", HexDir.SOUTH_EAST, OpGetWorldData { world -> world.time.asActionResult })
 		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { world -> world.moonSize.asActionResult })
-		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult() })
-		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult() })
+		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult })
+		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 
 		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpCatVariant())

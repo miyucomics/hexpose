@@ -19,7 +19,7 @@ class OpGetInventory : ConstMediaAction {
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		return when (val entity = args.getEntity(0, argc)) {
 			is AbstractHorseEntity -> entity.items.stacks.map { ItemStackIota.createOptimized(it) }.asActionResult
-			is ItemFrameEntity -> entity.heldItemStack.asActionResult()
+			is ItemFrameEntity -> entity.heldItemStack.asActionResult
 			is PlayerEntity -> {
 				if (env.castingEntity != entity)
 					throw MishapOthersName(entity)
