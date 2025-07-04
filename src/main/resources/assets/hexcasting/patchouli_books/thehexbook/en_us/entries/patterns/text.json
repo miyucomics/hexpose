@@ -19,6 +19,90 @@
 		},
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:add",
+			"anchor": "hexpose:add_text",
+			"input": "text, text",
+			"output": "text",
+			"text": "hexpose.page.add_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:abs",
+			"anchor": "hexpose:abs_text",
+			"input": "text",
+			"output": "number",
+			"text": "hexpose.page.abs_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:split_text",
+			"anchor": "hexpose:split_text",
+			"input": "text",
+			"output": "list",
+			"text": "hexpose.page.split_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:combine_text",
+			"anchor": "hexpose:combine_text",
+			"input": "list",
+			"output": "text",
+			"text": "hexpose.page.combine_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:index",
+			"anchor": "hexpose:index_text",
+			"input": "text, number",
+			"output": "text",
+			"text": "hexpose.page.index_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:slice",
+			"anchor": "hexpose:slice_text",
+			"input": "text, number, number",
+			"output": "text",
+			"text": "hexpose.page.slice_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:replace",
+			"anchor": "hexpose:replace_text",
+			"input": "text, number, text",
+			"output": "text",
+			"text": "hexpose.page.replace_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:remove_from",
+			"anchor": "hexpose:remove_text",
+			"input": "text, number",
+			"output": "text",
+			"text": "hexpose.page.remove_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:reverse",
+			"anchor": "hexpose:rev_text",
+			"input": "text",
+			"output": "text",
+			"text": "hexpose.page.rev_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:unique",
+			"anchor": "hexpose:unique_text",
+			"input": "text",
+			"output": "text",
+			"text": "hexpose.page.unique_text.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.text.1"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "hexpose:text_color",
 			"anchor": "hexpose:text_color",
 			"input": "text, vector",

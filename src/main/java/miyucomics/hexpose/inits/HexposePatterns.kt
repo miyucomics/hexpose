@@ -8,9 +8,11 @@ import at.petrak.hexcasting.api.casting.eval.env.PackagedItemCastEnv
 import at.petrak.hexcasting.api.casting.eval.env.StaffCastEnv
 import at.petrak.hexcasting.api.casting.getBool
 import at.petrak.hexcasting.api.casting.getVec3
+import at.petrak.hexcasting.api.casting.iota.BooleanIota
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
+import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.math.HexDir
 import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.api.misc.MediaConstants
@@ -18,23 +20,24 @@ import at.petrak.hexcasting.common.lib.hex.HexActions
 import miyucomics.hexpose.HexposeMain
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.asActionResult
-import miyucomics.hexpose.patterns.blockstates.OpGetBlockProperties
-import miyucomics.hexpose.patterns.blockstates.OpQueryBlockProperty
-import miyucomics.hexpose.patterns.identifier.OpClassify
-import miyucomics.hexpose.patterns.identifier.OpIdentify
-import miyucomics.hexpose.patterns.instance_data.*
-import miyucomics.hexpose.patterns.item_stack.*
-import miyucomics.hexpose.patterns.misc.*
-import miyucomics.hexpose.patterns.raycast.OpFluidRaycast
-import miyucomics.hexpose.patterns.raycast.OpFluidSurfaceRaycast
-import miyucomics.hexpose.patterns.raycast.OpPiercingRaycast
-import miyucomics.hexpose.patterns.raycast.OpPiercingSurfaceRaycast
-import miyucomics.hexpose.patterns.text.OpCreateText
-import miyucomics.hexpose.patterns.text.OpStyleText
-import miyucomics.hexpose.patterns.types.OpGetBlockTypeData
-import miyucomics.hexpose.patterns.types.OpGetFoodTypeData
-import miyucomics.hexpose.patterns.types.OpGetItemTypeData
-import net.minecraft.command.argument.ColorArgumentType.color
+import miyucomics.hexpose.actions.blockstates.OpGetBlockProperties
+import miyucomics.hexpose.actions.blockstates.OpQueryBlockProperty
+import miyucomics.hexpose.actions.identifier.OpClassify
+import miyucomics.hexpose.actions.identifier.OpIdentify
+import miyucomics.hexpose.actions.instance_data.*
+import miyucomics.hexpose.actions.item_stack.*
+import miyucomics.hexpose.actions.misc.*
+import miyucomics.hexpose.actions.raycast.OpFluidRaycast
+import miyucomics.hexpose.actions.raycast.OpFluidSurfaceRaycast
+import miyucomics.hexpose.actions.raycast.OpPiercingRaycast
+import miyucomics.hexpose.actions.raycast.OpPiercingSurfaceRaycast
+import miyucomics.hexpose.actions.text.OpCombineList
+import miyucomics.hexpose.actions.text.OpCreateText
+import miyucomics.hexpose.actions.text.OpSplitText
+import miyucomics.hexpose.actions.text.OpStyleText
+import miyucomics.hexpose.actions.types.OpGetBlockTypeData
+import miyucomics.hexpose.actions.types.OpGetFoodTypeData
+import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
@@ -58,16 +61,28 @@ object HexposePatterns {
 		register("perlin", "qawedqdq", HexDir.WEST, OpPerlin())
 
 		register("create_text", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateText())
-		register("text_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpStyleText(2) { args, style ->
-			val colorRaw = args.getVec3(1, 2)
-			val color = ((max(min(colorRaw.x, 1.0), 0.0) * 255).toInt() shl 16) or ((max(min(colorRaw.y, 1.0), 0.0) * 255).toInt() shl 8) or (max(min(colorRaw.z, 1.0), 0.0) * 255).toInt()
-			style.withColor(color)
-		})
-		register("text_bold", "awaqeeeeedd", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withBold(args.getBool(1, 2)) })
-		register("text_italics", "awaqeeeeede", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withItalic(args.getBool(1, 2)) })
-		register("text_underline", "awaqeeeeedw", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withUnderline(args.getBool(1, 2)) })
-		register("text_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withStrikethrough(args.getBool(1, 2)) })
-		register("text_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST, OpStyleText(2) { args, style -> style.withObfuscated(args.getBool(1, 2)) })
+		register("split_text", "awaqeeeeedwe", HexDir.SOUTH_WEST, OpSplitText())
+		register("combine_text", "dwdeqqqqqawq", HexDir.SOUTH_EAST, OpCombineList())
+		register("text_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpStyleText(
+			{ args, style ->
+				val colorRaw = args.getVec3(1, 2)
+				val color = ((max(min(colorRaw.x, 1.0), 0.0) * 255).toInt() shl 16) or ((max(min(colorRaw.y, 1.0), 0.0) * 255).toInt() shl 8) or (max(min(colorRaw.z, 1.0), 0.0) * 255).toInt()
+				style.withColor(color)
+			},
+			{ style ->
+				val color = style.color ?: return@OpStyleText Vec3Iota(Vec3d(1.0, 1.0, 1.0))
+				val colorInt = color.rgb and 0xFFFFFF
+				val r = ((colorInt shr 16) and 0xFF) / 255.0
+				val g = ((colorInt shr 8) and 0xFF) / 255.0
+				val b = (colorInt and 0xFF) / 255.0
+				Vec3Iota(Vec3d(r, g, b))
+			}
+		))
+		register("text_bold", "awaqeeeeedd", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withBold(args.getBool(1, 2)) }, { style -> BooleanIota(style.isBold) }))
+		register("text_italics", "awaqeeeeede", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withItalic(args.getBool(1, 2)) }, { style -> BooleanIota(style.isItalic) }))
+		register("text_underline", "awaqeeeeedw", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withUnderline(args.getBool(1, 2)) }, { style -> BooleanIota(style.isUnderlined) }))
+		register("text_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withStrikethrough(args.getBool(1, 2)) }, { style -> BooleanIota(style.isStrikethrough) }))
+		register("text_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withObfuscated(args.getBool(1, 2)) }, { style -> BooleanIota(style.isObfuscated) }))
 
 		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast())
 		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast())
