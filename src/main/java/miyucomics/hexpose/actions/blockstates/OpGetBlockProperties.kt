@@ -8,7 +8,7 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import miyucomics.hexpose.iotas.IdentifierIota
 import net.minecraft.util.Identifier
 
-class OpGetBlockProperties : ConstMediaAction {
+object OpGetBlockProperties : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val pos = args.getBlockPos(0, argc)

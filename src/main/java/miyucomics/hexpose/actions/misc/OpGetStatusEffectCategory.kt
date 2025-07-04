@@ -9,7 +9,7 @@ import miyucomics.hexpose.iotas.getIdentifier
 import net.minecraft.entity.effect.StatusEffectCategory
 import net.minecraft.registry.Registries
 
-class OpGetStatusEffectCategory : ConstMediaAction {
+object OpGetStatusEffectCategory : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment) =
 		when ((Registries.STATUS_EFFECT.get(args.getIdentifier(0, argc)) ?: throw MishapInvalidIota.of(args[0], 0, "status_effect_id")).category) {

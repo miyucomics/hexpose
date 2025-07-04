@@ -10,7 +10,7 @@ import miyucomics.hexpose.iotas.getItemStack
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.registry.Registries
 
-class OpGetEnchantmentStrength : ConstMediaAction {
+object OpGetEnchantmentStrength : ConstMediaAction {
 	override val argc = 2
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val stack = args.getItemStack(0, argc)

@@ -3,7 +3,6 @@ package miyucomics.hexpose
 import at.petrak.hexcasting.common.lib.hex.HexArithmetics
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
 import miyucomics.hexpose.arithmetic.TextArithmetic
-import miyucomics.hexpose.inits.HexposePatterns
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.ItemStackIota
 import miyucomics.hexpose.iotas.TextIota
@@ -17,7 +16,7 @@ class HexposeMain : ModInitializer {
 		Registry.register(HexIotaTypes.REGISTRY, id("item_stack"), ItemStackIota.TYPE)
 		Registry.register(HexIotaTypes.REGISTRY, id("text"), TextIota.TYPE)
 		Registry.register(HexArithmetics.REGISTRY, id("text"), TextArithmetic)
-		HexposePatterns.init()
+		HexposeActions.init()
 	}
 
 	companion object {

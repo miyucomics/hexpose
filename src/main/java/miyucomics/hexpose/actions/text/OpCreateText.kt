@@ -7,7 +7,7 @@ import miyucomics.hexpose.iotas.TextIota
 import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.text.Text
 
-class OpCreateText : ConstMediaAction {
+object OpCreateText : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		if (args[0] is TextIota)

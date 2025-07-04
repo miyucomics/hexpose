@@ -11,7 +11,7 @@ import miyucomics.hexpose.iotas.ItemStackIota
 import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.registry.Registries
 
-class OpIdentify : ConstMediaAction {
+object OpIdentify : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		return when (val arg = args[0]) {

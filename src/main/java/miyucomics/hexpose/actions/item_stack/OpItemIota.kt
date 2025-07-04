@@ -6,7 +6,7 @@ import at.petrak.hexcasting.api.casting.getItemEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
 import miyucomics.hexpose.iotas.asActionResult
 
-class OpItemIota : ConstMediaAction {
+object OpItemIota : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val item = args.getItemEntity(0, argc)

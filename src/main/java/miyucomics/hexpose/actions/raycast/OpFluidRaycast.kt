@@ -9,7 +9,7 @@ import miyucomics.hexpose.utils.DDAUtils
 import net.minecraft.block.FluidBlock
 import net.minecraft.util.math.Vec3d
 
-class OpFluidRaycast : ConstMediaAction {
+object OpFluidRaycast : ConstMediaAction {
 	override val argc = 2
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val start = args.getVec3(0, argc)

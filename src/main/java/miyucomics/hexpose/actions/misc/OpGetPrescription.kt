@@ -20,7 +20,7 @@ import net.minecraft.item.Items
 import net.minecraft.potion.PotionUtil
 import net.minecraft.registry.Registries
 
-class OpGetPrescription : ConstMediaAction {
+object OpGetPrescription : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		return when (val arg = args[0]) {
@@ -52,24 +52,22 @@ class OpGetPrescription : ConstMediaAction {
 		}
 	}
 
-	companion object {
-		private fun handleItemStack(stack: ItemStack, args: List<Iota>): List<IdentifierIota> {
-			if (!(stack.isOf(Items.POTION) || stack.isOf(Items.SPLASH_POTION) || stack.isOf(Items.LINGERING_POTION) || stack.item.isFood || stack.isOf(Items.TIPPED_ARROW)))
-				throw MishapInvalidIota.of(args[0], 0, "potion_holding")
-			val effects = mutableListOf<IdentifierIota>()
-			if (stack.isOf(Items.POTION) || stack.isOf(Items.SPLASH_POTION) || stack.isOf(Items.LINGERING_POTION)) {
-				for (effect in PotionUtil.getPotionEffects(stack))
-					effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
-			} else if (stack.isOf(Items.TIPPED_ARROW)) {
-				for (effect in PotionUtil.getPotion(stack).effects)
-					effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
-				for (effect in PotionUtil.getCustomPotionEffects(stack))
-					effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
-			} else {
-				for (statusEffect in stack.item.foodComponent!!.statusEffects)
-					effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(statusEffect.first.effectType)!!))
-			}
-			return effects
+	private fun handleItemStack(stack: ItemStack, args: List<Iota>): List<IdentifierIota> {
+		if (!(stack.isOf(Items.POTION) || stack.isOf(Items.SPLASH_POTION) || stack.isOf(Items.LINGERING_POTION) || stack.item.isFood || stack.isOf(Items.TIPPED_ARROW)))
+			throw MishapInvalidIota.of(args[0], 0, "potion_holding")
+		val effects = mutableListOf<IdentifierIota>()
+		if (stack.isOf(Items.POTION) || stack.isOf(Items.SPLASH_POTION) || stack.isOf(Items.LINGERING_POTION)) {
+			for (effect in PotionUtil.getPotionEffects(stack))
+				effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
+		} else if (stack.isOf(Items.TIPPED_ARROW)) {
+			for (effect in PotionUtil.getPotion(stack).effects)
+				effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
+			for (effect in PotionUtil.getCustomPotionEffects(stack))
+				effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
+		} else {
+			for (statusEffect in stack.item.foodComponent!!.statusEffects)
+				effects.add(IdentifierIota(Registries.STATUS_EFFECT.getId(statusEffect.first.effectType)!!))
 		}
+		return effects
 	}
 }

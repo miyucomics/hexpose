@@ -43,11 +43,6 @@
 	"hexcasting.action.hexpose:is_brainswept": "Sentience Purification",
 	"hexpose.page.is_brainswept.summary": "Pushes whether an entity has been \"magically relieved of its mind\". I feel this is strongly related to $(l:patterns/great_spells/brainsweep)$(action)Flay Mind$() somehow...",
 
-	"hexpose.page.perlin.title": "Quasirandomness",
-	"hexpose.page.perlin.0": "I have not found a way to harness it yet, but I notice ambient _media is not distributed evenly throughout reality. I can measure its concentration at a point in space and time to get a random number between 0 and 1, corresponding to media levels at that point in space and time. Points close together in space and time tend to have similar values.",
-	"hexcasting.action.hexpose:perlin": "Perlin Distillation",
-	"hexpose.page.perlin.summary": "Measures the concentration of ambient _media at a point in space and time, normalized between 0 and 1.",
-
 	"hexpose.page.text.title": "Text Iota",
 	"hexpose.page.text.0": "$(thing)Text iotas$() are a way to represent textual information itself in an iota. Not only does it encode all the information required for reading, it also contains all the information about styles such as $(#ff0000)coloring$() and $(o)italics$().$(br2)They can also encode an incredible amount of information in one iota.",
 	"hexcasting.action.hexpose:create_text": "Reading Purification",

@@ -10,7 +10,7 @@ import miyucomics.hexpose.iotas.getIdentifier
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.Registries
 
-class OpCreateStack : ConstMediaAction {
+object OpCreateStack : ConstMediaAction {
 	override val argc = 2
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val id = args.getIdentifier(0, argc)

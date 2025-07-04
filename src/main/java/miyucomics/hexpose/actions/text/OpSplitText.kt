@@ -8,7 +8,7 @@ import miyucomics.hexpose.iotas.TextIota
 import miyucomics.hexpose.iotas.getText
 import miyucomics.hexpose.utils.TextUtils
 
-class OpSplitText : ConstMediaAction {
+object OpSplitText : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val text = args.getText(0, 1)

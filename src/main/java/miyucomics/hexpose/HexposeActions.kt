@@ -1,25 +1,20 @@
-package miyucomics.hexpose.inits
+package miyucomics.hexpose
 
-import at.petrak.hexcasting.api.casting.ActionRegistryEntry
-import at.petrak.hexcasting.api.casting.asActionResult
+import at.petrak.hexcasting.api.HexAPI
+import at.petrak.hexcasting.api.casting.*
 import at.petrak.hexcasting.api.casting.castables.Action
+import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
+import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.env.CircleCastEnv
 import at.petrak.hexcasting.api.casting.eval.env.PackagedItemCastEnv
 import at.petrak.hexcasting.api.casting.eval.env.StaffCastEnv
-import at.petrak.hexcasting.api.casting.getBool
-import at.petrak.hexcasting.api.casting.getVec3
-import at.petrak.hexcasting.api.casting.iota.BooleanIota
-import at.petrak.hexcasting.api.casting.iota.EntityIota
-import at.petrak.hexcasting.api.casting.iota.Iota
-import at.petrak.hexcasting.api.casting.iota.NullIota
-import at.petrak.hexcasting.api.casting.iota.Vec3Iota
+import at.petrak.hexcasting.api.casting.iota.*
 import at.petrak.hexcasting.api.casting.math.HexDir
 import at.petrak.hexcasting.api.casting.math.HexPattern
+import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.common.lib.hex.HexActions
-import miyucomics.hexpose.HexposeMain
-import miyucomics.hexpose.iotas.IdentifierIota
-import miyucomics.hexpose.iotas.asActionResult
+import at.petrak.hexcasting.xplat.IXplatAbstractions
 import miyucomics.hexpose.actions.blockstates.OpGetBlockProperties
 import miyucomics.hexpose.actions.blockstates.OpQueryBlockProperty
 import miyucomics.hexpose.actions.identifier.OpClassify
@@ -38,7 +33,16 @@ import miyucomics.hexpose.actions.text.OpStyleText
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
+import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.asActionResult
+import net.minecraft.command.argument.EntityArgumentType.player
 import net.minecraft.enchantment.EnchantmentHelper
+import net.minecraft.entity.decoration.ItemFrameEntity
+import net.minecraft.entity.decoration.painting.PaintingEntity
+import net.minecraft.entity.mob.CreeperEntity
+import net.minecraft.entity.mob.MobEntity
+import net.minecraft.entity.passive.AnimalEntity
+import net.minecraft.entity.passive.CatEntity
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
 import net.minecraft.registry.Registries
@@ -52,21 +56,32 @@ import net.minecraft.util.math.Vec3d
 import kotlin.math.max
 import kotlin.math.min
 
-object HexposePatterns {
+object HexposeActions {
 	@JvmStatic
 	fun init() {
-		register("am_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpEnlightened())
-		register("is_brainswept", "qqqaqqq", HexDir.SOUTH_EAST, OpBrainswept())
+		register("am_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
+			val advancement = it.getServer()!!.advancementLoader[HexAPI.modLoc("enlightenment")]
+			val tracker = it.advancementTracker
+			if (tracker.getProgress(advancement) != null)
+				return@OpGetPlayerData tracker.getProgress(advancement).isDone.asActionResult
+			return@OpGetPlayerData false.asActionResult
+		})
+		register("is_brainswept", "qqqaqqq", HexDir.SOUTH_EAST, OpGetLivingEntityData {
+			if (it is MobEntity)
+				return@OpGetLivingEntityData IXplatAbstractions.INSTANCE.isBrainswept(it).asActionResult
+			return@OpGetLivingEntityData false.asActionResult
+		})
 
-		register("perlin", "qawedqdq", HexDir.WEST, OpPerlin())
-
-		register("create_text", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateText())
-		register("split_text", "awaqeeeeedwe", HexDir.SOUTH_WEST, OpSplitText())
-		register("combine_text", "dwdeqqqqqawq", HexDir.SOUTH_EAST, OpCombineList())
+		register("create_text", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateText)
+		register("split_text", "awaqeeeeedwe", HexDir.SOUTH_WEST, OpSplitText)
+		register("combine_text", "dwdeqqqqqawq", HexDir.SOUTH_EAST, OpCombineList)
 		register("text_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpStyleText(
 			{ args, style ->
 				val colorRaw = args.getVec3(1, 2)
-				val color = ((max(min(colorRaw.x, 1.0), 0.0) * 255).toInt() shl 16) or ((max(min(colorRaw.y, 1.0), 0.0) * 255).toInt() shl 8) or (max(min(colorRaw.z, 1.0), 0.0) * 255).toInt()
+				val color = ((max(min(colorRaw.x, 1.0), 0.0) * 255).toInt() shl 16) or ((max(
+					min(colorRaw.y, 1.0),
+					0.0
+				) * 255).toInt() shl 8) or (max(min(colorRaw.z, 1.0), 0.0) * 255).toInt()
 				style.withColor(color)
 			},
 			{ style ->
@@ -78,16 +93,36 @@ object HexposePatterns {
 				Vec3Iota(Vec3d(r, g, b))
 			}
 		))
-		register("text_bold", "awaqeeeeedd", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withBold(args.getBool(1, 2)) }, { style -> BooleanIota(style.isBold) }))
-		register("text_italics", "awaqeeeeede", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withItalic(args.getBool(1, 2)) }, { style -> BooleanIota(style.isItalic) }))
-		register("text_underline", "awaqeeeeedw", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withUnderline(args.getBool(1, 2)) }, { style -> BooleanIota(style.isUnderlined) }))
-		register("text_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withStrikethrough(args.getBool(1, 2)) }, { style -> BooleanIota(style.isStrikethrough) }))
-		register("text_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST, OpStyleText({ args, style -> style.withObfuscated(args.getBool(1, 2)) }, { style -> BooleanIota(style.isObfuscated) }))
+		register("text_bold", "awaqeeeeedd", HexDir.SOUTH_WEST,
+			OpStyleText(
+				{ args, style -> style.withBold(args.getBool(1, 2)) },
+				{ style -> BooleanIota(style.isBold) })
+		)
+		register("text_italics", "awaqeeeeede", HexDir.SOUTH_WEST,
+			OpStyleText(
+				{ args, style -> style.withItalic(args.getBool(1, 2)) },
+				{ style -> BooleanIota(style.isItalic) })
+		)
+		register("text_underline", "awaqeeeeedw", HexDir.SOUTH_WEST,
+			OpStyleText(
+				{ args, style -> style.withUnderline(args.getBool(1, 2)) },
+				{ style -> BooleanIota(style.isUnderlined) })
+		)
+		register("text_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST,
+			OpStyleText(
+				{ args, style -> style.withStrikethrough(args.getBool(1, 2)) },
+				{ style -> BooleanIota(style.isStrikethrough) })
+		)
+		register("text_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST,
+			OpStyleText(
+				{ args, style -> style.withObfuscated(args.getBool(1, 2)) },
+				{ style -> BooleanIota(style.isObfuscated) })
+		)
 
-		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast())
-		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast())
-		register("piercing_raycast", "wqqddqeqddq", HexDir.EAST, OpPiercingRaycast())
-		register("piercing_surface_raycast", "weeaaeqeaae", HexDir.EAST, OpPiercingSurfaceRaycast())
+		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast)
+		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast)
+		register("piercing_raycast", "wqqddqeqddq", HexDir.EAST, OpPiercingRaycast)
+		register("piercing_surface_raycast", "weeaaeqeaae", HexDir.EAST, OpPiercingSurfaceRaycast)
 
 		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
 		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
@@ -96,8 +131,18 @@ object HexposePatterns {
 				Properties.FACING to { state.get(Properties.FACING).unitVector },
 				Properties.HORIZONTAL_FACING to { state.get(Properties.HORIZONTAL_FACING).unitVector },
 				Properties.VERTICAL_DIRECTION to { state.get(Properties.VERTICAL_DIRECTION).unitVector },
-				Properties.AXIS to { Direction.from(state.get(Properties.AXIS), Direction.AxisDirection.POSITIVE).unitVector },
-				Properties.HORIZONTAL_AXIS to { Direction.from(state.get(Properties.HORIZONTAL_AXIS), Direction.AxisDirection.POSITIVE).unitVector },
+				Properties.AXIS to {
+					Direction.from(
+						state.get(Properties.AXIS),
+						Direction.AxisDirection.POSITIVE
+					).unitVector
+				},
+				Properties.HORIZONTAL_AXIS to {
+					Direction.from(
+						state.get(Properties.HORIZONTAL_AXIS),
+						Direction.AxisDirection.POSITIVE
+					).unitVector
+				},
 				Properties.HOPPER_FACING to { state.get(Properties.HOPPER_FACING).unitVector }
 			)
 
@@ -128,11 +173,15 @@ object HexposePatterns {
 
 			return@OpGetBlockStateData listOf(NullIota())
 		})
-		register("get_blockstates", "qaqqqeqqqwqaww", HexDir.EAST, OpGetBlockProperties())
-		register("query_blockstate", "qaqqqqqeawa", HexDir.EAST, OpQueryBlockProperty())
+		register("get_blockstates", "qaqqqeqqqwqaww", HexDir.EAST, OpGetBlockProperties)
+		register("query_blockstate", "qaqqqqqeawa", HexDir.EAST, OpQueryBlockProperty)
 		register("block_map_color", "qwedewqqqqq", HexDir.EAST, OpGetBlockTypeData { block ->
 			val color = block.defaultMapColor.color
-			Vec3d(ColorHelper.Argb.getRed(color) / 255.0, ColorHelper.Argb.getGreen(color) / 255.0, ColorHelper.Argb.getBlue(color) / 255.0).asActionResult
+			Vec3d(
+				ColorHelper.Argb.getRed(color) / 255.0,
+				ColorHelper.Argb.getGreen(color) / 255.0,
+				ColorHelper.Argb.getBlue(color) / 255.0
+			).asActionResult
 		})
 
 		register("get_enchantments", "waqeaeqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
@@ -144,7 +193,7 @@ object HexposePatterns {
 				enchantments.add(IdentifierIota(Registries.ENCHANTMENT.getId(enchantment)!!))
 			enchantments.asActionResult
 		})
-		register("get_enchantment_strength", "waqwwqaweede", HexDir.WEST, OpGetEnchantmentStrength())
+		register("get_enchantment_strength", "waqwwqaweede", HexDir.WEST, OpGetEnchantmentStrength)
 
 		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityData { entity -> entity.width.asActionResult })
 		register("theodolite", "wqaa", HexDir.EAST, OpGetEntityData { entity ->
@@ -167,16 +216,20 @@ object HexposePatterns {
 		register("is_sleeping", "aqaew", HexDir.NORTH_WEST, OpGetLivingEntityData { entity -> entity.isSleeping.asActionResult })
 		register("is_sprinting", "eaq", HexDir.WEST, OpGetLivingEntityData { entity -> entity.isSprinting.asActionResult })
 		register("is_baby", "awaqdwaaw", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity -> entity.isBaby.asActionResult })
-		register("breedable", "awaaqdqaawa", HexDir.EAST, OpBreedable())
+		register("breedable", "awaaqdqaawa", HexDir.EAST, OpGetLivingEntityData { entity ->
+			if (entity !is AnimalEntity)
+				return@OpGetLivingEntityData listOf(NullIota())
+			return@OpGetLivingEntityData entity.isInLove.asActionResult
+		})
 		register("get_player_hunger", "qqqadaddw", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.foodLevel.asActionResult })
 		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
 		register("entity_vehicle", "eqqedwewew", HexDir.EAST, OpGetEntityData { entity -> entity.vehicle.asActionResult })
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map { EntityIota(it) }.asActionResult })
-		register("shooter", "aadedade", HexDir.EAST, OpShooter())
-		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner())
+		register("shooter", "aadedade", HexDir.EAST, OpShooter)
+		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
 		register("absorption_hearts", "waawedwdwd", HexDir.NORTH_EAST, OpGetLivingEntityData { entity -> entity.absorptionAmount.asActionResult })
 
-		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit())
+		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit)
 		register("env_staff", "waaq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is StaffCastEnv).asActionResult })
 		register("env_offhand", "qaqqqwaaq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env.castingHand == Hand.MAIN_HAND).asActionResult })
 		register("env_packaged_hex", "waaqwwaqqqqq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is PackagedItemCastEnv).asActionResult })
@@ -188,17 +241,17 @@ object HexposePatterns {
 		register("is_meat", "adaqqqddaed", HexDir.WEST, OpGetFoodTypeData { food -> food.isMeat.asActionResult })
 		register("is_snack", "adaqqqddaq", HexDir.WEST, OpGetFoodTypeData { food -> food.isSnack.asActionResult })
 
-		register("identify", "qqqqqe", HexDir.NORTH_EAST, OpIdentify())
-		register("classify", "edqdeq", HexDir.WEST, OpClassify())
+		register("identify", "qqqqqe", HexDir.NORTH_EAST, OpIdentify)
+		register("classify", "edqdeq", HexDir.WEST, OpClassify)
 
-		register("get_stack", "edeedq", HexDir.WEST, OpItemIota())
-		register("create_stack", "qaqqae", HexDir.EAST, OpCreateStack())
+		register("get_stack", "edeedq", HexDir.WEST, OpItemIota)
+		register("create_stack", "qaqqae", HexDir.EAST, OpCreateStack)
 		register("get_mainhand", "qaqqqq", HexDir.NORTH_EAST, OpGetHeldStack(Hand.MAIN_HAND))
 		register("get_offhand", "edeeee", HexDir.NORTH_WEST, OpGetHeldStack(Hand.OFF_HAND))
-		register("get_armor", "qaqddqeeeeqd", HexDir.NORTH_EAST, OpGetArmor())
-		register("get_ender_chest", "qaqdqaqdeeewedw", HexDir.NORTH_EAST, OpGetEnderInventory())
-		register("get_inventory", "edeeeeeqdee", HexDir.WEST, OpGetInventory())
-		register("get_block_inventory", "qaqqqqqeaqq", HexDir.EAST, OpGetContainer())
+		register("get_armor", "qaqddqeeeeqd", HexDir.NORTH_EAST, OpGetArmor)
+		register("get_ender_chest", "qaqdqaqdeeewedw", HexDir.NORTH_EAST, OpGetEnderInventory)
+		register("get_inventory", "edeeeeeqdee", HexDir.WEST, OpGetInventory)
+		register("get_block_inventory", "qaqqqqqeaqq", HexDir.EAST, OpGetContainer)
 		register("count_stack", "qaqqwqqqw", HexDir.EAST, OpGetItemStackData { stack -> stack.count.asActionResult })
 		register("count_max_stack", "edeeweeew", HexDir.WEST, OpGetItemTypeData { item -> item.maxCount.asActionResult })
 		register("damage_stack", "eeweeewdeq", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.damage.asActionResult })
@@ -211,19 +264,28 @@ object HexposePatterns {
 				list.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
 			list.asActionResult
 		})
-		register("get_effects_item", "wqqqadee", HexDir.SOUTH_WEST, OpGetPrescription())
-		register("get_effect_category", "wqqqaawd", HexDir.SOUTH_WEST, OpGetStatusEffectCategory())
+		register("get_effects_item", "wqqqadee", HexDir.SOUTH_WEST, OpGetPrescription)
+		register("get_effect_category", "wqqqaawd", HexDir.SOUTH_WEST, OpGetStatusEffectCategory)
 		register("get_effect_amplifier", "wqqqaqwa", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.amplifier.asActionResult })
 		register("get_effect_duration", "wqqqaqwdd", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.duration.asActionResult })
 
 		register("villager_level", "qeqwqwqwqwqeqawdaeaeaeaeaea", HexDir.EAST, OpGetVillagerData { villager -> villager.villagerData.level.asActionResult })
 		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult })
 		register("villager_type", "qeqwqwqwqwqeqaweqqqqq", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
-		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome())
+		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome)
 
-		register("get_media", "ddew", HexDir.WEST, OpGetMedia())
-		register("env_media", "dde", HexDir.WEST, OpGetEnvData { env -> ((Long.MAX_VALUE - env.extractMedia(Long.MAX_VALUE, true)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult })
-		register("media_max_stack", "ddeaq", HexDir.EAST, OpGetMaxMedia())
+		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
+		register("env_media", "dde", HexDir.WEST,
+			OpGetEnvData { env ->
+				((Long.MAX_VALUE - env.extractMedia(
+					Long.MAX_VALUE,
+					true
+				)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
+			})
+		register("media_max_stack", "ddeaq", HexDir.EAST, OpGetItemStackData {
+			val holder = IXplatAbstractions.INSTANCE.findMediaHolder(it) ?: return@OpGetItemStackData listOf(NullIota())
+			return@OpGetItemStackData (holder.maxMedia.toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
+		})
 
 		register("get_weather", "eweweweweweeeaedqdqde", HexDir.WEST, OpGetWorldData { world -> (if (world.isThundering) 2.0 else if (world.isRaining) 1.0 else 0.0).asActionResult })
 		register("get_light", "wqwqwqwqwqwaeqqqqaeqaeaeaeaw", HexDir.SOUTH_WEST, OpGetPositionData { world, position -> world.getLightLevel(position).asActionResult })
@@ -241,12 +303,51 @@ object HexposePatterns {
 		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 
-		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpCatVariant())
-		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpCreeperFuse())
-		register("item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, OpItemFrameRotation())
-		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpPaintingVariant())
+		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, object : ConstMediaAction {
+			override val argc = 1
+			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
+				val entity = args.getEntity(0, argc)
+				env.assertEntityInRange(entity)
+				if (entity !is CatEntity)
+					throw MishapBadEntity.of(entity, "cat")
+				return entity.variant.comp_706.asActionResult
+			}
+		})
+		register("creeper_fuse", "dedwaqwede", HexDir.WEST, object : ConstMediaAction {
+			override val argc = 1
+			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
+				val entity = args.getEntity(0, argc)
+				env.assertEntityInRange(entity)
+				if (entity !is CreeperEntity)
+					throw MishapBadEntity.of(entity, "creeper")
+				return entity.getClientFuseTime(0f).asActionResult
+			}
+		})
+		register("item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, object : ConstMediaAction {
+			override val argc = 1
+			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
+				val entity = args.getEntity(0, argc)
+				env.assertEntityInRange(entity)
+				if (entity !is ItemFrameEntity)
+					throw MishapBadEntity.of(entity, "item_frame")
+				return entity.rotation.asActionResult
+			}
+		})
+		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, object : ConstMediaAction {
+			override val argc = 1
+			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
+				val entity = args.getEntity(0, argc)
+				env.assertEntityInRange(entity)
+				if (entity !is PaintingEntity)
+					throw MishapBadEntity.of(entity, "painting")
+				return Registries.PAINTING_VARIANT.getId(entity.variant.comp_349()).asActionResult
+			}
+		})
 	}
 
 	private fun register(name: String, signature: String, startDir: HexDir, action: Action) =
-		Registry.register(HexActions.REGISTRY, HexposeMain.id(name), ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action))
+		Registry.register(
+			HexActions.REGISTRY, HexposeMain.id(name),
+			ActionRegistryEntry(HexPattern.Companion.fromAngles(signature, startDir), action)
+		)
 }

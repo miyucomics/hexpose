@@ -8,7 +8,7 @@ import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
 import miyucomics.hexpose.iotas.ItemStackIota
 import net.minecraft.entity.player.PlayerEntity
 
-class OpGetEnderInventory : ConstMediaAction {
+object OpGetEnderInventory : ConstMediaAction {
 	override val argc = 0
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		if (env.castingEntity !is PlayerEntity)
