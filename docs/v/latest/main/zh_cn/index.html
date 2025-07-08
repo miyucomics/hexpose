@@ -30,8 +30,8 @@
       <link rel="mask-icon" href="https://raw.githubusercontent.com/hexdoc-dev/hexdoc/main/media/safari-pinned-tab.svg" color="#332233">
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Hexpose之书" />
-<meta property="og:image" content="https://miyucomics.github.io/hexposition/v/latest/main/zh_cn/icon.png" />
-<meta property="og:url" content="https://miyucomics.github.io/hexposition/v/latest/main/zh_cn" />
+<meta property="og:image" content="https://miyucomics.github.io/hexpose/v/latest/main/zh_cn/icon.png" />
+<meta property="og:url" content="https://miyucomics.github.io/hexpose/v/latest/main/zh_cn" />
 <meta property="og:description" content="Hexpose之书，辑录合一。" />
 <meta property="og:site_name" content="Hexpose (latest/main)" />
       <script src="https://code.jquery.com/jquery-1.12.4.min.js"
@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexposition/tree/45e10b0bdc64b27e226ccb6e2368b7a59e859dd3"
+      href="https://github.com/miyucomics/hexpose/tree/87fa6010d9bc544ad6bbb275b9bb7325646ce9fc"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -159,7 +159,7 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    > Text Iota</a></li>
+    > 文本 Iota</a></li>
           <li><a href="#patterns/special_raycasts" class="toc-elem "><img
       title="光灵箭"
       alt="光灵箭"
@@ -419,7 +419,7 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    >Text Iota<a
+    >文本 Iota<a
     href="#table-of-contents"
     class="permalink small"
     title="Jump to top"
@@ -428,10 +428,10 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p><span style="color: #8d6acc">Text iotas</span> are a way to represent textual information itself in an iota. Not only does it encode all the information required for reading, it also contains all the information about styles such as <span style="color: #ff0000">coloring</span> and <i>italics</i>.</p><p>They can also encode an incredible amount of information in one iota.</p>
+    <p><span style="color: #8d6acc">文本 iota</span> 是代表文本本身的 iota。它不只编码了字面的信息，还包含了<span style="color: #ff0000">颜色</span>和<i>斜体</i>等样式的信息。</p><p>它们可在单个 iota 中存下很多信息。</p>
 <br />
   <div id="patterns/text@hexpose:create_text" class="">
-<h4 class="pattern-title">Reading Purification (any → text)<a
+<h4 class="pattern-title">阅读之纯化 (any → text)<a
     href="#patterns/text@hexpose:create_text"
     class="permalink small"
     title="Permalink"
@@ -483,7 +483,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeee</canvas>
   </details>
-      <p>Takes an iota and returns a text iota representing it. If taking a text iota, strips all the styles of it.</p>
+      <p>接受一个 iota，返回代表其的文本 iota。如果接受的是文本 iota，则清除其样式。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:add" class="">
@@ -539,7 +539,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：waaw</canvas>
   </details>
-      <p>Pushes a text iota of the first followed immediately by the second.</p>
+      <p>返回第一文本和第二文本首尾相接的文本 iota。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:abs" class="">
@@ -595,11 +595,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wqaqw</canvas>
   </details>
-      <p>Pushes the length of the text iota.</p>
+      <p>返回文本 iota 的长度。</p>
   </div>
 <br />
   <div id="patterns/text@hexpose:split_text" class="">
-<h4 class="pattern-title">Glyph Purification (text → list)<a
+<h4 class="pattern-title">字符之纯化 (text → list)<a
     href="#patterns/text@hexpose:split_text"
     class="permalink small"
     title="Permalink"
@@ -651,11 +651,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedwe</canvas>
   </details>
-      <p>Splits a text iota into a list of individual glyphs.</p>
+      <p>将文本 iota 拆分成各个字符。</p>
   </div>
 <br />
   <div id="patterns/text@hexpose:combine_text" class="">
-<h4 class="pattern-title">Collage Purification (list → text)<a
+<h4 class="pattern-title">拼贴之纯化 (list → text)<a
     href="#patterns/text@hexpose:combine_text"
     class="permalink small"
     title="Permalink"
@@ -707,7 +707,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdeqqqqqawq</canvas>
   </details>
-      <p>Transforms all the elements of a list into text (or keeps them if they were) and pastes it all together.</p>
+      <p>将列表中各元素转换为文本（原来就是文本则保留不变），并拼接结果。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:index" class="">
@@ -763,7 +763,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：deeed</canvas>
   </details>
-      <p>Pushes the nth glyph in the text.</p>
+      <p>返回文本中第 n 个字符。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:slice" class="">
@@ -819,7 +819,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaeaqwded</canvas>
   </details>
-      <p>Pushes the specified slice of the text.</p>
+      <p>返回文本的指定切片。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:replace" class="">
@@ -875,7 +875,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wqaeaqw</canvas>
   </details>
-      <p>Replaces the glyph at the nth position in the text with another segment of text. Replacement can be longer than one glyph.</p>
+      <p>将文本中第 n 个字符替换为另一段文本。用于替换的文本可长于 1 个字符。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:remove_from" class="">
@@ -931,7 +931,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：edqdewaqa</canvas>
   </details>
-      <p>Removes the nth glyph in the text.</p>
+      <p>移除文本中第 n 个字符。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:reverse" class="">
@@ -987,7 +987,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qqqaede</canvas>
   </details>
-      <p>Reverses the text.</p>
+      <p>倒排文本。</p>
   </div>
 <br />
   <div id="patterns/text@hexcasting:unique" class="">
@@ -1043,13 +1043,13 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：aweaqa</canvas>
   </details>
-      <p>Keeps only the first instance of any glyph in the text. Styling is enough to distinguish a glyph.</p>
+      <p>只保留文本中各字符的第一处实例。样式不同的字符视作不同字符。</p>
   </div>
 <br />
-    <p>The following are a set of patterns involving the styling of the text. Despite resembling distillations, they are actually <i>gambits</i> due to their unique argument structure.</p><p>If the regular arguments are passed in, they will style the text according to their speciality (example of modification included).</p><p>If passed in just a text however, they will return the current value of the setting that they target.</p>
+    <p>后续的图案涉及到文本的样式。由于其参数结构，它们和馏化很相似，但它们实际上是<i>策略</i>。</p><p>如果传入的是常规参数，则它们会根据自身专长为文本设置样式（样例见说明）。</p><p>如果只传入一个文本，则会返回该文本中该样式的设置情况。</p>
 <br />
   <div id="patterns/text@hexpose:text_color" class="">
-<h4 class="pattern-title">Lumière Gambit (text, vector → text)<a
+<h4 class="pattern-title">卢米埃尔之策略 (text, vector → text)<a
     href="#patterns/text@hexpose:text_color"
     class="permalink small"
     title="Permalink"
@@ -1101,11 +1101,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeewded</canvas>
   </details>
-      <p>Takes a text iota and a color encoded as a vector whose components range from 0 to 1, and produces a text iota of that <span style="color: #ff0000">color</span>.</p>
+      <p>接受一个文本 iota 和一个颜色；颜色由各分量为 0 到 1 的向量定义。返回设置为该<span style="color: #ff0000">颜色</span>的文本。</p>
   </div>
 <br />
   <div id="patterns/text@hexpose:text_bold" class="">
-<h4 class="pattern-title">Gothic Gambit (text, boolean → text)<a
+<h4 class="pattern-title">哥特式之策略 (text, boolean → text)<a
     href="#patterns/text@hexpose:text_bold"
     class="permalink small"
     title="Permalink"
@@ -1157,11 +1157,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedd</canvas>
   </details>
-      <p>Takes a text iota and sets whether it is <strong>bold</strong>.</p>
+      <p>接受一个文本，设置其是否为<strong>粗体</strong>。</p>
   </div>
 <br />
   <div id="patterns/text@hexpose:text_italics" class="">
-<h4 class="pattern-title">Manutius&#39; Gambit (text, boolean → text)<a
+<h4 class="pattern-title">马努提乌斯之策略 (text, boolean → text)<a
     href="#patterns/text@hexpose:text_italics"
     class="permalink small"
     title="Permalink"
@@ -1213,11 +1213,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeede</canvas>
   </details>
-      <p>Takes a text iota and sets whether it is in <i>italics</i>.</p>
+      <p>接受一个文本，设置其是否为<i>斜体</i>。</p>
   </div>
 <br />
   <div id="patterns/text@hexpose:text_underline" class="">
-<h4 class="pattern-title">Notetaker&#39;s Gambit (text, boolean → text)<a
+<h4 class="pattern-title">记录员之策略 (text, boolean → text)<a
     href="#patterns/text@hexpose:text_underline"
     class="permalink small"
     title="Permalink"
@@ -1269,11 +1269,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedw</canvas>
   </details>
-      <p>Takes a text iota and sets whether it is <span style="text-decoration: underline">underlined</span>.</p>
+      <p>接受一个文本，设置其是否有<span style="text-decoration: underline">下划线</span>。</p>
   </div>
 <br />
   <div id="patterns/text@hexpose:text_strikethrough" class="">
-<h4 class="pattern-title">Editor&#39;s Gambit (text, boolean → text)<a
+<h4 class="pattern-title">编辑员之策略 (text, boolean → text)<a
     href="#patterns/text@hexpose:text_strikethrough"
     class="permalink small"
     title="Permalink"
@@ -1325,11 +1325,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedq</canvas>
   </details>
-      <p>Takes a text iota and sets whether it has been <s>struck through</s>.</p>
+      <p>接受一个文本，设置其是否有<s>删除线</s>。</p>
   </div>
 <br />
   <div id="patterns/text@hexpose:text_obfuscated" class="">
-<h4 class="pattern-title">Censor&#39;s Gambit (text, boolean → text)<a
+<h4 class="pattern-title">屏蔽之策略 (text, boolean → text)<a
     href="#patterns/text@hexpose:text_obfuscated"
     class="permalink small"
     title="Permalink"
@@ -1381,7 +1381,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeeda</canvas>
   </details>
-      <p>Takes a text iota and sets whether it is obfusca<span class="obfuscated">ted</span>.</p>
+      <p>接受一个文本，设置其是否显示为随机<span class="obfuscated">文本</span>。</p>
   </div>
 <br />
 </div>
@@ -3324,7 +3324,7 @@
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:absorption_hearts" class="">
-<h4 class="pattern-title">Absorption Purification (entity → number)<a
+<h4 class="pattern-title">吸收之纯化 (entity → number)<a
     href="#patterns/scrying/entities@hexpose:absorption_hearts"
     class="permalink small"
     title="Permalink"
@@ -3376,7 +3376,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：waawedwdwd</canvas>
   </details>
-      <p>Pushes the number of magical hearts this player has. I can think of these in terms of half-hearts.</p>
+      <p>返回玩家的魔法心数。使用半颗心作为单位。</p>
   </div>
 <br />
 </div>
@@ -3738,7 +3738,7 @@
     <p>若方块没有给定侧征，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。大多数情况下，返回的结果很好理解：布尔值、方向向量、整数，总之是最合乎侧征的 iota。</p><p>某些关系到状态等方面的侧征给出的是看似随机但恒定的整数。如果侧征太过生僻，即会返回无意义的 iota。</p>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_map_color" class="">
-<h4 class="pattern-title">Cartographer&#39;s Purification (identifier → vector)<a
+<h4 class="pattern-title">制图师之纯化 (identifier → vector)<a
     href="#patterns/scrying/blocks@hexpose:block_map_color"
     class="permalink small"
     title="Permalink"
@@ -3790,7 +3790,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qwedewqqqqq</canvas>
   </details>
-      <p>Pushes the color blocks of this type appear as on a map.</p>
+      <p>返回所给方块在地图上的颜色。</p>
   </div>
 <br />
 </div>
@@ -3864,11 +3864,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wqwqqwqwawaaw</canvas>
   </details>
-      <p>返回猫的外观。</p>
+      <p>返回<span style="color: #8d6acc">猫</span>的品种。</p>
   </div>
 <br />
   <div id="patterns/scrying/misc@hexpose:creeper_fuse" class="">
-<h4 class="pattern-title">Anger Purification (entity → number)<a
+<h4 class="pattern-title">怒气之纯化 (entity → number)<a
     href="#patterns/scrying/misc@hexpose:creeper_fuse"
     class="permalink small"
     title="Permalink"
@@ -3920,11 +3920,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dedwaqwede</canvas>
   </details>
-      <p>Pushes the progress of a <span style="color: #8d6acc">Creeper</span> to explosion.</p>
+      <p>返回<span style="color: #8d6acc">苦力怕</span>爆炸的进度。</p>
   </div>
 <br />
   <div id="patterns/scrying/misc@hexpose:item_frame_rotation" class="">
-<h4 class="pattern-title">Showcase Purification (entity → number)<a
+<h4 class="pattern-title">展示之纯化 (entity → number)<a
     href="#patterns/scrying/misc@hexpose:item_frame_rotation"
     class="permalink small"
     title="Permalink"
@@ -3976,7 +3976,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：ewdwewdea</canvas>
   </details>
-      <p>Pushes the rotation of an <span style="color: #b0b">Item Frame</span> as an integer 0 to 7.</p>
+      <p>返回<span style="color: #b0b">物品展示框</span>的旋转方向，为 0 到 7 的整数。</p>
   </div>
 <br />
   <div id="patterns/scrying/misc@hexpose:painting_variant" class="">
@@ -4032,7 +4032,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wawwwqwwawwwqadaqeda</canvas>
   </details>
-      <p>返回画的类型。</p>
+      <p>返回<span style="color: #8d6acc">画</span>的类型。</p>
   </div>
 <br />
 </div>
@@ -5940,7 +5940,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qqqadaddw</canvas>
   </details>
-      <p>返回<span style="color: #b0b">玩家</span>的饥饿值。使用半个饥饿值火腿作为单位。</p>
+      <p>返回<span style="color: #b0b">玩家</span>的饥饿值。使用半个火腿作为单位。</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_player_saturation" class="">
