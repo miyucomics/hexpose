@@ -126,11 +126,43 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:rarity",
-			"anchor": "hexpose:rarity",
+			"op_id": "hexpose:item_name",
+			"anchor": "hexpose:item_name",
+			"input": "item",
+			"output": "text",
+			"text": "hexpose.page.item_name.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:item_lore",
+			"anchor": "hexpose:item_lore",
+			"input": "item",
+			"output": "list of text",
+			"text": "hexpose.page.item_lore.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:item_variant",
+			"anchor": "hexpose:item_variant",
 			"input": "item",
 			"output": "number",
-			"text": "hexpose.page.rarity.summary"
+			"text": "hexpose.page.item_variant.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:item_variant_max",
+			"anchor": "hexpose:item_variant_max",
+			"input": "item",
+			"output": "number",
+			"text": "hexpose.page.item_variant_max.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:item_rarity",
+			"anchor": "hexpose:item_rarity",
+			"input": "item",
+			"output": "number",
+			"text": "hexpose.page.item_rarity.summary"
 		}
 	]
 }

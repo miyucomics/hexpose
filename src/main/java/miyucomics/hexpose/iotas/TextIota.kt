@@ -4,11 +4,13 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
+import at.petrak.hexcasting.api.utils.asCompound
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.text.Style
 import net.minecraft.text.Text
+import net.minecraft.util.Formatting
 import java.util.function.Function
 
 class TextIota(text: Text) : Iota(TYPE, text) {
@@ -17,16 +19,26 @@ class TextIota(text: Text) : Iota(TYPE, text) {
 	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is TextIota) && this.text == that.text
 
 	override fun serialize(): NbtElement {
-		val compound = NbtCompound()
-		compound.putString("text", Text.Serializer.toJson(text))
-		return compound
+		val serialized = Text.Serializer.toJson(text)
+		println(serialized.length)
+		if (serialized.length > 32000)
+			return NbtCompound()
+		return NbtCompound().also { it.putString("text", serialized) }
 	}
 
 	companion object {
 		var TYPE: IotaType<TextIota> = object : IotaType<TextIota>() {
 			override fun color() = 0xff_db3f30.toInt()
-			override fun display(tag: NbtElement) = Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!
-			override fun deserialize(tag: NbtElement, world: ServerWorld) = TextIota(Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!)
+			override fun display(tag: NbtElement): Text {
+				if (!tag.asCompound.contains("text"))
+					return Text.literal("arimfexendrapuse").formatted(Formatting.DARK_GRAY, Formatting.OBFUSCATED);
+				return Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!
+			}
+			override fun deserialize(tag: NbtElement, world: ServerWorld): TextIota? {
+				if (!tag.asCompound.contains("text"))
+					return null
+				return TextIota(Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!)
+			}
 		}
 	}
 }
