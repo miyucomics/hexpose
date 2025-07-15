@@ -12,6 +12,7 @@ import at.petrak.hexcasting.api.casting.iota.*
 import at.petrak.hexcasting.api.casting.math.HexDir
 import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
+import at.petrak.hexcasting.api.item.VariantItem
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.common.lib.hex.HexActions
 import at.petrak.hexcasting.xplat.IXplatAbstractions
@@ -34,8 +35,8 @@ import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.TextIota
 import miyucomics.hexpose.iotas.asActionResult
-import net.minecraft.command.argument.EntityArgumentType.player
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.decoration.ItemFrameEntity
 import net.minecraft.entity.decoration.painting.PaintingEntity
@@ -45,9 +46,11 @@ import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.entity.passive.CatEntity
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
+import net.minecraft.nbt.NbtElement
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.state.property.Properties
+import net.minecraft.text.Text
 import net.minecraft.util.Hand
 import net.minecraft.util.math.ColorHelper
 import net.minecraft.util.math.Direction
@@ -256,7 +259,22 @@ object HexposeActions {
 		register("count_max_stack", "edeeweeew", HexDir.WEST, OpGetItemTypeData { item -> item.maxCount.asActionResult })
 		register("damage_stack", "eeweeewdeq", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.damage.asActionResult })
 		register("damage_max_stack", "qqwqqqwaqe", HexDir.NORTH_WEST, OpGetItemTypeData { item -> item.maxDamage.asActionResult })
-		register("rarity", "wqqed", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.rarity.ordinal.asActionResult })
+		register("item_name", "qwawqwaqea", HexDir.SOUTH_EAST, OpGetItemStackData { stack -> stack.name.asActionResult })
+		register("item_lore", "dwewdwedea", HexDir.NORTH_WEST, OpGetItemStackData { stack ->
+			val displayList = stack.nbt?.getCompound("display")?.getList("Lore", NbtElement.COMPOUND_TYPE.toInt()) ?: return@OpGetItemStackData listOf<Iota>().asActionResult
+			displayList.map { TextIota(Text.Serializer.fromJson(it.asString())!!) }
+		})
+		register("item_variant", "dwaawaqwa", HexDir.WEST, OpGetItemStackData { stack ->
+			if (stack.item is VariantItem)
+				return@OpGetItemStackData (stack.item as VariantItem).getVariant(stack).asActionResult
+			return@OpGetItemStackData listOf(NullIota())
+		})
+		register("item_variant_max", "dwaawaqwawq", HexDir.WEST, OpGetItemStackData { stack ->
+			if (stack.item is VariantItem)
+				return@OpGetItemStackData (stack.item as VariantItem).numVariants().asActionResult
+			return@OpGetItemStackData listOf(NullIota())
+		})
+		register("item_rarity", "wqqed", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.rarity.ordinal.asActionResult })
 
 		register("get_effects_entity", "wqqq", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity ->
 			val list = mutableListOf<Iota>()
