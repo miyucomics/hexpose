@@ -1,0 +1,40 @@
+{
+	"name": "hexpose.page.misc.title",
+	"icon": "minecraft:suspicious_stew",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:cat_variant",
+			"anchor": "hexpose:cat_variant",
+			"input": "entity",
+			"output": "identifier",
+			"text": "hexpose.page.cat_variant.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:creeper_fuse",
+			"anchor": "hexpose:creeper_fuse",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.creeper_fuse.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:item_frame_rotation",
+			"anchor": "hexpose:item_frame_rotation",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.item_frame_rotation.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:painting_variant",
+			"anchor": "hexpose:painting_variant",
+			"input": "entity",
+			"output": "identifier",
+			"text": "hexpose.page.painting_variant.summary"
+		}
+	]
+}

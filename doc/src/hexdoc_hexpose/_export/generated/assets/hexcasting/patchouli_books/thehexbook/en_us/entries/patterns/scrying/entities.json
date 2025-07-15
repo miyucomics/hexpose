@@ -1,0 +1,144 @@
+{
+	"name": "hexpose.page.entities.title",
+	"icon": "minecraft:egg",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:entity_width",
+			"anchor": "hexpose:entity_width",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.entity_width.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:theodolite",
+			"anchor": "hexpose:theodolite",
+			"input": "entity",
+			"output": "vector",
+			"text": "hexpose.page.theodolite.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_health",
+			"anchor": "hexpose:get_health",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.get_health.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_max_health",
+			"anchor": "hexpose:get_max_health",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.get_max_health.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_air",
+			"anchor": "hexpose:get_air",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.get_air.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_max_air",
+			"anchor": "hexpose:get_max_air",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.get_max_air.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:burning",
+			"anchor": "hexpose:burning",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.burning.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_wet",
+			"anchor": "hexpose:is_wet",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexpose.page.is_wet.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_baby",
+			"anchor": "hexpose:is_baby",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexpose.page.is_baby.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:breedable",
+			"anchor": "hexpose:breedable",
+			"input": "entity",
+			"output": "boolean/null",
+			"text": "hexpose.page.breedable.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_sleeping",
+			"anchor": "hexpose:is_sleeping",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexpose.page.is_sleeping.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_sprinting",
+			"anchor": "hexpose:is_sprinting",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexpose.page.is_sprinting.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:entity_vehicle",
+			"anchor": "hexpose:entity_vehicle",
+			"input": "entity",
+			"output": "entity/null",
+			"text": "hexpose.page.entity_vehicle.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:entity_passengers",
+			"anchor": "hexpose:entity_passengers",
+			"input": "entity",
+			"output": "list of entities",
+			"text": "hexpose.page.entity_passengers.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:shooter",
+			"anchor": "hexpose:shooter",
+			"input": "entity",
+			"output": "entity/null",
+			"text": "hexpose.page.shooter.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:pet_owner",
+			"anchor": "hexpose:pet_owner",
+			"input": "entity",
+			"output": "entity/null",
+			"text": "hexpose.page.pet_owner.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:absorption_hearts",
+			"anchor": "hexpose:absorption_hearts",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.absorption_hearts.summary"
+		}
+	]
+}
