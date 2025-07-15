@@ -1,0 +1,153 @@
+{
+	"name": "hexpose.page.text.title",
+	"icon": "minecraft:writable_book",
+	"category": "hexcasting:patterns",
+	"advancement": "hexcasting:root",
+	"sortnum": 3,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.text.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:create_text",
+			"anchor": "hexpose:create_text",
+			"input": "any",
+			"output": "text",
+			"text": "hexpose.page.create_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:add",
+			"anchor": "hexcasting:add",
+			"input": "text, text",
+			"output": "text",
+			"text": "hexpose.page.add_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:abs",
+			"anchor": "hexcasting:abs",
+			"input": "text",
+			"output": "number",
+			"text": "hexpose.page.abs_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:split_text",
+			"anchor": "hexpose:split_text",
+			"input": "text",
+			"output": "list",
+			"text": "hexpose.page.split_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:combine_text",
+			"anchor": "hexpose:combine_text",
+			"input": "list",
+			"output": "text",
+			"text": "hexpose.page.combine_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:index",
+			"anchor": "hexcasting:index",
+			"input": "text, number",
+			"output": "text",
+			"text": "hexpose.page.index_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:slice",
+			"anchor": "hexcasting:slice",
+			"input": "text, number, number",
+			"output": "text",
+			"text": "hexpose.page.slice_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:replace",
+			"anchor": "hexcasting:replace",
+			"input": "text, number, text",
+			"output": "text",
+			"text": "hexpose.page.replace_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:remove_from",
+			"anchor": "hexcasting:remove_from",
+			"input": "text, number",
+			"output": "text",
+			"text": "hexpose.page.remove_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:reverse",
+			"anchor": "hexcasting:reverse",
+			"input": "text",
+			"output": "text",
+			"text": "hexpose.page.rev_text.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:unique",
+			"anchor": "hexcasting:unique",
+			"input": "text",
+			"output": "text",
+			"text": "hexpose.page.unique_text.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.text.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_color",
+			"anchor": "hexpose:text_color",
+			"input": "text, vector",
+			"output": "text",
+			"text": "hexpose.page.text_color.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_bold",
+			"anchor": "hexpose:text_bold",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_bold.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_italics",
+			"anchor": "hexpose:text_italics",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_italics.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_underline",
+			"anchor": "hexpose:text_underline",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_underline.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_strikethrough",
+			"anchor": "hexpose:text_strikethrough",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_strikethrough.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:text_obfuscated",
+			"anchor": "hexpose:text_obfuscated",
+			"input": "text, boolean",
+			"output": "text",
+			"text": "hexpose.page.text_obfuscated.summary"
+		}
+	]
+}

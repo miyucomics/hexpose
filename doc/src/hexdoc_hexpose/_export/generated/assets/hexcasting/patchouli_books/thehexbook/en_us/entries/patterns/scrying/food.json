@@ -1,0 +1,65 @@
+{
+	"name": "hexpose.page.food.title",
+	"icon": "minecraft:apple",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_player_hunger",
+			"anchor": "hexpose:get_player_hunger",
+			"input": "player entity",
+			"output": "number",
+			"text": "hexpose.page.get_player_hunger.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_player_saturation",
+			"anchor": "hexpose:get_player_saturation",
+			"input": "entity entity",
+			"output": "number",
+			"text": "hexpose.page.get_player_saturation.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:edible",
+			"anchor": "hexpose:edible",
+			"input": "identifier",
+			"output": "boolean",
+			"text": "hexpose.page.edible.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_hunger",
+			"anchor": "hexpose:get_hunger",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexpose.page.get_hunger.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_saturation",
+			"anchor": "hexpose:get_saturation",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexpose.page.get_saturation.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_meat",
+			"anchor": "hexpose:is_meat",
+			"input": "identifier",
+			"output": "boolean",
+			"text": "hexpose.page.is_meat.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_snack",
+			"anchor": "hexpose:is_snack",
+			"input": "identifier",
+			"output": "boolean",
+			"text": "hexpose.page.is_snack.summary"
+		}
+	]
+}

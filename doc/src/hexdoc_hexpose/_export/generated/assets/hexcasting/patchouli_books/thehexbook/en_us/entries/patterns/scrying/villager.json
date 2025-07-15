@@ -1,0 +1,40 @@
+{
+	"name": "hexpose.page.villager.title",
+	"icon": "minecraft:villager_spawn_egg",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:villager_level",
+			"anchor": "hexpose:villager_level",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.villager_level.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:villager_profession",
+			"anchor": "hexpose:villager_profession",
+			"input": "entity",
+			"output": "identifier",
+			"text": "hexpose.page.villager_profession.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:villager_type",
+			"anchor": "hexpose:villager_type",
+			"input": "entity",
+			"output": "identifier",
+			"text": "hexpose.page.villager_type.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:biome_to_villager",
+			"anchor": "hexpose:biome_to_villager",
+			"input": "identifier",
+			"output": "identifier/null",
+			"text": "hexpose.page.biome_to_villager.summary"
+		}
+	]
+}
