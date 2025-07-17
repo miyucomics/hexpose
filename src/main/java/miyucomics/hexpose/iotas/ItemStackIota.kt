@@ -15,7 +15,7 @@ import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
 
 class ItemStackIota(stack: ItemStack) : Iota(TYPE, stack) {
-	override fun isTruthy() = true
+	override fun isTruthy() = !stack.isEmpty
 	val stack = this.payload as ItemStack
 	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is ItemStackIota) && ItemStack.areEqual(this.stack, that.stack)
 
