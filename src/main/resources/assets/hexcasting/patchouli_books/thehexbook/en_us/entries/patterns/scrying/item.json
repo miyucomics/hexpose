@@ -158,6 +158,22 @@
 		},
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "hexpose:read_book",
+			"anchor": "hexpose:read_book",
+			"input": "item",
+			"output": "list of text",
+			"text": "hexpose.page.read_book.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:book_sources",
+			"anchor": "hexpose:book_sources",
+			"input": "item",
+			"output": "text, number",
+			"text": "hexpose.page.book_sources.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "hexpose:item_rarity",
 			"anchor": "hexpose:item_rarity",
 			"input": "item",
