@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/0f2cbad515ae7e0e0305e3b3cc3d2b09dfbb05b8"
+      href="https://github.com/miyucomics/hexpose/tree/1214ddb0812e59dbc6549529c929efb423f7f641"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -153,13 +153,13 @@
       loading="lazy"
       class="item-texture  texture pixelated"
     > 启迪后图案</a></li>
-          <li><a href="#patterns/text" class="toc-elem "><img
+          <li><a href="#patterns/text_iotas" class="toc-elem "><img
       title="书与笔"
       alt="书与笔"
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    > 文本 Iota</a></li>
+    > Text Iota</a></li>
           <li><a href="#patterns/special_raycasts" class="toc-elem "><img
       title="光灵箭"
       alt="光灵箭"
@@ -178,6 +178,13 @@
       class="item-texture  texture pixelated"
     > 探知</a></summary>
       <ul>
+          <li><a href="#patterns/scrying/chat" class="toc-elem "><img
+      title="橡木告示牌"
+      alt="橡木告示牌"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/oak_sign.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Chat</a></li>
           <li><a href="#patterns/scrying/world" class="toc-elem "><img
       title="指南针"
       alt="指南针"
@@ -411,7 +418,7 @@
 <br />
     </div>
 </div>
-<div id="patterns/text" class="entry">
+<div id="patterns/text_iotas" class="entry">
     <h3 class="entry-title page-header">
     <img
       title="书与笔"
@@ -419,20 +426,20 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    >文本 Iota<a
+    >Text Iota<a
     href="#table-of-contents"
     class="permalink small"
     title="Jump to top"
   ><i class="bi bi-box-arrow-up"></i></a><a
-    href="#patterns/text"
+    href="#patterns/text_iotas"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p><span style="color: #8d6acc">文本 iota</span> 代表着文本信息。它不只编码了字面的信息，还包含了<span style="color: #ff0000">颜色</span>和<i>斜体</i>等样式。</p><p>它们可在单个 iota 中存下很多信息。而正因其信息密度高，它们可能很快就会崩解为无意义的东西。</p>
+    <p><span style="color: #8d6acc">Text iotas</span> represent textual information. Not only does it encode all the information required for reading, it also contains styles such as <span style="color: #ff0000">coloring</span> and <i>italics</i>.</p><p>They can also encode an incredible amount of information in one iota. With how dense they are, they can quickly collapse into meaninglessness.</p>
 <br />
-  <div id="patterns/text@hexpose:create_text" class="">
+  <div id="patterns/text_iotas@hexpose:create_text" class="">
 <h4 class="pattern-title">阅读之纯化 (any → text)<a
-    href="#patterns/text@hexpose:create_text"
+    href="#patterns/text_iotas@hexpose:create_text"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -486,9 +493,9 @@
       <p>接受一个 iota，返回代表其的文本 iota。如果接受的是文本 iota，则清除其样式。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:add" class="">
+  <div id="patterns/text_iotas@hexcasting:add" class="">
 <h4 class="pattern-title">加法之馏化 (text, text → text)<a
-    href="#patterns/text@hexcasting:add"
+    href="#patterns/text_iotas@hexcasting:add"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -542,9 +549,9 @@
       <p>返回第一文本和第二文本首尾相接的文本 iota。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:abs" class="">
+  <div id="patterns/text_iotas@hexcasting:abs" class="">
 <h4 class="pattern-title">长度之纯化 (text → number)<a
-    href="#patterns/text@hexcasting:abs"
+    href="#patterns/text_iotas@hexcasting:abs"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -598,9 +605,9 @@
       <p>返回文本 iota 的长度。</p>
   </div>
 <br />
-  <div id="patterns/text@hexpose:split_text" class="">
+  <div id="patterns/text_iotas@hexpose:split_text" class="">
 <h4 class="pattern-title">字符之纯化 (text → list)<a
-    href="#patterns/text@hexpose:split_text"
+    href="#patterns/text_iotas@hexpose:split_text"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -654,9 +661,9 @@
       <p>将文本 iota 拆分成各个字符。</p>
   </div>
 <br />
-  <div id="patterns/text@hexpose:combine_text" class="">
+  <div id="patterns/text_iotas@hexpose:combine_text" class="">
 <h4 class="pattern-title">拼贴之纯化 (list → text)<a
-    href="#patterns/text@hexpose:combine_text"
+    href="#patterns/text_iotas@hexpose:combine_text"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -710,9 +717,9 @@
       <p>将列表中各元素转换为文本（原来就是文本则保留不变），并拼接结果。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:index" class="">
+  <div id="patterns/text_iotas@hexcasting:index" class="">
 <h4 class="pattern-title">选择之馏化 (text, number → text)<a
-    href="#patterns/text@hexcasting:index"
+    href="#patterns/text_iotas@hexcasting:index"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -766,9 +773,9 @@
       <p>返回文本中第 n 个字符。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:slice" class="">
+  <div id="patterns/text_iotas@hexcasting:slice" class="">
 <h4 class="pattern-title">选择之提整 (text, number, number → text)<a
-    href="#patterns/text@hexcasting:slice"
+    href="#patterns/text_iotas@hexcasting:slice"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -822,9 +829,9 @@
       <p>返回文本的指定切片。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:replace" class="">
+  <div id="patterns/text_iotas@hexcasting:replace" class="">
 <h4 class="pattern-title">外科医师之提整 (text, number, text → text)<a
-    href="#patterns/text@hexcasting:replace"
+    href="#patterns/text_iotas@hexcasting:replace"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -878,9 +885,9 @@
       <p>将文本中第 n 个字符替换为另一段文本。用于替换的文本可长于 1 个字符。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:remove_from" class="">
+  <div id="patterns/text_iotas@hexcasting:remove_from" class="">
 <h4 class="pattern-title">切除器之馏化 (text, number → text)<a
-    href="#patterns/text@hexcasting:remove_from"
+    href="#patterns/text_iotas@hexcasting:remove_from"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -934,9 +941,9 @@
       <p>移除文本中第 n 个字符。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:reverse" class="">
+  <div id="patterns/text_iotas@hexcasting:reverse" class="">
 <h4 class="pattern-title">逆行之纯化 (text → text)<a
-    href="#patterns/text@hexcasting:reverse"
+    href="#patterns/text_iotas@hexcasting:reverse"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -990,9 +997,9 @@
       <p>倒排文本。</p>
   </div>
 <br />
-  <div id="patterns/text@hexcasting:unique" class="">
+  <div id="patterns/text_iotas@hexcasting:unique" class="">
 <h4 class="pattern-title">唯一之纯化 (text → text)<a
-    href="#patterns/text@hexcasting:unique"
+    href="#patterns/text_iotas@hexcasting:unique"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1046,11 +1053,11 @@
       <p>只保留文本中各字符的第一处实例。样式不同的字符视作不同字符。</p>
   </div>
 <br />
-    <p>后续的图案涉及到文本的样式。由于其参数结构，它们和馏化很相似，但它们实际上是<i>策略</i>。</p><p>如果传入的是常规参数，则它们会根据自身专长为文本设置样式（样例见说明）。</p><p>如果只传入一个文本，则会返回该文本中该样式的设置情况。</p>
+    <p>The following are a set of patterns involving the styling of the text. Despite resembling distillations, they are actually <i>gambits</i> due to their unique argument structure.</p><p>If the regular arguments are passed in, they will style the text according to their speciality (example of modification included).</p><p>If passed in just a text however, they will return the current value of the setting that they target.</p>
 <br />
-  <div id="patterns/text@hexpose:text_color" class="">
+  <div id="patterns/text_iotas@hexpose:text_color" class="">
 <h4 class="pattern-title">卢米埃尔之策略 (text, vector → text)<a
-    href="#patterns/text@hexpose:text_color"
+    href="#patterns/text_iotas@hexpose:text_color"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1104,9 +1111,9 @@
       <p>接受一个文本 iota 和一个颜色；颜色由各分量为 0 到 1 的向量定义。返回设置为该<span style="color: #ff0000">颜色</span>的文本。</p>
   </div>
 <br />
-  <div id="patterns/text@hexpose:text_bold" class="">
+  <div id="patterns/text_iotas@hexpose:text_bold" class="">
 <h4 class="pattern-title">哥特式之策略 (text, boolean → text)<a
-    href="#patterns/text@hexpose:text_bold"
+    href="#patterns/text_iotas@hexpose:text_bold"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1160,9 +1167,9 @@
       <p>接受一个文本，设置其是否为<strong>粗体</strong>。</p>
   </div>
 <br />
-  <div id="patterns/text@hexpose:text_italics" class="">
+  <div id="patterns/text_iotas@hexpose:text_italics" class="">
 <h4 class="pattern-title">马努提乌斯之策略 (text, boolean → text)<a
-    href="#patterns/text@hexpose:text_italics"
+    href="#patterns/text_iotas@hexpose:text_italics"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1216,9 +1223,9 @@
       <p>接受一个文本，设置其是否为<i>斜体</i>。</p>
   </div>
 <br />
-  <div id="patterns/text@hexpose:text_underline" class="">
+  <div id="patterns/text_iotas@hexpose:text_underline" class="">
 <h4 class="pattern-title">记录员之策略 (text, boolean → text)<a
-    href="#patterns/text@hexpose:text_underline"
+    href="#patterns/text_iotas@hexpose:text_underline"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1272,9 +1279,9 @@
       <p>接受一个文本，设置其是否有<span style="text-decoration: underline">下划线</span>。</p>
   </div>
 <br />
-  <div id="patterns/text@hexpose:text_strikethrough" class="">
+  <div id="patterns/text_iotas@hexpose:text_strikethrough" class="">
 <h4 class="pattern-title">编辑员之策略 (text, boolean → text)<a
-    href="#patterns/text@hexpose:text_strikethrough"
+    href="#patterns/text_iotas@hexpose:text_strikethrough"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1328,9 +1335,9 @@
       <p>接受一个文本，设置其是否有<s>删除线</s>。</p>
   </div>
 <br />
-  <div id="patterns/text@hexpose:text_obfuscated" class="">
+  <div id="patterns/text_iotas@hexpose:text_obfuscated" class="">
 <h4 class="pattern-title">屏蔽之策略 (text, boolean → text)<a
-    href="#patterns/text@hexpose:text_obfuscated"
+    href="#patterns/text_iotas@hexpose:text_obfuscated"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1646,6 +1653,136 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
     <p>我偶然间触及了一条完全将<span style="color: #74b3f2">媒质</span>用于获取和处理世界信息的学术分支。</p><p>虽然这些操作在大多数<span style="color: #b38ef3">咒术</span>中没什么大用处，但有它们在也不错，我将来也许会用到。</p>
+<div id="patterns/scrying/chat" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="橡木告示牌"
+      alt="橡木告示牌"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/oak_sign.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Chat<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/scrying/chat"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/scrying/chat@hexpose:get_message" class="">
+<h4 class="pattern-title">News Reflection (→ text, text, number)<a
+    href="#patterns/scrying/chat@hexpose:get_message"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aeeedw"
+        data-start="south_west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：aeeedw</canvas>
+  </details>
+      <p>Pushes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> of the last person to use chat, a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> of the message, and a number of twenieths of a second since that message sent.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/chat@hexpose:get_chat" class="">
+<h4 class="pattern-title">Newspaper Reflection (→ list of lists)<a
+    href="#patterns/scrying/chat@hexpose:get_chat"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dqqqaw"
+        data-start="south_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：dqqqaw</canvas>
+  </details>
+      <p>Applies <a href="#patterns/scrying/chat@hexpose:get_message"><span style="color: #fc77be">News Reflection</span></a> to the last up to 32 messages in chat, wraps each in a list, and pushes a list of those lists.</p>
+  </div>
+<br />
+</div>
 <div id="patterns/scrying/world" class="entry">
     <h3 class="entry-title page-header">
     <img
@@ -4213,10 +4350,10 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="qeqwqwqwqwqeqaweqqqqq"
+        data-string="qeqwqwqwqwqeqaweqqqqqwded"
         data-start="east"
         data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqaweqqqqq</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqaweqqqqqwded</canvas>
   </details>
       <p>返回村民生长环境的文化类别，如沙漠、针叶林等。</p>
   </div>
@@ -5437,6 +5574,118 @@
       >浏览器不支持图案的可视化。图案代码见此：dwaawaqwawq</canvas>
   </details>
       <p>如果物品会受到<a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/spells/cyclevariant"><span style="color: #fc77be">施法者之魅力</span></a>的影响，则返回其可变化的外形总数；否则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/item@hexpose:read_book" class="">
+<h4 class="pattern-title">Reading Purification (item → list of text)<a
+    href="#patterns/scrying/item@hexpose:read_book"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="awqqwaqd"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：awqqwaqd</canvas>
+  </details>
+      <p>Pushes a list of <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iotas</span></a> contained inside a book or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it isn&#39;t a book.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/item@hexpose:book_sources" class="">
+<h4 class="pattern-title">Bibliography Purification (item → text, number)<a
+    href="#patterns/scrying/item@hexpose:book_sources"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="eaedweew"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：eaedweew</canvas>
+  </details>
+      <p>Pushes the author of a book and its generation number.</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:item_rarity" class="">
