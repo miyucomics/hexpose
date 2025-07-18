@@ -70,11 +70,8 @@ java {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            groupId = 'miyucomics'
-            artifactId = "$archives_base_name"
-            version = "$mod_version"
+        maven {
+            url System.getenv("local_maven_url")
         }
     }
 }
