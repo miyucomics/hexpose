@@ -5,7 +5,6 @@ import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.api.utils.asCompound
-import miyucomics.hexpose.utils.TextUtils
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement
 import net.minecraft.server.world.ServerWorld
@@ -14,14 +13,13 @@ import net.minecraft.text.Text
 import net.minecraft.util.Formatting
 import java.util.function.Function
 
-class TextIota(text: Text) : Iota(TYPE, TextUtils.optimize(text)) {
+class TextIota(text: Text) : Iota(TYPE, text) {
 	override fun isTruthy() = true
 	val text = this.payload as Text
 	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is TextIota) && this.text == that.text
 
 	override fun serialize(): NbtElement {
 		val serialized = Text.Serializer.toJson(text)
-		println(serialized.length)
 		if (serialized.length > 32000)
 			return NbtCompound()
 		return NbtCompound().also { it.putString("text", serialized) }

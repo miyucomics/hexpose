@@ -27,10 +27,7 @@ import miyucomics.hexpose.actions.raycast.OpFluidRaycast
 import miyucomics.hexpose.actions.raycast.OpFluidSurfaceRaycast
 import miyucomics.hexpose.actions.raycast.OpPiercingRaycast
 import miyucomics.hexpose.actions.raycast.OpPiercingSurfaceRaycast
-import miyucomics.hexpose.actions.text.OpCombineList
-import miyucomics.hexpose.actions.text.OpCreateText
-import miyucomics.hexpose.actions.text.OpSplitText
-import miyucomics.hexpose.actions.text.OpStyleText
+import miyucomics.hexpose.actions.text.*
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
@@ -187,6 +184,9 @@ object HexposeActions {
 			).asActionResult
 		})
 
+		register("get_chat", "dqqqaw", HexDir.SOUTH_EAST, OpGetChat)
+		register("get_message", "aeeedw", HexDir.SOUTH_WEST, OpGetMessage)
+
 		register("get_enchantments", "waqeaeqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
 			var data = stack.enchantments
 			if (stack.isOf(Items.ENCHANTED_BOOK))
@@ -230,6 +230,7 @@ object HexposeActions {
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map { EntityIota(it) }.asActionResult })
 		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
+		register("entity_name", "edeweedw", HexDir.SOUTH_WEST, OpGetEntityData { it.name.asActionResult })
 		register("absorption_hearts", "waawedwdwd", HexDir.NORTH_EAST, OpGetLivingEntityData { entity -> entity.absorptionAmount.asActionResult })
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit)
@@ -259,11 +260,6 @@ object HexposeActions {
 		register("count_max_stack", "edeeweeew", HexDir.WEST, OpGetItemTypeData { item -> item.maxCount.asActionResult })
 		register("damage_stack", "eeweeewdeq", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.damage.asActionResult })
 		register("damage_max_stack", "qqwqqqwaqe", HexDir.NORTH_WEST, OpGetItemTypeData { item -> item.maxDamage.asActionResult })
-		register("item_name", "qwawqwaqea", HexDir.SOUTH_EAST, OpGetItemStackData { stack -> stack.name.asActionResult })
-		register("item_lore", "dwewdwedea", HexDir.NORTH_WEST, OpGetItemStackData { stack ->
-			val displayList = stack.nbt?.getCompound("display")?.getList("Lore", NbtElement.COMPOUND_TYPE.toInt()) ?: return@OpGetItemStackData listOf<Iota>().asActionResult
-			displayList.map { TextIota(Text.Serializer.fromJson(it.asString())!!) }
-		})
 		register("item_variant", "dwaawaqwa", HexDir.WEST, OpGetItemStackData { stack ->
 			if (stack.item is VariantItem)
 				return@OpGetItemStackData (stack.item as VariantItem).getVariant(stack).asActionResult
@@ -274,6 +270,13 @@ object HexposeActions {
 				return@OpGetItemStackData (stack.item as VariantItem).numVariants().asActionResult
 			return@OpGetItemStackData listOf(NullIota())
 		})
+		register("item_name", "qwawqwaqea", HexDir.SOUTH_EAST, OpGetItemStackData { stack -> stack.name.asActionResult })
+		register("item_lore", "dwewdwedea", HexDir.NORTH_WEST, OpGetItemStackData { stack ->
+			val displayList = stack.nbt?.getCompound("display")?.getList("Lore", NbtElement.COMPOUND_TYPE.toInt()) ?: return@OpGetItemStackData listOf<Iota>().asActionResult
+			displayList.map { TextIota(Text.Serializer.fromJson(it.asString())!!) }
+		})
+		register("read_book", "awqqwaqd", HexDir.WEST, OpReadBook)
+		register("book_sources", "eaedweew", HexDir.EAST, OpBookSources)
 		register("item_rarity", "wqqed", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.rarity.ordinal.asActionResult })
 
 		register("get_effects_entity", "wqqq", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity ->
@@ -289,7 +292,7 @@ object HexposeActions {
 
 		register("villager_level", "qeqwqwqwqwqeqawdaeaeaeaeaea", HexDir.EAST, OpGetVillagerData { villager -> villager.villagerData.level.asActionResult })
 		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult })
-		register("villager_type", "qeqwqwqwqwqeqaweqqqqq", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
+		register("villager_type", "qeqwqwqwqwqeqaweqqqqqwded", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
 		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome)
 
 		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
