@@ -69,7 +69,7 @@ java {
 }
 
 publishing {
-    publications {
+    repositories {
         maven {
             url System.getenv("local_maven_url")
         }
