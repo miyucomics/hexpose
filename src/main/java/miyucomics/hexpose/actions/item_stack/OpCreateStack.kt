@@ -15,8 +15,8 @@ object OpCreateStack : ConstMediaAction {
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val id = args.getIdentifier(0, argc)
 		if (!Registries.ITEM.containsId(id))
-			throw MishapInvalidIota.of(args[0], 0, "item_id")
-		val count = args.getPositiveInt(0, argc)
+			throw MishapInvalidIota.of(args[0], 1, "item_id")
+		val count = args.getPositiveInt(1, argc)
 		return ItemStack(Registries.ITEM.get(id), count).asActionResult
 	}
 }
