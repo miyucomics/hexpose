@@ -1,9 +1,7 @@
 package miyucomics.hexpose.utils
 
-import net.minecraft.text.LiteralTextContent
-import net.minecraft.text.MutableText
-import net.minecraft.text.Style
-import net.minecraft.text.Text
+import net.minecraft.text.*
+import net.minecraft.util.Language
 
 object TextUtils {
 	fun split(text: Text): MutableList<Text> {
@@ -22,4 +20,30 @@ object TextUtils {
 	}
 }
 
-fun List<Text>.mergeText(): MutableText = this.fold(Text.empty()) { acc, text -> acc.append(text) }
+// nice little function that recursively explores and flattens Text into consistent literals
+fun Text.sanitize(): Text {
+	val sanitizedRoot: MutableText = when (val content = this.content) {
+		is LiteralTextContent -> Text.literal(content.string)
+		is TranslatableTextContent -> {
+			val pattern = Language.getInstance().get(content.key)
+			val args = content.args.map { arg ->
+				when (arg) {
+					is Text -> arg.sanitize().string
+					else -> arg.toString()
+				}
+			}.toTypedArray()
+			Text.literal(String.format(pattern, *args))
+		}
+		else -> Text.literal("arimfexendrapuse")
+	}
+
+	sanitizedRoot.style = this.style
+		.withClickEvent(null)
+		.withHoverEvent(null)
+		.withInsertion(null)
+
+	for (child in this.siblings)
+		sanitizedRoot.append(child.sanitize())
+
+	return sanitizedRoot
+}

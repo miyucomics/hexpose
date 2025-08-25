@@ -2,3 +2,9 @@ accessWidener   v2  named
 accessible field net/minecraft/entity/passive/AbstractHorseEntity items Lnet/minecraft/inventory/SimpleInventory;
 accessible field net/minecraft/entity/projectile/ArrowEntity potion Lnet/minecraft/potion/Potion;
 accessible field net/minecraft/entity/projectile/ArrowEntity effects Ljava/util/Set;
+accessible field net/minecraft/text/Style bold Ljava/lang/Boolean;
+accessible field net/minecraft/text/Style italic Ljava/lang/Boolean;
+accessible field net/minecraft/text/Style underlined Ljava/lang/Boolean;
+accessible field net/minecraft/text/Style strikethrough Ljava/lang/Boolean;
+accessible field net/minecraft/text/Style obfuscated Ljava/lang/Boolean;
+accessible field net/minecraft/text/Style font Lnet/minecraft/util/Identifier;

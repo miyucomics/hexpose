@@ -4,7 +4,7 @@ import at.petrak.hexcasting.api.casting.iota.DoubleIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import miyucomics.hexpose.iotas.TextIota
+import miyucomics.hexpose.iotas.DisplayIota
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents
 import net.minecraft.text.Text
 import java.time.Duration
@@ -13,7 +13,7 @@ import kotlin.math.floor
 
 object ChatHandler {
 	fun init() {
-		ServerMessageEvents.CHAT_MESSAGE.register { message, sender, params -> chatLog.add(Message(sender.name, message.content, message.timestamp)) }
+		ServerMessageEvents.CHAT_MESSAGE.register { message, sender, _ -> chatLog.add(Message(sender.name, message.content, message.timestamp)) }
 	}
 
 	fun getLog(): List<Iota> {
@@ -25,6 +25,6 @@ object ChatHandler {
 
 	private val chatLog = RingBuffer<Message>(32)
 	private data class Message(val sender: Text, val message: Text, val timestamp: Instant) {
-		fun intoHex(now: Instant) = listOf(TextIota(sender), TextIota(message), DoubleIota(floor(Duration.between(now, timestamp).toMillis() / -50.0)))
+		fun intoHex(now: Instant) = listOf(DisplayIota.createSanitized(sender), DisplayIota.createSanitized(message), DoubleIota(floor(Duration.between(now, timestamp).toMillis() / -50.0)))
 	}
 }

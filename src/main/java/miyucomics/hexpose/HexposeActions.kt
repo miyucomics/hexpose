@@ -18,6 +18,7 @@ import at.petrak.hexcasting.common.lib.hex.HexActions
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import miyucomics.hexpose.actions.blockstates.OpGetBlockProperties
 import miyucomics.hexpose.actions.blockstates.OpQueryBlockProperty
+import miyucomics.hexpose.actions.display.*
 import miyucomics.hexpose.actions.identifier.OpClassify
 import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
@@ -27,12 +28,11 @@ import miyucomics.hexpose.actions.raycast.OpFluidRaycast
 import miyucomics.hexpose.actions.raycast.OpFluidSurfaceRaycast
 import miyucomics.hexpose.actions.raycast.OpPiercingRaycast
 import miyucomics.hexpose.actions.raycast.OpPiercingSurfaceRaycast
-import miyucomics.hexpose.actions.text.*
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
+import miyucomics.hexpose.iotas.DisplayIota
 import miyucomics.hexpose.iotas.IdentifierIota
-import miyucomics.hexpose.iotas.TextIota
 import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.decoration.ItemFrameEntity
@@ -47,6 +47,7 @@ import net.minecraft.nbt.NbtElement
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.state.property.Properties
+import net.minecraft.text.Style
 import net.minecraft.text.Text
 import net.minecraft.util.Hand
 import net.minecraft.util.math.ColorHelper
@@ -72,52 +73,15 @@ object HexposeActions {
 			return@OpGetLivingEntityData false.asActionResult
 		})
 
-		register("create_text", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateText)
-		register("split_text", "awaqeeeeedwe", HexDir.SOUTH_WEST, OpSplitText)
-		register("combine_text", "dwdeqqqqqawq", HexDir.SOUTH_EAST, OpCombineList)
-		register("text_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpStyleText(
-			{ args, style ->
-				val colorRaw = args.getVec3(1, 2)
-				val color = ((max(min(colorRaw.x, 1.0), 0.0) * 255).toInt() shl 16) or ((max(
-					min(colorRaw.y, 1.0),
-					0.0
-				) * 255).toInt() shl 8) or (max(min(colorRaw.z, 1.0), 0.0) * 255).toInt()
-				style.withColor(color)
-			},
-			{ style ->
-				val color = style.color ?: return@OpStyleText Vec3Iota(Vec3d(1.0, 1.0, 1.0))
-				val colorInt = color.rgb and 0xFFFFFF
-				val r = ((colorInt shr 16) and 0xFF) / 255.0
-				val g = ((colorInt shr 8) and 0xFF) / 255.0
-				val b = (colorInt and 0xFF) / 255.0
-				Vec3Iota(Vec3d(r, g, b))
-			}
-		))
-		register("text_bold", "awaqeeeeedd", HexDir.SOUTH_WEST,
-			OpStyleText(
-				{ args, style -> style.withBold(args.getBool(1, 2)) },
-				{ style -> BooleanIota(style.isBold) })
-		)
-		register("text_italics", "awaqeeeeede", HexDir.SOUTH_WEST,
-			OpStyleText(
-				{ args, style -> style.withItalic(args.getBool(1, 2)) },
-				{ style -> BooleanIota(style.isItalic) })
-		)
-		register("text_underline", "awaqeeeeedw", HexDir.SOUTH_WEST,
-			OpStyleText(
-				{ args, style -> style.withUnderline(args.getBool(1, 2)) },
-				{ style -> BooleanIota(style.isUnderlined) })
-		)
-		register("text_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST,
-			OpStyleText(
-				{ args, style -> style.withStrikethrough(args.getBool(1, 2)) },
-				{ style -> BooleanIota(style.isStrikethrough) })
-		)
-		register("text_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST,
-			OpStyleText(
-				{ args, style -> style.withObfuscated(args.getBool(1, 2)) },
-				{ style -> BooleanIota(style.isObfuscated) })
-		)
+		register("create_display", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateDisplay)
+		register("display_children", "dwdeqqqqqawq", HexDir.SOUTH_EAST, OpDisplayChildren)
+		register("display_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpDisplayColor)
+		register("display_bold", "awaqeeeeedd", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::bold, Style::withBold))
+		register("display_italics", "awaqeeeeede", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::italic, Style::withItalic))
+		register("display_underline", "awaqeeeeedw", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::underlined, Style::withUnderline))
+		register("display_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::strikethrough, Style::withStrikethrough))
+		register("display_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::obfuscated, Style::withObfuscated))
+		register("display_font", "awaqeeeeedaqa", HexDir.SOUTH_WEST, OpDisplayFont)
 
 		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast)
 		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast)
@@ -273,7 +237,7 @@ object HexposeActions {
 		register("item_name", "qwawqwaqea", HexDir.SOUTH_EAST, OpGetItemStackData { stack -> stack.name.asActionResult })
 		register("item_lore", "dwewdwedea", HexDir.NORTH_WEST, OpGetItemStackData { stack ->
 			val displayList = stack.nbt?.getCompound("display")?.getList("Lore", NbtElement.COMPOUND_TYPE.toInt()) ?: return@OpGetItemStackData listOf<Iota>().asActionResult
-			displayList.map { TextIota(Text.Serializer.fromJson(it.asString())!!) }
+			displayList.map { DisplayIota.createSanitized(Text.Serializer.fromJson(it.asString())!!) }
 		})
 		register("read_book", "awqqwaqd", HexDir.WEST, OpReadBook)
 		register("book_sources", "eaedweew", HexDir.EAST, OpBookSources)
