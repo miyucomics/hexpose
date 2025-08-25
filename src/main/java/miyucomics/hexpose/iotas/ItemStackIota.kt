@@ -60,7 +60,7 @@ class ItemStackIota(stack: ItemStack) : Iota(TYPE, stack) {
 
 			val queue: ArrayDeque<NbtElement> = ArrayDeque(listOf(nbt))
 			while (queue.isNotEmpty()) {
-				when (val next = queue.removeFirst()) {
+				when (val next = queue.removeAt(0)) {
 					is NbtList -> queue.addAll(next)
 					is NbtCompound -> {
 						if (next.contains(TAG_STACK_ID)) {
