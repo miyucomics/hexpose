@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/84c305b1078945b80965b7ecc7c19817736eeef2"
+      href="https://github.com/miyucomics/hexpose/tree/02679867ca70c2d6584b2dc5f2222551269c43c1"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -153,13 +153,13 @@
       loading="lazy"
       class="item-texture  texture pixelated"
     > Enlightened Patterns</a></li>
-          <li><a href="#patterns/text_iotas" class="toc-elem "><img
+          <li><a href="#patterns/displays" class="toc-elem "><img
       title="Book and Quill"
       alt="Book and Quill"
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    > Text Iota</a></li>
+    > Display Iota</a></li>
           <li><a href="#patterns/special_raycasts" class="toc-elem "><img
       title="Spectral Arrow"
       alt="Spectral Arrow"
@@ -418,7 +418,7 @@
 <br />
     </div>
 </div>
-<div id="patterns/text_iotas" class="entry">
+<div id="patterns/displays" class="entry">
     <h3 class="entry-title page-header">
     <img
       title="Book and Quill"
@@ -426,20 +426,22 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    >Text Iota<a
+    >Display Iota<a
     href="#table-of-contents"
     class="permalink small"
     title="Jump to top"
   ><i class="bi bi-box-arrow-up"></i></a><a
-    href="#patterns/text_iotas"
+    href="#patterns/displays"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p><span style="color: #8d6acc">Text iotas</span> represent textual information. Not only does it encode all the information required for reading, it also contains styles such as <span style="color: #ff0000">coloring</span> and <i>italics</i>.</p><p>They can also encode an incredible amount of information in one iota. With how dense they are, they can quickly collapse into meaninglessness.</p>
+    <p><a href="#patterns/displays"><span style="color: #8d6acc">Display iotas</span></a> encode stylized text using a recursive model. The iota holds text, styling for that text, <i>and</i> other child <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a>, which may themselves contain children and have differing styles than the parent. Children are appended sequentially after the parent.</p>
 <br />
-  <div id="patterns/text_iotas@hexpose:create_text" class="">
-<h4 class="pattern-title">Reading Purification (any → text)<a
-    href="#patterns/text_iotas@hexpose:create_text"
+    <p>The properties of the parent&#39;s style propagate down to their children, provided the child has an unset value for that property. For example, the children of a red-colored <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> will be red, unless a child has a style for another color. That second color is then the color that gets passed down to <i>its</i> children.</p>
+<br />
+  <div id="patterns/displays@hexpose:create_display" class="">
+<h4 class="pattern-title">Reading Purification (any → display)<a
+    href="#patterns/displays@hexpose:create_display"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -490,180 +492,14 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeee</canvas>
   </details>
-      <p>Takes an iota and returns a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> representing it. If taking a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a>, strips all the styles of it.</p>
+      <p>Takes an iota and returns a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> representing it. If taking a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>, strips all the styles of it.</p>
   </div>
 <br />
-  <div id="patterns/text_iotas@hexcasting:add" class="">
-<h4 class="pattern-title">Additive Distillation (text, text → text)<a
-    href="#patterns/text_iotas@hexcasting:add"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="waaw"
-        data-start="north_east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waaw</canvas>
-  </details>
-      <p>Pushes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> of the first followed immediately by the second.</p>
-  </div>
+    <p>The patterns that interact with <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> are strangely multifaceted. While resembling distillations, they are actually <i>gambits</i>.</p><p>If their described arguments are passed in, they modify the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> according to their speciality (example of modification included).</p><p>If the top of the stack is just a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> however, they push the current value of the setting that they target.</p>
 <br />
-  <div id="patterns/text_iotas@hexcasting:abs" class="">
-<h4 class="pattern-title">Length Purification (text → number)<a
-    href="#patterns/text_iotas@hexcasting:abs"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="wqaqw"
-        data-start="north_east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqaqw</canvas>
-  </details>
-      <p>Pushes the length of the <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a>.</p>
-  </div>
-<br />
-  <div id="patterns/text_iotas@hexpose:split_text" class="">
-<h4 class="pattern-title">Glyph Purification (text → list)<a
-    href="#patterns/text_iotas@hexpose:split_text"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="awaqeeeeedwe"
-        data-start="south_west"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: awaqeeeeedwe</canvas>
-  </details>
-      <p>Splits a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> into a list of individual glyphs.</p>
-  </div>
-<br />
-  <div id="patterns/text_iotas@hexpose:combine_text" class="">
-<h4 class="pattern-title">Collage Purification (list → text)<a
-    href="#patterns/text_iotas@hexpose:combine_text"
+  <div id="patterns/displays@hexpose:display_children" class="">
+<h4 class="pattern-title">Parsing Purification (display → list of displays)<a
+    href="#patterns/displays@hexpose:display_children"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -714,350 +550,12 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: dwdeqqqqqawq</canvas>
   </details>
-      <p>Transforms all the elements of a list into text (or keeps them if they were) and pastes it all together.</p>
+      <p>Gets or sets a list of <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> corresponding to children of the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>.</p>
   </div>
 <br />
-  <div id="patterns/text_iotas@hexcasting:index" class="">
-<h4 class="pattern-title">Selection Distillation (text, number → text)<a
-    href="#patterns/text_iotas@hexcasting:index"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="deeed"
-        data-start="north_west"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: deeed</canvas>
-  </details>
-      <p>Pushes the nth glyph in the text.</p>
-  </div>
-<br />
-  <div id="patterns/text_iotas@hexcasting:slice" class="">
-<h4 class="pattern-title">Selection Exaltation (text, number, number → text)<a
-    href="#patterns/text_iotas@hexcasting:slice"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaeaqwded"
-        data-start="north_west"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaeaqwded</canvas>
-  </details>
-      <p>Pushes the specified slice of the text.</p>
-  </div>
-<br />
-  <div id="patterns/text_iotas@hexcasting:replace" class="">
-<h4 class="pattern-title">Surgeon&#39;s Exaltation (text, number, text → text)<a
-    href="#patterns/text_iotas@hexcasting:replace"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="wqaeaqw"
-        data-start="north_west"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqaeaqw</canvas>
-  </details>
-      <p>Replaces the glyph at the nth position in the text with another segment of text. Replacement can be longer than one glyph.</p>
-  </div>
-<br />
-  <div id="patterns/text_iotas@hexcasting:remove_from" class="">
-<h4 class="pattern-title">Excisor&#39;s Distillation (text, number → text)<a
-    href="#patterns/text_iotas@hexcasting:remove_from"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="edqdewaqa"
-        data-start="south_west"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: edqdewaqa</canvas>
-  </details>
-      <p>Removes the nth glyph in the text.</p>
-  </div>
-<br />
-  <div id="patterns/text_iotas@hexcasting:reverse" class="">
-<h4 class="pattern-title">Retrograde Purification (text → text)<a
-    href="#patterns/text_iotas@hexcasting:reverse"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qqqaede"
-        data-start="east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqaede</canvas>
-  </details>
-      <p>Reverses the text.</p>
-  </div>
-<br />
-  <div id="patterns/text_iotas@hexcasting:unique" class="">
-<h4 class="pattern-title">Uniqueness Purification (text → text)<a
-    href="#patterns/text_iotas@hexcasting:unique"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="aweaqa"
-        data-start="north_east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aweaqa</canvas>
-  </details>
-      <p>Keeps only the first instance of any glyph in the text. Styling is enough to distinguish a glyph.</p>
-  </div>
-<br />
-    <p>The following are a set of patterns involving the styling of the text. Despite resembling distillations, they are actually <i>gambits</i> due to their unique argument structure.</p><p>If the regular arguments are passed in, they will style the text according to their speciality (example of modification included).</p><p>If passed in just a text however, they will return the current value of the setting that they target.</p>
-<br />
-  <div id="patterns/text_iotas@hexpose:text_color" class="">
-<h4 class="pattern-title">Lumière Gambit (text, vector → text)<a
-    href="#patterns/text_iotas@hexpose:text_color"
+  <div id="patterns/displays@hexpose:display_color" class="">
+<h4 class="pattern-title">Lumière Gambit (display, vector → display)<a
+    href="#patterns/displays@hexpose:display_color"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1108,12 +606,70 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeeewded</canvas>
   </details>
-      <p>Takes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> and a color encoded as a vector whose components range from 0 to 1, and produces a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> of that <span style="color: #ff0000">color</span>.</p>
+      <p>Gets or sets a color encoded as a vector whose components range from 0 to 1. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
   </div>
 <br />
-  <div id="patterns/text_iotas@hexpose:text_bold" class="">
-<h4 class="pattern-title">Gothic Gambit (text, boolean → text)<a
-    href="#patterns/text_iotas@hexpose:text_bold"
+  <div id="patterns/displays@hexpose:display_font" class="">
+<h4 class="pattern-title">Calligrapher&#39;s Gambit (display, number → display)<a
+    href="#patterns/displays@hexpose:display_font"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="awaqeeeeedaqa"
+        data-start="south_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: awaqeeeeedaqa</canvas>
+  </details>
+      <p>Gets or sets a number, corresponding to the font a text is drawn in. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+  </div>
+<br />
+    <p>0, 1, and 2 are the current fonts that I know of, corresponding to standard appearance, the runes I see surrounding an <span style="color: #8d6acc">Enchanting Table</span>, and a strange variant of it that is allegedly used by ancient villagers.</p>
+<br />
+  <div id="patterns/displays@hexpose:display_bold" class="">
+<h4 class="pattern-title">Gothic Gambit (display, boolean → display)<a
+    href="#patterns/displays@hexpose:display_bold"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1164,12 +720,12 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeeedd</canvas>
   </details>
-      <p>Takes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> and sets whether it is <strong>bold</strong>.</p>
+      <p>Gets or sets a boolean, corresponding to whether it is <strong>bold</strong>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
   </div>
 <br />
-  <div id="patterns/text_iotas@hexpose:text_italics" class="">
-<h4 class="pattern-title">Manutius&#39; Gambit (text, boolean → text)<a
-    href="#patterns/text_iotas@hexpose:text_italics"
+  <div id="patterns/displays@hexpose:display_italics" class="">
+<h4 class="pattern-title">Manutius&#39; Gambit (display, boolean → display)<a
+    href="#patterns/displays@hexpose:display_italics"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1220,12 +776,12 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeeede</canvas>
   </details>
-      <p>Takes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> and sets whether it is in <i>italics</i>.</p>
+      <p>Gets or sets a boolean, corresponding to whether it is in <i>italics</i>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
   </div>
 <br />
-  <div id="patterns/text_iotas@hexpose:text_underline" class="">
-<h4 class="pattern-title">Notetaker&#39;s Gambit (text, boolean → text)<a
-    href="#patterns/text_iotas@hexpose:text_underline"
+  <div id="patterns/displays@hexpose:display_underline" class="">
+<h4 class="pattern-title">Notetaker&#39;s Gambit (display, boolean → display)<a
+    href="#patterns/displays@hexpose:display_underline"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1276,12 +832,12 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeeedw</canvas>
   </details>
-      <p>Takes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> and sets whether it is <span style="text-decoration: underline">underlined</span>.</p>
+      <p>Gets or sets a boolean, corresponding to whether it is <span style="text-decoration: underline">underlined</span>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
   </div>
 <br />
-  <div id="patterns/text_iotas@hexpose:text_strikethrough" class="">
-<h4 class="pattern-title">Editor&#39;s Gambit (text, boolean → text)<a
-    href="#patterns/text_iotas@hexpose:text_strikethrough"
+  <div id="patterns/displays@hexpose:display_strikethrough" class="">
+<h4 class="pattern-title">Editor&#39;s Gambit (display, boolean → display)<a
+    href="#patterns/displays@hexpose:display_strikethrough"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1332,12 +888,12 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeeedq</canvas>
   </details>
-      <p>Takes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> and sets whether it has been <s>struck through</s>.</p>
+      <p>Gets or sets a boolean, corresponding to whether it has been <s>struck through</s>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
   </div>
 <br />
-  <div id="patterns/text_iotas@hexpose:text_obfuscated" class="">
-<h4 class="pattern-title">Censor&#39;s Gambit (text, boolean → text)<a
-    href="#patterns/text_iotas@hexpose:text_obfuscated"
+  <div id="patterns/displays@hexpose:display_obfuscated" class="">
+<h4 class="pattern-title">Censor&#39;s Gambit (display, boolean → display)<a
+    href="#patterns/displays@hexpose:display_obfuscated"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -1388,7 +944,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeeeda</canvas>
   </details>
-      <p>Takes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> and sets whether it is obfusca<span class="obfuscated">ted</span>.</p>
+      <p>Gets or sets a boolean, corresponding to whether it is obfusca<span class="obfuscated">ted</span>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
   </div>
 <br />
 </div>
@@ -2137,7 +1693,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: aeeedw</canvas>
   </details>
-      <p>Pushes a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> of the last person to use chat, a <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iota</span></a> of the message, and a number of twenieths of a second since that message sent.</p>
+      <p>Pushes a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> of the last person to use chat, a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> of the message, and a number of twenieths of a second since that message sent.</p>
   </div>
 <br />
   <div id="patterns/scrying/chat@hexpose:get_chat" class="">
@@ -4087,7 +3643,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:create_stack" class="">
-<h4 class="pattern-title">Offer Purification (identifier, number → item)<a
+<h4 class="pattern-title">Offer Distillation (identifier, number → item)<a
     href="#patterns/scrying/item@hexpose:create_stack"
     class="permalink small"
     title="Permalink"
@@ -5091,7 +4647,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: awqqwaqd</canvas>
   </details>
-      <p>Pushes a list of <a href="#patterns/text_iotas"><span style="color: #8d6acc">text iotas</span></a> contained inside a book or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it isn&#39;t a book.</p>
+      <p>Pushes a list of <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> contained inside a book or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it isn&#39;t a book.</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:book_sources" class="">
