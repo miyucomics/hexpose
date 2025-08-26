@@ -33,6 +33,17 @@ object DisplayArithmetic : Arithmetic {
         implementations[Arithmetic.INDEX_OF] = twoDisplayIntoIota { a, b -> DoubleIota(a.getRoot().indexOf(b.getRoot()).toDouble()) }
         implementations[Arithmetic.REMOVE] = displayNumberIntoIota { display, number -> display.modifyRootBuilder { it.deleteCharAt(number.roundToInt()) } }
 
+        implementations[Arithmetic.APPEND] = twoDisplayIntoIota { a, b -> DisplayIota(a.getWithNewChildren(a.getChildren().map(Text::copy).plus(b.text.copy()))) }
+        implementations[Arithmetic.UNAPPEND] = object : OperatorBasic(1, IotaMultiPredicate.all(IotaPredicate.ofType(DisplayIota.TYPE))) {
+            override fun apply(iotas: Iterable<Iota>, env: CastingEnvironment): Iterable<Iota> {
+                val args = iotas.iterator().withIndex()
+                val display = args.next().value as DisplayIota
+                val children = display.getChildren().map(Text::copy).toMutableList()
+                val removed = children.removeLastOrNull()?.let(::DisplayIota) ?: NullIota()
+                return listOf(DisplayIota(display.getWithNewChildren(children)), removed)
+            }
+        }
+
         implementations[Arithmetic.REPLACE] = object : OperatorBasic(3, IotaMultiPredicate.triple(IotaPredicate.ofType(DisplayIota.TYPE), IotaPredicate.ofType(HexIotaTypes.DOUBLE), IotaPredicate.ofType(DisplayIota.TYPE))) {
             override fun apply(iotas: Iterable<Iota>, env: CastingEnvironment): Iterable<Iota> {
                 val args = iotas.iterator().withIndex()
