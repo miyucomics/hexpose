@@ -11,6 +11,7 @@ import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.text.LiteralTextContent
+import net.minecraft.text.MutableText
 import net.minecraft.text.Text
 import net.minecraft.text.TranslatableTextContent
 import net.minecraft.util.Formatting
@@ -29,7 +30,26 @@ class DisplayIota(text: Text) : Iota(TYPE, text) {
 		}
 	}
 
+	fun modifyRootBuilder(modifier: (StringBuilder) -> StringBuilder): DisplayIota {
+		val builder = StringBuilder(getRoot())
+		modifier(builder)
+		return getWithNewRoot(builder.toString())
+	}
+
+	fun modifyRootString(modifier: (StringBuilder) -> String): DisplayIota {
+		val builder = modifier(StringBuilder(getRoot()))
+		return getWithNewRoot(builder)
+	}
+
 	fun getChildren(): List<Text> = this.text.siblings
+
+	fun getWithNewRoot(root: String): DisplayIota {
+		val result = MutableText.of(LiteralTextContent(root))
+		result.style = this.text.style
+		result.siblings.clear()
+		result.siblings.addAll(this.text.siblings.map(Text::copy))
+		return DisplayIota(result)
+	}
 
 	fun getWithNewChildren(children: List<Text>): Text {
 		return this.text.copy().also {
