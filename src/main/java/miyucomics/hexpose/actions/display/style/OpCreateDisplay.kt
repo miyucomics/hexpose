@@ -1,12 +1,10 @@
-package miyucomics.hexpose.actions.display
+package miyucomics.hexpose.actions.display.style
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import miyucomics.hexpose.iotas.DisplayIota
 import miyucomics.hexpose.iotas.asActionResult
-import miyucomics.hexpose.utils.sanitize
-import net.minecraft.text.LiteralTextContent
 import net.minecraft.text.Text
 
 object OpCreateDisplay : ConstMediaAction {

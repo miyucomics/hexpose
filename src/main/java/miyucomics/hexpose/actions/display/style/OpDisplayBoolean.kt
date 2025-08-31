@@ -1,28 +1,19 @@
-package miyucomics.hexpose.actions.display
+package miyucomics.hexpose.actions.display.style
 
 import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.OperationResult
 import at.petrak.hexcasting.api.casting.eval.vm.CastingImage
 import at.petrak.hexcasting.api.casting.eval.vm.SpellContinuation
-import at.petrak.hexcasting.api.casting.iota.DoubleIota
+import at.petrak.hexcasting.api.casting.iota.BooleanIota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
 import miyucomics.hexpose.iotas.DisplayIota
-import net.minecraft.util.Identifier
-import kotlin.math.abs
-import kotlin.math.roundToInt
+import net.minecraft.text.Style
 
-object OpDisplayFont : Action {
-	val INT_TO_FONT = mapOf(
-		0 to Identifier("default"),
-		1 to Identifier("alt"),
-		2 to Identifier("illageralt")
-	)
-	val FONT_TO_INT = INT_TO_FONT.keys.associateBy(INT_TO_FONT::get)
-
+class OpDisplayBoolean(val getter: (Style) -> Boolean?, val setter: Style.(Boolean?) -> Style) : Action {
 	override fun operate(env: CastingEnvironment, image: CastingImage, continuation: SpellContinuation): OperationResult {
 		val stack = image.stack.toMutableList()
 		if (stack.isEmpty())
@@ -31,22 +22,24 @@ object OpDisplayFont : Action {
 		val top = stack.last()
 		if (top is DisplayIota) {
 			stack.removeAt(stack.lastIndex)
-			stack.add(DoubleIota(FONT_TO_INT[top.text.style.font]!!.toDouble()))
-			return OperationResult(image.copy(stack = stack).withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
+			val result = getter(top.text.style)
+			when (result) {
+                true -> stack.add(BooleanIota(true))
+                false -> stack.add(BooleanIota(false))
+                null -> stack.add(NullIota())
+            }
+			val newImage = image.copy(stack = stack, opsConsumed = image.opsConsumed + 1)
+			return OperationResult(newImage, listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 		}
 
 		if (stack.size == 1)
 			throw MishapNotEnoughArgs(2, 1)
 
-		val font = when (val raw = stack[stack.lastIndex]) {
-			is DoubleIota -> {
-				if (raw.double.roundToInt() !in 0 until FONT_TO_INT.size)
-					throw MishapInvalidIota.of(raw, 0, "int.positive.less", FONT_TO_INT.size)
-				INT_TO_FONT[raw.double.roundToInt()]
-			}
+        val arg = when (val raw = stack[stack.lastIndex]) {
+			is BooleanIota -> raw.bool
 			is NullIota -> null
-            else -> throw MishapInvalidIota.of(raw, 0, "number_or_null")
-        }
+			else -> throw MishapInvalidIota.of(raw, 0, "boolean_or_null")
+		}
 
 		val text = stack[stack.lastIndex - 1]
 		if (text !is DisplayIota)
@@ -54,7 +47,7 @@ object OpDisplayFont : Action {
 
 		stack.removeAt(stack.lastIndex)
 		stack.removeAt(stack.lastIndex)
-		stack.add(DisplayIota.createSanitized(text.text.copy().setStyle(text.text.style.withFont(font))))
+		stack.add(DisplayIota.createSanitized(text.text.copy().setStyle(text.text.style.setter(arg))))
 		return OperationResult(image.copy(stack = stack).withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }
