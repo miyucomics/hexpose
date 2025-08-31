@@ -1,4 +1,4 @@
-package miyucomics.hexpose.actions.display
+package miyucomics.hexpose.actions.display.style
 
 import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment

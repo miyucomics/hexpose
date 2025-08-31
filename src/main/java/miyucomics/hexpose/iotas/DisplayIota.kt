@@ -22,13 +22,7 @@ class DisplayIota(text: Text) : Iota(TYPE, text) {
 	val text = this.payload as Text
 	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is DisplayIota) && this.text == that.text
 
-	fun getRoot(): String {
-        return when (val content = this.text.content) {
-			is LiteralTextContent -> content.string
-			is TranslatableTextContent -> String.format(Language.getInstance().get(content.key), content.args)
-			else -> "arimfexendrapuse"
-		}
-	}
+	fun getRoot() = this.text.getRoot()
 
 	fun modifyRootBuilder(modifier: (StringBuilder) -> StringBuilder): DisplayIota {
 		val builder = StringBuilder(getRoot())
@@ -92,4 +86,12 @@ fun List<Iota>.getDisplay(idx: Int, argc: Int = 0): DisplayIota {
 	if (x is DisplayIota)
 		return x
 	throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "display")
+}
+
+fun Text.getRoot(): String {
+	return when (val content = this.content) {
+		is LiteralTextContent -> content.string
+		is TranslatableTextContent -> String.format(Language.getInstance().get(content.key), content.args)
+		else -> "arimfexendrapuse"
+	}
 }

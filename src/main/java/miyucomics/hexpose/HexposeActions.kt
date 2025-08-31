@@ -18,7 +18,16 @@ import at.petrak.hexcasting.common.lib.hex.HexActions
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import miyucomics.hexpose.actions.blockstates.OpGetBlockProperties
 import miyucomics.hexpose.actions.blockstates.OpQueryBlockProperty
-import miyucomics.hexpose.actions.display.*
+import miyucomics.hexpose.actions.display.OpCompareStyles
+import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
+import miyucomics.hexpose.actions.display.OpParseDisplay
+import miyucomics.hexpose.actions.display.chat.OpGetChat
+import miyucomics.hexpose.actions.display.chat.OpGetMessage
+import miyucomics.hexpose.actions.display.style.OpCreateDisplay
+import miyucomics.hexpose.actions.display.style.OpDisplayBoolean
+import miyucomics.hexpose.actions.display.style.OpDisplayChildren
+import miyucomics.hexpose.actions.display.style.OpDisplayColor
+import miyucomics.hexpose.actions.display.style.OpDisplayFont
 import miyucomics.hexpose.actions.identifier.OpClassify
 import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
@@ -54,8 +63,6 @@ import net.minecraft.util.math.ColorHelper
 import net.minecraft.util.math.Direction
 import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
-import kotlin.math.max
-import kotlin.math.min
 
 object HexposeActions {
 	@JvmStatic
@@ -74,7 +81,7 @@ object HexposeActions {
 		})
 
 		register("create_display", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateDisplay)
-		register("display_children", "dwdeqqqqqawq", HexDir.SOUTH_EAST, OpDisplayChildren)
+		register("display_children", "dwdeqqqqq", HexDir.SOUTH_EAST, OpDisplayChildren)
 		register("display_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpDisplayColor)
 		register("display_bold", "awaqeeeeedd", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::bold, Style::withBold))
 		register("display_italics", "awaqeeeeede", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::italic, Style::withItalic))
@@ -82,6 +89,10 @@ object HexposeActions {
 		register("display_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::strikethrough, Style::withStrikethrough))
 		register("display_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::obfuscated, Style::withObfuscated))
 		register("display_font", "awaqeeeeedaqa", HexDir.SOUTH_WEST, OpDisplayFont)
+
+		register("compare_style", "dwdeqqqqqdda", HexDir.SOUTH_EAST, OpCompareStyles)
+		register("parse_display", "dwdewqqqwqqaeq", HexDir.SOUTH_EAST, OpParseDisplay)
+		register("disintegrate_display", "dwdeqqqqqdeee", HexDir.SOUTH_EAST, OpDisintegrateDisplay)
 
 		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast)
 		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast)
