@@ -6,7 +6,7 @@ class RingBuffer<T>(private val capacity: Int) {
 	fun add(item: T) {
 		if (buffer.size == capacity)
 			buffer.removeAt(0)
-		buffer.addLast(item)
+		buffer.add(item)
 	}
 
 	fun buffer() = buffer

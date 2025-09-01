@@ -21,6 +21,7 @@ import miyucomics.hexpose.actions.blockstates.OpQueryBlockProperty
 import miyucomics.hexpose.actions.display.OpCompareStyles
 import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
 import miyucomics.hexpose.actions.display.OpParseDisplay
+import miyucomics.hexpose.actions.display.OpSplitDisplay
 import miyucomics.hexpose.actions.display.chat.OpGetChat
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
 import miyucomics.hexpose.actions.display.style.OpCreateDisplay
@@ -92,6 +93,7 @@ object HexposeActions {
 
 		register("compare_style", "dwdeqqqqqdda", HexDir.SOUTH_EAST, OpCompareStyles)
 		register("parse_display", "dwdewqqqwqqaeq", HexDir.SOUTH_EAST, OpParseDisplay)
+		register("split_display", "dwdeqqqwqqqqae", HexDir.SOUTH_EAST, OpSplitDisplay)
 		register("disintegrate_display", "dwdeqqqqqdeee", HexDir.SOUTH_EAST, OpDisintegrateDisplay)
 
 		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast)
