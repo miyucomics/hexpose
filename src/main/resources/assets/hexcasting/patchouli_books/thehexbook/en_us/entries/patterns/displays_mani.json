@@ -23,6 +23,14 @@
 		},
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "hexpose:split_display",
+			"anchor": "hexpose:split_display",
+			"input": "display, display",
+			"output": "list of displays",
+			"text": "hexpose.page.split_display.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "hexpose:disintegrate_display",
 			"anchor": "hexpose:disintegrate_display",
 			"input": "display",
@@ -32,6 +40,14 @@
 		{
 			"type": "patchouli:text",
 			"text": "hexpose.page.displays_mani.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexcasting:abs",
+			"anchor": "hexcasting:abs",
+			"input": "display",
+			"output": "number",
+			"text": "hexpose.page.abs_text.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -66,13 +82,6 @@
 			"text": "hexpose.page.mul_text.summary"
 		},
 		{
-			"type": "hexcasting:pattern",
-			"op_id": "hexcasting:abs",
-			"anchor": "hexcasting:abs",
-			"input": "display",
-			"output": "number",
-			"text": "hexpose.page.abs_text.summary"
-		},{
 			"type": "hexcasting:pattern",
 			"op_id": "hexcasting:index",
 			"anchor": "hexcasting:index",
