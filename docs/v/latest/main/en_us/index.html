@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/4003c72b7d42b80bd98751794a7242d89beb7c02"
+      href="https://github.com/miyucomics/hexpose/tree/7590ba8a9186df8e21135058224bef6c17f229ef"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -160,6 +160,13 @@
       loading="lazy"
       class="item-texture  texture pixelated"
     > Display Iota</a></li>
+          <li><a href="#patterns/displays_mani" class="toc-elem "><img
+      title="Feather"
+      alt="Feather"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/feather.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Display Iota Manipulation</a></li>
           <li><a href="#patterns/special_raycasts" class="toc-elem "><img
       title="Spectral Arrow"
       alt="Spectral Arrow"
@@ -495,7 +502,7 @@
       <p>Takes an iota and returns a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> representing it. If taking a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>, strips all the styles of it.</p>
   </div>
 <br />
-    <p>The patterns that interact with <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> are strangely multifaceted. While resembling distillations, they are actually <i>gambits</i>.</p><p>If their described arguments are passed in, they modify the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> according to their speciality (example of modification included).</p><p>If the top of the stack is just a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> however, they push the current value of the setting that they target.</p>
+    <p>The patterns that interact with <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> are strangely multifaceted. While resembling distillations, they are actually <i>gambits</i>.</p><p>If their described arguments are passed in, they modify the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s root according to their speciality (example of modification included).</p><p>If the top of the stack is just a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> however, they push the current value of the setting that they target.</p>
 <br />
   <div id="patterns/displays@hexpose:display_children" class="">
 <h4 class="pattern-title">Parsing Purification (display → list of displays)<a
@@ -545,10 +552,10 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="dwdeqqqqqawq"
+        data-string="dwdeqqqqq"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dwdeqqqqqawq</canvas>
+      >Your browser does not support visualizing patterns. Pattern code: dwdeqqqqq</canvas>
   </details>
       <p>Gets or sets a list of <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> corresponding to children of the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>.</p>
   </div>
@@ -945,6 +952,810 @@
       >Your browser does not support visualizing patterns. Pattern code: awaqeeeeeda</canvas>
   </details>
       <p>Gets or sets a boolean, corresponding to whether it is obfusca<span class="obfuscated">ted</span>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+  </div>
+<br />
+</div>
+<div id="patterns/displays_mani" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="Feather"
+      alt="Feather"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/feather.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Display Iota Manipulation<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/displays_mani"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/displays_mani@hexpose:compare_style" class="">
+<h4 class="pattern-title">Stylistic Distillation (display, display → boolean)<a
+    href="#patterns/displays_mani@hexpose:compare_style"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dwdeqqqqqdda"
+        data-start="south_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dwdeqqqqqdda</canvas>
+  </details>
+      <p>Returns whether the two <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> have the same style.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexpose:parse_display" class="">
+<h4 class="pattern-title">Calculator Purification (display → number/null)<a
+    href="#patterns/displays_mani@hexpose:parse_display"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dwdewqqqwqqaeq"
+        data-start="south_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dwdewqqqwqqaeq</canvas>
+  </details>
+      <p>Returns the number the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s root says, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it can not be determined.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexpose:split_display" class="">
+<h4 class="pattern-title">Cleaving Distillation (display, display → list of displays)<a
+    href="#patterns/displays_mani@hexpose:split_display"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dwdeqqqwqqqqae"
+        data-start="south_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dwdeqqqwqqqqae</canvas>
+  </details>
+      <p><br />Uses the second <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> as a delimiter to slice up the first into a list of <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a>. The elements do not retain their children.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexpose:disintegrate_display" class="">
+<h4 class="pattern-title">Streaming Purification (display → list of displays)<a
+    href="#patterns/displays_mani@hexpose:disintegrate_display"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dwdeqqqqqdeee"
+        data-start="south_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dwdeqqqqqdeee</canvas>
+  </details>
+      <p>Transforms a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> into a long stream of styled single characters for parsing purposes, including its children.</p>
+  </div>
+<br />
+    <p>A number of common patterns also work on <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>, listed afterwards. However, it is worth noting that these patterns only operate on the &#34;root&#34; text, that is the textual content of the highest level; it will not for instance include the added length of children when determining length, nor reverse the text of children.</p>
+<br />
+  <div id="patterns/displays_mani@hexcasting:abs" class="">
+<h4 class="pattern-title">Length Purification (display → number)<a
+    href="#patterns/displays_mani@hexcasting:abs"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="wqaqw"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: wqaqw</canvas>
+  </details>
+      <p>Returns the length of the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:append" class="">
+<h4 class="pattern-title">Integration Distillation (display, display → display)<a
+    href="#patterns/displays_mani@hexcasting:append"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="edqde"
+        data-start="south_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: edqde</canvas>
+  </details>
+      <p>Adds the second <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> as a child of the first <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:unappend" class="">
+<h4 class="pattern-title">Derivation Decomposition (display → display, display)<a
+    href="#patterns/displays_mani@hexcasting:unappend"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaeaq"
+        data-start="north_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qaeaq</canvas>
+  </details>
+      <p>Returns a copy with the provided <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text repeated.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:add" class="">
+<h4 class="pattern-title">Additive Distillation (display, display → display)<a
+    href="#patterns/displays_mani@hexcasting:add"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="waaw"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: waaw</canvas>
+  </details>
+      <p>Append the second&#39;s text to the first&#39;s. Keeps the style of the first.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:mul" class="">
+<h4 class="pattern-title">Multiplicative Dstl. (display, number → display)<a
+    href="#patterns/displays_mani@hexcasting:mul"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="waqaw"
+        data-start="south_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: waqaw</canvas>
+  </details>
+      <p>Returns a copy with the provided <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text repeated.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:index" class="">
+<h4 class="pattern-title">Selection Distillation (display, number → display)<a
+    href="#patterns/displays_mani@hexcasting:index"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="deeed"
+        data-start="north_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: deeed</canvas>
+  </details>
+      <p>Returns the single character at the given position of the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text and keeps children.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:slice" class="">
+<h4 class="pattern-title">Selection Exaltation (display, number, number → display)<a
+    href="#patterns/displays_mani@hexcasting:slice"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaeaqwded"
+        data-start="north_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qaeaqwded</canvas>
+  </details>
+      <p><br />Extracts a range from the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text and keeps children.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:replace" class="">
+<h4 class="pattern-title">Surgeon&#39;s Exaltation (display, number, display → display)<a
+    href="#patterns/displays_mani@hexcasting:replace"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="wqaeaqw"
+        data-start="north_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: wqaeaqw</canvas>
+  </details>
+      <p><br />Replaces a single character from the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text with a potentially larger string and keeps children.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:remove_from" class="">
+<h4 class="pattern-title">Excisor&#39;s Distillation (display, number → display)<a
+    href="#patterns/displays_mani@hexcasting:remove_from"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="edqdewaqa"
+        data-start="south_west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: edqdewaqa</canvas>
+  </details>
+      <p>Removes a single character from the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text and keeps children.</p>
+  </div>
+<br />
+  <div id="patterns/displays_mani@hexcasting:reverse" class="">
+<h4 class="pattern-title">Retrograde Purification (display → display)<a
+    href="#patterns/displays_mani@hexcasting:reverse"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qqqaede"
+        data-start="east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qqqaede</canvas>
+  </details>
+      <p>Reverses the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text and keeps children.</p>
   </div>
 <br />
 </div>
