@@ -71,7 +71,7 @@ class DisplayIota(text: Text) : Iota(TYPE, text) {
 			override fun deserialize(tag: NbtElement, world: ServerWorld): DisplayIota? {
 				if (!tag.asCompound.contains("text"))
 					return null
-				return DisplayIota(Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!)
+				return DisplayIota(Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!.formatted(Formatting.RESET))
 			}
 		}
 
