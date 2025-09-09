@@ -244,7 +244,7 @@
 	"hexpose.page.item_variant.summary": "If this item is subceptible to $(l:patterns/spells/cyclevariant)$(action)Caster's Glamour$(), pushes the index of the current form it's taking on. Otherwise pushes $(l:casting/influences)$(thing)Null$().",
 	"hexcasting.action.hexpose:item_variant_max": "Glamour Purification II",
 	"hexpose.page.item_variant_max.summary": "If this item is subceptible to $(l:patterns/spells/cyclevariant)$(action)Caster's Glamour$(), pushes the number of forms it's capable of. Otherwise pushes $(l:casting/influences)$(thing)Null$().",
-	"hexcasting.action.hexpose:read_book": "Reading Purification",
+	"hexcasting.action.hexpose:read_book": "Literature Purification",
 	"hexpose.page.read_book.summary": "Pushes a list of $(l:patterns/displays)$(thing)display iotas$() contained inside a book or $(l:casting/influences)$(thing)Null$() if it isn't a book.",
 	"hexcasting.action.hexpose:book_sources": "Bibliography Purification",
 	"hexpose.page.book_sources.summary": "Pushes the author of a book and its generation number.",
