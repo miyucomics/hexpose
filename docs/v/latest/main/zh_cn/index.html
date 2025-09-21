@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/2e90cf5babb7677a26ca211bd66ac2777e5518cd"
+      href="https://github.com/miyucomics/hexpose/tree/37f8651b54aa812f1c1db12e580ccf45875e1941"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -159,14 +159,14 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    > Display Iota</a></li>
+    > 文形 Iota</a></li>
           <li><a href="#patterns/displays_mani" class="toc-elem "><img
       title="羽毛"
       alt="羽毛"
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/feather.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    > Display Iota Manipulation</a></li>
+    > 文形 Iota 操纵</a></li>
           <li><a href="#patterns/special_raycasts" class="toc-elem "><img
       title="光灵箭"
       alt="光灵箭"
@@ -433,7 +433,7 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/writable_book.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    >Display Iota<a
+    >文形 Iota<a
     href="#table-of-contents"
     class="permalink small"
     title="Jump to top"
@@ -442,12 +442,12 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p><a href="#patterns/displays"><span style="color: #8d6acc">Display iotas</span></a> encode stylized text using a recursive model. The iota holds text, styling for that text, <i>and</i> other child <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a>, which may themselves contain children and have differing styles than the parent. Children are appended sequentially after the parent.</p>
+    <p><a href="#patterns/displays"><span style="color: #8d6acc">文形 iota</span></a> 使用一套专用于文本及其样式的递归式编码模型。这类 iota 记录了文本、文本样式、<i>以及</i>子<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的信息；子文形也可具有子文形，且子文形的样式不必跟随父文形。子文形会按次序拼接在父文形后方。</p>
 <br />
-    <p>The properties of the parent&#39;s style propagate down to their children, provided the child has an unset value for that property. For example, the children of a red-colored <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> will be red, unless a child has a style for another color. That second color is then the color that gets passed down to <i>its</i> children.</p>
+    <p>若子文学某属性的值未给定，则会继承父文形该样式的属性。例如，红色<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的子文形也会是红色，除非子文形设置了其他颜色样式。之后，子文形会将最优先设置的颜色继承给<i>它</i>的子文形。</p>
 <br />
   <div id="patterns/displays@hexpose:create_display" class="">
-<h4 class="pattern-title">Reading Purification (any → display)<a
+<h4 class="pattern-title">阅读之纯化 (any → display)<a
     href="#patterns/displays@hexpose:create_display"
     class="permalink small"
     title="Permalink"
@@ -499,13 +499,13 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeee</canvas>
   </details>
-      <p>Takes an iota and returns a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> representing it. If taking a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>, strips all the styles of it.</p>
+      <p>接受一个 iota，返回代表它的<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>。若传入<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>，则去除所有样式。</p>
   </div>
 <br />
-    <p>The patterns that interact with <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> are strangely multifaceted. While resembling distillations, they are actually <i>gambits</i>.</p><p>If their described arguments are passed in, they modify the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s root according to their speciality (example of modification included).</p><p>If the top of the stack is just a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> however, they push the current value of the setting that they target.</p>
+    <p>和<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>交互的图案有着奇异的多面性。它们看上去像是馏化，但实际上是<i>策略</i>。</p><p>传入对应的参数后，这些图案会对其根<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>做出对应的改动（各页有附例）。</p><p>如果栈顶就只是一个<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>，那么这些图案会返回对应样式当前的值。</p>
 <br />
   <div id="patterns/displays@hexpose:display_children" class="">
-<h4 class="pattern-title">Parsing Purification (display → list of displays)<a
+<h4 class="pattern-title">解析之纯化 (display → list of displays)<a
     href="#patterns/displays@hexpose:display_children"
     class="permalink small"
     title="Permalink"
@@ -557,11 +557,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdeqqqqq</canvas>
   </details>
-      <p>Gets or sets a list of <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> corresponding to children of the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>.</p>
+      <p>获取<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的子<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>列表，或将列表中的文形设为其子文形。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:display_color" class="">
-<h4 class="pattern-title">Lumière Gambit (display, vector → display)<a
+<h4 class="pattern-title">卢米埃尔之策略 (display, vector → display)<a
     href="#patterns/displays@hexpose:display_color"
     class="permalink small"
     title="Permalink"
@@ -613,11 +613,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeewded</canvas>
   </details>
-      <p>Gets or sets a color encoded as a vector whose components range from 0 to 1. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+      <p>获取或设定文形的颜色，格式为各分量在 0 到 1 之间的向量。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:display_font" class="">
-<h4 class="pattern-title">Calligrapher&#39;s Gambit (display, number → display)<a
+<h4 class="pattern-title">书法师之策略 (display, number → display)<a
     href="#patterns/displays@hexpose:display_font"
     class="permalink small"
     title="Permalink"
@@ -669,13 +669,13 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedaqa</canvas>
   </details>
-      <p>Gets or sets a number, corresponding to the font a text is drawn in. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+      <p>获取或设定文形的字体，格式为一个数。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
-    <p>0, 1, and 2 are the current fonts that I know of, corresponding to standard appearance, the runes I see surrounding an <span style="color: #8d6acc">Enchanting Table</span>, and a strange variant of it that is allegedly used by ancient villagers.</p>
+    <p>我目前所知的字体分别对应 0、1、2。0 为标准字体，1 是能在<span style="color: #8d6acc">附魔台</span>周围看见的符文，2 对应传闻中古代村民所用的奇怪符文。</p>
 <br />
   <div id="patterns/displays@hexpose:display_bold" class="">
-<h4 class="pattern-title">Gothic Gambit (display, boolean → display)<a
+<h4 class="pattern-title">哥特式之策略 (display, boolean → display)<a
     href="#patterns/displays@hexpose:display_bold"
     class="permalink small"
     title="Permalink"
@@ -727,11 +727,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedd</canvas>
   </details>
-      <p>Gets or sets a boolean, corresponding to whether it is <strong>bold</strong>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+      <p>获取或设定文形为<strong>粗体</strong>与否，格式为一个布尔值。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:display_italics" class="">
-<h4 class="pattern-title">Manutius&#39; Gambit (display, boolean → display)<a
+<h4 class="pattern-title">马努提乌斯之策略 (display, boolean → display)<a
     href="#patterns/displays@hexpose:display_italics"
     class="permalink small"
     title="Permalink"
@@ -783,11 +783,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeede</canvas>
   </details>
-      <p>Gets or sets a boolean, corresponding to whether it is in <i>italics</i>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+      <p>获取或设定文形为<i>斜体</i>与否，格式为一个布尔值。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:display_underline" class="">
-<h4 class="pattern-title">Notetaker&#39;s Gambit (display, boolean → display)<a
+<h4 class="pattern-title">记录员之策略 (display, boolean → display)<a
     href="#patterns/displays@hexpose:display_underline"
     class="permalink small"
     title="Permalink"
@@ -839,11 +839,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedw</canvas>
   </details>
-      <p>Gets or sets a boolean, corresponding to whether it is <span style="text-decoration: underline">underlined</span>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+      <p>获取或设定文形有无<span style="text-decoration: underline">下划线</span>，格式为一个布尔值。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:display_strikethrough" class="">
-<h4 class="pattern-title">Editor&#39;s Gambit (display, boolean → display)<a
+<h4 class="pattern-title">编辑员之策略 (display, boolean → display)<a
     href="#patterns/displays@hexpose:display_strikethrough"
     class="permalink small"
     title="Permalink"
@@ -895,11 +895,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeedq</canvas>
   </details>
-      <p>Gets or sets a boolean, corresponding to whether it has been <s>struck through</s>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+      <p>获取或设定文形有无<s>删除线</s>，格式为一个布尔值。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:display_obfuscated" class="">
-<h4 class="pattern-title">Censor&#39;s Gambit (display, boolean → display)<a
+<h4 class="pattern-title">审查员之策略 (display, boolean → display)<a
     href="#patterns/displays@hexpose:display_obfuscated"
     class="permalink small"
     title="Permalink"
@@ -951,7 +951,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeeda</canvas>
   </details>
-      <p>Gets or sets a boolean, corresponding to whether it is obfusca<span class="obfuscated">ted</span>. Pass in <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> to defer to parent.</p>
+      <p>获取或设定文形为随机<span class="obfuscated">文本</span>与否，格式为一个布尔值。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
 </div>
@@ -963,7 +963,7 @@
       src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/feather.png"
       loading="lazy"
       class="item-texture  texture pixelated"
-    >Display Iota Manipulation<a
+    >文形 Iota 操纵<a
     href="#table-of-contents"
     class="permalink small"
     title="Jump to top"
@@ -973,7 +973,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/displays_mani@hexpose:compare_style" class="">
-<h4 class="pattern-title">Stylistic Distillation (display, display → boolean)<a
+<h4 class="pattern-title">样式之馏化 (display, display → boolean)<a
     href="#patterns/displays_mani@hexpose:compare_style"
     class="permalink small"
     title="Permalink"
@@ -1025,11 +1025,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdeqqqqqdda</canvas>
   </details>
-      <p>Returns whether the two <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> have the same style.</p>
+      <p>检验两<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的样式是否相同。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexpose:parse_display" class="">
-<h4 class="pattern-title">Calculator Purification (display → number/null)<a
+<h4 class="pattern-title">计算器之纯化 (display → number/null)<a
     href="#patterns/displays_mani@hexpose:parse_display"
     class="permalink small"
     title="Permalink"
@@ -1081,11 +1081,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdewqqqwqqaeq</canvas>
   </details>
-      <p>Returns the number the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s root says, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it can not be determined.</p>
+      <p>返回根<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>对应的数，若无法解析为数则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexpose:split_display" class="">
-<h4 class="pattern-title">Cleaving Distillation (display, display → list of displays)<a
+<h4 class="pattern-title">剪文之馏化 (display, display → list of displays)<a
     href="#patterns/displays_mani@hexpose:split_display"
     class="permalink small"
     title="Permalink"
@@ -1137,11 +1137,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdeqqqwqqqqae</canvas>
   </details>
-      <p><br />Uses the second <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> as a delimiter to slice up the first into a list of <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a>. The elements do not retain their children.</p>
+      <p><br />以第二个<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>为分隔符，将第一个<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>拆分为文形列表。两参数的子文形不会保留。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexpose:disintegrate_display" class="">
-<h4 class="pattern-title">Streaming Purification (display → list of displays)<a
+<h4 class="pattern-title">文形流之纯化 (display → list of displays)<a
     href="#patterns/displays_mani@hexpose:disintegrate_display"
     class="permalink small"
     title="Permalink"
@@ -1193,10 +1193,10 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdeqqqqqdeee</canvas>
   </details>
-      <p>Transforms a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> into a long stream of styled single characters for parsing purposes, including its children.</p>
+      <p>将<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>转换成一长串单个带样式字符组成的流，以便解析等功能使用。子文形也会经历此变换。</p>
   </div>
 <br />
-    <p>A number of common patterns also work on <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>, listed afterwards. However, it is worth noting that these patterns only operate on the &#34;root&#34; text, that is the textual content of the highest level; it will not for instance include the added length of children when determining length, nor reverse the text of children.</p>
+    <p>许多普通图案也对<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>有效，具体见后页。不过需要注意的是，这些图案只作用于“根”文形，也即最高层次的文本内容。比如说在判定长度时，接在后方的子文形不会纳入统计；又比如反转操作不会反转子文形。</p>
 <br />
   <div id="patterns/displays_mani@hexcasting:abs" class="">
 <h4 class="pattern-title">长度之纯化 (display → number)<a
@@ -1251,7 +1251,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wqaqw</canvas>
   </details>
-      <p>返回<a href="#patterns/displays"><span style="color: #8d6acc">文本 iota</span></a> 的长度。</p>
+      <p>返回<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>文本的长度。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:append" class="">
@@ -1307,7 +1307,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：edqde</canvas>
   </details>
-      <p>Adds the second <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> as a child of the first <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>.</p>
+      <p>将第二个<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>加作第一个<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的子文形。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:unappend" class="">
@@ -1363,7 +1363,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaeaq</canvas>
   </details>
-      <p>Returns a copy with the provided <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text repeated.</p>
+      <p>返回原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的副本，其文本为原文形文本重复多次。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:add" class="">
@@ -1419,7 +1419,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：waaw</canvas>
   </details>
-      <p>返回第一文本和第二文本首尾相接的<a href="#patterns/displays"><span style="color: #8d6acc">文本 iota</span></a>。</p>
+      <p>将第二参数的文本拼接在第一参数的后方。使用第一参数的样式。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:mul" class="">
@@ -1475,7 +1475,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：waqaw</canvas>
   </details>
-      <p>Returns a copy with the provided <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s text repeated.</p>
+      <p>返回原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的副本，其文本为原文形文本重复多次。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:index" class="">
@@ -1531,7 +1531,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：deeed</canvas>
   </details>
-      <p>返回文本中第 n 个字符。</p>
+      <p>返回原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>文本给定位置处的单个字符，保留子文形。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:slice" class="">
@@ -1587,7 +1587,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaeaqwded</canvas>
   </details>
-      <p>返回文本的指定切片。</p>
+      <p><br />依照所给范围从原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>中截取文本，保留子文形。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:replace" class="">
@@ -1643,7 +1643,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wqaeaqw</canvas>
   </details>
-      <p>将文本中第 n 个字符替换为另一段文本。用于替换的文本可长于 1 个字符。</p>
+      <p><br />将原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>文本中单个字符替换为新文本，可超出原有长度，保留子文形。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:remove_from" class="">
@@ -1699,7 +1699,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：edqdewaqa</canvas>
   </details>
-      <p>移除文本中第 n 个字符。</p>
+      <p>从原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的文本中移除单个字符，保留子文形。</p>
   </div>
 <br />
   <div id="patterns/displays_mani@hexcasting:reverse" class="">
@@ -1755,7 +1755,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qqqaede</canvas>
   </details>
-      <p>倒排文本。</p>
+      <p>反转原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的文本，保留子文形。</p>
   </div>
 <br />
 </div>
@@ -4862,7 +4862,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:create_stack" class="">
-<h4 class="pattern-title">献物之纯化 (identifier, number → item)<a
+<h4 class="pattern-title">献物之馏化 (identifier, number → item)<a
     href="#patterns/scrying/item@hexpose:create_stack"
     class="permalink small"
     title="Permalink"
@@ -5814,7 +5814,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:read_book" class="">
-<h4 class="pattern-title">阅读之纯化 (item → list of text)<a
+<h4 class="pattern-title">文学之纯化 (item → list of text)<a
     href="#patterns/scrying/item@hexpose:read_book"
     class="permalink small"
     title="Permalink"
