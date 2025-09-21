@@ -249,8 +249,9 @@ object HexposeActions {
 		})
 		register("item_name", "qwawqwaqea", HexDir.SOUTH_EAST, OpGetItemStackData { stack -> stack.name.asActionResult })
 		register("item_lore", "dwewdwedea", HexDir.NORTH_WEST, OpGetItemStackData { stack ->
-			val displayList = stack.nbt?.getCompound("display")?.getList("Lore", NbtElement.COMPOUND_TYPE.toInt()) ?: return@OpGetItemStackData listOf<Iota>().asActionResult
-			displayList.map { DisplayIota.createSanitized(Text.Serializer.fromJson(it.asString())!!) }
+			stack.nbt?.getCompound("display")?.getList("Lore", NbtElement.STRING_TYPE.toInt())
+				?.map { DisplayIota.createSanitized(Text.Serializer.fromJson(it.asString())!!) }?.asActionResult
+				?: return@OpGetItemStackData listOf<Iota>().asActionResult
 		})
 		register("read_book", "awqqwaqd", HexDir.WEST, OpReadBook)
 		register("book_sources", "eaedweew", HexDir.EAST, OpBookSources)
