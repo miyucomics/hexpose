@@ -1,5 +1,6 @@
 package miyucomics.hexpose.actions.misc
 
+import at.petrak.hexcasting.api.addldata.ADMediaHolder
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.circles.BlockEntityAbstractImpetus
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
@@ -64,10 +65,18 @@ object OpGetMedia : ConstMediaAction {
 				val position = args.getBlockPos(0, argc)
 				env.assertPosInRange(position)
 				val blockEntity = env.world.getBlockEntity(position)
-				if (blockEntity == null || blockEntity !is BlockEntityAbstractImpetus)
-					NullIota()
+
+				val media = when {
+					env.world.getBlockState(position).block is ADMediaHolder -> (env.world.getBlockState(position).block as ADMediaHolder).media
+					blockEntity is ADMediaHolder -> (blockEntity as ADMediaHolder).media
+					blockEntity is BlockEntityAbstractImpetus -> blockEntity.media
+					else -> null
+				}
+
+				if (media != null)
+					DoubleIota(media.toDouble() / MediaConstants.DUST_UNIT.toDouble())
 				else
-					DoubleIota(blockEntity.media.toDouble() / MediaConstants.DUST_UNIT.toDouble())
+					NullIota()
 			}
 			is ItemStackIota -> {
 				val stack = args.getItemStack(0, argc)
