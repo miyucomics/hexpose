@@ -1,0 +1,4 @@
+{
+  "parent": "hexdebug:builtin/type",
+  "use_iota_color": false
+}
