@@ -1,0 +1,6 @@
+{
+  "type": "hexdebug:item",
+  "item_path": "hexpose:stack_id",
+  "count_path": "hexpose:stack_count",
+  "tag_path": "hexpose:stack_tag"
+}
