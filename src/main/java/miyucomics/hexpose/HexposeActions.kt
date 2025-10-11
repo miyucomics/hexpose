@@ -22,7 +22,6 @@ import miyucomics.hexpose.actions.display.OpCompareStyles
 import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
 import miyucomics.hexpose.actions.display.OpParseDisplay
 import miyucomics.hexpose.actions.display.OpSplitDisplay
-import miyucomics.hexpose.actions.display.chat.OpGetChat
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
 import miyucomics.hexpose.actions.display.style.OpCreateDisplay
 import miyucomics.hexpose.actions.display.style.OpDisplayBoolean
@@ -161,7 +160,6 @@ object HexposeActions {
 			).asActionResult
 		})
 
-		register("get_chat", "dqqqaw", HexDir.SOUTH_EAST, OpGetChat)
 		register("get_message", "aeeedw", HexDir.SOUTH_WEST, OpGetMessage)
 
 		register("get_enchantments", "waqeaeqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
