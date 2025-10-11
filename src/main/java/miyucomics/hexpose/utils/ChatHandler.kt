@@ -16,11 +16,6 @@ object ChatHandler {
 		ServerMessageEvents.CHAT_MESSAGE.register { message, sender, _ -> chatLog.add(Message(sender.name, message.content, message.timestamp)) }
 	}
 
-	fun getLog(): List<Iota> {
-		val now = Instant.now()
-		return chatLog.buffer().map { ListIota(it.intoHex(now)) }
-	}
-
 	fun getLast(): List<Iota> = chatLog.last()?.intoHex(Instant.now()) ?: listOf(NullIota())
 
 	private val chatLog = RingBuffer<Message>(32)
