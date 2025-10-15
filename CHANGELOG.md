@@ -11,6 +11,11 @@
 - fixed Offer Purification sampling count from incorrect position
 - renamed text iotas to display iotas to avoid confusion with strings
 - removed Newspaper Reflection
+  - no other pattern does the same "retroactive" effect and I think I'd be cool if the player had to handle it
+- removed piercing raycasts
+  - since it's all just math, I just think it'd be neat if the player had to do it instead
+  - there will be replacement patterns that return the list of things to check and the direction so it's not a complete loss
+  - in fact, it can be thought of as a benefit due to increased flexibility when it is the player that has to handle it
 
 ## 1.0.0
 - initial release

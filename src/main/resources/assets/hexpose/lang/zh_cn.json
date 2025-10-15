@@ -93,16 +93,6 @@
 	"hexpose.page.remove_text.summary": "从原$(l:patterns/displays)$(thing)文形$()的文本中移除单个字符，保留子文形。",
 	"hexpose.page.rev_text.summary": "反转原$(l:patterns/displays)$(thing)文形$()的文本，保留子文形。",
 
-	"hexpose.page.special_raycasts.title": "特殊射线追踪",
-	"hexcasting.action.hexpose:fluid_raycast": "占水之馏化",
-	"hexpose.page.fluid_raycast.summary": "与$(l:patterns/basics#hexcasting:raycast)$(action)弓箭手之馏化$()类似，但只会瞄准液体，无视其余方块。",
-	"hexcasting.action.hexpose:fluid_surface_raycast": "睡莲之馏化",
-	"hexpose.page.fluid_surface_raycast.summary": "与$(l:patterns/basics#hexcasting:raycast/axis)$(action)建筑师之馏化$()类似，但只会瞄准液体，无视其余方块。",
-	"hexcasting.action.hexpose:piercing_raycast": "轨道炮之提整",
-	"hexpose.page.piercing_raycast.summary": "与$(l:patterns/basics#hexcasting:raycast)$(action)弓箭手之馏化$()类似，但会额外接受一个标识。在抵达标识对应的方块前，此操作会无视其他方块。",
-	"hexcasting.action.hexpose:piercing_surface_raycast": "激光之提整",
-	"hexpose.page.piercing_surface_raycast.summary": "与$(l:patterns/basics#hexcasting:raycast/axis)$(action)建筑师之馏化$()类似，但会额外接受一个标识。在抵达标识对应的方块前，此操作会无视其他方块。",
-
 	"hexpose.category.scrying": "探知",
 	"hexpose.category.scrying.desc": "我偶然间触及了一条完全将$(media)媒质$()用于获取和处理世界信息的学术分支。$(br2)虽然这些操作在大多数$(hex)咒术$()中没什么大用处，但有它们在也不错，我将来也许会用到。",
 

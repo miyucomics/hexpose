@@ -33,10 +33,6 @@ import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.misc.*
-import miyucomics.hexpose.actions.raycast.OpFluidRaycast
-import miyucomics.hexpose.actions.raycast.OpFluidSurfaceRaycast
-import miyucomics.hexpose.actions.raycast.OpPiercingRaycast
-import miyucomics.hexpose.actions.raycast.OpPiercingSurfaceRaycast
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
@@ -94,11 +90,6 @@ object HexposeActions {
 		register("parse_display", "dwdewqqqwqqaeq", HexDir.SOUTH_EAST, OpParseDisplay)
 		register("split_display", "dwdeqqqwqqqqae", HexDir.SOUTH_EAST, OpSplitDisplay)
 		register("disintegrate_display", "dwdeqqqqqdeee", HexDir.SOUTH_EAST, OpDisintegrateDisplay)
-
-		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast)
-		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast)
-		register("piercing_raycast", "wqqddqeqddq", HexDir.EAST, OpPiercingRaycast)
-		register("piercing_surface_raycast", "weeaaeqeaae", HexDir.EAST, OpPiercingSurfaceRaycast)
 
 		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
 		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
