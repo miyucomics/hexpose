@@ -93,16 +93,6 @@
 	"hexpose.page.remove_text.summary": "Removes a single character from the $(l:patterns/displays)$(thing)display iota$()'s text and keeps children.",
 	"hexpose.page.rev_text.summary": "Reverses the $(l:patterns/displays)$(thing)display iota$()'s text and keeps children.",
 
-	"hexpose.page.special_raycasts.title": "Special Raycasts",
-	"hexcasting.action.hexpose:fluid_raycast": "Dousing Distillation",
-	"hexpose.page.fluid_raycast.summary": "Works similar to $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation$() but targets only liquids, piercing through all other blocks.",
-	"hexcasting.action.hexpose:fluid_surface_raycast": "Lilypad Distillation",
-	"hexpose.page.fluid_surface_raycast.summary": "Works similar to $(l:patterns/basics#hexcasting:raycast/axis)$(action)Architect's Distillation$() but targets only liquids, piercing through all other blocks.",
-	"hexcasting.action.hexpose:piercing_raycast": "Railgun Exaltation",
-	"hexpose.page.piercing_raycast.summary": "Works similar to $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation$() but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier.",
-	"hexcasting.action.hexpose:piercing_surface_raycast": "Laser Exaltation",
-	"hexpose.page.piercing_surface_raycast.summary": "Works similar to $(l:patterns/basics#hexcasting:raycast/axis)$(action)Architect's Distillation$() but accepts an additional identifier. It will pierce all blocks until it hits the block specified by the identifier.",
-
 	"hexpose.category.scrying": "Scrying",
 	"hexpose.category.scrying.desc": "I have stumbled upon a branch of manipulating _media entirely focused around information about the world.$(br2)While likely not useful for the majority of _Hexes, these will be convenient to have, should I ever need them.",
 
