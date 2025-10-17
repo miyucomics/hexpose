@@ -194,7 +194,7 @@ object HexposeActions {
 		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
 		register("entity_vehicle", "eqqedwewew", HexDir.EAST, OpGetEntityData { entity -> entity.vehicle.asActionResult })
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map(::EntityIota).asActionResult })
-		register("angry_at", "aqwedewwded", HexDir.SOUTH_EAST, OpGetAngryAt)
+		register("angry_at", "aqwedewwded", HexDir.SOUTH_WEST, OpGetAngryAt)
 		register("angry_time", "aqawwqaqwed", HexDir.NORTH_EAST, OpGetAngryTime)
 		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
