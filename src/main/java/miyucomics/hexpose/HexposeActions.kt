@@ -196,6 +196,8 @@ object HexposeActions {
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map(::EntityIota).asActionResult })
 		register("angry_at", "aqwedewwded", HexDir.SOUTH_WEST, OpGetAngryAt)
 		register("angry_time", "aqawwqaqwed", HexDir.NORTH_EAST, OpGetAngryTime)
+		register("last_attacker", "qqqwaeqa", HexDir.NORTH_WEST, OpGetAttacker)
+		register("last_attacked", "deqdweee", HexDir.EAST, OpGetLivingEntityData { entity -> (entity.age - entity.lastAttackedTime).asActionResult })
 		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
 		register("entity_name", "edeweedw", HexDir.SOUTH_WEST, OpGetEntityData { it.name.asActionResult })

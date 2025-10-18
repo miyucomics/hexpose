@@ -118,7 +118,7 @@
 
 	"hexpose.page.chat.title": "Chat",
 	"hexcasting.action.hexpose:get_message": "News Reflection",
-	"hexpose.page.get_message.summary": "Pushes a $(l:patterns/displays)$(thing)display iota$() of the last person to use chat, a $(l:patterns/displays)$(thing)display iota$() of the message, and a number of twenieths of a second since that message sent.",
+	"hexpose.page.get_message.summary": "Pushes a $(l:patterns/displays)$(thing)display iota$() of the last person to use chat, a $(l:patterns/displays)$(thing)display iota$() of the message, and a number of twentieths of a second since that message sent.",
 
 	"hexpose.page.entities.title": "Entities",
 	"hexcasting.action.hexpose:entity_width": "Caliper's Purification",
@@ -153,6 +153,10 @@
 	"hexpose.page.angry_at.summary": "Pushes the entity the given entity is currently targetting if they are in ambit. This generally pushes the entity that the entity is angry at.",
 	"hexcasting.action.hexpose:angry_time": "Grudge Purification",
 	"hexpose.page.angry_time.summary": "Pushes how long the given entity will stay targetting another entity. Sometimes, this number may not go down.",
+	"hexcasting.action.hexpose:last_attacker": "Victim Purification",
+	"hexpose.page.last_attacker.summary": "Pushes the last entity that attacked the given one, if they are within ambit.",
+	"hexcasting.action.hexpose:last_attacked": "Scar Purification",
+	"hexpose.page.last_attacked.summary": "Pushes how long ago in twentieths of a second the given entity was last attacked.",
 	"hexcasting.action.hexpose:shooter": "Shooter Purification",
 	"hexpose.page.shooter.summary": "Pushes the shooter of the given projectile entity or $(l:casting/influences)$(thing)Null$() if it has no shooter or isn't a projectile. It also pushes $(l:casting/influences)$(thing)Null$() if the shooter is outside my ambit.",
 	"hexcasting.action.hexpose:pet_owner": "Adoration Purification",
