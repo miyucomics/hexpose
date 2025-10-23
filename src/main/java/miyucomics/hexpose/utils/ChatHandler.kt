@@ -13,12 +13,12 @@ import kotlin.math.floor
 
 object ChatHandler {
 	fun init() {
-		ServerMessageEvents.CHAT_MESSAGE.register { message, sender, _ -> chatLog.add(Message(sender.name, message.content, message.timestamp)) }
+		ServerMessageEvents.CHAT_MESSAGE.register { message, sender, _ -> lastMessage = Message(sender.name, message.content, message.timestamp).intoHex(Instant.now()) }
 	}
 
-	fun getLast(): List<Iota> = chatLog.last()?.intoHex(Instant.now()) ?: listOf(NullIota())
+	fun getLast(): List<Iota> = lastMessage
 
-	private val chatLog = RingBuffer<Message>(32)
+	private var lastMessage: List<Iota> = listOf(NullIota())
 	private data class Message(val sender: Text, val message: Text, val timestamp: Instant) {
 		fun intoHex(now: Instant) = listOf(DisplayIota.createSanitized(sender), DisplayIota.createSanitized(message), DoubleIota(floor(Duration.between(now, timestamp).toMillis() / -50.0)))
 	}
