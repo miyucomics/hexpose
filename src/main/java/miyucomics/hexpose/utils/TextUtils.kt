@@ -4,7 +4,7 @@ import net.minecraft.text.*
 import net.minecraft.util.Language
 
 object TextUtils {
-	private fun collectStyledCharacters(text: Text, parentStyle: Style, out: MutableList<Text>) {
+	fun collectStyledCharacters(text: Text, parentStyle: Style, out: MutableList<Text>) {
 		val effectiveStyle = text.style.withParent(parentStyle)
 		val content = text.content
 		if (content is LiteralTextContent)
