@@ -4,12 +4,6 @@ import net.minecraft.text.*
 import net.minecraft.util.Language
 
 object TextUtils {
-	fun split(text: Text): MutableList<Text> {
-		val chars = mutableListOf<Text>()
-		collectStyledCharacters(text, text.style, chars)
-		return chars
-	}
-
 	private fun collectStyledCharacters(text: Text, parentStyle: Style, out: MutableList<Text>) {
 		val effectiveStyle = text.style.withParent(parentStyle)
 		val content = text.content
@@ -20,7 +14,7 @@ object TextUtils {
 	}
 }
 
-// nice little function that recursively explores and flattens Text into consistent literals
+// nice little function that recursively explores and flattens Text into English literals
 fun Text.sanitize(): Text {
 	val sanitizedRoot: MutableText = when (val content = this.content) {
 		is LiteralTextContent -> Text.literal(content.string)
