@@ -33,10 +33,6 @@ import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.misc.*
-import miyucomics.hexpose.actions.raycast.OpFluidRaycast
-import miyucomics.hexpose.actions.raycast.OpFluidSurfaceRaycast
-import miyucomics.hexpose.actions.raycast.OpPiercingRaycast
-import miyucomics.hexpose.actions.raycast.OpPiercingSurfaceRaycast
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
@@ -94,11 +90,6 @@ object HexposeActions {
 		register("parse_display", "dwdewqqqwqqaeq", HexDir.SOUTH_EAST, OpParseDisplay)
 		register("split_display", "dwdeqqqwqqqqae", HexDir.SOUTH_EAST, OpSplitDisplay)
 		register("disintegrate_display", "dwdeqqqqqdeee", HexDir.SOUTH_EAST, OpDisintegrateDisplay)
-
-		register("fluid_raycast", "wqqaqwede", HexDir.EAST, OpFluidRaycast)
-		register("fluid_surface_raycast", "weedewqaq", HexDir.EAST, OpFluidSurfaceRaycast)
-		register("piercing_raycast", "wqqddqeqddq", HexDir.EAST, OpPiercingRaycast)
-		register("piercing_surface_raycast", "weeaaeqeaae", HexDir.EAST, OpPiercingSurfaceRaycast)
 
 		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
 		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
@@ -202,7 +193,11 @@ object HexposeActions {
 		register("get_player_hunger", "qqqadaddw", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.foodLevel.asActionResult })
 		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
 		register("entity_vehicle", "eqqedwewew", HexDir.EAST, OpGetEntityData { entity -> entity.vehicle.asActionResult })
-		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map { EntityIota(it) }.asActionResult })
+		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map(::EntityIota).asActionResult })
+		register("angry_at", "aqwedewwded", HexDir.SOUTH_WEST, OpGetAngryAt)
+		register("angry_time", "aqawwqaqwed", HexDir.NORTH_EAST, OpGetAngryTime)
+		register("last_attacker", "qqqwaeqa", HexDir.NORTH_WEST, OpGetAttacker)
+		register("last_attacked", "deqdweee", HexDir.EAST, OpGetLivingEntityData { entity -> (entity.age - entity.lastAttackedTime).asActionResult })
 		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
 		register("entity_name", "edeweedw", HexDir.SOUTH_WEST, OpGetEntityData { it.name.asActionResult })
