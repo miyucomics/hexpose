@@ -4,7 +4,6 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
-import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import com.samsthenerd.inline.api.data.ItemInlineData
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound

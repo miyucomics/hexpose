@@ -340,6 +340,6 @@ object HexposeActions {
 	private fun register(name: String, signature: String, startDir: HexDir, action: Action) =
 		Registry.register(
 			HexActions.REGISTRY, HexposeMain.id(name),
-			ActionRegistryEntry(HexPattern.Companion.fromAngles(signature, startDir), action)
+			ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action)
 		)
 }

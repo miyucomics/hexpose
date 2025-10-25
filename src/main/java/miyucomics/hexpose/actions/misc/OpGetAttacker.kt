@@ -3,16 +3,10 @@ package miyucomics.hexpose.actions.misc
 import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
-import at.petrak.hexcasting.api.casting.getEntity
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
-import at.petrak.hexcasting.api.casting.iota.NullIota
-import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import net.minecraft.entity.LivingEntity
-import net.minecraft.entity.Tameable
-import net.minecraft.entity.Targeter
-import net.minecraft.entity.mob.Angerable
 
 object OpGetAttacker : ConstMediaAction {
 	override val argc = 1

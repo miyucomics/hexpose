@@ -2,7 +2,6 @@ package miyucomics.hexpose.utils
 
 import at.petrak.hexcasting.api.casting.iota.DoubleIota
 import at.petrak.hexcasting.api.casting.iota.Iota
-import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import miyucomics.hexpose.iotas.DisplayIota
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents
