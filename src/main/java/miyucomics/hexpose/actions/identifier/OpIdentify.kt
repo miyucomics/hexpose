@@ -15,13 +15,17 @@ object OpIdentify : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		return when (val arg = args[0]) {
-			is EntityIota -> Registries.ENTITY_TYPE.getId(arg.entity.type).asActionResult
-			is ItemStackIota -> Registries.ITEM.getId(arg.stack.item).asActionResult
+			is EntityIota -> {
+				val entity = arg.entity
+				env.assertEntityInRange(entity)
+				Registries.ENTITY_TYPE.getId(entity.type).asActionResult
+			}
 			is Vec3Iota -> {
 				val pos = args.getBlockPos(0, argc)
 				env.assertPosInRange(pos)
 				Registries.BLOCK.getId(env.world.getBlockState(pos).block).asActionResult
 			}
+			is ItemStackIota -> Registries.ITEM.getId(arg.stack.item).asActionResult
 			else -> throw MishapInvalidIota.of(arg, 0, "identifiable")
 		}
 	}
