@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id "fabric-loom" version "1.6-SNAPSHOT"
+	id "fabric-loom" version "1.9-SNAPSHOT"
 	id "maven-publish"
-	id "org.jetbrains.kotlin.jvm" version "1.8.0"
+	id "org.jetbrains.kotlin.jvm" version "2.2.21"
 }
 
 version = mod_version
@@ -18,10 +18,11 @@ loom {
 }
 
 repositories {
-    maven { url = "https://maven.blamejared.com/" }
+    maven { url = "https://maven.blamejared.com" }
     maven { url = "https://maven.ladysnake.org/releases" }
-    maven { url = "https://maven.shedaniel.me/" }
+    maven { url = "https://maven.shedaniel.me" }
     maven { url = "https://maven.terraformersmc.com/releases" }
+	maven { url = "https://maven.hexxy.media" }
 }
 
 dependencies {
@@ -43,6 +44,9 @@ dependencies {
 	modLocalRuntime "vazkii.patchouli:Patchouli:$minecraft_version-$patchouli_version-FABRIC"
 	modLocalRuntime "at.petra-k.paucal:paucal-fabric-$minecraft_version:$paucal_version"
 	modLocalRuntime files("$rootProject.rootDir/libs/serialization-hooks-0.4.99999.jar")
+
+	modCompileOnly("ram.talia.moreiotas:moreiotas-fabric-$minecraft_version:$moreiotas_version") { exclude module: "serialization-hooks" }
+	modLocalRuntime("ram.talia.moreiotas:moreiotas-fabric-$minecraft_version:$moreiotas_version") { exclude module: "serialization-hooks" }
 }
 
 processResources {
