@@ -36,9 +36,11 @@ import miyucomics.hexpose.actions.misc.*
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
+import miyucomics.hexpose.interop.MoreiotasInteropActions
 import miyucomics.hexpose.iotas.DisplayIota
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.asActionResult
+import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.decoration.ItemFrameEntity
 import net.minecraft.entity.decoration.painting.PaintingEntity
@@ -335,9 +337,12 @@ object HexposeActions {
 				return Registries.PAINTING_VARIANT.getId(entity.variant.comp_349()).asActionResult
 			}
 		})
+
+		if (FabricLoader.getInstance().isModLoaded("moreiotas"))
+			MoreiotasInteropActions.init()
 	}
 
-	private fun register(name: String, signature: String, startDir: HexDir, action: Action) =
+	fun register(name: String, signature: String, startDir: HexDir, action: Action): ActionRegistryEntry =
 		Registry.register(
 			HexActions.REGISTRY, HexposeMain.id(name),
 			ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action)
