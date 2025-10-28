@@ -41,7 +41,7 @@ class ItemStackIota(stack: ItemStack) : Iota(TYPE, stack) {
 				val stack = deserialize(tag, null).stack
 				if (stack.isEmpty)
 					return Text.translatable("hexpose.item_stack.null").formatted(Formatting.GRAY)
-				return stack.name.copy().append(" (").append(Text.literal(stack.count.toString()).formatted(stack.rarity.formatting)).append("): ").append(ItemInlineData.make(stack))
+				return stack.name.copy().append(" (").append(Text.literal(stack.count.toString()).formatted(stack.rarity.formatting)).append("): ")
 			}
 
 			override fun deserialize(tag: NbtElement, world: ServerWorld?): ItemStackIota {
