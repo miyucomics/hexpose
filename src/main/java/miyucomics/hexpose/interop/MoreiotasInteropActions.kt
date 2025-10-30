@@ -11,12 +11,12 @@ import ram.talia.moreiotas.api.casting.iota.ItemTypeIota
 
 object MoreiotasInteropActions {
 	fun init() {
-		register("moreiotas_entitytype_compat", "wawde", HexDir.EAST, OpIotaBijection<IdentifierIota, EntityTypeIota>("entitytype", IdentifierIota.TYPE, EntityTypeIota.TYPE,
+		register("moreiotas_entitytype_compat", "adwaq", HexDir.EAST, OpIotaBijection<IdentifierIota, EntityTypeIota>("entitytype", IdentifierIota.TYPE, EntityTypeIota.TYPE,
 			{ IdentifierIota(Registries.ENTITY_TYPE.getId(it.entityType)) },
 			{ if (Registries.ENTITY_TYPE.containsId(it.identifier)) EntityTypeIota(Registries.ENTITY_TYPE.get(it.identifier)) else null }
 		))
 
-		register("moreiotas_itemtype_compat", "qadee", HexDir.EAST, OpIotaBijection<IdentifierIota, ItemTypeIota>("itemtype", IdentifierIota.TYPE, ItemTypeIota.TYPE,
+		register("moreiotas_itemtype_compat", "adwaqa", HexDir.EAST, OpIotaBijection<IdentifierIota, ItemTypeIota>("itemtype", IdentifierIota.TYPE, ItemTypeIota.TYPE,
 			{ it.item?.let { item -> IdentifierIota(Registries.ITEM.getId(item)) } ?: IdentifierIota(Registries.BLOCK.getId(it.block)) },
 			{ identifierIota -> when {
 				Registries.ITEM.containsId(identifierIota.identifier) -> ItemTypeIota(Registries.ITEM.get(identifierIota.identifier))
