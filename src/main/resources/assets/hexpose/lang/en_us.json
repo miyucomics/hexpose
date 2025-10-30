@@ -288,7 +288,7 @@
 	"hexcasting.action.hexpose:get_comparator": "Peripheral Purification",
 	"hexpose.page.get_comparator.summary": "Pushes the power level a $(item)Comparator$() would output if pressed against a position.",
 	"hexcasting.action.hexpose:get_day": "Circadian Reflection",
-	"hexpose.page.get_day.summary": "Pushes the progress of the day as a number between 0 (start) and 1 (end) of the day.",
+	"hexpose.page.get_day.summary": "Pushes the number of days since the creation of the world. Includes decimal for progress of current day.",
 	"hexcasting.action.hexpose:get_time": "Temporal Reflection",
 	"hexpose.page.get_time.summary": "Pushes the twentieths of a second since the creation of the world, unaffected by events such as sleeping.",
 	"hexcasting.action.hexpose:get_biome": "Geographical Purification",
