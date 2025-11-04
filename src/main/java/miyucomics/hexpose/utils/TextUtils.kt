@@ -1,6 +1,7 @@
 package miyucomics.hexpose.utils
 
 import net.minecraft.text.*
+import net.minecraft.util.Formatting
 import net.minecraft.util.Language
 
 object TextUtils {
@@ -12,6 +13,26 @@ object TextUtils {
 		for (child in text.siblings)
 			collectStyledCharacters(child, effectiveStyle, out)
 	}
+}
+
+// a little utility method that returns a copy of a text with default values for styles so that it does not take on anything from its parent if one exists
+fun Text.makeIndependent(): Text {
+	var independentStyle = style
+	if (style.color == null)
+		independentStyle = independentStyle.withColor(Formatting.WHITE)
+	if (style.bold == null)
+		independentStyle = independentStyle.withBold(false)
+	if (style.italic == null)
+		independentStyle = independentStyle.withItalic(false)
+	if (style.underlined == null)
+		independentStyle = independentStyle.withUnderline(false)
+	if (style.strikethrough == null)
+		independentStyle = independentStyle.withStrikethrough(false)
+	if (style.obfuscated == null)
+		independentStyle = independentStyle.withObfuscated(false)
+	if (style.font == null)
+		independentStyle = independentStyle.withFont(Style.DEFAULT_FONT_ID)
+	return this.copy().setStyle(independentStyle)
 }
 
 // nice little function that recursively explores and flattens Text into English literals

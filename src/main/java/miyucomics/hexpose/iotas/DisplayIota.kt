@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.api.utils.asCompound
+import miyucomics.hexpose.utils.makeIndependent
 import miyucomics.hexpose.utils.sanitize
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement
@@ -63,14 +64,14 @@ class DisplayIota(text: Text) : Iota(TYPE, text) {
 			override fun color() = 0xff_db3f30.toInt()
 			override fun display(tag: NbtElement): Text {
 				if (!tag.asCompound.contains("text"))
-					return Text.literal("arimfexendrapuse").formatted(Formatting.DARK_GRAY, Formatting.OBFUSCATED)
-				return Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!
+					return Text.literal("arimfexendrapuse").formatted(Formatting.DARK_GRAY, Formatting.OBFUSCATED).makeIndependent()
+				return Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!.makeIndependent()
 			}
 
 			override fun deserialize(tag: NbtElement, world: ServerWorld): DisplayIota? {
 				if (!tag.asCompound.contains("text"))
 					return null
-				return DisplayIota(Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!.formatted(Formatting.RESET))
+				return DisplayIota(Text.Serializer.fromJson((tag as NbtCompound).getString("text"))!!)
 			}
 		}
 
