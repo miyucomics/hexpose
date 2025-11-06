@@ -1,10 +1,9 @@
-package miyucomics.hexpose.iotas
+package miyucomics.hexpose.iotas.item_stack
 
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
-import com.samsthenerd.inline.api.data.ItemInlineData
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement

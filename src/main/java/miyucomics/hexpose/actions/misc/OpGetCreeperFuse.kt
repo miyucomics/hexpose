@@ -1,17 +1,20 @@
-package miyucomics.hexpose.actions.item_stack
+package miyucomics.hexpose.actions.misc
 
 import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.item_stack.ItemStackIota
+import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
+import net.minecraft.entity.mob.CreeperEntity
 
-object OpGetArmor : ConstMediaAction {
+object OpGetCreeperFuse : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val entity = args.getEntity(0, argc)
 		env.assertEntityInRange(entity)
-		return entity.armorItems.map { ItemStackIota.createOptimized(it) }.asActionResult
+		if (entity !is CreeperEntity)
+			throw MishapBadEntity.of(entity, "creeper")
+		return entity.getClientFuseTime(0f).asActionResult
 	}
 }

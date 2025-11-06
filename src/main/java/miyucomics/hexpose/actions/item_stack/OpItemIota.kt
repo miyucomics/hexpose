@@ -4,7 +4,7 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getItemEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.asActionResult
+import miyucomics.hexpose.iotas.item_stack.asActionResult
 
 object OpItemIota : ConstMediaAction {
 	override val argc = 1

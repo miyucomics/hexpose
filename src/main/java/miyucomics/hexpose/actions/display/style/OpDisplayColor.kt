@@ -10,7 +10,7 @@ import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
-import miyucomics.hexpose.iotas.DisplayIota
+import miyucomics.hexpose.iotas.display.DisplayIota
 import net.minecraft.text.TextColor
 import net.minecraft.util.math.Vec3d
 

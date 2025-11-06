@@ -1,17 +1,20 @@
-package miyucomics.hexpose.actions.item_stack
+package miyucomics.hexpose.actions.misc
 
 import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.item_stack.ItemStackIota
+import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
+import net.minecraft.entity.decoration.ItemFrameEntity
 
-object OpGetArmor : ConstMediaAction {
+object OpGetItemFrameRotation : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val entity = args.getEntity(0, argc)
 		env.assertEntityInRange(entity)
-		return entity.armorItems.map { ItemStackIota.createOptimized(it) }.asActionResult
+		if (entity !is ItemFrameEntity)
+			throw MishapBadEntity.of(entity, "item_frame")
+		return entity.rotation.asActionResult
 	}
 }

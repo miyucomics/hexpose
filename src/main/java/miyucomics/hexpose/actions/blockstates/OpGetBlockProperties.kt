@@ -5,7 +5,7 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getBlockPos
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.identifier.IdentifierIota
 import net.minecraft.util.Identifier
 
 object OpGetBlockProperties : ConstMediaAction {

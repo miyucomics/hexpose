@@ -1,17 +1,17 @@
 package miyucomics.hexpose
 
 import at.petrak.hexcasting.api.HexAPI
-import at.petrak.hexcasting.api.casting.*
+import at.petrak.hexcasting.api.casting.ActionRegistryEntry
+import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.Action
-import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
-import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.eval.env.CircleCastEnv
 import at.petrak.hexcasting.api.casting.eval.env.PackagedItemCastEnv
 import at.petrak.hexcasting.api.casting.eval.env.StaffCastEnv
-import at.petrak.hexcasting.api.casting.iota.*
+import at.petrak.hexcasting.api.casting.iota.EntityIota
+import at.petrak.hexcasting.api.casting.iota.Iota
+import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.math.HexDir
 import at.petrak.hexcasting.api.casting.math.HexPattern
-import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
 import at.petrak.hexcasting.api.item.VariantItem
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.common.lib.hex.HexActions
@@ -23,11 +23,7 @@ import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
 import miyucomics.hexpose.actions.display.OpParseDisplay
 import miyucomics.hexpose.actions.display.OpSplitDisplay
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
-import miyucomics.hexpose.actions.display.style.OpCreateDisplay
-import miyucomics.hexpose.actions.display.style.OpDisplayBoolean
-import miyucomics.hexpose.actions.display.style.OpDisplayChildren
-import miyucomics.hexpose.actions.display.style.OpDisplayColor
-import miyucomics.hexpose.actions.display.style.OpDisplayFont
+import miyucomics.hexpose.actions.display.style.*
 import miyucomics.hexpose.actions.identifier.OpClassify
 import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
@@ -37,17 +33,14 @@ import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import miyucomics.hexpose.interop.MoreiotasInteropActions
-import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.IdentifierIota
-import miyucomics.hexpose.iotas.asActionResult
+import miyucomics.hexpose.iotas.display.DisplayIota
+import miyucomics.hexpose.iotas.display.asActionResult
+import miyucomics.hexpose.iotas.identifier.IdentifierIota
+import miyucomics.hexpose.iotas.identifier.asActionResult
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.enchantment.EnchantmentHelper
-import net.minecraft.entity.decoration.ItemFrameEntity
-import net.minecraft.entity.decoration.painting.PaintingEntity
-import net.minecraft.entity.mob.CreeperEntity
 import net.minecraft.entity.mob.MobEntity
 import net.minecraft.entity.passive.AnimalEntity
-import net.minecraft.entity.passive.CatEntity
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
 import net.minecraft.nbt.NbtElement
@@ -297,46 +290,10 @@ object HexposeActions {
 		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 
-		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, object : ConstMediaAction {
-			override val argc = 1
-			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
-				val entity = args.getEntity(0, argc)
-				env.assertEntityInRange(entity)
-				if (entity !is CatEntity)
-					throw MishapBadEntity.of(entity, "cat")
-				return entity.variant.comp_706.asActionResult
-			}
-		})
-		register("creeper_fuse", "dedwaqwede", HexDir.WEST, object : ConstMediaAction {
-			override val argc = 1
-			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
-				val entity = args.getEntity(0, argc)
-				env.assertEntityInRange(entity)
-				if (entity !is CreeperEntity)
-					throw MishapBadEntity.of(entity, "creeper")
-				return entity.getClientFuseTime(0f).asActionResult
-			}
-		})
-		register("item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, object : ConstMediaAction {
-			override val argc = 1
-			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
-				val entity = args.getEntity(0, argc)
-				env.assertEntityInRange(entity)
-				if (entity !is ItemFrameEntity)
-					throw MishapBadEntity.of(entity, "item_frame")
-				return entity.rotation.asActionResult
-			}
-		})
-		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, object : ConstMediaAction {
-			override val argc = 1
-			override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
-				val entity = args.getEntity(0, argc)
-				env.assertEntityInRange(entity)
-				if (entity !is PaintingEntity)
-					throw MishapBadEntity.of(entity, "painting")
-				return Registries.PAINTING_VARIANT.getId(entity.variant.comp_349()).asActionResult
-			}
-		})
+		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpGetCatVariant)
+		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpGetCreeperFuse)
+		register("item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, OpGetItemFrameRotation)
+		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpGetPaintingVariant)
 
 		if (FabricLoader.getInstance().isModLoaded("moreiotas"))
 			MoreiotasInteropActions.init()

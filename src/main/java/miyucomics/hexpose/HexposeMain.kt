@@ -3,9 +3,9 @@ package miyucomics.hexpose
 import at.petrak.hexcasting.common.lib.hex.HexArithmetics
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
 import miyucomics.hexpose.actions.display.arithmetic.DisplayArithmetic
-import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.IdentifierIota
-import miyucomics.hexpose.iotas.ItemStackIota
+import miyucomics.hexpose.iotas.display.DisplayIota
+import miyucomics.hexpose.iotas.identifier.IdentifierIota
+import miyucomics.hexpose.iotas.item_stack.ItemStackIota
 import miyucomics.hexpose.utils.ChatHandler
 import net.fabricmc.api.ModInitializer
 import net.minecraft.registry.Registry

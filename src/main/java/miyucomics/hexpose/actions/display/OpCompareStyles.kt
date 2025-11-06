@@ -4,7 +4,7 @@ import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.getDisplay
+import miyucomics.hexpose.iotas.display.getDisplay
 
 object OpCompareStyles : ConstMediaAction {
 	override val argc = 2

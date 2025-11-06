@@ -5,8 +5,8 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.DoubleIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.getItemStack
+import miyucomics.hexpose.iotas.display.DisplayIota
+import miyucomics.hexpose.iotas.item_stack.getItemStack
 import net.minecraft.item.WrittenBookItem
 import net.minecraft.text.Text
 

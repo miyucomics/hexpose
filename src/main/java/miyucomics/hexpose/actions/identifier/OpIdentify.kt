@@ -7,8 +7,8 @@ import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.ItemStackIota
-import miyucomics.hexpose.iotas.asActionResult
+import miyucomics.hexpose.iotas.identifier.asActionResult
+import miyucomics.hexpose.iotas.item_stack.ItemStackIota
 import net.minecraft.registry.Registries
 
 object OpIdentify : ConstMediaAction {

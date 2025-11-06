@@ -4,8 +4,8 @@ import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.getDisplay
+import miyucomics.hexpose.iotas.display.DisplayIota
+import miyucomics.hexpose.iotas.display.getDisplay
 import miyucomics.hexpose.utils.TextUtils
 import net.minecraft.text.Style
 import net.minecraft.text.Text

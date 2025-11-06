@@ -5,7 +5,7 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapBadCaster
-import miyucomics.hexpose.iotas.ItemStackIota
+import miyucomics.hexpose.iotas.item_stack.ItemStackIota
 import net.minecraft.entity.player.PlayerEntity
 
 object OpGetEnderInventory : ConstMediaAction {
