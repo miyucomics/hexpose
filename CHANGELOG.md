@@ -5,6 +5,7 @@
 - added patterns to flick Hexpose iotas into MoreIotas iotas and vice versa
 - added patterns to get mob anger
 - added patterns to get mob attacker and attacked time
+- added spell to use display iotas to set name and lore of items
 - changed display iotas to be recursive
   - you are now responsible for managing children and styles
   - Minecraft `Text`, called `Component` in Mojmap, is a recursive data model. A `Text` has content and styling information, but it can also contain a number of children, which themselves contain children. Styles are inherited parent to child if the child does not specify them

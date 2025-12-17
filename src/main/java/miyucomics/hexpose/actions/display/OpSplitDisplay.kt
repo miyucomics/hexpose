@@ -6,6 +6,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import miyucomics.hexpose.iotas.display.DisplayIota
 import miyucomics.hexpose.iotas.display.getDisplay
+import miyucomics.hexpose.iotas.display.getRoot
 import net.minecraft.text.Text
 
 object OpSplitDisplay : ConstMediaAction {
@@ -13,6 +14,6 @@ object OpSplitDisplay : ConstMediaAction {
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val source = args.getDisplay(0, argc)
 		val delimiter = args.getDisplay(1, argc).getRoot()
-		return source.getRoot().split(delimiter).map { splice -> Text.literal(splice).also { it.style = source.text.style } }.map(::DisplayIota).asActionResult
+		return source.getRoot().split(delimiter).map { splice -> Text.literal(splice).also { it.style = source.style } }.map(::DisplayIota).asActionResult
 	}
 }

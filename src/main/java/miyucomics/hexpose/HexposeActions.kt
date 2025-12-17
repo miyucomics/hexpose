@@ -28,6 +28,8 @@ import miyucomics.hexpose.actions.identifier.OpClassify
 import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
+import miyucomics.hexpose.actions.lore.OpItemLore
+import miyucomics.hexpose.actions.lore.OpItemName
 import miyucomics.hexpose.actions.misc.*
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
@@ -58,6 +60,9 @@ import net.minecraft.util.math.Vec3d
 object HexposeActions {
 	@JvmStatic
 	fun init() {
+		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
+		register("set_item_lore", "dwewdweedwa", HexDir.NORTH_WEST, OpItemLore)
+
 		register("am_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
 			val advancement = it.getServer()!!.advancementLoader[HexAPI.modLoc("enlightenment")]
 			val tracker = it.advancementTracker

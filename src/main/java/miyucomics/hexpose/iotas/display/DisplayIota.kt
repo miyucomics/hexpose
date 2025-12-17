@@ -81,10 +81,10 @@ class DisplayIota(text: Text) : Iota(TYPE, text) {
 
 inline val Text.asActionResult get() = listOf(DisplayIota.createSanitized(this))
 
-fun List<Iota>.getDisplay(idx: Int, argc: Int = 0): DisplayIota {
+fun List<Iota>.getDisplay(idx: Int, argc: Int = 0): Text {
 	val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
 	if (x is DisplayIota)
-		return x
+		return x.text
 	throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "display")
 }
 
