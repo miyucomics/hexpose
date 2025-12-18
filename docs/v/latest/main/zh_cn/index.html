@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/41da967ab80a26dd941bd11aa8c3a4294d29d68b"
+      href="https://github.com/miyucomics/hexpose/tree/eadf677c6832041a95a2d4a5d51b869142d2403a"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -167,6 +167,24 @@
       loading="lazy"
       class="item-texture  texture pixelated"
     > 文形 Iota 操纵</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/spells" class="toc-elem "><img
+      title="附魔书"
+      alt="附魔书"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > 法术</a></summary>
+      <ul>
+          <li><a href="#patterns/spells/rename" class="toc-elem "><img
+      title="命名牌"
+      alt="命名牌"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/name_tag.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    > Item Renaming</a></li>
       </ul>
     </details>
     <details class="toc-category">
@@ -1749,6 +1767,155 @@
       >浏览器不支持图案的可视化。图案代码见此：qqqaede</canvas>
   </details>
       <p>反转原<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的文本，保留子文形。</p>
+  </div>
+<br />
+</div>
+</section>
+<section id="patterns/spells">
+    <h2 class="category-title page-header">
+    <img
+      title="附魔书"
+      alt="附魔书"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/enchanted_book.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >法术<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/spells"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h2>
+    <p>能以魔法影响到世界的图案和操作。</p>
+<div id="patterns/spells/rename" class="entry">
+    <h3 class="entry-title page-header">
+    <img
+      title="命名牌"
+      alt="命名牌"
+      src="https://raw.githubusercontent.com/PrismarineJS/minecraft-assets/a14c64362abe4a12c2dfd87f8d1673af9d1b09f4/data/1.20.2/items/name_tag.png"
+      loading="lazy"
+      class="item-texture  texture pixelated"
+    >Item Renaming<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/spells/rename"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+  <div id="patterns/spells/rename@hexpose:set_item_name" class="">
+<h4 class="pattern-title">Name Item (entity, display/null →)<a
+    href="#patterns/spells/rename@hexpose:set_item_name"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qwawqwaadwa"
+        data-start="south_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qwawqwaadwa</canvas>
+  </details>
+      <p>Takes an item and renames it to the display iota given. Resets name if given <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>. Free.</p>
+  </div>
+<br />
+  <div id="patterns/spells/rename@hexpose:set_item_lore" class="">
+<h4 class="pattern-title">Describe Item (entity, list of display/null →)<a
+    href="#patterns/spells/rename@hexpose:set_item_lore"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dwewdweedwa"
+        data-start="north_west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：dwewdweedwa</canvas>
+  </details>
+      <p>Takes an item and a list of display iotas to append as a description. Clears if given <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>. Free.</p>
   </div>
 <br />
 </div>
