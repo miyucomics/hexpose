@@ -14,7 +14,7 @@ object OpDisintegrateDisplay : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val output = mutableListOf<Text>()
-		TextUtils.collectStyledCharacters(args.getDisplay(0, argc).text, Style.EMPTY, output)
+		TextUtils.collectStyledCharacters(args.getDisplay(0, argc), Style.EMPTY, output)
 		return output.map(::DisplayIota).asActionResult
 	}
 }
