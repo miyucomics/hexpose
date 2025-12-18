@@ -14,8 +14,9 @@
   - the only solution that I can execute would be to dynamically flatten and simplify `Text` on the fly. However, that raises its own issues if I invisibly alter the composition of `Text` on the fly. Thus, the solution I have determined is to release a breaking API update to give that responsibility entirely to the user
 - fixed Offer Purification sampling count from incorrect position
 - renamed text iotas to display iotas to avoid confusion with strings
-- removed Newspaper Reflection
+- altered Newspaper Reflection
   - no other pattern does the same "retroactive" effect and I think I'd be cool if the player had to handle it
+  - now there is News Disintegration in case you do want to dig back in time, and it won't blow up your stack with a giant list
 - removed piercing raycasts
   - since it's all just math, I just think it'd be neat if the player had to do it instead
   - there will be replacement patterns that return the list of things to check and the direction so it's not a complete loss

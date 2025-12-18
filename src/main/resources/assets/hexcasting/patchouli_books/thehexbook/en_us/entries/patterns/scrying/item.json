@@ -129,7 +129,7 @@
 			"op_id": "hexpose:item_name",
 			"anchor": "hexpose:item_name",
 			"input": "item",
-			"output": "text",
+			"output": "display",
 			"text": "hexpose.page.item_name.summary"
 		},
 		{
@@ -137,7 +137,7 @@
 			"op_id": "hexpose:item_lore",
 			"anchor": "hexpose:item_lore",
 			"input": "item",
-			"output": "list of text",
+			"output": "list of displays",
 			"text": "hexpose.page.item_lore.summary"
 		},
 		{

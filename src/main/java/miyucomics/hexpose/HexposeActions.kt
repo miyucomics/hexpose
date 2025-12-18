@@ -23,6 +23,7 @@ import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
 import miyucomics.hexpose.actions.display.OpParseDisplay
 import miyucomics.hexpose.actions.display.OpSplitDisplay
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
+import miyucomics.hexpose.actions.display.chat.OpGetMessageIndexed
 import miyucomics.hexpose.actions.display.style.*
 import miyucomics.hexpose.actions.identifier.OpClassify
 import miyucomics.hexpose.actions.identifier.OpIdentify
@@ -152,6 +153,7 @@ object HexposeActions {
 		})
 
 		register("get_message", "aeeedw", HexDir.SOUTH_WEST, OpGetMessage)
+		register("get_message_indexed", "dqqqaw", HexDir.SOUTH_EAST, OpGetMessageIndexed)
 
 		register("get_enchantments", "waqeaeqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
 			var data = stack.enchantments

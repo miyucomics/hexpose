@@ -119,6 +119,8 @@
 	"hexpose.page.chat.title": "Chat",
 	"hexcasting.action.hexpose:get_message": "News Reflection",
 	"hexpose.page.get_message.summary": "Pushes a $(l:patterns/displays)$(thing)display iota$() of the last person to use chat, a $(l:patterns/displays)$(thing)display iota$() of the message, and a number of twentieths of a second since that message sent.",
+	"hexcasting.action.hexpose:get_message_indexed": "News Disintegration",
+	"hexpose.page.get_message_indexed.summary": "$(br)Acts similarly to $(l:patterns/scrying/chat#hexpose:get_message)$(action)News Reflection$() but acts on the message sent n messages ago, up to sixty four messages ago.",
 
 	"hexpose.page.entities.title": "Entities",
 	"hexcasting.action.hexpose:entity_width": "Caliper's Purification",
