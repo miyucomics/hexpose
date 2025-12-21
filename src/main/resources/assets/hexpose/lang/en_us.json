@@ -231,6 +231,8 @@
 	"hexpose.page.damage_stack.summary": "Takes in an item and pushes how much damage the item has sustained.",
 	"hexcasting.action.hexpose:damage_max_stack": "Fragility Purification",
 	"hexpose.page.damage_max_stack.summary": "Takes in an item and pushes how much durability the item can have at its peak.",
+	"hexpose.page.readable_item.summary": "Returns whether an item iota represents an item that I could have read from.",
+	"hexpose.page.read_item.summary": "Reads an iota from the item that the item iota represents.",
 	"hexcasting.action.hexpose:get_enchantments": "Thaumaturgist's Purification",
 	"hexpose.page.get_enchantments.summary": "Gets a list of enchantments the item has.",
 	"hexcasting.action.hexpose:get_enchantment_strength": "Charm Distillation",

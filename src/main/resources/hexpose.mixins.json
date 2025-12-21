@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "miyucomics.hexpose.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"minVersion": "0.8",
+	"mixins": [
+		"OpTheCoolerReadableMixin",
+		"OpTheCoolerReadMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

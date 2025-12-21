@@ -3,6 +3,7 @@
 ## 2.0.0
 - new major version due to breaking API changes
 - added patterns to flick Hexpose iotas into MoreIotas iotas and vice versa
+- added ability to read from item stack iotas
 - added patterns to get mob anger
 - added patterns to get mob attacker and attacked time
 - added spell to use display iotas to set name and lore of items
