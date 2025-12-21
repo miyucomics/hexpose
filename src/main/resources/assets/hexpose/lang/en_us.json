@@ -42,6 +42,16 @@
 	"hexcasting.action.book.hexpose:get_biome": "Geographical Purif.",
 	"hexcasting.action.book.hexpose:get_weather": "Meterologist's Refl.",
 
+	"hexpose.page.moreiotas_interop.title": "MoreIotas Compatibility",
+	"hexpose.page.moreiotas_interop.0": "It seems Nature is not a perfectly efficient system—which fair enough, what minds are free of redundancy? How could I have expected the sentient set of all minds to be?$(br2)In any case, it seems there are often $(o)competing standards$(): multiple types of iota that achieve the same purpose within Nature's designs, possibly from different eras or reflecting different philosophies.",
+	"hexpose.page.moreiotas_interop.1": "I have identified three pairs of iotas that can form a bijection, which I have documented on the following pages.$(br2)$(o)There are 14 competing standards.$(br2)'We need to develop one universal standard that covers everybody's use cases!'$(br2)There are now 15 competing standards.$()",
+	"hexcasting.action.hexpose:moreiotas_entitytype_compat": "Darwin's Purification",
+	"hexpose.page.moreiotas_entitytype_compat.summary": "$(br)Toggles between entitytypes and an identifier representing that entity type.",
+	"hexcasting.action.hexpose:moreiotas_itemtype_compat": "Erosion Purification",
+	"hexpose.page.moreiotas_itemtype_compat.summary": "$(br)Toggles between itemtype and an identifier representing that item.",
+	"hexcasting.action.hexpose:moreiotas_itemstack_compat": "Exchange Purification",
+	"hexpose.page.moreiotas_itemstack_compat.summary": "Toggles between item stack iotas and item iotas. Item iotas tend to have more patterns for scrying properties.",
+
 	"hexpose.page.enlightened_patterns.title": "Enlightened Patterns",
 	"hexpose.page.enlightened_patterns.0": "After $(thing)Enlightenment$(), I find myself acutely aware of certain patterns that aid with my newfound abilities. These patterns don't seem to require anything from me that I didn't have before; perhaps I was always able to cast them but was simply unaware of their existence. An unenlightened player will be able to use $(l:items/hexcasting)$(item)casting devices$() with these patterns.",
 	"hexcasting.action.hexpose:am_enlightened": "Epiphany Purification",

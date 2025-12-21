@@ -1,0 +1,42 @@
+{
+	"name": "hexpose.page.moreiotas_interop.title",
+	"icon": "minecraft:iron_nugget",
+	"category": "hexcasting:interop",
+	"sortnum": 5,
+	"flag": "mod:moreiotas",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.moreiotas_interop.0"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.moreiotas_interop.1"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:moreiotas_entitytype_compat",
+			"anchor": "hexpose:moreiotas_entitytype_compat",
+			"input": "entitytype/identifier",
+			"output": "identifier/entitytype",
+			"text": "hexpose.page.moreiotas_entitytype_compat.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:moreiotas_itemtype_compat",
+			"anchor": "hexpose:moreiotas_itemtype_compat",
+			"input": "itemtype/identifier",
+			"output": "identifier/itemtype",
+			"text": "hexpose.page.moreiotas_itemtype_compat.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:moreiotas_itemstack_compat",
+			"anchor": "hexpose:moreiotas_itemstack_compat",
+			"input": "itemstack/item",
+			"output": "item/itemstack",
+			"text": "hexpose.page.moreiotas_itemstack_compat.summary"
+		}
+	]
+}
