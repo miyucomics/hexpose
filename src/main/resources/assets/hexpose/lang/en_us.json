@@ -23,6 +23,10 @@
 	"hexcasting.mishap.invalid_value.potion_holding": "a potion holding item or entity",
 	"hexcasting.mishap.invalid_value.tamable": "a tameable entity",
 	"hexcasting.mishap.invalid_value.vector_or_null": "a vector or null",
+	"hexcasting.mishap.invalid_value.iota_bijection.entitytype": "an entitytype or an identifier of an entity type",
+	"hexcasting.mishap.invalid_value.iota_bijection.iotatype": "an iotatype or an identifier of an iota type",
+	"hexcasting.mishap.invalid_value.iota_bijection.itemtype": "an itemtype or an identifier of an item type",
+	"hexcasting.mishap.invalid_value.iota_bijection.itemstack": "either type of item stack iota",
 
 	"hexpose.item_stack.format": " | %s (%d)",
 	"hexpose.item_stack.null": "Null Item",
