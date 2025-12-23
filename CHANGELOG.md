@@ -2,6 +2,7 @@
 
 ## 2.0.0
 - new major version due to breaking API changes
+- added ability to get the book from lectern
 - added patterns to flick Hexpose iotas into MoreIotas iotas and vice versa
 - added ability to read from item stack iotas
 - added patterns to get mob anger

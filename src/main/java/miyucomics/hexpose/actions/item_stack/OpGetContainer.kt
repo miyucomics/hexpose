@@ -7,6 +7,7 @@ import at.petrak.hexcasting.api.casting.getBlockPos
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import miyucomics.hexpose.iotas.item_stack.ItemStackIota
+import net.minecraft.block.entity.LecternBlockEntity
 import net.minecraft.inventory.Inventory
 
 object OpGetContainer : ConstMediaAction {
@@ -15,6 +16,8 @@ object OpGetContainer : ConstMediaAction {
 		val pos = args.getBlockPos(0, argc)
 		env.assertPosInRange(pos)
 		val inventory = env.world.getBlockEntity(pos)
+		if (inventory is LecternBlockEntity)
+			return listOf(ItemStackIota.createOptimized(inventory.book))
 		if (inventory == null || inventory !is Inventory)
 			return listOf(NullIota())
 		return (0 until inventory.size()).map { ItemStackIota.createOptimized(inventory.getStack(it)) }.asActionResult
