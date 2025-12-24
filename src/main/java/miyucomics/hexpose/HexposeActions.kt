@@ -299,7 +299,8 @@ object HexposeActions {
 
 		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpGetCatVariant)
 		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpGetCreeperFuse)
-		register("item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, OpGetItemFrameRotation)
+		register("get_item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, OpGetItemFrameRotation)
+		register("set_item_frame_rotation", "awqwawqaa", HexDir.SOUTH_WEST, OpSetItemFrameRotation)
 		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpGetPaintingVariant)
 
 		if (FabricLoader.getInstance().isModLoaded("moreiotas"))

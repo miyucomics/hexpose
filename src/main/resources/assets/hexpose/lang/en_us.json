@@ -325,8 +325,10 @@
 	"hexpose.page.cat_variant.summary": "Pushes the variant of the $(thing)Cat$().",
 	"hexcasting.action.hexpose:creeper_fuse": "Anger Purification",
 	"hexpose.page.creeper_fuse.summary": "Pushes the progress of a $(thing)Creeper$() to explosion.",
-	"hexcasting.action.hexpose:item_frame_rotation": "Showcase Purification",
-	"hexpose.page.item_frame_rotation.summary": "Pushes the rotation of an $(item)Item Frame$() as an integer 0 to 7.",
+	"hexcasting.action.hexpose:get_item_frame_rotation": "Showcase Purification",
+	"hexpose.page.get_item_frame_rotation.summary": "Pushes the rotation of an $(item)Item Frame$() as an integer 0 to 7.",
+	"hexcasting.action.hexpose:set_item_frame_rotation": "Showcase Gambit",
+	"hexpose.page.set_item_frame_rotation.summary": "Sets the rotation of an $(item)Item Frame$() to a given integer 0 to 7.",
 	"hexcasting.action.hexpose:painting_variant": "Artistic Purification",
 	"hexpose.page.painting_variant.summary": "Pushes the variant of the $(thing)Painting$().",
 
