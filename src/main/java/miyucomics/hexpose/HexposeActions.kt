@@ -32,6 +32,9 @@ import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.lore.OpItemLore
 import miyucomics.hexpose.actions.lore.OpItemName
 import miyucomics.hexpose.actions.misc.*
+import miyucomics.hexpose.actions.tags.OpBlockTags
+import miyucomics.hexpose.actions.tags.OpEntityTags
+import miyucomics.hexpose.actions.tags.OpItemTags
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
@@ -252,22 +255,6 @@ object HexposeActions {
 		register("book_sources", "eaedweew", HexDir.EAST, OpBookSources)
 		register("item_rarity", "wqqed", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.rarity.ordinal.asActionResult })
 
-		register("get_effects_entity", "wqqq", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity ->
-			val list = mutableListOf<Iota>()
-			for (effect in entity.statusEffects)
-				list.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
-			list.asActionResult
-		})
-		register("get_effects_item", "wqqqadee", HexDir.SOUTH_WEST, OpGetPrescription)
-		register("get_effect_category", "wqqqaawd", HexDir.SOUTH_WEST, OpGetStatusEffectCategory)
-		register("get_effect_amplifier", "wqqqaqwa", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.amplifier.asActionResult })
-		register("get_effect_duration", "wqqqaqwdd", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.duration.asActionResult })
-
-		register("villager_level", "qeqwqwqwqwqeqawdaeaeaeaeaea", HexDir.EAST, OpGetVillagerData { villager -> villager.villagerData.level.asActionResult })
-		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult })
-		register("villager_type", "qeqwqwqwqwqeqaweqqqqqwded", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
-		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome)
-
 		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
 		register("env_media", "dde", HexDir.WEST,
 			OpGetEnvData { env ->
@@ -280,6 +267,32 @@ object HexposeActions {
 			val holder = IXplatAbstractions.INSTANCE.findMediaHolder(it) ?: return@OpGetItemStackData listOf(NullIota())
 			return@OpGetItemStackData (holder.maxMedia.toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
 		})
+
+		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpGetCatVariant)
+		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpGetCreeperFuse)
+		register("get_item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, OpGetItemFrameRotation)
+		register("set_item_frame_rotation", "awqwawqaa", HexDir.SOUTH_WEST, OpSetItemFrameRotation)
+		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpGetPaintingVariant)
+
+		register("get_effects_entity", "wqqq", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity ->
+			val list = mutableListOf<Iota>()
+			for (effect in entity.statusEffects)
+				list.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
+			list.asActionResult
+		})
+		register("get_effects_item", "wqqqadee", HexDir.SOUTH_WEST, OpGetPrescription)
+		register("get_effect_category", "wqqqaawd", HexDir.SOUTH_WEST, OpGetStatusEffectCategory)
+		register("get_effect_amplifier", "wqqqaqwa", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.amplifier.asActionResult })
+		register("get_effect_duration", "wqqqaqwdd", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.duration.asActionResult })
+
+		register("block_tags", "qaqqqqqwqqd", HexDir.EAST, OpBlockTags)
+		register("entity_tags", "qaqqqqwqqd", HexDir.NORTH_EAST, OpEntityTags)
+		register("item_tags", "aqawawqqqd", HexDir.EAST, OpItemTags)
+
+		register("villager_level", "qeqwqwqwqwqeqawdaeaeaeaeaea", HexDir.EAST, OpGetVillagerData { villager -> villager.villagerData.level.asActionResult })
+		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult })
+		register("villager_type", "qeqwqwqwqwqeqaweqqqqqwded", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
+		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome)
 
 		register("get_weather", "eweweweweweeeaedqdqde", HexDir.WEST, OpGetWorldData { world -> (if (world.isThundering) 2.0 else if (world.isRaining) 1.0 else 0.0).asActionResult })
 		register("get_light", "wqwqwqwqwqwaeqqqqaeqaeaeaeaw", HexDir.SOUTH_WEST, OpGetPositionData { world, position -> world.getLightLevel(position).asActionResult })
@@ -296,12 +309,6 @@ object HexposeActions {
 		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult })
 		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
-
-		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpGetCatVariant)
-		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpGetCreeperFuse)
-		register("get_item_frame_rotation", "ewdwewdea", HexDir.NORTH_EAST, OpGetItemFrameRotation)
-		register("set_item_frame_rotation", "awqwawqaa", HexDir.SOUTH_WEST, OpSetItemFrameRotation)
-		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpGetPaintingVariant)
 
 		if (FabricLoader.getInstance().isModLoaded("moreiotas"))
 			MoreiotasInteropActions.init()

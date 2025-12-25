@@ -27,6 +27,9 @@
 	"hexcasting.mishap.invalid_value.iota_bijection.iotatype": "an iotatype or an identifier of an iota type",
 	"hexcasting.mishap.invalid_value.iota_bijection.itemtype": "an itemtype or an identifier of an item type",
 	"hexcasting.mishap.invalid_value.iota_bijection.itemstack": "either type of item stack iota",
+	"hexcasting.mishap.invalid_value.blocktype_coerceable": "a vector, a dropped block, an item iota of a block, or an identifier of a block type",
+	"hexcasting.mishap.invalid_value.entitytype_coerceable": "an entity or an identifier of an entity type",
+	"hexcasting.mishap.invalid_value.itemtype_coerceable": "an item entity, an item iota, or an identifier of an item type",
 
 	"hexpose.item_stack.format": " | %s (%d)",
 	"hexpose.item_stack.null": "Null Item",
@@ -287,6 +290,15 @@
 	"hexpose.page.get_effect_amplifier.summary": "Pushes how potent the effect type is acting on the entity or $(l:casting/influences)$(thing)Null$() if the entity doesn't have it.",
 	"hexcasting.action.hexpose:get_effect_duration": "Clearance Distillation",
 	"hexpose.page.get_effect_duration.summary": "Pushes how long the effect type will affect the entity in twentieths of a second or $(l:casting/influences)$(thing)Null$() if the entity doesn't have it.",
+
+	"hexpose.page.tags.title": "Tags",
+	"hexpose.page.tags.0": "It seems Nature uses a system of $(o)tags$() to group similar blocks, items, and entities. For example, $(thing)Skeletons$(), $(thing)Strays$(), and $(thing)Wither Skeletons$() all have a 'minecraft:skeletons' identifier. All the types of $(l:items/staff)$(item)Staves$() share a tag and all $(item)Music Discs$() share another.",
+	"hexcasting.action.hexpose:entity_tags": "Genus Purification",
+	"hexpose.page.entity_tags.summary": "Pushes a list of all tags the entity or entity identifier belongs to.",
+	"hexcasting.action.hexpose:block_tags": "Geology Purification",
+	"hexpose.page.block_tags.summary": "Pushes a list of all tags the block at the vector, dropped block, item iota encoding a dropped block, or block identifier belong to.",
+	"hexcasting.action.hexpose:item_tags": "Bauble Purification",
+	"hexpose.page.item_tags.summary": "Pushes a list of all the tags the dropped item, item iota, or item identifier belong to.",
 
 	"hexpose.page.villager.title": "Villagers",
 	"hexcasting.action.hexpose:villager_level": "Tier Purification",

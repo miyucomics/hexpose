@@ -5,6 +5,7 @@
 - added ability to get the book from lectern
 - added patterns to flick Hexpose iotas into MoreIotas iotas and vice versa
 - added ability to read from item stack iotas
+- added patterns to read tags from entities, blocks, and items
 - added patterns to get mob anger
 - added patterns to get mob attacker and attacked time
 - added basic free spells. It seems unreasonable that a mod that has a pattern to get item frame rotation would need an accessory mod to set item frame rotation for example, or for a mod that has display iotas and the ability to read the name of an item to not have a spell to set those things
