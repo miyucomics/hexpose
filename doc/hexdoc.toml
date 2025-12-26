@@ -35,6 +35,11 @@ path = "{^^^_common.package}/HexposeActions.kt"
 regex = "{^_pattern_regex}"
 per_world_value = "{^_per_world_value}"
 
+[[extra.hexcasting.pattern_stubs]]
+path = "{^^^_common.package}/interop/MoreiotasInteropActions.kt"
+regex = "{^_pattern_regex}"
+per_world_value = "{^_per_world_value}"
+
 [_common]
 src = "../src"
 package = "{src}/main/java/miyucomics/hexpose"
