@@ -36,6 +36,7 @@ import miyucomics.hexpose.actions.tags.OpBlockTags
 import miyucomics.hexpose.actions.tags.OpEntityTags
 import miyucomics.hexpose.actions.tags.OpItemTags
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
+import miyucomics.hexpose.actions.types.OpGetEnchantmentTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import miyucomics.hexpose.interop.MoreiotasInteropActions
@@ -158,7 +159,7 @@ object HexposeActions {
 		register("get_message", "aeeedw", HexDir.SOUTH_WEST, OpGetMessage)
 		register("get_message_indexed", "dqqqaw", HexDir.SOUTH_EAST, OpGetMessageIndexed)
 
-		register("get_enchantments", "waqeaeqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
+		register("get_enchantments", "waqwwqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
 			var data = stack.enchantments
 			if (stack.isOf(Items.ENCHANTED_BOOK))
 				data = EnchantedBookItem.getEnchantmentNbt(stack)
@@ -167,7 +168,13 @@ object HexposeActions {
 				enchantments.add(IdentifierIota(Registries.ENCHANTMENT.getId(enchantment)!!))
 			enchantments.asActionResult
 		})
-		register("get_enchantment_strength", "waqwwqaweede", HexDir.WEST, OpGetEnchantmentStrength)
+		register("get_enchantment_strength", "wdewwedwewdwdw", HexDir.EAST, OpGetEnchantmentStrength)
+		register("enchantment_weight", "waawdedwd", HexDir.NORTH_EAST, OpGetEnchantmentTypeData { it.rarity.weight.asActionResult })
+		register("can_item_support_enchantment", "aaqqadaqwqa", HexDir.WEST, OpGetEnchantmentCompat)
+		register("enchantment_min_level", "waqwqaqwaaw", HexDir.WEST, OpGetEnchantmentTypeData { it.minLevel.asActionResult })
+		register("enchantment_max_level", "wdewedqwaaw", HexDir.EAST, OpGetEnchantmentTypeData { it.maxLevel.asActionResult })
+		register("is_enchantment_cursed", "aeaqwqaqwaaw", HexDir.NORTH_WEST, OpGetEnchantmentTypeData { it.isCursed.asActionResult })
+		register("is_enchantment_treasure", "aqwqaeaqwddw", HexDir.WEST, OpGetEnchantmentTypeData { it.isTreasure.asActionResult })
 
 		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityData { entity -> entity.width.asActionResult })
 		register("theodolite", "wqaa", HexDir.EAST, OpGetEntityData { entity ->
