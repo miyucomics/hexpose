@@ -34,6 +34,7 @@
 	"hexpose.item_stack.format": " | %s (%d)",
 	"hexpose.item_stack.null": "Null Item",
 
+	"hexcasting.action.book.hexpose:block_map_color": "Cartographer's Purif.",
 	"hexcasting.action.book.hexpose:get_enchantments": "Thaumaturgist's Purif.",
 	"hexcasting.action.book.hexpose:breedable": "Reproduction Purif.",
 	"hexcasting.action.book.hexpose:theodolite": "Theodolite Purif.",
@@ -117,6 +118,10 @@
 	"hexpose.category.scrying.desc": "I have stumbled upon a branch of manipulating _media entirely focused around information about the world.$(br2)While likely not useful for the majority of _Hexes, these will be convenient to have, should I ever need them.",
 
 	"hexpose.page.blocks.title": "Blocks",
+	"hexcasting.action.hexpose:is_block_air": "Void Purification",
+	"hexpose.page.is_block_air.summary": "Pushes whether the block is a form of air.",
+	"hexcasting.action.hexpose:is_block_replaceable": "Overwriting Purification",
+	"hexpose.page.is_block_replaceable.summary": "Pushes whether the block is typically weak enough to be overwritten, such as $(item)Grass$() and the air.",
 	"hexcasting.action.hexpose:block_hardness": "Miner's Purification",
 	"hexpose.page.block_hardness.summary": "Pushes how difficult blocks of this type are to mine.",
 	"hexcasting.action.hexpose:block_blast_resistance": "Demoman's Purification",

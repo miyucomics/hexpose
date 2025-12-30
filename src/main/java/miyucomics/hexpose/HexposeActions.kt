@@ -96,6 +96,8 @@ object HexposeActions {
 		register("split_display", "dwdeqqqwqqqqae", HexDir.SOUTH_EAST, OpSplitDisplay)
 		register("disintegrate_display", "dwdeqqqqqdeee", HexDir.SOUTH_EAST, OpDisintegrateDisplay)
 
+		register("is_block_air", "edeeeee", HexDir.NORTH_EAST, OpGetBlockStateData { it.isAir.asActionResult })
+		register("is_block_replaceable", "eaqqqqqe", HexDir.NORTH_EAST, OpGetBlockStateData { it.isReplaceable.asActionResult })
 		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
 		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
 		register("blockstate_rotation", "qaqqqqqwadeeed", HexDir.EAST, OpGetBlockStateData { state ->
