@@ -65,9 +65,6 @@ import net.minecraft.util.math.Vec3d
 object HexposeActions {
 	@JvmStatic
 	fun init() {
-		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
-		register("set_item_lore", "dwewdweedwa", HexDir.NORTH_WEST, OpItemLore)
-
 		register("am_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
 			val advancement = it.getServer()!!.advancementLoader[HexAPI.modLoc("enlightenment")]
 			val tracker = it.advancementTracker
@@ -318,6 +315,9 @@ object HexposeActions {
 		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult })
 		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
+
+		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
+		register("set_item_lore", "dwewdweedwa", HexDir.NORTH_WEST, OpItemLore)
 
 		if (FabricLoader.getInstance().isModLoaded("moreiotas"))
 			MoreiotasInteropActions.init()
