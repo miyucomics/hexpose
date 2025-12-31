@@ -4,9 +4,8 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.identifier.getIdentifier
+import miyucomics.hexpose.iotas.getIdentifier
 import net.minecraft.enchantment.Enchantment
-import net.minecraft.item.FoodComponent
 import net.minecraft.registry.Registries
 
 class OpGetEnchantmentTypeData(private val process: (Enchantment) -> List<Iota>) : ConstMediaAction {

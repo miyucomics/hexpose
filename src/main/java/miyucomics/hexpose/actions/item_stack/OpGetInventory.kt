@@ -7,8 +7,8 @@ import at.petrak.hexcasting.api.casting.getEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapOthersName
-import miyucomics.hexpose.iotas.item_stack.ItemStackIota
-import miyucomics.hexpose.iotas.item_stack.asActionResult
+import miyucomics.hexpose.iotas.ItemStackIota
+import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.entity.decoration.ItemFrameEntity
 import net.minecraft.entity.passive.AbstractHorseEntity
 import net.minecraft.entity.player.PlayerEntity

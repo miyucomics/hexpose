@@ -6,8 +6,8 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.identifier.IdentifierIota
-import miyucomics.hexpose.iotas.item_stack.ItemStackIota
+import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.ItemStackIota
 import net.minecraft.entity.ItemEntity
 import net.minecraft.item.Item
 import net.minecraft.registry.Registries

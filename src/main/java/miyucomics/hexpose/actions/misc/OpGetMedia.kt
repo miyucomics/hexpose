@@ -13,8 +13,8 @@ import at.petrak.hexcasting.api.mod.HexConfig
 import at.petrak.hexcasting.api.utils.extractMedia
 import at.petrak.hexcasting.api.utils.scanPlayerForMediaStuff
 import at.petrak.hexcasting.xplat.IXplatAbstractions
-import miyucomics.hexpose.iotas.item_stack.ItemStackIota
-import miyucomics.hexpose.iotas.item_stack.getItemStack
+import miyucomics.hexpose.iotas.ItemStackIota
+import miyucomics.hexpose.iotas.getItemStack
 import net.minecraft.entity.ItemEntity
 import net.minecraft.entity.passive.AllayEntity
 import net.minecraft.server.network.ServerPlayerEntity

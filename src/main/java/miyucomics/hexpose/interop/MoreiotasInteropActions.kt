@@ -1,12 +1,11 @@
 package miyucomics.hexpose.interop
 
 import at.petrak.hexcasting.api.casting.math.HexDir
-import at.petrak.hexcasting.common.lib.HexRegistries
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import miyucomics.hexpose.HexposeActions.register
 import miyucomics.hexpose.actions.interop.OpIotaBijection
-import miyucomics.hexpose.iotas.identifier.IdentifierIota
-import miyucomics.hexpose.iotas.item_stack.ItemStackIota
+import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.ItemStackIota
 import net.minecraft.registry.Registries
 import ram.talia.moreiotas.api.casting.iota.EntityTypeIota
 import ram.talia.moreiotas.api.casting.iota.IotaTypeIota

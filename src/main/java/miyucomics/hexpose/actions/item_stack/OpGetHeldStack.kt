@@ -5,7 +5,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.item_stack.asActionResult
+import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.entity.LivingEntity
 import net.minecraft.util.Hand
 

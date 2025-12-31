@@ -40,10 +40,9 @@ import miyucomics.hexpose.actions.types.OpGetEnchantmentTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import miyucomics.hexpose.interop.MoreiotasInteropActions
-import miyucomics.hexpose.iotas.display.DisplayIota
-import miyucomics.hexpose.iotas.display.asActionResult
-import miyucomics.hexpose.iotas.identifier.IdentifierIota
-import miyucomics.hexpose.iotas.identifier.asActionResult
+import miyucomics.hexpose.iotas.DisplayIota
+import miyucomics.hexpose.iotas.asActionResult
+import miyucomics.hexpose.iotas.IdentifierIota
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.mob.MobEntity

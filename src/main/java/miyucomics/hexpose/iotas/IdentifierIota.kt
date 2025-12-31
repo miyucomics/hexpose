@@ -1,4 +1,4 @@
-package miyucomics.hexpose.iotas.identifier
+package miyucomics.hexpose.iotas
 
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType

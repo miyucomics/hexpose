@@ -3,7 +3,7 @@ package miyucomics.hexpose.actions.instance_data
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
-import miyucomics.hexpose.iotas.item_stack.getItemStack
+import miyucomics.hexpose.iotas.getItemStack
 import net.minecraft.item.ItemStack
 
 class OpGetItemStackData(private val process: (ItemStack) -> List<Iota>) : ConstMediaAction {

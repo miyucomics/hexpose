@@ -6,7 +6,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getBlockPos
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import miyucomics.hexpose.iotas.item_stack.ItemStackIota
+import miyucomics.hexpose.iotas.ItemStackIota
 import net.minecraft.block.entity.LecternBlockEntity
 import net.minecraft.inventory.Inventory
 
