@@ -3,11 +3,11 @@ package miyucomics.hexpose
 import at.petrak.hexcasting.common.lib.hex.HexArithmetics
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
 import miyucomics.hexpose.actions.display.arithmetic.DisplayArithmetic
-import miyucomics.hexpose.utils.inventories.HopperEndpointRegistry
 import miyucomics.hexpose.iotas.DisplayIota
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.ItemStackIota
 import miyucomics.hexpose.utils.ChatHandler
+import miyucomics.hexpose.utils.depots.DepotRegistry
 import net.fabricmc.api.ModInitializer
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
@@ -20,7 +20,7 @@ class HexposeMain : ModInitializer {
 		Registry.register(HexArithmetics.REGISTRY, id("display"), DisplayArithmetic)
 		ChatHandler.init()
 		HexposeActions.init()
-		HopperEndpointRegistry.init()
+		DepotRegistry.init()
 	}
 
 	companion object {

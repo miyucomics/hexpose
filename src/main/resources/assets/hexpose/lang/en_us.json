@@ -1,4 +1,5 @@
 {
+	"hexcasting.mishap.invalid_value.class.depot": "a depot iota",
 	"hexcasting.mishap.invalid_value.class.display": "a display iota",
 	"hexcasting.mishap.invalid_value.class.identifier": "an identifier",
 	"hexcasting.mishap.invalid_value.class.item_stack":	"an item stack",
@@ -22,6 +23,7 @@
 	"hexcasting.mishap.invalid_value.media_holding": "a media holding item or entity",
 	"hexcasting.mishap.invalid_value.potion_holding": "a potion holding item or entity",
 	"hexcasting.mishap.invalid_value.tamable": "a tameable entity",
+	"hexcasting.mishap.invalid_value.valid_depot": "an existing depot",
 	"hexcasting.mishap.invalid_value.vector_or_null": "a vector or null",
 	"hexcasting.mishap.invalid_value.iota_bijection.entitytype": "an entitytype or an identifier of an entity type",
 	"hexcasting.mishap.invalid_value.iota_bijection.iotatype": "an iotatype or an identifier of an iota type",
