@@ -2,9 +2,8 @@ package miyucomics.hexpose.utils.depots.implementations
 
 import miyucomics.hexpose.HexposeMain
 import miyucomics.hexpose.utils.depots.Depot
-import miyucomics.hexpose.utils.depots.DepotAccess
+import miyucomics.hexpose.utils.depots.accesses.InventoryDepotAccess
 import net.minecraft.inventory.Inventory
-import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.util.Identifier
@@ -22,10 +21,10 @@ class BlockInventoryDepot(val pos: BlockPos, val slot: Int) : Depot {
 		putInt("slot", slot)
 	}
 
-	override fun getInventoryAccess(world: ServerWorld): BlockInventoryDepotAccess? {
+	override fun getInventoryAccess(world: ServerWorld): InventoryDepotAccess? {
 		if (!isValid(world))
 			return null
-		return BlockInventoryDepotAccess(world.getBlockEntity(pos) as Inventory, slot)
+		return InventoryDepotAccess(world.getBlockEntity(pos) as Inventory, slot)
 	}
 
 	companion object {
@@ -33,15 +32,4 @@ class BlockInventoryDepot(val pos: BlockPos, val slot: Int) : Depot {
 		fun deserialize(compound: NbtCompound) =
 			BlockInventoryDepot(BlockPos.fromLong(compound.getLong("pos")), compound.getInt("slot"))
 	}
-}
-
-class BlockInventoryDepotAccess(val inventory: Inventory, val slot: Int) : DepotAccess {
-	override var stack: ItemStack
-		get() = inventory.getStack(slot)
-		set(stack) {
-			inventory.setStack(slot, stack)
-			inventory.markDirty()
-		}
-
-	override fun isValidForSlot(stack: ItemStack): Boolean = inventory.isValid(slot, stack)
 }
