@@ -350,6 +350,8 @@
 	"hexpose.page.get_dimension.summary": "Pushes the identifier of the dimension the _Hex is being cast in.",
 	"hexcasting.action.hexpose:get_moon": "Lunar Reflection",
 	"hexpose.page.get_moon.summary": "Pushes the current phase of the $(thing)Moon$() as a fraction of its size.",
+	"hexcasting.action.hexpose:get_slime": "Exorcist's Purification",
+	"hexpose.page.get_slime.summary": "Pushes whether $(thing)Slimes$() are likely to spawn in this location, even if it is not a swamp.",
 	"hexcasting.action.hexpose:get_einstein": "Distortion Reflection",
 	"hexpose.page.get_einstein.summary": "Pushes whether $(item)Compasses$() and $(item)Clocks$() will work in this dimension.",
 

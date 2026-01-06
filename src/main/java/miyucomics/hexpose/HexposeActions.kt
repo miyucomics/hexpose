@@ -41,8 +41,8 @@ import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import miyucomics.hexpose.interop.MoreiotasInteropActions
 import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.asActionResult
 import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.asActionResult
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.mob.MobEntity
@@ -56,10 +56,8 @@ import net.minecraft.state.property.Properties
 import net.minecraft.text.Style
 import net.minecraft.text.Text
 import net.minecraft.util.Hand
-import net.minecraft.util.math.ColorHelper
-import net.minecraft.util.math.Direction
-import net.minecraft.util.math.MathHelper
-import net.minecraft.util.math.Vec3d
+import net.minecraft.util.math.*
+import net.minecraft.util.math.random.ChunkRandom
 
 object HexposeActions {
 	@JvmStatic
@@ -310,9 +308,13 @@ object HexposeActions {
 		})
 		register("get_day", "wwawwawwqqawwdwwdwwaqwqwqwqwq", HexDir.SOUTH_EAST, OpGetWorldData { world -> (world.timeOfDay.toDouble() / 24000.0).asActionResult })
 		register("get_time", "wddwaqqwqaddaqqwddwaqqwqaddaq", HexDir.SOUTH_EAST, OpGetWorldData { world -> world.time.asActionResult })
-		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { world -> world.moonSize.asActionResult })
 		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult })
 		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
+		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { world -> world.moonSize.asActionResult })
+		register("get_slime", "eweweweweweeweeeeewdeee", HexDir.WEST, OpGetPositionData { world, position ->
+			val chunk = ChunkPos(position)
+			(ChunkRandom.getSlimeRandom(chunk.x, chunk.z, world.seed, 987234911L).nextInt(10) == 0).asActionResult
+		})
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 
 		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
