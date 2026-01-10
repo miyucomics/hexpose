@@ -139,6 +139,8 @@
 	"hexcasting.action.hexpose:query_blockstate": "Facet Distillation",
 	"hexpose.page.query_blockstate.summary": "Takes a block and a facet and pushes that facet's value.",
 	"hexpose.page.query_blockstate.description": "If the block does not have the given facet, the pattern pushes $(l:casting/influences)$(thing)Null$(). For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, and integers, whichever matches the facet best.$(br2)For certain facets that deal with a state among a variety of them, it will produce a seemingly random yet consistent integer. If a facet is too alien, a senseless iota is produced.",
+	"hexcasting.action.hexpose:block_slipperiness": "Skating Purification",
+	"hexpose.page.block_slipperiness.summary": "Pushes the slipperiness coefficient of a block.",
 	"hexcasting.action.hexpose:block_map_color": "Cartographer's Purification",
 	"hexpose.page.block_map_color.summary": "Pushes the color blocks of this type appear as on a map.",
 

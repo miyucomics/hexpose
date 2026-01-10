@@ -143,6 +143,7 @@ object HexposeActions {
 		})
 		register("get_blockstates", "qaqqqeqqqwqaww", HexDir.EAST, OpGetBlockProperties)
 		register("query_blockstate", "qaqqqqqeawa", HexDir.EAST, OpQueryBlockProperty)
+		register("block_slipperiness", "qaqqqqqdaqwqwqa", HexDir.EAST, OpGetBlockTypeData { it.slipperiness.asActionResult })
 		register("block_map_color", "qwedewqqqqq", HexDir.EAST, OpGetBlockTypeData { block ->
 			val color = block.defaultMapColor.color
 			Vec3d(

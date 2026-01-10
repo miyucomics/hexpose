@@ -8,7 +8,10 @@
 - added patterns to read tags from entities, blocks, and items
 - added patterns to get mob anger
 - added pattern to test for slime chunks
-- added some nice block scrying patterns for replaceability and whether it is a type of air
+- added some nice block scrying patterns
+  - whether it is a type of air
+  - replaceability
+  - slipperiness
 - added patterns to get mob attacker and attacked time
 - added basic free spells. It seems unreasonable that a mod that has a pattern to get item frame rotation would need an accessory mod to set item frame rotation for example, or for a mod that has display iotas and the ability to read the name of an item to not have a spell to set those things
   - added spell to use display iotas to set name and lore of items
