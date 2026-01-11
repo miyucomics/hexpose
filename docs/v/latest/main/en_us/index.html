@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/35c27e462c93eab8a7360a48cce448b104f7df6f"
+      href="https://github.com/miyucomics/hexpose/tree/70b7d13f04ca67e25e3afd37d9b2241abbd625b2"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -2704,6 +2704,62 @@
 <br />
     <p>If the block does not have the given facet, the pattern pushes <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>. For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, and integers, whichever matches the facet best.</p><p>For certain facets that deal with a state among a variety of them, it will produce a seemingly random yet consistent integer. If a facet is too alien, a senseless iota is produced.</p>
 <br />
+  <div id="patterns/scrying/blocks@hexpose:block_slipperiness" class="">
+<h4 class="pattern-title">Skating Purification (identifier → number)<a
+    href="#patterns/scrying/blocks@hexpose:block_slipperiness"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaqqqqqdaqwqwqa"
+        data-start="east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qaqqqqqdaqwqwqa</canvas>
+  </details>
+      <p>Pushes the slipperiness coefficient of a block.</p>
+  </div>
+<br />
   <div id="patterns/scrying/blocks@hexpose:block_map_color" class="">
 <h4 class="pattern-title">Cartographer&#39;s Purif. (identifier → vector)<a
     href="#patterns/scrying/blocks@hexpose:block_map_color"
@@ -2779,7 +2835,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/scrying/chat@hexpose:get_message" class="">
-<h4 class="pattern-title">News Reflection (→ text, text, number)<a
+<h4 class="pattern-title">News Reflection (→ display, display, number)<a
     href="#patterns/scrying/chat@hexpose:get_message"
     class="permalink small"
     title="Permalink"
@@ -2832,6 +2888,62 @@
       >Your browser does not support visualizing patterns. Pattern code: aeeedw</canvas>
   </details>
       <p>Pushes a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> of the last person to use chat, a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> of the message, and a number of twentieths of a second since that message sent.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/chat@hexpose:get_message_indexed" class="">
+<h4 class="pattern-title">News Disintegration (number → display, display, number)<a
+    href="#patterns/scrying/chat@hexpose:get_message_indexed"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dqqqaw"
+        data-start="south_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: dqqqaw</canvas>
+  </details>
+      <p><br />Acts similarly to <a href="#patterns/scrying/chat@hexpose:get_message"><span style="color: #fc77be">News Reflection</span></a> but acts on the message sent n messages ago, up to sixty four messages ago.</p>
   </div>
 <br />
 </div>
@@ -6143,7 +6255,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:item_name" class="">
-<h4 class="pattern-title">Appellation Purification (item → text)<a
+<h4 class="pattern-title">Appellation Purification (item → display)<a
     href="#patterns/scrying/item@hexpose:item_name"
     class="permalink small"
     title="Permalink"
@@ -6199,7 +6311,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:item_lore" class="">
-<h4 class="pattern-title">Legacy Purification (item → list of text)<a
+<h4 class="pattern-title">Legacy Purification (item → list of displays)<a
     href="#patterns/scrying/item@hexpose:item_lore"
     class="permalink small"
     title="Permalink"
@@ -8266,6 +8378,62 @@
       >Your browser does not support visualizing patterns. Pattern code: eweweweweweeweeedadw</canvas>
   </details>
       <p>Pushes the current phase of the <span style="color: #8d6acc">Moon</span> as a fraction of its size.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/world@hexpose:get_slime" class="">
+<h4 class="pattern-title">Exorcist&#39;s Purification (vector → boolean)<a
+    href="#patterns/scrying/world@hexpose:get_slime"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="eweweweweweeweeeeewdeee"
+        data-start="west"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: eweweweweweeweeeeewdeee</canvas>
+  </details>
+      <p>Pushes whether <span style="color: #8d6acc">Slimes</span> are likely to spawn in this location, even if it is not a swamp.</p>
   </div>
 <br />
   <div id="patterns/scrying/world@hexpose:get_einstein" class="">

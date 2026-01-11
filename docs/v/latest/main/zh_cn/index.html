@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/35c27e462c93eab8a7360a48cce448b104f7df6f"
+      href="https://github.com/miyucomics/hexpose/tree/70b7d13f04ca67e25e3afd37d9b2241abbd625b2"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -3410,6 +3410,62 @@
       <p>返回当前的月相，返回值为可见的<span style="color: #b0b">月亮</span>照亮区域的占比。</p>
   </div>
 <br />
+  <div id="patterns/scrying/world@hexpose:get_slime" class="">
+<h4 class="pattern-title">Exorcist&#39;s Purification (vector → boolean)<a
+    href="#patterns/scrying/world@hexpose:get_slime"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="eweweweweweeweeeeewdeee"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：eweweweweweeweeeeewdeee</canvas>
+  </details>
+      <p>Pushes whether <span style="color: #8d6acc">Slimes</span> are likely to spawn in this location, even if it is not a swamp.</p>
+  </div>
+<br />
   <div id="patterns/scrying/world@hexpose:get_einstein" class="">
 <h4 class="pattern-title">扭曲之精思 (→ boolean)<a
     href="#patterns/scrying/world@hexpose:get_einstein"
@@ -5316,6 +5372,62 @@
 <br />
     <p>若方块没有给定侧征，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。大多数情况下，返回的结果很好理解：布尔值、方向向量、整数，总之是最合乎侧征的 iota。</p><p>某些关系到状态等方面的侧征给出的是看似随机但恒定的整数。如果侧征太过生僻，即会返回无意义的 iota。</p>
 <br />
+  <div id="patterns/scrying/blocks@hexpose:block_slipperiness" class="">
+<h4 class="pattern-title">Skating Purification (identifier → number)<a
+    href="#patterns/scrying/blocks@hexpose:block_slipperiness"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaqqqqqdaqwqwqa"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qaqqqqqdaqwqwqa</canvas>
+  </details>
+      <p>Pushes the slipperiness coefficient of a block.</p>
+  </div>
+<br />
   <div id="patterns/scrying/blocks@hexpose:block_map_color" class="">
 <h4 class="pattern-title">制图师之纯化 (identifier → vector)<a
     href="#patterns/scrying/blocks@hexpose:block_map_color"
@@ -6851,7 +6963,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:item_name" class="">
-<h4 class="pattern-title">称谓之纯化 (item → text)<a
+<h4 class="pattern-title">称谓之纯化 (item → display)<a
     href="#patterns/scrying/item@hexpose:item_name"
     class="permalink small"
     title="Permalink"
@@ -6907,7 +7019,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:item_lore" class="">
-<h4 class="pattern-title">传承之纯化 (item → list of text)<a
+<h4 class="pattern-title">传承之纯化 (item → list of displays)<a
     href="#patterns/scrying/item@hexpose:item_lore"
     class="permalink small"
     title="Permalink"
@@ -7859,7 +7971,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/scrying/chat@hexpose:get_message" class="">
-<h4 class="pattern-title">新闻之精思 (→ text, text, number)<a
+<h4 class="pattern-title">新闻之精思 (→ display, display, number)<a
     href="#patterns/scrying/chat@hexpose:get_message"
     class="permalink small"
     title="Permalink"
@@ -7912,6 +8024,62 @@
       >浏览器不支持图案的可视化。图案代码见此：aeeedw</canvas>
   </details>
       <p>以<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>形式返回最近一次使用聊天栏的玩家，同时以<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>形式返回该消息，以及发送时间距现在有多少个 1/20 秒。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/chat@hexpose:get_message_indexed" class="">
+<h4 class="pattern-title">News Disintegration (number → display, display, number)<a
+    href="#patterns/scrying/chat@hexpose:get_message_indexed"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="dqqqaw"
+        data-start="south_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：dqqqaw</canvas>
+  </details>
+      <p><br />Acts similarly to <a href="#patterns/scrying/chat@hexpose:get_message"><span style="color: #fc77be">News Reflection</span></a> but acts on the message sent n messages ago, up to sixty four messages ago.</p>
   </div>
 <br />
 </div>
