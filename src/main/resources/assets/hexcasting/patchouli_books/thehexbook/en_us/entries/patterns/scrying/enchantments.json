@@ -1,0 +1,72 @@
+{
+	"name": "hexpose.page.enchantments.title",
+	"icon": "minecraft:enchanted_book",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_enchantments",
+			"anchor": "hexpose:get_enchantments",
+			"input": "item",
+			"output": "list of identifiers",
+			"text": "hexpose.page.get_enchantments.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_enchantment_strength",
+			"anchor": "hexpose:get_enchantment_strength",
+			"input": "item, identifier",
+			"output": "number",
+			"text": "hexpose.page.get_enchantment_strength.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:enchantment_weight",
+			"anchor": "hexpose:enchantment_weight",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexpose.page.enchantment_weight.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:can_item_support_enchantment",
+			"anchor": "hexpose:can_item_support_enchantment",
+			"input": "item, identifier",
+			"output": "boolean",
+			"text": "hexpose.page.can_item_support_enchantment.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:enchantment_min_level",
+			"anchor": "hexpose:enchantment_min_level",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexpose.page.enchantment_min_level.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:enchantment_max_level",
+			"anchor": "hexpose:enchantment_max_level",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexpose.page.enchantment_max_level.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_enchantment_cursed",
+			"anchor": "hexpose:is_enchantment_cursed",
+			"input": "identifier",
+			"output": "boolean",
+			"text": "hexpose.page.is_enchantment_cursed.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_enchantment_treasure",
+			"anchor": "hexpose:is_enchantment_treasure",
+			"input": "identifier",
+			"output": "boolean",
+			"text": "hexpose.page.is_enchantment_treasure.summary"
+		}
+	]
+}

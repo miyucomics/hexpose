@@ -5,8 +5,8 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import miyucomics.hexpose.iotas.display.getDisplay
-import miyucomics.hexpose.iotas.display.getRoot
+import miyucomics.hexpose.iotas.getDisplay
+import miyucomics.hexpose.iotas.getRoot
 
 object OpParseDisplay : ConstMediaAction {
 	override val argc = 1

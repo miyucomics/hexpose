@@ -9,8 +9,16 @@
 			"op_id": "hexpose:get_message",
 			"anchor": "hexpose:get_message",
 			"input": "",
-			"output": "text, text, number",
+			"output": "display, display, number",
 			"text": "hexpose.page.get_message.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_message_indexed",
+			"anchor": "hexpose:get_message_indexed",
+			"input": "number",
+			"output": "display, display, number",
+			"text": "hexpose.page.get_message_indexed.summary"
 		}
 	]
 }

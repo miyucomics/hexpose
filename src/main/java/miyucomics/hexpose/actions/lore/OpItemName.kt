@@ -7,7 +7,7 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getItemEntity
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import miyucomics.hexpose.iotas.display.getDisplay
+import miyucomics.hexpose.iotas.getDisplay
 import net.minecraft.item.ItemStack
 import net.minecraft.text.Text
 

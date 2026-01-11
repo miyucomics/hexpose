@@ -1,0 +1,36 @@
+{
+	"name": "hexpose.page.tags.title",
+	"icon": "minecraft:name_tag",
+	"category": "hexcasting:scrying",
+	"advancement": "hexcasting:root",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.tags.0"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:entity_tags",
+			"anchor": "hexpose:entity_tags",
+			"input": "entity/identifier",
+			"output": "list",
+			"text": "hexpose.page.entity_tags.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:block_tags",
+			"anchor": "hexpose:block_tags",
+			"input": "vec/entity/item/id",
+			"output": "list",
+			"text": "hexpose.page.block_tags.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:item_tags",
+			"anchor": "hexpose:item_tags",
+			"input": "entity/item/identifier",
+			"output": "list",
+			"text": "hexpose.page.item_tags.summary"
+		}
+	]
+}

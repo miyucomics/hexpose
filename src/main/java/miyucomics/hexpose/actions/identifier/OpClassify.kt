@@ -4,7 +4,7 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.fabric.xplat.FabricXplatImpl
-import miyucomics.hexpose.iotas.identifier.asActionResult
+import miyucomics.hexpose.iotas.asActionResult
 
 object OpClassify : ConstMediaAction {
 	override val argc = 1

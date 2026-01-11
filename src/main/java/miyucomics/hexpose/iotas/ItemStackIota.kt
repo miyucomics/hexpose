@@ -1,9 +1,10 @@
-package miyucomics.hexpose.iotas.item_stack
+package miyucomics.hexpose.iotas
 
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
+import com.samsthenerd.inline.api.data.ItemInlineData
 import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement
@@ -40,7 +41,7 @@ class ItemStackIota(stack: ItemStack) : Iota(TYPE, stack) {
 				val stack = deserialize(tag, null).stack
 				if (stack.isEmpty)
 					return Text.translatable("hexpose.item_stack.null").formatted(Formatting.GRAY)
-				return stack.name.copy().append(" (").append(Text.literal(stack.count.toString()).formatted(stack.rarity.formatting)).append("): ")
+				return stack.name.copy().append(" (").append(Text.literal(stack.count.toString()).formatted(stack.rarity.formatting)).append("): ").append(ItemInlineData.make(stack))
 			}
 
 			override fun deserialize(tag: NbtElement, world: ServerWorld?): ItemStackIota {

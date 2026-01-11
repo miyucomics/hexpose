@@ -1,7 +1,7 @@
 package miyucomics.hexpose.utils
 
 class RingBuffer<T>(private val capacity: Int) : Iterable<T> {
-	private val buffer = ArrayDeque<T>(capacity)
+	val buffer = ArrayDeque<T>(capacity)
 	override fun iterator(): Iterator<T> = buffer.iterator()
 
 	fun add(item: T) {

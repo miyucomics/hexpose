@@ -6,6 +6,22 @@
 	"pages": [
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_block_air",
+			"anchor": "hexpose:is_block_air",
+			"input": "vector",
+			"output": "boolean",
+			"text": "hexpose.page.is_block_air.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_block_replaceable",
+			"anchor": "hexpose:is_block_replaceable",
+			"input": "vector",
+			"output": "boolean",
+			"text": "hexpose.page.is_block_replaceable.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "hexpose:block_hardness",
 			"anchor": "hexpose:block_hardness",
 			"input": "identifier",
@@ -59,6 +75,14 @@
 		{
 			"type": "patchouli:text",
 			"text": "hexpose.page.query_blockstate.description"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:block_slipperiness",
+			"anchor": "hexpose:block_slipperiness",
+			"input": "identifier",
+			"output": "number",
+			"text": "hexpose.page.block_slipperiness.summary"
 		},
 		{
 			"type": "hexcasting:pattern",

@@ -10,7 +10,7 @@ import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.common.lib.hex.HexEvalSounds
-import miyucomics.hexpose.iotas.display.DisplayIota
+import miyucomics.hexpose.iotas.DisplayIota
 import net.minecraft.text.Style
 
 class OpDisplayBoolean(val getter: (Style) -> Boolean?, val setter: Style.(Boolean?) -> Style) : Action {

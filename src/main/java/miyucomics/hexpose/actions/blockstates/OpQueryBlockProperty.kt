@@ -7,7 +7,7 @@ import at.petrak.hexcasting.api.casting.getBlockPos
 import at.petrak.hexcasting.api.casting.iota.GarbageIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import miyucomics.hexpose.iotas.identifier.getIdentifier
+import miyucomics.hexpose.iotas.getIdentifier
 import net.minecraft.state.property.BooleanProperty
 import net.minecraft.state.property.DirectionProperty
 import net.minecraft.state.property.EnumProperty

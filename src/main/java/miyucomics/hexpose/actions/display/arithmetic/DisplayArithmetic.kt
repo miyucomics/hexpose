@@ -14,7 +14,7 @@ import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.math.HexPattern
 import at.petrak.hexcasting.common.casting.arithmetic.operator.nextPositiveIntUnderInclusive
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
-import miyucomics.hexpose.iotas.display.DisplayIota
+import miyucomics.hexpose.iotas.DisplayIota
 import net.minecraft.text.Text
 import kotlin.math.max
 import kotlin.math.min

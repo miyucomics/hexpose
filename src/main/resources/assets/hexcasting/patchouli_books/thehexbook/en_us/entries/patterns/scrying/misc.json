@@ -22,11 +22,19 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:item_frame_rotation",
-			"anchor": "hexpose:item_frame_rotation",
+			"op_id": "hexpose:get_item_frame_rotation",
+			"anchor": "hexpose:get_item_frame_rotation",
 			"input": "entity",
 			"output": "number",
-			"text": "hexpose.page.item_frame_rotation.summary"
+			"text": "hexpose.page.get_item_frame_rotation.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:set_item_frame_rotation",
+			"anchor": "hexpose:set_item_frame_rotation",
+			"input": "entity, number",
+			"output": "",
+			"text": "hexpose.page.set_item_frame_rotation.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
