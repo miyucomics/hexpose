@@ -1,4 +1,13 @@
 {
+	"hexcasting.iota.hexpose:depot": "Depot",
+	"hexcasting.iota.hexpose:depot.desc": "a depot iota",
+	"hexcasting.iota.hexpose:text": "Text Display",
+	"hexcasting.iota.hexpose:text.desc": "a display iota",
+	"hexcasting.iota.hexpose:identifier": "Identifier",
+	"hexcasting.iota.hexpose:identifier.desc": "an identifier",
+	"hexcasting.iota.hexpose:item_stack": "Item Stack",
+	"hexcasting.iota.hexpose:item_stack.desc": "an item stack",
+	
 	"hexcasting.mishap.invalid_value.class.depot": "a depot iota",
 	"hexcasting.mishap.invalid_value.class.display": "a display iota",
 	"hexcasting.mishap.invalid_value.class.identifier": "an identifier",
