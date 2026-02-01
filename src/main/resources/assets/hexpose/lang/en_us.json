@@ -53,7 +53,7 @@
 	"hexcasting.action.book.hexpose:get_weather": "Meterologist's Refl.",
 
 	"hexpose.page.moreiotas_interop.title": "Competing Standards",
-	"hexpose.page.moreiotas_interop.0": "It seems Nature is not a perfectly efficient system—which fair enough, what mind is free of redundancy? Why would the sentient set of all minds to be?$(br2)In any case, it seems there are often $(o)competing standards$(): multiple types of iota that achieve the same purpose, possibly from different eras or reflecting different philosophies.",
+	"hexpose.page.moreiotas_interop.0": "It seems Nature is not a perfectly efficient system—which fair enough, what mind is free of redundancy? Why would the sentient set of all minds be?$(br2)In any case, it seems there are often $(o)competing standards$(): multiple types of iota that achieve the same purpose, possibly from different eras or reflecting different philosophies.",
 	"hexpose.page.moreiotas_interop.1": "I have identified four pairs of iotas that can form a bijection, which I have documented on the following pages.$(br2)$(o)There are 14 competing standards.$(br2)'We need to develop one universal standard that covers everybody's use cases!'$(br2)There are now 15 competing standards.$()",
 	"hexcasting.action.hexpose:moreiotas_entitytype_compat": "Darwin's Purification",
 	"hexpose.page.moreiotas_entitytype_compat.summary": "$(br)Toggles between entitytypes and an identifier representing that entity type.",
