@@ -295,7 +295,7 @@
 	"hexcasting.action.hexpose:env_media": "Media Reflection",
 	"hexpose.page.env_media.summary": "Pushes the _media available to the current cast.",
 	"hexcasting.action.hexpose:get_media": "Media Purification",
-	"hexpose.page.get_media.summary": "Pushes the amount of _media an entity, block, or item has or contains, or $(l:casting/influences)$(thing)Null$() if the item does not have any _media-holding potential or no neatly defined maximum.",
+	"hexpose.page.get_media.summary": "Pushes the amount of _media an entity, block, or item has or contains, or $(l:casting/influences)$(thing)Null$() if the item does not have any _media-holding potential.",
 	"hexcasting.action.hexpose:get_max_media": "Potential Purification",
 	"hexpose.page.get_max_media.summary": "Pushes the maximum amount of _media an entity, block, or item has or contains, or $(l:casting/influences)$(thing)Null$() if the item does not have any _media-holding potential or no neatly defined maximum.",
 

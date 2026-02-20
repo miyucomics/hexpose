@@ -269,7 +269,7 @@ object HexposeActions {
 				)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
 			})
 		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
-		register("get_max_media", "ddeaq", HexDir.EAST, OpGetMaxMedia)
+		register("get_max_media", "ddea", HexDir.EAST, OpGetMaxMedia)
 
 		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpGetCatVariant)
 		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpGetCreeperFuse)
