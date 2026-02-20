@@ -150,11 +150,11 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:shooter",
-			"anchor": "hexpose:shooter",
+			"op_id": "hexpose:entity_name",
+			"anchor": "hexpose:entity_name",
 			"input": "entity",
-			"output": "entity/null",
-			"text": "hexpose.page.shooter.summary"
+			"output": "display",
+			"text": "hexpose.page.entity_name.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -163,6 +163,22 @@
 			"input": "entity",
 			"output": "entity/null",
 			"text": "hexpose.page.pet_owner.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_monster",
+			"anchor": "hexpose:is_monster",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexpose.page.is_monster.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:shooter",
+			"anchor": "hexpose:shooter",
+			"input": "entity",
+			"output": "entity/null",
+			"text": "hexpose.page.shooter.summary"
 		},
 		{
 			"type": "hexcasting:pattern",

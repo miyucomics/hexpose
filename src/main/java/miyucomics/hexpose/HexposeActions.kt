@@ -48,6 +48,7 @@ import miyucomics.hexpose.iotas.asActionResult
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.mob.MobEntity
+import net.minecraft.entity.mob.Monster
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
@@ -201,17 +202,16 @@ object HexposeActions {
 				return@OpGetLivingEntityData listOf(NullIota())
 			return@OpGetLivingEntityData entity.isInLove.asActionResult
 		})
-		register("get_player_hunger", "qqqadaddw", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.foodLevel.asActionResult })
-		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
 		register("entity_vehicle", "eqqedwewew", HexDir.EAST, OpGetEntityData { entity -> entity.vehicle.asActionResult })
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map(::EntityIota).asActionResult })
 		register("angry_at", "aqwedewwded", HexDir.SOUTH_WEST, OpGetAngryAt)
 		register("angry_time", "aqawwqaqwed", HexDir.NORTH_EAST, OpGetAngryTime)
 		register("last_attacker", "qqqwaeqa", HexDir.NORTH_WEST, OpGetAttacker)
 		register("last_attacked", "deqdweee", HexDir.EAST, OpGetLivingEntityData { entity -> (entity.age - entity.lastAttackedTime).asActionResult })
-		register("shooter", "aadedade", HexDir.EAST, OpShooter)
-		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
 		register("entity_name", "edeweedw", HexDir.SOUTH_WEST, OpGetEntityData { it.name.asActionResult })
+		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
+		register("is_monster", "qaedwaa", HexDir.NORTH_EAST, OpGetEntityData { (it is Monster).asActionResult })
+		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("absorption_hearts", "waawedwdwd", HexDir.NORTH_EAST, OpGetLivingEntityData { entity -> entity.absorptionAmount.asActionResult })
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit)
@@ -220,11 +220,13 @@ object HexposeActions {
 		register("env_packaged_hex", "waaqwwaqqqqq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is PackagedItemCastEnv).asActionResult })
 		register("env_circle", "waaqdeaqwqae", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is CircleCastEnv).asActionResult })
 
-		register("edible", "adaqqqdd", HexDir.WEST, OpGetItemTypeData { item -> item.isFood.asActionResult })
+		register("get_player_hunger", "qqqadaddw", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.foodLevel.asActionResult })
+		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
 		register("get_hunger", "adaqqqddqe", HexDir.WEST, OpGetFoodTypeData { food -> food.hunger.asActionResult })
 		register("get_saturation", "adaqqqddqw", HexDir.WEST, OpGetFoodTypeData { food -> food.saturationModifier.asActionResult })
 		register("is_meat", "adaqqqddaed", HexDir.WEST, OpGetFoodTypeData { food -> food.isMeat.asActionResult })
 		register("is_snack", "adaqqqddaq", HexDir.WEST, OpGetFoodTypeData { food -> food.isSnack.asActionResult })
+		register("edible", "adaqqqdd", HexDir.WEST, OpGetItemTypeData { item -> item.isFood.asActionResult })
 
 		register("identify", "qqqqqe", HexDir.NORTH_EAST, OpIdentify)
 		register("classify", "edqdeq", HexDir.WEST, OpClassify)
