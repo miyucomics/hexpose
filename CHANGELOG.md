@@ -22,15 +22,13 @@
   - in 1.0.0, text iotas would automatically handle all this information for you. Create some text, style the entire thing, and concatenate them to mix and match styles
   - however, this leads to a lot of unintuitive behavior that would simply be unreasonable for the developer to handle. Is this piece of green text a single text, or actually `Text` with a child for every letter, or actually split at some random ratio? All of those would not equal each other
   - the only solution that I can execute would be to dynamically flatten and simplify `Text` on the fly. However, that raises its own issues if I invisibly alter the composition of `Text` on the fly. Thus, the solution I have determined is to release a breaking API update to give that responsibility entirely to the user
-- fixed Offer Purification sampling count from incorrect position
+- changed Potential Purification to accept entities and blocks, useful for interop
+- fixed Offer Purification taking the count parameter from incorrect position
+- removed piercing raycasts since it's all just math. I just think it'd be neat if the player had to do it instead
 - renamed text iotas to display iotas to avoid confusion with strings
-- altered Newspaper Reflection
+- reworked Newspaper Reflection
   - no other pattern does the same "retroactive" effect and I think I'd be cool if the player had to handle it
   - now there is News Disintegration in case you do want to dig back in time, and it won't blow up your stack with a giant list
-- removed piercing raycasts
-  - since it's all just math, I just think it'd be neat if the player had to do it instead
-  - there will be replacement patterns that return the list of things to check and the direction so it's not a complete loss
-  - in fact, it can be thought of as a benefit due to increased flexibility when it is the player that has to handle it
 
 ## 1.0.0
 - initial release

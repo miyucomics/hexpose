@@ -31,6 +31,8 @@ import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.lore.OpItemLore
 import miyucomics.hexpose.actions.lore.OpItemName
+import miyucomics.hexpose.actions.media.OpGetMaxMedia
+import miyucomics.hexpose.actions.media.OpGetMedia
 import miyucomics.hexpose.actions.misc.*
 import miyucomics.hexpose.actions.tags.OpBlockTags
 import miyucomics.hexpose.actions.tags.OpEntityTags
@@ -259,7 +261,6 @@ object HexposeActions {
 		register("book_sources", "eaedweew", HexDir.EAST, OpBookSources)
 		register("item_rarity", "wqqed", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.rarity.ordinal.asActionResult })
 
-		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
 		register("env_media", "dde", HexDir.WEST,
 			OpGetEnvData { env ->
 				((Long.MAX_VALUE - env.extractMedia(
@@ -267,10 +268,8 @@ object HexposeActions {
 					true
 				)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
 			})
-		register("media_max_stack", "ddeaq", HexDir.EAST, OpGetItemStackData {
-			val holder = IXplatAbstractions.INSTANCE.findMediaHolder(it) ?: return@OpGetItemStackData listOf(NullIota())
-			return@OpGetItemStackData (holder.maxMedia.toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
-		})
+		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
+		register("get_max_media", "ddeaq", HexDir.EAST, OpGetMaxMedia)
 
 		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpGetCatVariant)
 		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpGetCreeperFuse)

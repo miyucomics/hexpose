@@ -252,8 +252,8 @@
 	"hexpose.page.env_media.summary": "返回当前施放可用的$(media)媒质$()的量。",
 	"hexcasting.action.hexpose:get_media": "媒质之纯化",
 	"hexpose.page.get_media.summary": "返回物品中的，或生物含有的，或生物持有的，或特种$(media)媒质$()存储方块含有的$(media)媒质$()。",
-	"hexcasting.action.hexpose:media_max_stack": "潜能之纯化",
-	"hexpose.page.media_max_stack.summary": "接受一个物品实体，若其无法存储$(media)媒质$()，返回 $(l:casting/influences)$(thing)Null$()；否则返回其$(media)媒质$()存储上限。",
+	"hexcasting.action.hexpose:get_max_media": "潜能之纯化",
+	"hexpose.page.get_max_media.summary": "接受一个物品实体，若其无法存储$(media)媒质$()，返回 $(l:casting/influences)$(thing)Null$()；否则返回其$(media)媒质$()存储上限。",
 
 	"hexpose.page.status_effects.title": "状态效果",
 	"hexcasting.action.hexpose:get_effects_entity": "诊断之纯化",
