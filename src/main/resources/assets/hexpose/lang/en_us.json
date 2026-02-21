@@ -354,6 +354,9 @@
 	"hexpose.page.get_moon.summary": "Pushes the current phase of the $(thing)Moon$() as a fraction of its size.",
 	"hexcasting.action.hexpose:get_slime": "Exorcist's Purification",
 	"hexpose.page.get_slime.summary": "Pushes whether $(thing)Slimes$() are likely to spawn in this location, even if it is not a swamp.",
+	"hexcasting.action.hexpose:get_chunk_loaded": "Reality Purification",
+	"hexpose.page.get_chunk_loaded.summary": "Pushes the degree to which a given chunk is experiencing object permanence.",
+	"hexpose.page.get_chunk_loaded.description": "The further I travel from a place, the less reality seems to exist there until it just ceases to be at all. This pattern returns the degree of existence a given location is experiencing.$(br2)-1: it has not yet existed. 0: it does not exist due to lack of presence. Entities here become $(l:casting/influences)$(thing)Null$(). 1: entities and blocks exist here and can be queried, but no time flows. 2: blocks function but entities are frozen in time. 3: full and regular operation of reality.",
 	"hexcasting.action.hexpose:get_einstein": "Distortion Reflection",
 	"hexpose.page.get_einstein.summary": "Pushes whether $(item)Compasses$() and $(item)Clocks$() will work in this dimension.",
 

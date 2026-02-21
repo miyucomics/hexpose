@@ -317,6 +317,7 @@ object HexposeActions {
 			val chunk = ChunkPos(position)
 			(ChunkRandom.getSlimeRandom(chunk.x, chunk.z, world.seed, 987234911L).nextInt(10) == 0).asActionResult
 		})
+		register("get_chunk_loaded", "eweweweweweeedaawaqd", HexDir.WEST, OpGetChunkLoaded)
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 
 		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
