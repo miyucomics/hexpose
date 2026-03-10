@@ -1,4 +1,4 @@
-package miyucomics.hexpose.actions.misc
+package miyucomics.hexpose.actions.item_stack
 
 import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction

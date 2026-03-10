@@ -86,6 +86,18 @@
 		},
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "hexpose:get_chunk_loaded",
+			"anchor": "hexpose:get_chunk_loaded",
+			"input": "vector",
+			"output": "number",
+			"text": "hexpose.page.get_chunk_loaded.summary"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "hexpose.page.get_chunk_loaded.description"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "hexpose:get_einstein",
 			"anchor": "hexpose:get_einstein",
 			"input": "",

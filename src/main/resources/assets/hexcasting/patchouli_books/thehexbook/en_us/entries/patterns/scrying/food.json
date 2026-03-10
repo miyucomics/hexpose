@@ -4,7 +4,6 @@
 	"category": "hexcasting:scrying",
 	"advancement": "hexcasting:root",
 	"pages": [
-
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:get_player_hunger",
@@ -20,14 +19,6 @@
 			"input": "entity entity",
 			"output": "number",
 			"text": "hexpose.page.get_player_saturation.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
-			"op_id": "hexpose:edible",
-			"anchor": "hexpose:edible",
-			"input": "identifier",
-			"output": "boolean",
-			"text": "hexpose.page.edible.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -60,6 +51,14 @@
 			"input": "identifier",
 			"output": "boolean",
 			"text": "hexpose.page.is_snack.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:edible",
+			"anchor": "hexpose:edible",
+			"input": "identifier",
+			"output": "boolean",
+			"text": "hexpose.page.edible.summary"
 		}
 	]
 }

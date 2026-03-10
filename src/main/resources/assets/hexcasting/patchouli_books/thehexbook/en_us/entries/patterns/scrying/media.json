@@ -16,17 +16,17 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:get_media",
 			"anchor": "hexpose:get_media",
-			"input": "entity | item | vector",
-			"output": "number",
+			"input": "any",
+			"output": "number/null",
 			"text": "hexpose.page.get_media.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:media_max_stack",
-			"anchor": "hexpose:media_max_stack",
-			"input": "item",
+			"op_id": "hexpose:get_max_media",
+			"anchor": "hexpose:get_max_media",
+			"input": "any",
 			"output": "number/null",
-			"text": "hexpose.page.media_max_stack.summary"
+			"text": "hexpose.page.get_max_media.summary"
 		}
 	]
 }

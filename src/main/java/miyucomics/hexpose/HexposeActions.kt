@@ -31,6 +31,8 @@ import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.lore.OpItemLore
 import miyucomics.hexpose.actions.lore.OpItemName
+import miyucomics.hexpose.actions.media.OpGetMaxMedia
+import miyucomics.hexpose.actions.media.OpGetMedia
 import miyucomics.hexpose.actions.misc.*
 import miyucomics.hexpose.actions.tags.OpBlockTags
 import miyucomics.hexpose.actions.tags.OpEntityTags
@@ -46,6 +48,7 @@ import miyucomics.hexpose.iotas.asActionResult
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.mob.MobEntity
+import net.minecraft.entity.mob.Monster
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.item.Items
@@ -199,17 +202,16 @@ object HexposeActions {
 				return@OpGetLivingEntityData listOf(NullIota())
 			return@OpGetLivingEntityData entity.isInLove.asActionResult
 		})
-		register("get_player_hunger", "qqqadaddw", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.foodLevel.asActionResult })
-		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
 		register("entity_vehicle", "eqqedwewew", HexDir.EAST, OpGetEntityData { entity -> entity.vehicle.asActionResult })
 		register("entity_passengers", "qeeqawqwqw", HexDir.EAST, OpGetEntityData { entity -> entity.passengerList.map(::EntityIota).asActionResult })
 		register("angry_at", "aqwedewwded", HexDir.SOUTH_WEST, OpGetAngryAt)
 		register("angry_time", "aqawwqaqwed", HexDir.NORTH_EAST, OpGetAngryTime)
 		register("last_attacker", "qqqwaeqa", HexDir.NORTH_WEST, OpGetAttacker)
 		register("last_attacked", "deqdweee", HexDir.EAST, OpGetLivingEntityData { entity -> (entity.age - entity.lastAttackedTime).asActionResult })
-		register("shooter", "aadedade", HexDir.EAST, OpShooter)
-		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
 		register("entity_name", "edeweedw", HexDir.SOUTH_WEST, OpGetEntityData { it.name.asActionResult })
+		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
+		register("is_monster", "qaedwaa", HexDir.NORTH_EAST, OpGetEntityData { (it is Monster).asActionResult })
+		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("absorption_hearts", "waawedwdwd", HexDir.NORTH_EAST, OpGetLivingEntityData { entity -> entity.absorptionAmount.asActionResult })
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit)
@@ -218,11 +220,13 @@ object HexposeActions {
 		register("env_packaged_hex", "waaqwwaqqqqq", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is PackagedItemCastEnv).asActionResult })
 		register("env_circle", "waaqdeaqwqae", HexDir.NORTH_EAST, OpGetEnvData { env -> (env is CircleCastEnv).asActionResult })
 
-		register("edible", "adaqqqdd", HexDir.WEST, OpGetItemTypeData { item -> item.isFood.asActionResult })
+		register("get_player_hunger", "qqqadaddw", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.foodLevel.asActionResult })
+		register("get_player_saturation", "qqqadaddq", HexDir.WEST, OpGetPlayerData { player -> player.hungerManager.saturationLevel.asActionResult })
 		register("get_hunger", "adaqqqddqe", HexDir.WEST, OpGetFoodTypeData { food -> food.hunger.asActionResult })
 		register("get_saturation", "adaqqqddqw", HexDir.WEST, OpGetFoodTypeData { food -> food.saturationModifier.asActionResult })
 		register("is_meat", "adaqqqddaed", HexDir.WEST, OpGetFoodTypeData { food -> food.isMeat.asActionResult })
 		register("is_snack", "adaqqqddaq", HexDir.WEST, OpGetFoodTypeData { food -> food.isSnack.asActionResult })
+		register("edible", "adaqqqdd", HexDir.WEST, OpGetItemTypeData { item -> item.isFood.asActionResult })
 
 		register("identify", "qqqqqe", HexDir.NORTH_EAST, OpIdentify)
 		register("classify", "edqdeq", HexDir.WEST, OpClassify)
@@ -259,7 +263,6 @@ object HexposeActions {
 		register("book_sources", "eaedweew", HexDir.EAST, OpBookSources)
 		register("item_rarity", "wqqed", HexDir.NORTH_EAST, OpGetItemStackData { stack -> stack.rarity.ordinal.asActionResult })
 
-		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
 		register("env_media", "dde", HexDir.WEST,
 			OpGetEnvData { env ->
 				((Long.MAX_VALUE - env.extractMedia(
@@ -267,10 +270,8 @@ object HexposeActions {
 					true
 				)).toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
 			})
-		register("media_max_stack", "ddeaq", HexDir.EAST, OpGetItemStackData {
-			val holder = IXplatAbstractions.INSTANCE.findMediaHolder(it) ?: return@OpGetItemStackData listOf(NullIota())
-			return@OpGetItemStackData (holder.maxMedia.toDouble() / MediaConstants.DUST_UNIT.toDouble()).asActionResult
-		})
+		register("get_media", "ddew", HexDir.WEST, OpGetMedia)
+		register("get_max_media", "ddea", HexDir.EAST, OpGetMaxMedia)
 
 		register("cat_variant", "wqwqqwqwawaaw", HexDir.SOUTH_WEST, OpGetCatVariant)
 		register("creeper_fuse", "dedwaqwede", HexDir.WEST, OpGetCreeperFuse)
@@ -316,6 +317,7 @@ object HexposeActions {
 			val chunk = ChunkPos(position)
 			(ChunkRandom.getSlimeRandom(chunk.x, chunk.z, world.seed, 987234911L).nextInt(10) == 0).asActionResult
 		})
+		register("get_chunk_loaded", "eweweweweweeedaawaqd", HexDir.WEST, OpGetChunkLoaded)
 		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
 
 		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
