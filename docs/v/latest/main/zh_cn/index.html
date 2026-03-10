@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/89f28c85192318f5784e4b8a0556426dd4dc63e4"
+      href="https://github.com/miyucomics/hexpose/tree/4fad16f558de714ad554e74d38dec5435a120fb5"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -3466,6 +3466,64 @@
       <p>Pushes whether <span style="color: #8d6acc">Slimes</span> are likely to spawn in this location, even if it is not a swamp.</p>
   </div>
 <br />
+  <div id="patterns/scrying/world@hexpose:get_chunk_loaded" class="">
+<h4 class="pattern-title">Reality Purification (vector → number)<a
+    href="#patterns/scrying/world@hexpose:get_chunk_loaded"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="eweweweweweeedaawaqd"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：eweweweweweeedaawaqd</canvas>
+  </details>
+      <p>Pushes the degree to which a given chunk is experiencing object permanence.</p>
+  </div>
+<br />
+    <p>The further I travel from a place, the less reality seems to exist there until it just ceases to be at all. This pattern returns the degree of existence a given location is experiencing.</p><p>-1: it has not yet existed. 0: it does not exist due to lack of presence. Entities here become <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>. 1: entities and blocks exist here and can be queried, but no time flows. 2: blocks function but entities are frozen in time. 3: full and regular operation of reality.</p>
+<br />
   <div id="patterns/scrying/world@hexpose:get_einstein" class="">
 <h4 class="pattern-title">扭曲之精思 (→ boolean)<a
     href="#patterns/scrying/world@hexpose:get_einstein"
@@ -4734,9 +4792,9 @@
       <p>返回所给实体从上一次被攻击到现在经过了多少个 1/20 秒。</p>
   </div>
 <br />
-  <div id="patterns/scrying/entities@hexpose:shooter" class="">
-<h4 class="pattern-title">射手之纯化 (entity → entity/null)<a
-    href="#patterns/scrying/entities@hexpose:shooter"
+  <div id="patterns/scrying/entities@hexpose:entity_name" class="">
+<h4 class="pattern-title">名称之纯化 (entity → display)<a
+    href="#patterns/scrying/entities@hexpose:entity_name"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -4782,12 +4840,12 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="aadedade"
-        data-start="east"
+        data-string="edeweedw"
+        data-start="south_west"
         data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：aadedade</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：edeweedw</canvas>
   </details>
-      <p>返回所给弹射物实体的发射者，若无发射者或不是弹射物，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。如果发射者在我影响范围之外，也会返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+      <p>以<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>形式返回所给实体的名称，带格式。</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:pet_owner" class="">
@@ -4844,6 +4902,118 @@
       >浏览器不支持图案的可视化。图案代码见此：qdaqwawqeewde</canvas>
   </details>
       <p>检验玩家是否驯服了所给动物，若未驯服或玩家在影响范围之外，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:is_monster" class="">
+<h4 class="pattern-title">Malevolence Purif. (entity → boolean)<a
+    href="#patterns/scrying/entities@hexpose:is_monster"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaedwaa"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qaedwaa</canvas>
+  </details>
+      <p>Pushes whether the given entity is considered inherently evil, i.e. a Snow Golem will attack it on sight. Iron Golems will also attack these creatures on sight, with the exception of Creepers.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:shooter" class="">
+<h4 class="pattern-title">射手之纯化 (entity → entity/null)<a
+    href="#patterns/scrying/entities@hexpose:shooter"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aadedade"
+        data-start="east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：aadedade</canvas>
+  </details>
+      <p>返回所给弹射物实体的发射者，若无发射者或不是弹射物，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。如果发射者在我影响范围之外，也会返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:absorption_hearts" class="">
@@ -8212,62 +8382,6 @@
       <p>返回<span style="color: #b0b">玩家</span>的饱和度。这一数据大致与饱腹感的持续时间对应。</p>
   </div>
 <br />
-  <div id="patterns/scrying/food@hexpose:edible" class="">
-<h4 class="pattern-title">可食性之纯化 (identifier → boolean)<a
-    href="#patterns/scrying/food@hexpose:edible"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="adaqqqdd"
-        data-start="west"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：adaqqqdd</canvas>
-  </details>
-      <p>接受一个物品标识，检验它是否可被我食用。</p>
-  </div>
-<br />
   <div id="patterns/scrying/food@hexpose:get_hunger" class="">
 <h4 class="pattern-title">卡路里之纯化 (identifier → number)<a
     href="#patterns/scrying/food@hexpose:get_hunger"
@@ -8490,6 +8604,62 @@
       >浏览器不支持图案的可视化。图案代码见此：adaqqqddaq</canvas>
   </details>
       <p>接受一个物品标识，检验它是否算作小食。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/food@hexpose:edible" class="">
+<h4 class="pattern-title">可食性之纯化 (identifier → boolean)<a
+    href="#patterns/scrying/food@hexpose:edible"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="adaqqqdd"
+        data-start="west"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：adaqqqdd</canvas>
+  </details>
+      <p>接受一个物品标识，检验它是否可被我食用。</p>
   </div>
 <br />
 </div>
