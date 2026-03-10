@@ -1,4 +1,11 @@
 {
+	"hexcasting.iota.hexpose:display": "Text Display",
+	"hexcasting.iota.hexpose:display.desc": "a display iota",
+	"hexcasting.iota.hexpose:identifier": "Identifier",
+	"hexcasting.iota.hexpose:identifier.desc": "an identifier",
+	"hexcasting.iota.hexpose:item_stack": "Item Stack",
+	"hexcasting.iota.hexpose:item_stack.desc": "an item stack",
+	
 	"hexcasting.mishap.invalid_value.class.display": "a display iota",
 	"hexcasting.mishap.invalid_value.class.identifier": "an identifier",
 	"hexcasting.mishap.invalid_value.class.item_stack":	"an item stack",
@@ -9,7 +16,7 @@
 	"hexcasting.mishap.invalid_value.painting": "a painting",
 	"hexcasting.mishap.invalid_value.item_frame": "an item frame",
 	"hexcasting.mishap.invalid_value.targetting": "an entity that may have a target",
-    "hexcasting.mishap.invalid_value.block_id": "an identifier of a block type",
+  "hexcasting.mishap.invalid_value.block_id": "an identifier of a block type",
 	"hexcasting.mishap.invalid_value.entity_id": "an identifier of an entity type",
 	"hexcasting.mishap.invalid_value.enchantment_id": "an identifier of an enchantment type",
 	"hexcasting.mishap.invalid_value.food_id": "an identifier of a food item type",
