@@ -8,6 +8,9 @@
 - added patterns to read tags from entities, blocks, and items
 - added patterns to get mob anger
 - added pattern to test for slime chunks
+- added pattern to get whether chunk is loaded
+- added pattern to get shooter of entity
+- added pattern to get whether an entity is considered a monster
 - added some nice block scrying patterns
   - whether it is a type of air
   - replaceability
