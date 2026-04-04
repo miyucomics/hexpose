@@ -25,7 +25,6 @@ import miyucomics.hexpose.actions.display.OpSplitDisplay
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
 import miyucomics.hexpose.actions.display.chat.OpGetMessageIndexed
 import miyucomics.hexpose.actions.display.style.*
-import miyucomics.hexpose.actions.identifier.OpClassify
 import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
@@ -41,11 +40,9 @@ import miyucomics.hexpose.actions.types.OpGetBlockTypeData
 import miyucomics.hexpose.actions.types.OpGetEnchantmentTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
-import miyucomics.hexpose.interop.MoreiotasInteropActions
 import miyucomics.hexpose.iotas.DisplayIota
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.asActionResult
-import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.mob.MobEntity
 import net.minecraft.entity.mob.Monster
@@ -322,9 +319,6 @@ object HexposeActions {
 
 		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
 		register("set_item_lore", "dwewdweedwa", HexDir.NORTH_WEST, OpItemLore)
-
-		if (FabricLoader.getInstance().isModLoaded("moreiotas"))
-			MoreiotasInteropActions.init()
 	}
 
 	fun register(name: String, signature: String, startDir: HexDir, action: Action): ActionRegistryEntry =

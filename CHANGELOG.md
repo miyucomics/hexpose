@@ -1,5 +1,12 @@
 # Hexpose
 
+## 3.0.0
+- added MoreIotas as a required dependency
+  - this removes a competing standard, although there still will be patterns that appear to do similar things, like the rename spell. With the power of display iotas, you can get a lot more display customization and the default MoreIotas spell does that support that, and it would just be impractical to mixin in and duct tape it into working.
+  - for other patterns like the time getting one, it is kept simply because I think mine is prettier and more memorable, and I'd prefer not to break hexes.
+- removed identifier iotas
+- removed item stack iotas
+
 ## 2.0.0
 - new major version due to breaking API changes
 - added ability to get the book from lectern

@@ -5,13 +5,13 @@ import net.minecraft.util.Formatting
 import net.minecraft.util.Language
 
 object TextUtils {
-	fun collectStyledCharacters(text: Text, parentStyle: Style, out: MutableList<Text>) {
+	fun disintegrateText(text: Text, parentStyle: Style, out: MutableList<Text>) {
 		val effectiveStyle = text.style.withParent(parentStyle)
 		val content = text.content
 		if (content is LiteralTextContent)
 			content.string.forEach { out += Text.literal(it.toString()).setStyle(effectiveStyle) }
 		for (child in text.siblings)
-			collectStyledCharacters(child, effectiveStyle, out)
+			disintegrateText(child, effectiveStyle, out)
 	}
 }
 
