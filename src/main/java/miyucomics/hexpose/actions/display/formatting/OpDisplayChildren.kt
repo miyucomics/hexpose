@@ -1,4 +1,4 @@
-package miyucomics.hexpose.actions.display.style
+package miyucomics.hexpose.actions.display.formatting
 
 import at.petrak.hexcasting.api.casting.castables.Action
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
@@ -19,7 +19,7 @@ object OpDisplayChildren : Action {
 
 		val top = stack.removeAt(stack.lastIndex)
 		if (top is DisplayIota) {
-			stack.add(ListIota(top.getChildren().map(DisplayIota::createSanitized)))
+			stack.add(ListIota(top.text.siblings.map(DisplayIota::createSanitized)))
 			return OperationResult(image.copy(stack = stack).withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 		}
 

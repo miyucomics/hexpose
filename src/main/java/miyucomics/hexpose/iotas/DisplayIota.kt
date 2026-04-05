@@ -10,40 +10,12 @@ import miyucomics.hexpose.utils.sanitize
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement
 import net.minecraft.server.world.ServerWorld
-import net.minecraft.text.LiteralTextContent
-import net.minecraft.text.MutableText
 import net.minecraft.text.Text
-import net.minecraft.text.TranslatableTextContent
 import net.minecraft.util.Formatting
-import net.minecraft.util.Language
 
-class DisplayIota(text: Text) : Iota(TYPE, text) {
+class DisplayIota(val text: Text) : Iota(TYPE, text) {
 	override fun isTruthy() = true
-	val text = this.payload as Text
 	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is DisplayIota) && this.text == that.text
-
-	fun getRoot() = this.text.getRoot()
-
-	fun modifyRootBuilder(modifier: (StringBuilder) -> StringBuilder): DisplayIota {
-		val builder = StringBuilder(getRoot())
-		modifier(builder)
-		return getWithNewRoot(builder.toString())
-	}
-
-	fun modifyRootString(modifier: (StringBuilder) -> String): DisplayIota {
-		val builder = modifier(StringBuilder(getRoot()))
-		return getWithNewRoot(builder)
-	}
-
-	fun getChildren(): List<Text> = this.text.siblings
-
-	fun getWithNewRoot(root: String): DisplayIota {
-		val result = MutableText.of(LiteralTextContent(root))
-		result.style = this.text.style
-		result.siblings.clear()
-		result.siblings.addAll(this.text.siblings.map(Text::copy))
-		return DisplayIota(result)
-	}
 
 	fun getWithNewChildren(children: List<Text>): Text {
 		return this.text.copy().also {
@@ -86,12 +58,4 @@ fun List<Iota>.getDisplay(idx: Int, argc: Int = 0): Text {
 	if (x is DisplayIota)
 		return x.text
 	throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "display")
-}
-
-fun Text.getRoot(): String {
-	return when (val content = this.content) {
-		is LiteralTextContent -> content.string
-		is TranslatableTextContent -> String.format(Language.getInstance().get(content.key), content.args)
-		else -> "arimfexendrapuse"
-	}
 }

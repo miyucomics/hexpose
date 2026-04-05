@@ -19,12 +19,12 @@ import at.petrak.hexcasting.xplat.IXplatAbstractions
 import miyucomics.hexpose.actions.blockstates.OpGetBlockProperties
 import miyucomics.hexpose.actions.blockstates.OpQueryBlockProperty
 import miyucomics.hexpose.actions.display.OpCompareStyles
+import miyucomics.hexpose.actions.display.OpCreateDisplay
 import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
 import miyucomics.hexpose.actions.display.OpParseDisplay
-import miyucomics.hexpose.actions.display.OpSplitDisplay
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
 import miyucomics.hexpose.actions.display.chat.OpGetMessageIndexed
-import miyucomics.hexpose.actions.display.style.*
+import miyucomics.hexpose.actions.display.formatting.*
 import miyucomics.hexpose.actions.identifier.OpIdentify
 import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
@@ -76,6 +76,9 @@ object HexposeActions {
 		})
 
 		register("create_display", "awaqeeeee", HexDir.SOUTH_WEST, OpCreateDisplay)
+		register("parse_display", "dwdewqqqwqqaeq", HexDir.SOUTH_EAST, OpParseDisplay)
+		register("compare_style", "dwdeqqqqqdda", HexDir.SOUTH_EAST, OpCompareStyles)
+		register("disintegrate_display", "dwdeqqqqqdeee", HexDir.SOUTH_EAST, OpDisintegrateDisplay)
 		register("display_children", "dwdeqqqqq", HexDir.SOUTH_EAST, OpDisplayChildren)
 		register("display_color", "awaqeeeeewded", HexDir.SOUTH_WEST, OpDisplayColor)
 		register("display_bold", "awaqeeeeedd", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::bold, Style::withBold))
@@ -84,11 +87,6 @@ object HexposeActions {
 		register("display_strikethrough", "awaqeeeeedq", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::strikethrough, Style::withStrikethrough))
 		register("display_obfuscated", "awaqeeeeeda", HexDir.SOUTH_WEST, OpDisplayBoolean(Style::obfuscated, Style::withObfuscated))
 		register("display_font", "awaqeeeeedaqa", HexDir.SOUTH_WEST, OpDisplayFont)
-
-		register("compare_style", "dwdeqqqqqdda", HexDir.SOUTH_EAST, OpCompareStyles)
-		register("parse_display", "dwdewqqqwqqaeq", HexDir.SOUTH_EAST, OpParseDisplay)
-		register("split_display", "dwdeqqqwqqqqae", HexDir.SOUTH_EAST, OpSplitDisplay)
-		register("disintegrate_display", "dwdeqqqqqdeee", HexDir.SOUTH_EAST, OpDisintegrateDisplay)
 
 		register("is_block_air", "edeeeee", HexDir.NORTH_EAST, OpGetBlockStateData { it.isAir.asActionResult })
 		register("is_block_replaceable", "eaqqqqqe", HexDir.NORTH_EAST, OpGetBlockStateData { it.isReplaceable.asActionResult })
