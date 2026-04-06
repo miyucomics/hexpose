@@ -32,7 +32,7 @@ class DisplayIota(val text: Text) : Iota(TYPE, text) {
 	}
 
 	companion object {
-		var TYPE: IotaType<DisplayIota> = object : IotaType<DisplayIota>() {
+		val TYPE: IotaType<DisplayIota> = object : IotaType<DisplayIota>() {
 			override fun color() = 0xff_db3f30.toInt()
 			override fun display(tag: NbtElement): Text {
 				if (!tag.asCompound.contains("text"))

@@ -6,11 +6,11 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.ListIota
 import at.petrak.hexcasting.api.casting.iota.NullIota
 import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.getItemStack
 import net.minecraft.item.WritableBookItem
 import net.minecraft.item.WrittenBookItem
 import net.minecraft.nbt.NbtElement
 import net.minecraft.text.Text
+import ram.talia.moreiotas.api.getItemStack
 
 object OpReadBook : ConstMediaAction {
 	override val argc = 1

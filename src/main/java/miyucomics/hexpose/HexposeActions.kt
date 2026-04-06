@@ -26,22 +26,22 @@ import miyucomics.hexpose.actions.display.chat.OpGetMessage
 import miyucomics.hexpose.actions.display.chat.OpGetMessageIndexed
 import miyucomics.hexpose.actions.display.formatting.*
 import miyucomics.hexpose.actions.identifier.OpIdentify
-import miyucomics.hexpose.actions.instance_data.*
 import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.lore.OpItemLore
 import miyucomics.hexpose.actions.lore.OpItemName
 import miyucomics.hexpose.actions.media.OpGetMaxMedia
 import miyucomics.hexpose.actions.media.OpGetMedia
 import miyucomics.hexpose.actions.misc.*
+import miyucomics.hexpose.actions.processors.*
 import miyucomics.hexpose.actions.tags.OpBlockTags
 import miyucomics.hexpose.actions.tags.OpEntityTags
 import miyucomics.hexpose.actions.tags.OpItemTags
 import miyucomics.hexpose.actions.types.OpGetBlockTypeData
-import miyucomics.hexpose.actions.types.OpGetEnchantmentTypeData
 import miyucomics.hexpose.actions.types.OpGetFoodTypeData
 import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import miyucomics.hexpose.iotas.DisplayIota
 import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.StatusEffectIota
 import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.mob.MobEntity
@@ -274,12 +274,7 @@ object HexposeActions {
 		register("set_item_frame_rotation", "awqwawqaa", HexDir.SOUTH_WEST, OpSetItemFrameRotation)
 		register("painting_variant", "wawwwqwwawwwqadaqeda", HexDir.SOUTH_WEST, OpGetPaintingVariant)
 
-		register("get_effects_entity", "wqqq", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity ->
-			val list = mutableListOf<Iota>()
-			for (effect in entity.statusEffects)
-				list.add(IdentifierIota(Registries.STATUS_EFFECT.getId(effect.effectType)!!))
-			list.asActionResult
-		})
+		register("get_effects_entity", "wqqq", HexDir.SOUTH_WEST, OpGetLivingEntityData { entity -> entity.statusEffects.map { StatusEffectIota(it.effectType) }.asActionResult })
 		register("get_effects_item", "wqqqadee", HexDir.SOUTH_WEST, OpGetPrescription)
 		register("get_effect_category", "wqqqaawd", HexDir.SOUTH_WEST, OpGetStatusEffectCategory)
 		register("get_effect_amplifier", "wqqqaqwa", HexDir.SOUTH_WEST, OpGetStatusEffectInstanceData { it.amplifier.asActionResult })

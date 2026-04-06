@@ -1,9 +1,13 @@
 {
 	"hexcasting.iota.hexpose:display": "Display",
 	"hexcasting.iota.hexpose:display.desc": "a display iota",
-
 	"hexcasting.mishap.invalid_value.class.display": "a text display",
-	"hexcasting.mishap.invalid_value.class.string":	"a string",
+	"hexcasting.iota.hexpose:enchantment": "Enchantment",
+	"hexcasting.iota.hexpose:enchantment.desc": "an enchantment iota",
+	"hexcasting.mishap.invalid_value.class.enchantment": "an enchantment",
+	"hexcasting.iota.hexpose:status_effect": "Status Effect",
+	"hexcasting.iota.hexpose:status_effect.desc": "a status effect iota",
+	"hexcasting.mishap.invalid_value.class.status_effect": "a status effect",
 
 	"hexcasting.mishap.invalid_value.boolean_or_null": "a boolean or null",
 	"hexcasting.mishap.invalid_value.display_or_string": "a text display or a string",

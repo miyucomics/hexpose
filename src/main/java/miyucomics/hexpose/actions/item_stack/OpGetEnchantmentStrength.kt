@@ -4,17 +4,15 @@ import at.petrak.hexcasting.api.casting.asActionResult
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
-import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.getIdentifier
-import miyucomics.hexpose.iotas.getItemStack
+import miyucomics.hexpose.iotas.getEnchantment
 import net.minecraft.enchantment.EnchantmentHelper
-import net.minecraft.registry.Registries
+import ram.talia.moreiotas.api.getItemStack
 
 object OpGetEnchantmentStrength : ConstMediaAction {
 	override val argc = 2
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val stack = args.getItemStack(0, argc)
-		val enchantment = Registries.ENCHANTMENT.get(args.getIdentifier(1, argc)) ?: throw MishapInvalidIota.of(args[1], 0, "enchantment_id")
+		val enchantment = args.getEnchantment(1, argc)
 		val data = EnchantmentHelper.get(stack)
 		if (!data.containsKey(enchantment))
 			return (0).asActionResult

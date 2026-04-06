@@ -1,4 +1,4 @@
-package miyucomics.hexpose.actions.instance_data
+package miyucomics.hexpose.actions.processors
 
 import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment

@@ -14,12 +14,12 @@ import at.petrak.hexcasting.api.casting.iota.NullIota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.xplat.IXplatAbstractions
-import miyucomics.hexpose.iotas.ItemStackIota
-import miyucomics.hexpose.iotas.getItemStack
 import net.minecraft.entity.ItemEntity
 import net.minecraft.entity.passive.AllayEntity
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.util.Hand
+import ram.talia.moreiotas.api.casting.iota.ItemStackIota
+import ram.talia.moreiotas.api.getItemStack
 
 object OpGetMedia : ConstMediaAction {
 	override val argc = 1
