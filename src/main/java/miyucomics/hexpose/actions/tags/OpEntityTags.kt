@@ -10,6 +10,7 @@ import miyucomics.hexpose.iotas.IdentifierIota
 import net.minecraft.entity.EntityType
 import net.minecraft.registry.Registries
 import net.minecraft.registry.tag.TagKey
+import ram.talia.moreiotas.api.casting.iota.EntityTypeIota
 
 object OpEntityTags : ConstMediaAction {
 	override val argc: Int = 1
@@ -19,7 +20,7 @@ object OpEntityTags : ConstMediaAction {
 				env.assertEntityInRange(iota.entity)
 				iota.entity.type
 			}
-			is IdentifierIota if Registries.ENTITY_TYPE.containsId(iota.identifier) -> Registries.ENTITY_TYPE.get(iota.identifier)
+			is EntityTypeIota -> iota.entityType
 			else -> throw MishapInvalidIota.of(iota, 0, "entitytype_coerceable")
 		}
 		return Registries.ENTITY_TYPE.getEntry(entityType).streamTags().map(TagKey<EntityType<*>>::id).map(::IdentifierIota).toList().asActionResult
