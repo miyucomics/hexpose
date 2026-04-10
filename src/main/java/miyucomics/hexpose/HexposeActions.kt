@@ -36,9 +36,6 @@ import miyucomics.hexpose.actions.processors.*
 import miyucomics.hexpose.actions.tags.OpBlockTags
 import miyucomics.hexpose.actions.tags.OpEntityTags
 import miyucomics.hexpose.actions.tags.OpItemTags
-import miyucomics.hexpose.actions.types.OpGetBlockTypeData
-import miyucomics.hexpose.actions.types.OpGetFoodTypeData
-import miyucomics.hexpose.actions.types.OpGetItemTypeData
 import miyucomics.hexpose.iotas.DisplayIota
 import miyucomics.hexpose.iotas.IdentifierIota
 import miyucomics.hexpose.iotas.StatusEffectIota

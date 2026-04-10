@@ -12,8 +12,11 @@
 	"hexcasting.mishap.invalid_value.class.block_type": "a block type",
 	"hexcasting.mishap.invalid_value.class.item_type": "an item type",
 
+	"hexcasting.mishap.invalid_value.food_item": "an item type that is a food",
+
 	"hexcasting.mishap.invalid_value.boolean_or_null": "a boolean or null",
 	"hexcasting.mishap.invalid_value.display_or_string": "a text display or a string",
+
 	"hexcasting.mishap.invalid_value.cat": "a cat",
 	"hexcasting.mishap.invalid_value.creeper": "a creeper",
 	"hexcasting.mishap.invalid_value.display_list": "a list of display iotas",
@@ -23,7 +26,6 @@
 	"hexcasting.mishap.invalid_value.block_id": "an identifier of a block type",
 	"hexcasting.mishap.invalid_value.entity_id": "an identifier of an entity type",
 	"hexcasting.mishap.invalid_value.enchantment_id": "an identifier of an enchantment type",
-	"hexcasting.mishap.invalid_value.food_id": "an identifier of a food item type",
 	"hexcasting.mishap.invalid_value.identifiable": "an identifiable target",
 	"hexcasting.mishap.invalid_value.number_or_null": "a number or null",
 	"hexcasting.mishap.invalid_value.status_effect_id": "an identifier of a status effect type",
