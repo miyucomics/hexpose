@@ -9,6 +9,9 @@
 	"hexcasting.iota.hexpose:status_effect.desc": "a status effect iota",
 	"hexcasting.mishap.invalid_value.class.status_effect": "a status effect",
 
+	"hexcasting.mishap.invalid_value.class.block_type": "a block type",
+	"hexcasting.mishap.invalid_value.class.item_type": "an item type",
+
 	"hexcasting.mishap.invalid_value.boolean_or_null": "a boolean or null",
 	"hexcasting.mishap.invalid_value.display_or_string": "a text display or a string",
 	"hexcasting.mishap.invalid_value.cat": "a cat",
@@ -22,7 +25,6 @@
 	"hexcasting.mishap.invalid_value.enchantment_id": "an identifier of an enchantment type",
 	"hexcasting.mishap.invalid_value.food_id": "an identifier of a food item type",
 	"hexcasting.mishap.invalid_value.identifiable": "an identifiable target",
-	"hexcasting.mishap.invalid_value.item_id": "an identifier of an item type",
 	"hexcasting.mishap.invalid_value.number_or_null": "a number or null",
 	"hexcasting.mishap.invalid_value.status_effect_id": "an identifier of a status effect type",
 	"hexcasting.mishap.invalid_value.entity_or_vector": "an entity or a vector",
