@@ -1,4 +1,7 @@
 {
+	"hexcasting.iota.hexpose:dimension": "Dimension",
+	"hexcasting.iota.hexpose:dimension.desc": "a dimension iota",
+	"hexcasting.mishap.invalid_value.class.dimension": "a dimension",
 	"hexcasting.iota.hexpose:display": "Display",
 	"hexcasting.iota.hexpose:display.desc": "a display iota",
 	"hexcasting.mishap.invalid_value.class.display": "a text display",
@@ -342,7 +345,7 @@
 	"hexcasting.action.hexpose:get_biome": "Geographical Purification",
 	"hexpose.page.get_biome.summary": "Pushes the identifier of the type of biome the vector is within.",
 	"hexcasting.action.hexpose:get_dimension": "Plane Reflection",
-	"hexpose.page.get_dimension.summary": "Pushes the identifier of the dimension the _Hex is being cast in.",
+	"hexpose.page.get_dimension.summary": "Pushes the dimension the _Hex is being cast in.",
 	"hexcasting.action.hexpose:get_moon": "Lunar Reflection",
 	"hexpose.page.get_moon.summary": "Pushes the current phase of the $(thing)Moon$() as a fraction of its size.",
 	"hexcasting.action.hexpose:get_slime": "Exorcist's Purification",
@@ -351,7 +354,7 @@
 	"hexpose.page.get_chunk_loaded.summary": "Pushes the degree to which a given chunk is experiencing object permanence.",
 	"hexpose.page.get_chunk_loaded.description": "The further I travel from a place, the less reality seems to exist there until it just ceases to be at all. This pattern returns the degree of existence a given location is experiencing.$(br2)-1: it has not yet existed. 0: it does not exist due to lack of presence. Entities here become $(l:casting/influences)$(thing)Null$(). 1: entities and blocks exist here and can be queried, but no time flows. 2: blocks function but entities are frozen in time. 3: full and regular operation of reality.",
 	"hexcasting.action.hexpose:get_einstein": "Distortion Reflection",
-	"hexpose.page.get_einstein.summary": "Pushes whether $(item)Compasses$() and $(item)Clocks$() will work in this dimension.",
+	"hexpose.page.get_einstein.summary": "Pushes whether $(item)Compasses$() and $(item)Clocks$() will work in the dimension the _Hex is being cast in.",
 
 	"hexpose.page.misc.title": "Miscellaneous",
 	"hexcasting.action.hexpose:cat_variant": "Feline Purification",

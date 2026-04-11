@@ -95,18 +95,8 @@ object HexposeActions {
 				Properties.FACING to { state.get(Properties.FACING).unitVector },
 				Properties.HORIZONTAL_FACING to { state.get(Properties.HORIZONTAL_FACING).unitVector },
 				Properties.VERTICAL_DIRECTION to { state.get(Properties.VERTICAL_DIRECTION).unitVector },
-				Properties.AXIS to {
-					Direction.from(
-						state.get(Properties.AXIS),
-						Direction.AxisDirection.POSITIVE
-					).unitVector
-				},
-				Properties.HORIZONTAL_AXIS to {
-					Direction.from(
-						state.get(Properties.HORIZONTAL_AXIS),
-						Direction.AxisDirection.POSITIVE
-					).unitVector
-				},
+				Properties.AXIS to { Direction.from(state.get(Properties.AXIS), Direction.AxisDirection.POSITIVE).unitVector },
+				Properties.HORIZONTAL_AXIS to { Direction.from(state.get(Properties.HORIZONTAL_AXIS), Direction.AxisDirection.POSITIVE).unitVector },
 				Properties.HOPPER_FACING to { state.get(Properties.HOPPER_FACING).unitVector }
 			)
 
@@ -170,11 +160,7 @@ object HexposeActions {
 			val yaw = -entity.headYaw * (Math.PI.toFloat() / 180)
 			val h = MathHelper.cos(yaw).toDouble()
 			val j = MathHelper.cos(upPitch).toDouble()
-			Vec3d(
-				MathHelper.sin(yaw).toDouble() * j,
-				MathHelper.sin(upPitch).toDouble(),
-				h * j
-			).asActionResult
+			Vec3d(MathHelper.sin(yaw).toDouble() * j, MathHelper.sin(upPitch).toDouble(), h * j).asActionResult
 		})
 		register("get_health", "wddwaqqwawq", HexDir.SOUTH_EAST, OpGetLivingEntityData { entity -> entity.health.asActionResult })
 		register("get_max_health", "wddwwawaeqwawq", HexDir.SOUTH_EAST, OpGetLivingEntityData { entity -> entity.maxHealth.asActionResult })
@@ -291,14 +277,14 @@ object HexposeActions {
 		register("get_day", "wwawwawwqqawwdwwdwwaqwqwqwqwq", HexDir.SOUTH_EAST, OpGetWorldData { world -> (world.timeOfDay.toDouble() / 24000.0).asActionResult })
 		register("get_time", "wddwaqqwqaddaqqwddwaqqwqaddaq", HexDir.SOUTH_EAST, OpGetWorldData { world -> world.time.asActionResult })
 		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult })
-		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
-		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { world -> world.moonSize.asActionResult })
+		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { it.asActionResult })
+		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { it.moonSize.asActionResult })
 		register("get_slime", "eweweweweweeweeeeewdeee", HexDir.WEST, OpGetPositionData { world, position ->
 			val chunk = ChunkPos(position)
 			(ChunkRandom.getSlimeRandom(chunk.x, chunk.z, world.seed, 987234911L).nextInt(10) == 0).asActionResult
 		})
 		register("get_chunk_loaded", "eweweweweweeedaawaqd", HexDir.WEST, OpGetChunkLoaded)
-		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
+		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { it.dimension.comp_645().asActionResult })
 
 		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
 		register("set_item_lore", "dwewdweedwa", HexDir.NORTH_WEST, OpItemLore)
