@@ -4,6 +4,7 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import net.minecraft.block.Block
+import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.Items
 import ram.talia.moreiotas.api.casting.iota.ItemTypeIota
@@ -18,6 +19,8 @@ fun List<Iota>.getBlockType(idx: Int, argc: Int = 0): Block {
 	val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
 	if (x is BlockTypeSubiota)
 		return x.block
+	if (x is ItemTypeSubiota && x.item is BlockItem)
+		return x.item.block
 	if (x is ItemTypeIota)
 		return x.block ?: throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "block_type")
 	throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "block_type")
@@ -27,6 +30,8 @@ fun List<Iota>.getItemType(idx: Int, argc: Int = 0): Item {
 	val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
 	if (x is ItemTypeSubiota)
 		return x.item
+	if (x is BlockTypeSubiota && x.block.asItem() != Items.AIR)
+		return x.block.asItem()
 	if (x is ItemTypeIota) {
 		val item = x.item ?: throw MishapInvalidIota.ofType(x, if (argc == 0) idx else argc - (idx + 1), "item_type")
 		if (item == Items.AIR)
