@@ -12,6 +12,6 @@ object OpGetArmor : ConstMediaAction {
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		val entity = args.getEntity(0, argc)
 		env.assertEntityInRange(entity)
-		return entity.armorItems.map { ItemStackIota.createFiltered(it) }.asActionResult
+		return entity.armorItems.map(ItemStackIota::createFiltered).asActionResult
 	}
 }

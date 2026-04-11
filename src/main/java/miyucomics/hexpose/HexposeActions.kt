@@ -24,8 +24,10 @@ import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
 import miyucomics.hexpose.actions.display.OpParseDisplay
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
 import miyucomics.hexpose.actions.display.chat.OpGetMessageIndexed
-import miyucomics.hexpose.actions.display.formatting.*
-import miyucomics.hexpose.actions.identifier.OpIdentify
+import miyucomics.hexpose.actions.display.formatting.OpDisplayBoolean
+import miyucomics.hexpose.actions.display.formatting.OpDisplayChildren
+import miyucomics.hexpose.actions.display.formatting.OpDisplayColor
+import miyucomics.hexpose.actions.display.formatting.OpDisplayFont
 import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.lore.OpItemLore
 import miyucomics.hexpose.actions.lore.OpItemName
@@ -37,7 +39,7 @@ import miyucomics.hexpose.actions.tags.OpBlockTags
 import miyucomics.hexpose.actions.tags.OpEntityTags
 import miyucomics.hexpose.actions.tags.OpItemTags
 import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.EnchantmentIota
 import miyucomics.hexpose.iotas.StatusEffectIota
 import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.enchantment.EnchantmentHelper
@@ -45,7 +47,6 @@ import net.minecraft.entity.mob.MobEntity
 import net.minecraft.entity.mob.Monster
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.item.EnchantedBookItem
-import net.minecraft.item.Items
 import net.minecraft.nbt.NbtElement
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
@@ -152,13 +153,8 @@ object HexposeActions {
 		register("get_message_indexed", "dqqqaw", HexDir.SOUTH_EAST, OpGetMessageIndexed)
 
 		register("get_enchantments", "waqwwqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
-			var data = stack.enchantments
-			if (stack.isOf(Items.ENCHANTED_BOOK))
-				data = EnchantedBookItem.getEnchantmentNbt(stack)
-			val enchantments = mutableListOf<IdentifierIota>()
-			for ((enchantment, _) in EnchantmentHelper.fromNbt(data))
-				enchantments.add(IdentifierIota(Registries.ENCHANTMENT.getId(enchantment)!!))
-			enchantments.asActionResult
+			val enchantments = EnchantmentHelper.fromNbt(stack.enchantments) + EnchantmentHelper.fromNbt(EnchantedBookItem.getEnchantmentNbt(stack))
+			enchantments.map { EnchantmentIota(it.key) }.asActionResult
 		})
 		register("get_enchantment_strength", "wdewwedwewdwdw", HexDir.EAST, OpGetEnchantmentStrength)
 		register("enchantment_weight", "waawdedwd", HexDir.NORTH_EAST, OpGetEnchantmentTypeData { it.rarity.weight.asActionResult })
@@ -219,9 +215,6 @@ object HexposeActions {
 		register("is_meat", "adaqqqddaed", HexDir.WEST, OpGetFoodTypeData { food -> food.isMeat.asActionResult })
 		register("is_snack", "adaqqqddaq", HexDir.WEST, OpGetFoodTypeData { food -> food.isSnack.asActionResult })
 		register("edible", "adaqqqdd", HexDir.WEST, OpGetItemTypeData { item -> item.isFood.asActionResult })
-
-		register("identify", "qqqqqe", HexDir.NORTH_EAST, OpIdentify)
-		register("classify", "edqdeq", HexDir.WEST, OpClassify)
 
 		register("get_stack", "edeedq", HexDir.WEST, OpItemIota)
 		register("create_stack", "qaqqae", HexDir.EAST, OpCreateStack)

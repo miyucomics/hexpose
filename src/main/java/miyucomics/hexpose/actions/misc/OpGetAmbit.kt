@@ -10,10 +10,9 @@ import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 
 object OpGetAmbit : ConstMediaAction {
 	override val argc = 1
-	override fun execute(args: List<Iota>, env: CastingEnvironment) =
-		when (val iota = args[0]) {
-			is EntityIota -> env.isEntityInRange(iota.entity)
-			is Vec3Iota -> env.isVecInRange(iota.vec3) && env.isVecInWorld(iota.vec3)
-			else -> throw MishapInvalidIota.of(args[0], 0, "entity_or_vector")
-		}.asActionResult
+	override fun execute(args: List<Iota>, env: CastingEnvironment) = when (val iota = args[0]) {
+		is EntityIota -> env.isEntityInRange(iota.entity)
+		is Vec3Iota -> env.isVecInRange(iota.vec3) && env.isVecInWorld(iota.vec3)
+		else -> throw MishapInvalidIota.of(args[0], 0, "entity_or_vector")
+	}.asActionResult
 }
