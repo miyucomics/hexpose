@@ -56,6 +56,7 @@ import net.minecraft.text.Text
 import net.minecraft.util.Hand
 import net.minecraft.util.math.*
 import net.minecraft.util.math.random.ChunkRandom
+import ram.talia.moreiotas.api.asActionResult
 
 object HexposeActions {
 	@JvmStatic
@@ -261,8 +262,8 @@ object HexposeActions {
 		register("item_tags", "aqawawqqqd", HexDir.EAST, OpItemTags)
 
 		register("villager_level", "qeqwqwqwqwqeqawdaeaeaeaeaea", HexDir.EAST, OpGetVillagerData { villager -> villager.villagerData.level.asActionResult })
-		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult })
-		register("villager_type", "qeqwqwqwqwqeqaweqqqqqwded", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
+		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { it.villagerData.profession.id.asActionResult })
+		register("villager_type", "qeqwqwqwqwqeqaweqqqqqwded", HexDir.EAST, OpGetVillagerData { it.villagerData.type.toString().asActionResult })
 		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome)
 
 		register("get_weather", "eweweweweweeeaedqdqde", HexDir.WEST, OpGetWorldData { world -> (if (world.isThundering) 2.0 else if (world.isRaining) 1.0 else 0.0).asActionResult })

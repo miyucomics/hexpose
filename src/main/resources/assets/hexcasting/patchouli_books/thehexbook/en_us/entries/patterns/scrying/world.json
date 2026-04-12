@@ -65,7 +65,7 @@
 			"op_id": "hexpose:get_dimension",
 			"anchor": "hexpose:get_dimension",
 			"input": "",
-			"output": "identifier",
+			"output": "dimension",
 			"text": "hexpose.page.get_dimension.summary"
 		},
 		{

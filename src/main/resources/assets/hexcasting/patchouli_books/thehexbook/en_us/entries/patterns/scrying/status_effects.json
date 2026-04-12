@@ -9,7 +9,7 @@
 			"op_id": "hexpose:get_effects_entity",
 			"anchor": "hexpose:get_effects_entity",
 			"input": "entity",
-			"output": "list of identifiers",
+			"output": "list of status effect types",
 			"text": "hexpose.page.get_effects_entity.summary"
 		},
 		{
@@ -17,14 +17,14 @@
 			"op_id": "hexpose:get_effects_item",
 			"anchor": "hexpose:get_effects_item",
 			"input": "item",
-			"output": "list of identifiers",
+			"output": "list of status effect types",
 			"text": "hexpose.page.get_effects_item.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:get_effect_category",
 			"anchor": "hexpose:get_effect_category",
-			"input": "identifier",
+			"input": "status effect type",
 			"output": "number",
 			"text": "hexpose.page.get_effect_category.summary"
 		},
@@ -32,7 +32,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:get_effect_amplifier",
 			"anchor": "hexpose:get_effect_amplifier",
-			"input": "entity, identifier",
+			"input": "entity, status effect type",
 			"output": "number",
 			"text": "hexpose.page.get_effect_amplifier.summary"
 		},
@@ -40,7 +40,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:get_effect_duration",
 			"anchor": "hexpose:get_effect_duration",
-			"input": "entity, identifier",
+			"input": "entity, status effect type",
 			"output": "number",
 			"text": "hexpose.page.get_effect_duration.summary"
 		}
