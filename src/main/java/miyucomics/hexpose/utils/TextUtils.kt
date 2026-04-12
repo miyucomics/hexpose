@@ -4,7 +4,6 @@ import net.minecraft.text.*
 import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
 import net.minecraft.util.Language
-import kotlin.text.lowercase
 
 object TextUtils {
 	fun disintegrateText(text: Text, parentStyle: Style, out: MutableList<Text>) {

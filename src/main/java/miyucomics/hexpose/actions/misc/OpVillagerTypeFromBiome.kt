@@ -4,13 +4,9 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.NullIota
-import miyucomics.hexpose.iotas.asActionResult
 import miyucomics.hexpose.iotas.getBiome
 import miyucomics.hexpose.utils.wordify
-import net.minecraft.command.argument.IdentifierArgumentType.identifier
 import net.minecraft.registry.Registries
-import net.minecraft.registry.RegistryKey
-import net.minecraft.registry.RegistryKeys
 import net.minecraft.village.VillagerType
 import ram.talia.moreiotas.api.asActionResult
 

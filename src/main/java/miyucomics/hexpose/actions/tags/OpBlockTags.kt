@@ -8,11 +8,9 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import miyucomics.hexpose.iotas.TagIota
-import net.minecraft.block.Block
 import net.minecraft.entity.ItemEntity
 import net.minecraft.item.BlockItem
 import net.minecraft.registry.Registries
-import net.minecraft.registry.tag.TagKey
 import net.minecraft.util.math.BlockPos
 import ram.talia.moreiotas.api.casting.iota.ItemStackIota
 import ram.talia.moreiotas.api.casting.iota.ItemTypeIota

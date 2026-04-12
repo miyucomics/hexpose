@@ -5,19 +5,14 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
-import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import miyucomics.hexpose.utils.wordify
-import net.fabricmc.fabric.impl.biome.TheEndBiomeData.biomeRegistry
-import net.minecraft.command.argument.RegistryKeyArgumentType.registryKey
 import net.minecraft.nbt.NbtElement
 import net.minecraft.nbt.NbtString
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
-import net.minecraft.registry.entry.RegistryEntry
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
-import net.minecraft.world.World
 import net.minecraft.world.biome.Biome
 
 class BiomeIota(val biome: RegistryKey<Biome>) : Iota(TYPE, biome) {

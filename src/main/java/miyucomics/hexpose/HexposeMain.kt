@@ -1,12 +1,7 @@
 package miyucomics.hexpose
 
 import at.petrak.hexcasting.common.lib.hex.HexIotaTypes
-import miyucomics.hexpose.iotas.BiomeIota
-import miyucomics.hexpose.iotas.DimensionIota
-import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.EnchantmentIota
-import miyucomics.hexpose.iotas.StatusEffectIota
-import miyucomics.hexpose.iotas.TagIota
+import miyucomics.hexpose.iotas.*
 import miyucomics.hexpose.utils.ChatHandler
 import net.fabricmc.api.ModInitializer
 import net.minecraft.registry.Registry

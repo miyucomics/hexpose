@@ -5,7 +5,6 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
-import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import miyucomics.hexpose.utils.wordify
 import net.minecraft.nbt.NbtElement
 import net.minecraft.nbt.NbtString

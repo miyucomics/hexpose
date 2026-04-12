@@ -2,20 +2,13 @@ package miyucomics.hexpose.iotas
 
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
-import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.api.utils.asCompound
-import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import miyucomics.hexpose.utils.wordify
-import net.minecraft.entity.effect.StatusEffect
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.nbt.NbtElement
-import net.minecraft.nbt.NbtString
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.tag.TagKey
 import net.minecraft.server.world.ServerWorld
-import net.minecraft.text.MutableText
-import net.minecraft.text.Text
 import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
 

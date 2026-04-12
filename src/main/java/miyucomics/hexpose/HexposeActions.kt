@@ -48,7 +48,6 @@ import net.minecraft.entity.mob.Monster
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.item.EnchantedBookItem
 import net.minecraft.nbt.NbtElement
-import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.state.property.Properties
 import net.minecraft.text.Style
@@ -61,7 +60,7 @@ import ram.talia.moreiotas.api.asActionResult
 object HexposeActions {
 	@JvmStatic
 	fun init() {
-		register("am_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
+		register("is_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
 			val advancement = it.getServer()!!.advancementLoader[HexAPI.modLoc("enlightenment")]
 			val tracker = it.advancementTracker
 			if (tracker.getProgress(advancement) != null)

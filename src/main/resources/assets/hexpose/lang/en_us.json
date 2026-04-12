@@ -1,4 +1,6 @@
 {
+	"hexpose.item_stack.null": "Null Item",
+
 	"hexcasting.iota.hexpose:biome": "Biome",
 	"hexcasting.iota.hexpose:biome.desc": "a biome",
 	"hexcasting.mishap.invalid_value.class.biome": "a biome",
@@ -43,9 +45,6 @@
 	"hexcasting.mishap.invalid_value.entitytype_coerceable": "an entity or an entity type",
 	"hexcasting.mishap.invalid_value.itemtype_coerceable": "an item entity, an item iota, or an item type",
 
-	"hexpose.item_stack.format": " | %s (%d)",
-	"hexpose.item_stack.null": "Null Item",
-
 	"hexcasting.action.book.hexpose:block_map_color": "Cartographer's Purif.",
 	"hexcasting.action.book.hexpose:get_enchantments": "Thaumaturgist's Purif.",
 	"hexcasting.action.book.hexpose:breedable": "Reproduction Purif.",
@@ -63,13 +62,13 @@
 
 	"hexpose.page.enlightened_patterns.title": "Enlightened Patterns",
 	"hexpose.page.enlightened_patterns.0": "After $(thing)Enlightenment$(), I find myself acutely aware of certain patterns that aid with my newfound abilities. These patterns don't seem to require anything from me that I didn't have before; perhaps I was always able to cast them but was simply unaware of their existence. An unenlightened player will be able to use $(l:items/hexcasting)$(item)casting devices$() with these patterns.",
-	"hexcasting.action.hexpose:am_enlightened": "Epiphany Purification",
-	"hexpose.page.am_enlightened.summary": "Pushes whether the given player has achieved $(thing)Enlightenment$().",
+	"hexcasting.action.hexpose:is_enlightened": "Epiphany Purification",
+	"hexpose.page.is_enlightened.summary": "Pushes whether the given player has achieved $(thing)Enlightenment$().",
 	"hexcasting.action.hexpose:is_brainswept": "Sentience Purification",
 	"hexpose.page.is_brainswept.summary": "Pushes whether an entity has been \"magically relieved of its mind\". I feel this is strongly related to $(l:patterns/great_spells/brainsweep)$(action)Flay Mind$() somehow...",
 
 	"hexpose.page.display_iotas.title": "Display Iota",
-	"hexpose.page.display_iotas.0": "$(l:patterns/displays)$(thing)Display iotas$() encode stylized text using a recursive model. The iota holds text, styling for that text, $(o)and$() other child $(l:patterns/displays)$(thing)display iotas$(), which may themselves contain children and have differing styles than the parent. Children are appended sequentially after the parent when read.",
+	"hexpose.page.display_iotas.0": "$(l:patterns/displays)$(thing)Display iotas$() encode stylized text using a recursive model. The iota holds text, styling for that text, and $(o)other$() child $(l:patterns/displays)$(thing)display iotas$(), which may themselves contain children and have differing styles than the parent. Children are appended sequentially after the parent's text.",
 	"hexpose.page.display_iotas.1": "The properties of the parent's style propagate down to their children, provided the child has an unset value for that property. For example, the children of a red-colored $(l:patterns/displays)$(thing)display iota$() will be red, unless a child has a style for another color. That second color is then the color that gets passed down to $(o)its$() children.",
 	"hexcasting.action.hexpose:create_display": "Reading Purification",
 	"hexpose.page.create_display.summary": "Takes an iota and returns a $(l:patterns/displays)$(thing)display iota$() representing it.",
@@ -83,7 +82,7 @@
 	"hexcasting.action.hexpose:display_children": "Offspring Purification",
 	"hexpose.page.display_children.summary": "Gets or sets a list of $(l:patterns/displays)$(thing)display iotas$() corresponding to children of the $(l:patterns/displays)$(thing)display iota$().",
 	"hexcasting.action.hexpose:display_color": "Lumière Gambit",
-	"hexpose.page.display_color.summary": "Gets or sets a color encoded as a vector whose components range from 0 to 1. Pass in $(l:casting/influences)$(thing)Null$() to defer to parent.",
+	"hexpose.page.display_color.summary": "Gets or sets the text color encoded as a vector whose components range from 0 to 1. Pass in $(l:casting/influences)$(thing)Null$() to defer to parent.",
 	"hexcasting.action.hexpose:display_font": "Calligrapher's Gambit",
 	"hexpose.page.display_font.summary": "Gets or sets a number, corresponding to the font a text is drawn in. Pass in $(l:casting/influences)$(thing)Null$() to defer to parent.",
 	"hexpose.page.display_font.description": "0, 1, and 2 are the current fonts that I know of, corresponding to standard appearance, the runes I see surrounding an $(thing)Enchanting Table$(), and a strange variant of it that is allegedly used by ancient villagers.",
@@ -97,6 +96,12 @@
 	"hexpose.page.display_strikethrough.summary": "Gets or sets a boolean, corresponding to whether it has been $(m)struck through$(). Pass in $(l:casting/influences)$(thing)Null$() to defer to parent.",
 	"hexcasting.action.hexpose:display_obfuscated": "Censor's Gambit",
 	"hexpose.page.display_obfuscated.summary": "Gets or sets a boolean, corresponding to whether it is obfusca$(k)ted$(). Pass in $(l:casting/influences)$(thing)Null$() to defer to parent.",
+
+	"hexpose.page.rename.title": "Item Renaming",
+	"hexcasting.action.hexpose:set_item_name": "Name Item",
+	"hexpose.page.set_item_name.summary": "Takes an item and renames it to the display iota given. Resets name if given $(l:casting/influences)$(thing)Null$(). Free.",
+	"hexcasting.action.hexpose:set_item_lore": "Describe Item",
+	"hexpose.page.set_item_lore.summary": "Takes an item and a list of display iotas to append as a description. Clears if given $(l:casting/influences)$(thing)Null$(). Free.",
 
 	"hexpose.category.scrying": "Scrying",
 	"hexpose.category.scrying.desc": "I have stumbled upon a branch of manipulating _media entirely focused around information about the world.$(br2)While likely not useful for the majority of _Hexes, these will be convenient to have, should I ever need them.",
@@ -347,11 +352,5 @@
 	"hexcasting.action.hexpose:set_item_frame_rotation": "Showcase Gambit",
 	"hexpose.page.set_item_frame_rotation.summary": "Sets the rotation of an $(item)Item Frame$() to a given integer 0 to 7.",
 	"hexcasting.action.hexpose:painting_variant": "Artistic Purification",
-	"hexpose.page.painting_variant.summary": "Pushes the variant of the $(thing)Painting$().",
-
-	"hexpose.page.rename.title": "Item Renaming",
-	"hexcasting.action.hexpose:set_item_name": "Name Item",
-	"hexpose.page.set_item_name.summary": "Takes an item and renames it to the display iota given. Resets name if given $(l:casting/influences)$(thing)Null$(). Free.",
-	"hexcasting.action.hexpose:set_item_lore": "Describe Item",
-	"hexpose.page.set_item_lore.summary": "Takes an item and a list of display iotas to append as a description. Clears if given $(l:casting/influences)$(thing)Null$(). Free."
+	"hexpose.page.painting_variant.summary": "Pushes the variant of the $(thing)Painting$()."
 }
