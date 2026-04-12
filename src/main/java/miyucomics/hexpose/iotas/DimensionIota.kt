@@ -6,6 +6,7 @@ import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import at.petrak.hexcasting.api.utils.asTranslatedComponent
+import miyucomics.hexpose.utils.wordify
 import net.minecraft.nbt.NbtElement
 import net.minecraft.nbt.NbtString
 import net.minecraft.registry.RegistryKey
@@ -23,7 +24,7 @@ class DimensionIota(val dimension: Identifier) : Iota(TYPE, dimension) {
 	companion object {
 		val TYPE: IotaType<DimensionIota> = object : IotaType<DimensionIota>() {
 			override fun color() = 0xff_db3f30.toInt()
-			override fun display(tag: NbtElement) = tag.asString().asTranslatedComponent.formatted(Formatting.AQUA)
+			override fun display(tag: NbtElement) = tag.asString().wordify().formatted(Formatting.LIGHT_PURPLE)
 			override fun deserialize(tag: NbtElement, world: ServerWorld) = DimensionIota(Identifier(tag.asString()))
 		}
 	}

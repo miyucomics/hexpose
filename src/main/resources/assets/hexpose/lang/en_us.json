@@ -1,4 +1,7 @@
 {
+	"hexcasting.iota.hexpose:biome": "Biome",
+	"hexcasting.iota.hexpose:biome.desc": "a biome",
+	"hexcasting.mishap.invalid_value.class.biome": "a biome",
 	"hexcasting.iota.hexpose:dimension": "Dimension",
 	"hexcasting.iota.hexpose:dimension.desc": "a dimension",
 	"hexcasting.mishap.invalid_value.class.dimension": "a dimension",
@@ -11,6 +14,9 @@
 	"hexcasting.iota.hexpose:status_effect": "Status Effect",
 	"hexcasting.iota.hexpose:status_effect.desc": "a status effect",
 	"hexcasting.mishap.invalid_value.class.status_effect": "a status effect",
+	"hexcasting.iota.hexpose:tag": "Tag",
+	"hexcasting.iota.hexpose:tag.desc": "a tag",
+	"hexcasting.mishap.invalid_value.class.tag": "a tag",
 
 	"hexcasting.mishap.invalid_value.class.block_type": "a block type",
 	"hexcasting.mishap.invalid_value.class.item_type": "an item type",
@@ -118,7 +124,7 @@
 	"hexpose.page.get_blockstates.summary": "Pushes a list of all blockstate property of the given block.",
 	"hexcasting.action.hexpose:query_blockstate": "Facet Distillation",
 	"hexpose.page.query_blockstate.summary": "Takes a block and a blockstate property and pushes that property's value if possible.",
-	"hexpose.page.query_blockstate.description": "If the block does not have the property, the pattern pushes $(l:casting/influences)$(thing)Null$(). For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, and integers, whichever best represents the property's data.$(br2)For certain properties that deal with a state from a set of states, it will produce a seemingly arbitrary yet consistent integer. If a property is too alien, a senseless iota is produced.",
+	"hexpose.page.query_blockstate.description": "If the block does not have the property, the pattern pushes $(l:casting/influences)$(thing)Null$(). For the most part, it is quite intuitive: the pattern produces booleans, directional vectors, strings, and integers, whichever best represents the property's data.$(br2)If a property is too alien, a senseless iota is produced.",
 
 	"hexpose.page.chat.title": "Chat",
 	"hexcasting.action.hexpose:get_message": "News Reflection",
@@ -298,11 +304,11 @@
 	"hexcasting.action.hexpose:villager_level": "Tier Purification",
 	"hexpose.page.villager_level.summary": "Pushes how advanced a villager is as a number, encoding mastery of their craft.",
 	"hexcasting.action.hexpose:villager_profession": "Professional Purification",
-	"hexpose.page.villager_profession.summary": "Pushes the villager's profession.",
+	"hexpose.page.villager_profession.summary": "Pushes the villager's profession as a string.",
 	"hexcasting.action.hexpose:villager_type": "Culture Purification",
-	"hexpose.page.villager_type.summary": "Pushes the ambient cultural aspect tied to the villager’s origin, such as desert or taiga roots.",
+	"hexpose.page.villager_type.summary": "Pushes the general culture that a villager was born into. These are generally more broad than specific biomes, like deserts as a whole or jungles as a whole.",
 	"hexcasting.action.hexpose:biome_to_villager": "Nurture Purification",
-	"hexpose.page.biome_to_villager.summary": "Projects the villager archetype most attuned to the essence of the specified biome, or $(l:casting/influences)$(thing)Null$() if none can be drawn.",
+	"hexpose.page.biome_to_villager.summary": "Pushes the villager culture most likely to be born from a given biome, or $(l:casting/influences)$(thing)Null$() if no conclusion could be drawn.",
 
 	"hexpose.page.world.title": "World",
 	"hexcasting.action.hexpose:get_light": "Luminance Purification",

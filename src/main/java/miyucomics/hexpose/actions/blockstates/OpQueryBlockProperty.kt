@@ -11,6 +11,7 @@ import net.minecraft.state.property.BooleanProperty
 import net.minecraft.state.property.DirectionProperty
 import net.minecraft.state.property.EnumProperty
 import net.minecraft.state.property.IntProperty
+import ram.talia.moreiotas.api.asActionResult
 import ram.talia.moreiotas.api.getString
 
 object OpQueryBlockProperty : ConstMediaAction {
@@ -26,7 +27,7 @@ object OpQueryBlockProperty : ConstMediaAction {
 		return when (property) {
 			is BooleanProperty -> state.get(property).asActionResult
 			is DirectionProperty -> state.get(property).unitVector.asActionResult
-			is EnumProperty -> state.get(property).ordinal.asActionResult
+			is EnumProperty -> state.get(property).toString().asActionResult
 			is IntProperty -> state.get(property).asActionResult
 			else -> listOf(GarbageIota())
 		}

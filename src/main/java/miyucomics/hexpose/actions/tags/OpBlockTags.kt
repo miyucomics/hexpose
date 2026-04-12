@@ -7,7 +7,7 @@ import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.TagIota
 import net.minecraft.block.Block
 import net.minecraft.entity.ItemEntity
 import net.minecraft.item.BlockItem
@@ -15,6 +15,7 @@ import net.minecraft.registry.Registries
 import net.minecraft.registry.tag.TagKey
 import net.minecraft.util.math.BlockPos
 import ram.talia.moreiotas.api.casting.iota.ItemStackIota
+import ram.talia.moreiotas.api.casting.iota.ItemTypeIota
 
 object OpBlockTags : ConstMediaAction {
 	override val argc: Int = 1
@@ -29,9 +30,9 @@ object OpBlockTags : ConstMediaAction {
 				((iota.entity as ItemEntity).stack.item as BlockItem).block
 			}
 			is ItemStackIota if iota.itemStack.item is BlockItem -> (iota.itemStack.item as BlockItem).block
-			is IdentifierIota if Registries.BLOCK.containsId(iota.identifier) -> Registries.BLOCK.get(iota.identifier)
+			is ItemTypeIota if iota.block != null -> iota.block
 			else -> throw MishapInvalidIota.of(iota, 0, "blocktype_coerceable")
 		}
-		return Registries.BLOCK.getEntry(blockType).streamTags().map(TagKey<Block>::id).map(::IdentifierIota).toList().asActionResult
+		return Registries.BLOCK.getEntry(blockType).streamTags().map(::TagIota).toList().asActionResult
 	}
 }

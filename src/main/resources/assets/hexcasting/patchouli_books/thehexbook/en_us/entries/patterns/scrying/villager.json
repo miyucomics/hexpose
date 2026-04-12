@@ -25,7 +25,7 @@
 			"op_id": "hexpose:villager_type",
 			"anchor": "hexpose:villager_type",
 			"input": "entity",
-			"output": "string",
+			"output": "biome",
 			"text": "hexpose.page.villager_type.summary"
 		},
 		{

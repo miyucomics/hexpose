@@ -8,6 +8,7 @@ import at.petrak.hexcasting.api.casting.mishaps.MishapBadEntity
 import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.entity.decoration.painting.PaintingEntity
 import net.minecraft.registry.Registries
+import ram.talia.moreiotas.api.asActionResult
 
 object OpGetPaintingVariant : ConstMediaAction {
 	override val argc = 1
@@ -16,6 +17,6 @@ object OpGetPaintingVariant : ConstMediaAction {
 		env.assertEntityInRange(entity)
 		if (entity !is PaintingEntity)
 			throw MishapBadEntity.of(entity, "painting")
-		return Registries.PAINTING_VARIANT.getId(entity.variant.comp_349()).asActionResult
+		return Registries.PAINTING_VARIANT.getId(entity.variant.comp_349()).path.asActionResult
 	}
 }
