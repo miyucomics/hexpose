@@ -11,6 +11,8 @@ import java.time.Instant
 import kotlin.math.floor
 
 object ChatHandler {
+	const val MESSAGES_REMEMBERED = 128;
+
 	fun init() {
 		ServerMessageEvents.CHAT_MESSAGE.register { message, sender, _ -> chatLog.add(Message(sender.name, message.content, message.timestamp)) }
 	}
@@ -24,7 +26,7 @@ object ChatHandler {
 
 	fun getLast(): List<Iota> = chatLog.last()?.intoHex(Instant.now()) ?: listOf(NullIota())
 
-	val chatLog = RingBuffer<Message>(64)
+	val chatLog = RingBuffer<Message>(MESSAGES_REMEMBERED)
 	data class Message(val sender: Text, val message: Text, val timestamp: Instant) {
 		fun intoHex(now: Instant) = listOf(DisplayIota.createSanitized(sender), DisplayIota.createSanitized(message), DoubleIota(floor(Duration.between(now, timestamp).toMillis() / -50.0)))
 	}

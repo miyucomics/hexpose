@@ -58,7 +58,6 @@ import net.minecraft.util.math.random.ChunkRandom
 import ram.talia.moreiotas.api.asActionResult
 
 object HexposeActions {
-	@JvmStatic
 	fun init() {
 		register("is_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
 			val advancement = it.getServer()!!.advancementLoader[HexAPI.modLoc("enlightenment")]
@@ -88,8 +87,8 @@ object HexposeActions {
 
 		register("is_block_air", "edeeeee", HexDir.NORTH_EAST, OpGetBlockStateData { it.isAir.asActionResult })
 		register("is_block_replaceable", "eaqqqqqe", HexDir.NORTH_EAST, OpGetBlockStateData { it.isReplaceable.asActionResult })
-		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
-		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
+		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { it.hardness.asActionResult })
+		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { it.blastResistance.asActionResult })
 		register("blockstate_rotation", "qaqqqqqwadeeed", HexDir.EAST, OpGetBlockStateData { state ->
 			val candidates = listOf(
 				Properties.FACING to { state.get(Properties.FACING).unitVector },
@@ -291,8 +290,5 @@ object HexposeActions {
 	}
 
 	fun register(name: String, signature: String, startDir: HexDir, action: Action): ActionRegistryEntry =
-		Registry.register(
-			HexActions.REGISTRY, HexposeMain.id(name),
-			ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action)
-		)
+		Registry.register(HexActions.REGISTRY, HexposeMain.id(name), ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action))
 }

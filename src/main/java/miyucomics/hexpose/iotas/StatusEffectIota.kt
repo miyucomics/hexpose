@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier
 
 class StatusEffectIota(val effect: StatusEffect) : Iota(TYPE, effect) {
 	override fun isTruthy() = true
-	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is StatusEffectIota) && this.effect == that.effect
+	override fun toleratesOther(that: Iota) = that is StatusEffectIota && this.effect == that.effect
 	override fun serialize(): NbtElement = NbtString.of(Registries.STATUS_EFFECT.getId(this.effect).toString())
 
 	companion object {

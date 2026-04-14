@@ -47,13 +47,13 @@ object OpDisplayFont : Action {
             else -> throw MishapInvalidIota.of(raw, 0, "number_or_null")
         }
 
-		val text = stack[stack.lastIndex - 1]
-		if (text !is DisplayIota)
-			throw MishapInvalidIota.ofType(text, 1, "text")
+		val display = stack[stack.lastIndex - 1]
+		if (display !is DisplayIota)
+			throw MishapInvalidIota.ofType(display, 1, "text")
 
 		stack.removeAt(stack.lastIndex)
 		stack.removeAt(stack.lastIndex)
-		stack.add(DisplayIota.createSanitized(text.text.copy().setStyle(text.text.style.withFont(font))))
+		stack.add(DisplayIota.createSanitized(display.text.copy().setStyle(display.text.style.withFont(font))))
 		return OperationResult(image.copy(stack = stack).withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }

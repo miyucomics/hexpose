@@ -8,5 +8,5 @@ import miyucomics.hexpose.utils.ChatHandler
 
 object OpGetMessageIndexed : ConstMediaAction {
 	override val argc = 1
-	override fun execute(args: List<Iota>, env: CastingEnvironment) = ChatHandler.getIndexed(args.getPositiveIntUnder(0, 64, argc))
+	override fun execute(args: List<Iota>, env: CastingEnvironment) = ChatHandler.getIndexed(args.getPositiveIntUnder(0, ChatHandler.MESSAGES_REMEMBERED, argc))
 }

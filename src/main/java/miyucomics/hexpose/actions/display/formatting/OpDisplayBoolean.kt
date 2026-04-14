@@ -41,13 +41,13 @@ class OpDisplayBoolean(val getter: (Style) -> Boolean?, val setter: Style.(Boole
 			else -> throw MishapInvalidIota.of(raw, 0, "boolean_or_null")
 		}
 
-		val text = stack[stack.lastIndex - 1]
-		if (text !is DisplayIota)
-			throw MishapInvalidIota.ofType(text, 1, "text")
+		val display = stack[stack.lastIndex - 1]
+		if (display !is DisplayIota)
+			throw MishapInvalidIota.ofType(display, 1, "text")
 
 		stack.removeAt(stack.lastIndex)
 		stack.removeAt(stack.lastIndex)
-		stack.add(DisplayIota.createSanitized(text.text.copy().setStyle(text.text.style.setter(arg))))
+		stack.add(DisplayIota.createSanitized(display.text.copy().setStyle(display.text.style.setter(arg))))
 		return OperationResult(image.copy(stack = stack).withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }

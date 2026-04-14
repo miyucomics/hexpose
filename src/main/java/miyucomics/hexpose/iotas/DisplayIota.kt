@@ -15,7 +15,7 @@ import net.minecraft.util.Formatting
 
 class DisplayIota(val text: Text) : Iota(TYPE, text) {
 	override fun isTruthy() = true
-	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is DisplayIota) && this.text == that.text
+	override fun toleratesOther(that: Iota) = that is DisplayIota && this.text == that.text
 
 	fun getWithNewChildren(children: List<Text>): Text {
 		return this.text.copy().also {
