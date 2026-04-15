@@ -23,14 +23,10 @@
 	"hexcasting.mishap.invalid_value.class.block_type": "a block type",
 	"hexcasting.mishap.invalid_value.class.item_type": "an item type",
 
-	"hexcasting.mishap.invalid_value.food_item": "an item type that is a food",
-
-	"hexcasting.mishap.invalid_value.boolean_or_null": "a boolean or null",
-	"hexcasting.mishap.invalid_value.display_or_string": "a text display or a string",
-
 	"hexcasting.mishap.invalid_value.cat": "a cat",
 	"hexcasting.mishap.invalid_value.creeper": "a creeper",
 	"hexcasting.mishap.invalid_value.display_list": "a list of display iotas",
+	"hexcasting.mishap.invalid_value.food_item": "an item type that is a food",
 	"hexcasting.mishap.invalid_value.painting": "a painting",
 	"hexcasting.mishap.invalid_value.item_frame": "an item frame",
 	"hexcasting.mishap.invalid_value.targetting": "an entity that may have a target",
@@ -40,7 +36,11 @@
 	"hexcasting.mishap.invalid_value.lenient_living": "a living entity or an armor stand",
 	"hexcasting.mishap.invalid_value.potion_holding": "a potion holding item or entity",
 	"hexcasting.mishap.invalid_value.tamable": "a tameable entity",
+
+	"hexcasting.mishap.invalid_value.display_or_string": "a text display or a string",
+	"hexcasting.mishap.invalid_value.boolean_or_null": "a boolean or null",
 	"hexcasting.mishap.invalid_value.vector_or_null": "a vector or null",
+	"hexcasting.mishap.invalid_value.enchantment_or_item": "an enchantment or an item",
 	"hexcasting.mishap.invalid_value.blocktype_coerceable": "a vector, a dropped block, an item iota of a block, or a block type",
 	"hexcasting.mishap.invalid_value.entitytype_coerceable": "an entity or an entity type",
 	"hexcasting.mishap.invalid_value.itemtype_coerceable": "an item entity, an item iota, or an item type",
@@ -144,8 +144,8 @@
 	"hexpose.page.get_enchantment_strength.summary": "Gets the strength of the specific enchantment on the item.",
 	"hexcasting.action.hexpose:enchantment_weight": "Conjuring Purification",
 	"hexpose.page.enchantment_weight.summary": "Gets the relative ease of finding this enchantment. For example, common enchantments return 10 and are thus ten times more likely than very rare enchantments that return 1.",
-	"hexcasting.action.hexpose:can_item_support_enchantment": "Conjuring Distillation",
-	"hexpose.page.can_item_support_enchantment.summary": "Returns whether the item and its current enchantments can support the given enchantment type.",
+	"hexcasting.action.hexpose:enchantment_compatibility": "Conjuring Distillation",
+	"hexpose.page.enchantment_compatibility.summary": "Returns whether the item and its current enchantments can support the given enchantment type, or if two enchantments can support each other.",
 	"hexcasting.action.hexpose:enchantment_min_level": "Valley Purification",
 	"hexpose.page.enchantment_min_level.summary": "Gets the minimum level the enchantment type can naturally achieve.",
 	"hexcasting.action.hexpose:enchantment_max_level": "Peak Purification",

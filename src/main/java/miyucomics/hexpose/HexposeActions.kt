@@ -148,7 +148,7 @@ object HexposeActions {
 		})
 		register("get_enchantment_strength", "wdewwedwewdwdw", HexDir.EAST, OpGetEnchantmentStrength)
 		register("enchantment_weight", "waawdedwd", HexDir.NORTH_EAST, OpGetEnchantmentTypeData { it.rarity.weight.asActionResult })
-		register("can_item_support_enchantment", "aaqqadaqwqa", HexDir.WEST, OpGetEnchantmentCompat)
+		register("enchantment_compatibility", "aaqqadaqwqa", HexDir.WEST, OpGetEnchantmentCompat)
 		register("enchantment_min_level", "waqwqaqwaaw", HexDir.WEST, OpGetEnchantmentTypeData { it.minLevel.asActionResult })
 		register("enchantment_max_level", "wdewedqwaaw", HexDir.EAST, OpGetEnchantmentTypeData { it.maxLevel.asActionResult })
 		register("is_enchantment_cursed", "aeaqwqaqwaaw", HexDir.NORTH_WEST, OpGetEnchantmentTypeData { it.isCursed.asActionResult })
