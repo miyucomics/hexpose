@@ -14,11 +14,27 @@
 		},
 		{
 			"type": "hexcasting:pattern",
+			"op_id": "hexpose:body_yaw",
+			"anchor": "hexpose:body_yaw",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.body_yaw.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
 			"op_id": "hexpose:theodolite",
 			"anchor": "hexpose:theodolite",
 			"input": "entity",
 			"output": "vector",
 			"text": "hexpose.page.theodolite.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:absorption_hearts",
+			"anchor": "hexpose:absorption_hearts",
+			"input": "entity",
+			"output": "number",
+			"text": "hexpose.page.absorption_hearts.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
@@ -166,14 +182,6 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:is_monster",
-			"anchor": "hexpose:is_monster",
-			"input": "entity",
-			"output": "boolean",
-			"text": "hexpose.page.is_monster.summary"
-		},
-		{
-			"type": "hexcasting:pattern",
 			"op_id": "hexpose:shooter",
 			"anchor": "hexpose:shooter",
 			"input": "entity",
@@ -182,11 +190,19 @@
 		},
 		{
 			"type": "hexcasting:pattern",
-			"op_id": "hexpose:absorption_hearts",
-			"anchor": "hexpose:absorption_hearts",
+			"op_id": "hexpose:projectile_age",
+			"anchor": "hexpose:projectile_age",
 			"input": "entity",
 			"output": "number",
-			"text": "hexpose.page.absorption_hearts.summary"
+			"text": "hexpose.page.projectile_age.summary"
+		},
+		{
+			"type": "hexcasting:pattern",
+			"op_id": "hexpose:is_monster",
+			"anchor": "hexpose:is_monster",
+			"input": "entity",
+			"output": "boolean",
+			"text": "hexpose.page.is_monster.summary"
 		}
 	]
 }

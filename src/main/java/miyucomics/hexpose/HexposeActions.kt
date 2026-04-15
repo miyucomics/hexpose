@@ -56,6 +56,7 @@ import net.minecraft.util.Hand
 import net.minecraft.util.math.*
 import net.minecraft.util.math.random.ChunkRandom
 import ram.talia.moreiotas.api.asActionResult
+import kotlin.math.max
 
 object HexposeActions {
 	fun init() {
@@ -153,7 +154,10 @@ object HexposeActions {
 		register("is_enchantment_cursed", "aeaqwqaqwaaw", HexDir.NORTH_WEST, OpGetEnchantmentTypeData { it.isCursed.asActionResult })
 		register("is_enchantment_treasure", "aqwqaeaqwddw", HexDir.WEST, OpGetEnchantmentTypeData { it.isTreasure.asActionResult })
 
+		register("shooter", "aadedade", HexDir.EAST, OpShooter)
+		register("projectile_age", "wwaaw", HexDir.NORTH_EAST, OpGetEntityData { entity -> max(200, entity.age).asActionResult })
 		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityData { entity -> entity.width.asActionResult })
+		register("body_yaw", "we", HexDir.NORTH_EAST, OpGetEntityData { entity -> entity.bodyYaw.asActionResult })
 		register("theodolite", "wqaa", HexDir.EAST, OpGetEntityData { entity ->
 			val upPitch = (-entity.pitch + 90) * (Math.PI.toFloat() / 180)
 			val yaw = -entity.headYaw * (Math.PI.toFloat() / 180)
@@ -184,7 +188,6 @@ object HexposeActions {
 		register("entity_name", "edeweedw", HexDir.SOUTH_WEST, OpGetEntityData { it.name.asActionResult })
 		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
 		register("is_monster", "qaedwaa", HexDir.NORTH_EAST, OpGetEntityData { (it is Monster).asActionResult })
-		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("absorption_hearts", "waawedwdwd", HexDir.NORTH_EAST, OpGetLivingEntityData { entity -> entity.absorptionAmount.asActionResult })
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit)
