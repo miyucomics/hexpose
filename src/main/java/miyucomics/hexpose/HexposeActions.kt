@@ -156,7 +156,7 @@ object HexposeActions {
 
 		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("projectile_age", "wwaaw", HexDir.NORTH_EAST, OpGetEntityData { entity -> max(200, entity.age).asActionResult })
-		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityData { entity -> entity.width.asActionResult })
+		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityTypeData { entity -> entity.width.asActionResult })
 		register("body_yaw", "we", HexDir.NORTH_EAST, OpGetEntityData { entity -> entity.bodyYaw.asActionResult })
 		register("theodolite", "wqaa", HexDir.EAST, OpGetEntityData { entity ->
 			val upPitch = (-entity.pitch + 90) * (Math.PI.toFloat() / 180)

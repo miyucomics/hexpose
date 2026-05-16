@@ -8,7 +8,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:entity_width",
 			"anchor": "hexpose:entity_width",
-			"input": "entity",
+			"input": "entity/entity type",
 			"output": "number",
 			"text": "hexpose.page.entity_width.summary"
 		},

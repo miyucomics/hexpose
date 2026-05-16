@@ -4,7 +4,10 @@
 - added MoreIotas as a required dependency
   - this removes a competing standard, although there still will be patterns that appear to do similar things, like the rename spell. With the power of display iotas, you can get a lot more display customization and the default MoreIotas spell does that support that, and it would just be impractical to mixin in and duct tape it into working.
   - for other patterns like the time getting one, it is kept simply because I think mine is prettier and more memorable, and I'd prefer not to break hexes.
-- changed identifiers into a slew of new iota types, how exciting!
+- added entity age purification, maxes out at 20 to avoid breaking the fourth wall too much
+- added body yaw purification, just in case it was needed
+- added type coersion for some patterns to turn item entities or vectors into item types and block types respectively
+- changed identifiers into a slew of new iota types
   - biome iotas
   - dimension iotas
   - enchantment iotas

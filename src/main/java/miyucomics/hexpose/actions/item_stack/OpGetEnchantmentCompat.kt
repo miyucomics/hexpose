@@ -5,7 +5,6 @@ import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import jdk.vm.ci.code.Location.stack
 import miyucomics.hexpose.iotas.EnchantmentIota
 import miyucomics.hexpose.iotas.getEnchantment
 import net.minecraft.enchantment.EnchantmentHelper
