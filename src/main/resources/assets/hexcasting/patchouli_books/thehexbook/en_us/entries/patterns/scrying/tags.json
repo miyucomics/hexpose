@@ -12,7 +12,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:entity_tags",
 			"anchor": "hexpose:entity_tags",
-			"input": "entity/identifier",
+			"input": "entity/entity type",
 			"output": "list",
 			"text": "hexpose.page.entity_tags.summary"
 		},
@@ -28,7 +28,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:item_tags",
 			"anchor": "hexpose:item_tags",
-			"input": "entity/item/identifier",
+			"input": "entity/item/item type",
 			"output": "list",
 			"text": "hexpose.page.item_tags.summary"
 		}

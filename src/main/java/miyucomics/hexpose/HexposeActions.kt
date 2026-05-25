@@ -24,8 +24,10 @@ import miyucomics.hexpose.actions.display.OpDisintegrateDisplay
 import miyucomics.hexpose.actions.display.OpParseDisplay
 import miyucomics.hexpose.actions.display.chat.OpGetMessage
 import miyucomics.hexpose.actions.display.chat.OpGetMessageIndexed
-import miyucomics.hexpose.actions.display.formatting.*
-import miyucomics.hexpose.actions.identifier.OpIdentify
+import miyucomics.hexpose.actions.display.formatting.OpDisplayBoolean
+import miyucomics.hexpose.actions.display.formatting.OpDisplayChildren
+import miyucomics.hexpose.actions.display.formatting.OpDisplayColor
+import miyucomics.hexpose.actions.display.formatting.OpDisplayFont
 import miyucomics.hexpose.actions.item_stack.*
 import miyucomics.hexpose.actions.lore.OpItemLore
 import miyucomics.hexpose.actions.lore.OpItemName
@@ -37,7 +39,7 @@ import miyucomics.hexpose.actions.tags.OpBlockTags
 import miyucomics.hexpose.actions.tags.OpEntityTags
 import miyucomics.hexpose.actions.tags.OpItemTags
 import miyucomics.hexpose.iotas.DisplayIota
-import miyucomics.hexpose.iotas.IdentifierIota
+import miyucomics.hexpose.iotas.EnchantmentIota
 import miyucomics.hexpose.iotas.StatusEffectIota
 import miyucomics.hexpose.iotas.asActionResult
 import net.minecraft.enchantment.EnchantmentHelper
@@ -45,9 +47,7 @@ import net.minecraft.entity.mob.MobEntity
 import net.minecraft.entity.mob.Monster
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.item.EnchantedBookItem
-import net.minecraft.item.Items
 import net.minecraft.nbt.NbtElement
-import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.state.property.Properties
 import net.minecraft.text.Style
@@ -55,11 +55,12 @@ import net.minecraft.text.Text
 import net.minecraft.util.Hand
 import net.minecraft.util.math.*
 import net.minecraft.util.math.random.ChunkRandom
+import ram.talia.moreiotas.api.asActionResult
 
 object HexposeActions {
 	@JvmStatic
 	fun init() {
-		register("am_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
+		register("is_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
 			val advancement = it.getServer()!!.advancementLoader[HexAPI.modLoc("enlightenment")]
 			val tracker = it.advancementTracker
 			if (tracker.getProgress(advancement) != null)
@@ -94,18 +95,8 @@ object HexposeActions {
 				Properties.FACING to { state.get(Properties.FACING).unitVector },
 				Properties.HORIZONTAL_FACING to { state.get(Properties.HORIZONTAL_FACING).unitVector },
 				Properties.VERTICAL_DIRECTION to { state.get(Properties.VERTICAL_DIRECTION).unitVector },
-				Properties.AXIS to {
-					Direction.from(
-						state.get(Properties.AXIS),
-						Direction.AxisDirection.POSITIVE
-					).unitVector
-				},
-				Properties.HORIZONTAL_AXIS to {
-					Direction.from(
-						state.get(Properties.HORIZONTAL_AXIS),
-						Direction.AxisDirection.POSITIVE
-					).unitVector
-				},
+				Properties.AXIS to { Direction.from(state.get(Properties.AXIS), Direction.AxisDirection.POSITIVE).unitVector },
+				Properties.HORIZONTAL_AXIS to { Direction.from(state.get(Properties.HORIZONTAL_AXIS), Direction.AxisDirection.POSITIVE).unitVector },
 				Properties.HOPPER_FACING to { state.get(Properties.HOPPER_FACING).unitVector }
 			)
 
@@ -152,13 +143,8 @@ object HexposeActions {
 		register("get_message_indexed", "dqqqaw", HexDir.SOUTH_EAST, OpGetMessageIndexed)
 
 		register("get_enchantments", "waqwwqawqwawaw", HexDir.WEST, OpGetItemStackData { stack ->
-			var data = stack.enchantments
-			if (stack.isOf(Items.ENCHANTED_BOOK))
-				data = EnchantedBookItem.getEnchantmentNbt(stack)
-			val enchantments = mutableListOf<IdentifierIota>()
-			for ((enchantment, _) in EnchantmentHelper.fromNbt(data))
-				enchantments.add(IdentifierIota(Registries.ENCHANTMENT.getId(enchantment)!!))
-			enchantments.asActionResult
+			val enchantments = EnchantmentHelper.fromNbt(stack.enchantments) + EnchantmentHelper.fromNbt(EnchantedBookItem.getEnchantmentNbt(stack))
+			enchantments.map { EnchantmentIota(it.key) }.asActionResult
 		})
 		register("get_enchantment_strength", "wdewwedwewdwdw", HexDir.EAST, OpGetEnchantmentStrength)
 		register("enchantment_weight", "waawdedwd", HexDir.NORTH_EAST, OpGetEnchantmentTypeData { it.rarity.weight.asActionResult })
@@ -174,11 +160,7 @@ object HexposeActions {
 			val yaw = -entity.headYaw * (Math.PI.toFloat() / 180)
 			val h = MathHelper.cos(yaw).toDouble()
 			val j = MathHelper.cos(upPitch).toDouble()
-			Vec3d(
-				MathHelper.sin(yaw).toDouble() * j,
-				MathHelper.sin(upPitch).toDouble(),
-				h * j
-			).asActionResult
+			Vec3d(MathHelper.sin(yaw).toDouble() * j, MathHelper.sin(upPitch).toDouble(), h * j).asActionResult
 		})
 		register("get_health", "wddwaqqwawq", HexDir.SOUTH_EAST, OpGetLivingEntityData { entity -> entity.health.asActionResult })
 		register("get_max_health", "wddwwawaeqwawq", HexDir.SOUTH_EAST, OpGetLivingEntityData { entity -> entity.maxHealth.asActionResult })
@@ -219,9 +201,6 @@ object HexposeActions {
 		register("is_meat", "adaqqqddaed", HexDir.WEST, OpGetFoodTypeData { food -> food.isMeat.asActionResult })
 		register("is_snack", "adaqqqddaq", HexDir.WEST, OpGetFoodTypeData { food -> food.isSnack.asActionResult })
 		register("edible", "adaqqqdd", HexDir.WEST, OpGetItemTypeData { item -> item.isFood.asActionResult })
-
-		register("identify", "qqqqqe", HexDir.NORTH_EAST, OpIdentify)
-		register("classify", "edqdeq", HexDir.WEST, OpClassify)
 
 		register("get_stack", "edeedq", HexDir.WEST, OpItemIota)
 		register("create_stack", "qaqqae", HexDir.EAST, OpCreateStack)
@@ -282,8 +261,8 @@ object HexposeActions {
 		register("item_tags", "aqawawqqqd", HexDir.EAST, OpItemTags)
 
 		register("villager_level", "qeqwqwqwqwqeqawdaeaeaeaeaea", HexDir.EAST, OpGetVillagerData { villager -> villager.villagerData.level.asActionResult })
-		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_PROFESSION.getId(villager.villagerData.profession).asActionResult })
-		register("villager_type", "qeqwqwqwqwqeqaweqqqqqwded", HexDir.EAST, OpGetVillagerData { villager -> Registries.VILLAGER_TYPE.getId(villager.villagerData.type).asActionResult })
+		register("villager_profession", "qeqwqwqwqwqeqawewawqwawadeeeee", HexDir.EAST, OpGetVillagerData { it.villagerData.profession.id.asActionResult })
+		register("villager_type", "qeqwqwqwqwqeqaweqqqqqwded", HexDir.EAST, OpGetVillagerData { it.villagerData.type.toString().asActionResult })
 		register("biome_to_villager", "qeqwqwqwqwqeqawewwqqwwqwwqqww", HexDir.EAST, OpVillagerTypeFromBiome)
 
 		register("get_weather", "eweweweweweeeaedqdqde", HexDir.WEST, OpGetWorldData { world -> (if (world.isThundering) 2.0 else if (world.isRaining) 1.0 else 0.0).asActionResult })
@@ -297,15 +276,15 @@ object HexposeActions {
 		})
 		register("get_day", "wwawwawwqqawwdwwdwwaqwqwqwqwq", HexDir.SOUTH_EAST, OpGetWorldData { world -> (world.timeOfDay.toDouble() / 24000.0).asActionResult })
 		register("get_time", "wddwaqqwqaddaqqwddwaqqwqaddaq", HexDir.SOUTH_EAST, OpGetWorldData { world -> world.time.asActionResult })
-		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().value.asActionResult })
-		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { world -> world.registryKey.value.asActionResult })
-		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { world -> world.moonSize.asActionResult })
+		register("get_biome", "qwqwqawdqqaqqdwaqwqwq", HexDir.WEST, OpGetPositionData { world, position -> world.getBiome(position).key.get().asActionResult })
+		register("get_dimension", "qwqwqwqwqwqqaedwaqd", HexDir.WEST, OpGetWorldData { it.asActionResult })
+		register("get_moon", "eweweweweweeweeedadw", HexDir.WEST, OpGetWorldData { it.moonSize.asActionResult })
 		register("get_slime", "eweweweweweeweeeeewdeee", HexDir.WEST, OpGetPositionData { world, position ->
 			val chunk = ChunkPos(position)
 			(ChunkRandom.getSlimeRandom(chunk.x, chunk.z, world.seed, 987234911L).nextInt(10) == 0).asActionResult
 		})
 		register("get_chunk_loaded", "eweweweweweeedaawaqd", HexDir.WEST, OpGetChunkLoaded)
-		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { world -> world.dimension.comp_645().asActionResult })
+		register("get_einstein", "aqwawqwqqwqwqwqwqwq", HexDir.SOUTH_WEST, OpGetWorldData { it.dimension.comp_645().asActionResult })
 
 		register("set_item_name", "qwawqwaadwa", HexDir.SOUTH_EAST, OpItemName)
 		register("set_item_lore", "dwewdweedwa", HexDir.NORTH_WEST, OpItemLore)

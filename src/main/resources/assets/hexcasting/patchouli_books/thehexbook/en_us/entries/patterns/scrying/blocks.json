@@ -24,7 +24,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:block_hardness",
 			"anchor": "hexpose:block_hardness",
-			"input": "identifier",
+			"input": "block types",
 			"output": "number",
 			"text": "hexpose.page.block_hardness.summary"
 		},
@@ -32,7 +32,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:block_blast_resistance",
 			"anchor": "hexpose:block_blast_resistance",
-			"input": "identifier",
+			"input": "block types",
 			"output": "number",
 			"text": "hexpose.page.block_blast_resistance.summary"
 		},
@@ -60,7 +60,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:block_slipperiness",
 			"anchor": "hexpose:block_slipperiness",
-			"input": "identifier",
+			"input": "block types",
 			"output": "number",
 			"text": "hexpose.page.block_slipperiness.summary"
 		},
@@ -68,7 +68,7 @@
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:block_map_color",
 			"anchor": "hexpose:block_map_color",
-			"input": "identifier",
+			"input": "block types",
 			"output": "vector",
 			"text": "hexpose.page.block_map_color.summary"
 		},
@@ -77,14 +77,14 @@
 			"op_id": "hexpose:get_blockstates",
 			"anchor": "hexpose:get_blockstates",
 			"input": "vector",
-			"output": "list of identifiers",
+			"output": "list of strings",
 			"text": "hexpose.page.get_blockstates.summary"
 		},
 		{
 			"type": "hexcasting:pattern",
 			"op_id": "hexpose:query_blockstate",
 			"anchor": "hexpose:query_blockstate",
-			"input": "vector, identifier",
+			"input": "vector, string",
 			"output": "any",
 			"text": "hexpose.page.query_blockstate.summary"
 		},

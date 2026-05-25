@@ -9,7 +9,7 @@
 			"op_id": "hexpose:cat_variant",
 			"anchor": "hexpose:cat_variant",
 			"input": "entity",
-			"output": "identifier",
+			"output": "string",
 			"text": "hexpose.page.cat_variant.summary"
 		},
 		{
@@ -41,7 +41,7 @@
 			"op_id": "hexpose:painting_variant",
 			"anchor": "hexpose:painting_variant",
 			"input": "entity",
-			"output": "identifier",
+			"output": "string",
 			"text": "hexpose.page.painting_variant.summary"
 		}
 	]

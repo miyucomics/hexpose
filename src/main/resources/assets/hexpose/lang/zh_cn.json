@@ -72,8 +72,8 @@
 
 	"hexpose.page.enlightened_patterns.title": "启迪后图案",
 	"hexpose.page.enlightened_patterns.0": "在经过$(thing)启迪$()之后，我敏锐地意识到，世上真的存在协助我感知和操纵$(media)媒质$()的图案。这些图案并无其他更进一步的需求，也许我一直都能运行它们，但也一直浑然不觉。这也意味着，我可以给未经$(thing)启迪$()的玩家带有这些图案的$(l:items/hexcasting)$(item)施法物品$()，他们在施放过程中不会受到阻碍。",
-	"hexcasting.action.hexpose:am_enlightened": "显圣之纯化",
-	"hexpose.page.am_enlightened.summary": "检验所给玩家是否和我一样经过$(thing)启迪$()。",
+	"hexcasting.action.hexpose:is_enlightened": "显圣之纯化",
+	"hexpose.page.is_enlightened.summary": "检验所给玩家是否和我一样经过$(thing)启迪$()。",
 	"hexcasting.action.hexpose:is_brainswept": "感知之纯化",
 	"hexpose.page.is_brainswept.summary": "检验实体是否“被魔法手段去除了意识”。我总觉得它和$(l:patterns/great_spells/brainsweep)$(action)剥离意识$()之间有种紧密的联系……",
 

@@ -2,6 +2,7 @@ package miyucomics.hexpose.utils
 
 import net.minecraft.text.*
 import net.minecraft.util.Formatting
+import net.minecraft.util.Identifier
 import net.minecraft.util.Language
 
 object TextUtils {
@@ -14,6 +15,10 @@ object TextUtils {
 			disintegrateText(child, effectiveStyle, out)
 	}
 }
+
+// turns an identifier string like `minecraft:the_end` into a Text saying The End, useful for various iota displays
+fun Identifier.wordify(): String = this.path.split("_").joinToString(" ") { it.lowercase().replaceFirstChar(Char::titlecase) }
+fun String.wordify(): MutableText = Text.literal(this.split(":")[1].split("_").joinToString(" ") { it.lowercase().replaceFirstChar(Char::titlecase) })
 
 // a little utility method that returns a copy of a text with default values for styles so that it does not take on anything from its parent if one exists
 fun Text.makeIndependent(): Text {

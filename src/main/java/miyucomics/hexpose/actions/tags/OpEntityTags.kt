@@ -6,10 +6,8 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.IdentifierIota
-import net.minecraft.entity.EntityType
+import miyucomics.hexpose.iotas.TagIota
 import net.minecraft.registry.Registries
-import net.minecraft.registry.tag.TagKey
 import ram.talia.moreiotas.api.casting.iota.EntityTypeIota
 
 object OpEntityTags : ConstMediaAction {
@@ -23,6 +21,6 @@ object OpEntityTags : ConstMediaAction {
 			is EntityTypeIota -> iota.entityType
 			else -> throw MishapInvalidIota.of(iota, 0, "entitytype_coerceable")
 		}
-		return Registries.ENTITY_TYPE.getEntry(entityType).streamTags().map(TagKey<EntityType<*>>::id).map(::IdentifierIota).toList().asActionResult
+		return Registries.ENTITY_TYPE.getEntry(entityType).streamTags().map(::TagIota).toList().asActionResult
 	}
 }

@@ -6,12 +6,11 @@ import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
-import miyucomics.hexpose.iotas.IdentifierIota
-import miyucomics.hexpose.iotas.ItemStackIota
+import miyucomics.hexpose.iotas.TagIota
 import net.minecraft.entity.ItemEntity
-import net.minecraft.item.Item
 import net.minecraft.registry.Registries
-import net.minecraft.registry.tag.TagKey
+import ram.talia.moreiotas.api.casting.iota.ItemStackIota
+import ram.talia.moreiotas.api.casting.iota.ItemTypeIota
 
 object OpItemTags : ConstMediaAction {
 	override val argc: Int = 1
@@ -21,10 +20,10 @@ object OpItemTags : ConstMediaAction {
 				env.assertEntityInRange(iota.entity)
 				(iota.entity as ItemEntity).stack.item
 			}
-			is ItemStackIota -> iota.stack.item
-			is IdentifierIota if Registries.ITEM.containsId(iota.identifier) -> Registries.ITEM.get(iota.identifier)
+			is ItemStackIota -> iota.itemStack.item
+			is ItemTypeIota if iota.item != null -> iota.item
 			else -> throw MishapInvalidIota.of(iota, 0, "itemtype_coerceable")
 		}
-		return Registries.ITEM.getEntry(item).streamTags().map(TagKey<Item>::id).map(::IdentifierIota).toList().asActionResult
+		return Registries.ITEM.getEntry(item).streamTags().map(::TagIota).toList().asActionResult
 	}
 }
