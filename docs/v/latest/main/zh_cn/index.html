@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/ddacfe66ca8fcdd6f8ae9dfb079e4f4d76ae1ecc"
+      href="https://github.com/miyucomics/hexpose/tree/1f8cf9d5142dcdbc6cb9b21cd1ea24560a281dcd"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -514,7 +514,7 @@
   </div>
 <br />
   <div id="patterns/displays@hexpose:parse_display" class="">
-<h4 class="pattern-title">计算器之纯化 (display/string → string)<a
+<h4 class="pattern-title">计算器之纯化 (display/string → string/display)<a
     href="#patterns/displays@hexpose:parse_display"
     class="permalink small"
     title="Permalink"
@@ -2198,7 +2198,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/scrying/entities@hexpose:entity_width" class="">
-<h4 class="pattern-title">卡尺之纯化 (entity → number)<a
+<h4 class="pattern-title">卡尺之纯化 (entity/entity type → number)<a
     href="#patterns/scrying/entities@hexpose:entity_width"
     class="permalink small"
     title="Permalink"
@@ -2251,6 +2251,62 @@
       >浏览器不支持图案的可视化。图案代码见此：dwe</canvas>
   </details>
       <p>类似<a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:get_entity_height"><span style="color: #fc77be">测高仪之纯化</span></a>，但返回的不是实体的高度，而是实体的宽度。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:body_yaw" class="">
+<h4 class="pattern-title">Shoulder Purification (entity → number)<a
+    href="#patterns/scrying/entities@hexpose:body_yaw"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="we"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：we</canvas>
+  </details>
+      <p>Pushes the angle that an entity&#39;s body is rotated in which may be separate from its head.</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:theodolite" class="">
@@ -2307,6 +2363,62 @@
       >浏览器不支持图案的可视化。图案代码见此：wqaa</canvas>
   </details>
       <p>类似<a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:get_entity_look"><span style="color: #fc77be">照准仪之纯化</span></a>，但返回向量并不指向实体的视线，而是自其头部指向上方。</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:absorption_hearts" class="">
+<h4 class="pattern-title">吸收之纯化 (entity → number)<a
+    href="#patterns/scrying/entities@hexpose:absorption_hearts"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="waawedwdwd"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：waawedwdwd</canvas>
+  </details>
+      <p>返回玩家的魔法心数。使用半颗心作为单位。</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:get_health" class="">
@@ -3317,62 +3429,6 @@
       <p>检验玩家是否驯服了所给动物，若未驯服或玩家在影响范围之外，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
-  <div id="patterns/scrying/entities@hexpose:is_monster" class="">
-<h4 class="pattern-title">恶意之纯化 (entity → boolean)<a
-    href="#patterns/scrying/entities@hexpose:is_monster"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >渲染方式</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >配色</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaedwaa"
-        data-start="north_east"
-        data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：qaedwaa</canvas>
-  </details>
-      <p>检验所给实体是否天性邪恶，也即雪傀儡会不会一看见它就发起攻击。铁傀儡也会在看见此类实体时发起攻击（苦力怕除外）。</p>
-  </div>
-<br />
   <div id="patterns/scrying/entities@hexpose:shooter" class="">
 <h4 class="pattern-title">射手之纯化 (entity → entity/null)<a
     href="#patterns/scrying/entities@hexpose:shooter"
@@ -3429,9 +3485,9 @@
       <p>返回所给弹射物实体的发射者，若无发射者或不是弹射物，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。如果发射者在我影响范围之外，也会返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
-  <div id="patterns/scrying/entities@hexpose:absorption_hearts" class="">
-<h4 class="pattern-title">吸收之纯化 (entity → number)<a
-    href="#patterns/scrying/entities@hexpose:absorption_hearts"
+  <div id="patterns/scrying/entities@hexpose:projectile_age" class="">
+<h4 class="pattern-title">Age Purification (entity → number)<a
+    href="#patterns/scrying/entities@hexpose:projectile_age"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -3477,12 +3533,68 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="waawedwdwd"
+        data-string="wwaaw"
         data-start="north_east"
         data-per-world="False"
-      >浏览器不支持图案的可视化。图案代码见此：waawedwdwd</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wwaaw</canvas>
   </details>
-      <p>返回玩家的魔法心数。使用半颗心作为单位。</p>
+      <p>Pushes the age of an entity in twentieths of a second although loses track after about ten seconds. Useful for selecting only newly fired projectiles perhaps?</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:is_monster" class="">
+<h4 class="pattern-title">恶意之纯化 (entity → boolean)<a
+    href="#patterns/scrying/entities@hexpose:is_monster"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >渲染方式</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >配色</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaedwaa"
+        data-start="north_east"
+        data-per-world="False"
+      >浏览器不支持图案的可视化。图案代码见此：qaedwaa</canvas>
+  </details>
+      <p>检验所给实体是否天性邪恶，也即雪傀儡会不会一看见它就发起攻击。铁傀儡也会在看见此类实体时发起攻击（苦力怕除外）。</p>
   </div>
 <br />
 </div>
@@ -3616,7 +3728,7 @@
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_hardness" class="">
-<h4 class="pattern-title">矿工之纯化 (block types → number)<a
+<h4 class="pattern-title">矿工之纯化 (block type → number)<a
     href="#patterns/scrying/blocks@hexpose:block_hardness"
     class="permalink small"
     title="Permalink"
@@ -3672,7 +3784,7 @@
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_blast_resistance" class="">
-<h4 class="pattern-title">爆破兵之纯化 (block types → number)<a
+<h4 class="pattern-title">爆破兵之纯化 (block type → number)<a
     href="#patterns/scrying/blocks@hexpose:block_blast_resistance"
     class="permalink small"
     title="Permalink"
@@ -3842,7 +3954,7 @@
     <p>每个方块都有很多<i>侧征</i>——将其与其他同种方块区分开来的简单特征，例如朝向、农作物的成熟度、门的开闭等。</p><p>自然提供了两个图案，允许<span style="color: #b38ef3">咒法学</span>读取和分析影响范围内各方块的侧征。</p>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_slipperiness" class="">
-<h4 class="pattern-title">滑冰之纯化 (block types → number)<a
+<h4 class="pattern-title">滑冰之纯化 (block type → number)<a
     href="#patterns/scrying/blocks@hexpose:block_slipperiness"
     class="permalink small"
     title="Permalink"
@@ -3898,7 +4010,7 @@
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_map_color" class="">
-<h4 class="pattern-title">制图师之纯化 (block types → vector)<a
+<h4 class="pattern-title">制图师之纯化 (block type → vector)<a
     href="#patterns/scrying/blocks@hexpose:block_map_color"
     class="permalink small"
     title="Permalink"
@@ -4874,7 +4986,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:create_stack" class="">
-<h4 class="pattern-title">献物之馏化 (item type, number → item)<a
+<h4 class="pattern-title">献物之馏化 (item coerceable, number → item)<a
     href="#patterns/scrying/item@hexpose:create_stack"
     class="permalink small"
     title="Permalink"
@@ -5322,7 +5434,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:count_max_stack" class="">
-<h4 class="pattern-title">库房之纯化 (item type → number)<a
+<h4 class="pattern-title">库房之纯化 (item coerceable → number)<a
     href="#patterns/scrying/item@hexpose:count_max_stack"
     class="permalink small"
     title="Permalink"
@@ -5378,7 +5490,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:damage_stack" class="">
-<h4 class="pattern-title">损耗之纯化 (item → number)<a
+<h4 class="pattern-title">损耗之纯化 (item coerceable → number)<a
     href="#patterns/scrying/item@hexpose:damage_stack"
     class="permalink small"
     title="Permalink"
@@ -5434,7 +5546,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:damage_max_stack" class="">
-<h4 class="pattern-title">脆弱性之纯化 (item type → number)<a
+<h4 class="pattern-title">脆弱性之纯化 (item coerceable → number)<a
     href="#patterns/scrying/item@hexpose:damage_max_stack"
     class="permalink small"
     title="Permalink"
@@ -6666,7 +6778,7 @@
   </div>
 <br />
   <div id="patterns/scrying/chat@hexpose:get_message_indexed" class="">
-<h4 class="pattern-title">新闻之拆解 (number → display, display, number)<a
+<h4 class="pattern-title">新闻之拆解 (num → display, display, num)<a
     href="#patterns/scrying/chat@hexpose:get_message_indexed"
     class="permalink small"
     title="Permalink"
@@ -6740,7 +6852,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/scrying/food@hexpose:get_player_hunger" class="">
-<h4 class="pattern-title">饥饿之纯化 (player entity → number)<a
+<h4 class="pattern-title">饥饿之纯化 (entity → number)<a
     href="#patterns/scrying/food@hexpose:get_player_hunger"
     class="permalink small"
     title="Permalink"
@@ -6796,7 +6908,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_player_saturation" class="">
-<h4 class="pattern-title">耐力之纯化 (entity entity → number)<a
+<h4 class="pattern-title">耐力之纯化 (entity → number)<a
     href="#patterns/scrying/food@hexpose:get_player_saturation"
     class="permalink small"
     title="Permalink"
@@ -6852,7 +6964,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_hunger" class="">
-<h4 class="pattern-title">卡路里之纯化 (item type → number)<a
+<h4 class="pattern-title">卡路里之纯化 (item coerceable → number)<a
     href="#patterns/scrying/food@hexpose:get_hunger"
     class="permalink small"
     title="Permalink"
@@ -6908,7 +7020,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_saturation" class="">
-<h4 class="pattern-title">饱和之纯化 (item type → number)<a
+<h4 class="pattern-title">饱和之纯化 (item coerceable → number)<a
     href="#patterns/scrying/food@hexpose:get_saturation"
     class="permalink small"
     title="Permalink"
@@ -6964,7 +7076,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:is_meat" class="">
-<h4 class="pattern-title">肉类之纯化 (item type → boolean)<a
+<h4 class="pattern-title">肉类之纯化 (item coerceable → boolean)<a
     href="#patterns/scrying/food@hexpose:is_meat"
     class="permalink small"
     title="Permalink"
@@ -7020,7 +7132,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:is_snack" class="">
-<h4 class="pattern-title">甜点之纯化 (item type → boolean)<a
+<h4 class="pattern-title">甜点之纯化 (item coerceable → boolean)<a
     href="#patterns/scrying/food@hexpose:is_snack"
     class="permalink small"
     title="Permalink"
@@ -7076,7 +7188,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:edible" class="">
-<h4 class="pattern-title">可食性之纯化 (item type → boolean)<a
+<h4 class="pattern-title">可食性之纯化 (item coerceable → boolean)<a
     href="#patterns/scrying/food@hexpose:edible"
     class="permalink small"
     title="Permalink"
@@ -7317,9 +7429,9 @@
       <p>获取发现此魔咒的相对难易程度。例如，有某个常见的魔咒返回 10，又有某个极其稀有的魔咒返回 1，那么前者的出现概率即是后者的 10 倍。</p>
   </div>
 <br />
-  <div id="patterns/scrying/enchantments@hexpose:can_item_support_enchantment" class="">
-<h4 class="pattern-title">成咒之馏化 (item, enchantment type → boolean)<a
-    href="#patterns/scrying/enchantments@hexpose:can_item_support_enchantment"
+  <div id="patterns/scrying/enchantments@hexpose:enchantment_compatibility" class="">
+<h4 class="pattern-title">成咒之馏化 (item/enchantment, enchantment → boolean)<a
+    href="#patterns/scrying/enchantments@hexpose:enchantment_compatibility"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>

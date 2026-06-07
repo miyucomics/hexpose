@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/ddacfe66ca8fcdd6f8ae9dfb079e4f4d76ae1ecc"
+      href="https://github.com/miyucomics/hexpose/tree/1f8cf9d5142dcdbc6cb9b21cd1ea24560a281dcd"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -514,7 +514,7 @@
   </div>
 <br />
   <div id="patterns/displays@hexpose:parse_display" class="">
-<h4 class="pattern-title">Transcriber Purification (display/string → string)<a
+<h4 class="pattern-title">Transcriber Purification (display/string → string/display)<a
     href="#patterns/displays@hexpose:parse_display"
     class="permalink small"
     title="Permalink"
@@ -684,7 +684,7 @@
     <p>The patterns that interact with <a href="#patterns/displays"><span style="color: #8d6acc">display iotas</span></a> are strangely multifaceted. While resembling distillations, they are actually <i>gambits</i>.</p><p>If their described arguments are passed in, they modify the <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a>&#39;s root according to their speciality (example of modification included).</p><p>If the top of the stack is just a <a href="#patterns/displays"><span style="color: #8d6acc">display iota</span></a> however, they push the current value of the setting that they target.</p>
 <br />
   <div id="patterns/displays@hexpose:display_children" class="">
-<h4 class="pattern-title">Offspring Purification (display → list of displays)<a
+<h4 class="pattern-title">Recursive Gambit (display → list of displays)<a
     href="#patterns/displays@hexpose:display_children"
     class="permalink small"
     title="Permalink"
@@ -1432,7 +1432,7 @@
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_hardness" class="">
-<h4 class="pattern-title">Miner&#39;s Purification (block types → number)<a
+<h4 class="pattern-title">Miner&#39;s Purification (block type → number)<a
     href="#patterns/scrying/blocks@hexpose:block_hardness"
     class="permalink small"
     title="Permalink"
@@ -1488,7 +1488,7 @@
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_blast_resistance" class="">
-<h4 class="pattern-title">Demoman&#39;s Purification (block types → number)<a
+<h4 class="pattern-title">Demoman&#39;s Purification (block type → number)<a
     href="#patterns/scrying/blocks@hexpose:block_blast_resistance"
     class="permalink small"
     title="Permalink"
@@ -1658,7 +1658,7 @@
     <p>Certain blocks have one or more blockstate properties: simple named aspects that can primitively distinguish them from other blocks of the same type. While it won&#39;t tell me whether two <span style="color: #b0b">Furnaces</span> are smelting the same items, it can tell me their orientation, if they are lit, how grown a crop is, and whether a <span style="color: #b0b">Fence Gate</span> is open.</p><p>There are two patterns for reading and analyzing the properties of blocks.</p>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_slipperiness" class="">
-<h4 class="pattern-title">Skating Purification (block types → number)<a
+<h4 class="pattern-title">Skating Purification (block type → number)<a
     href="#patterns/scrying/blocks@hexpose:block_slipperiness"
     class="permalink small"
     title="Permalink"
@@ -1714,7 +1714,7 @@
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_map_color" class="">
-<h4 class="pattern-title">Cartographer&#39;s Purif. (block types → vector)<a
+<h4 class="pattern-title">Cartographer&#39;s Purif. (block type → vector)<a
     href="#patterns/scrying/blocks@hexpose:block_map_color"
     class="permalink small"
     title="Permalink"
@@ -1958,7 +1958,7 @@
   </div>
 <br />
   <div id="patterns/scrying/chat@hexpose:get_message_indexed" class="">
-<h4 class="pattern-title">News Disintegration (number → display, display, number)<a
+<h4 class="pattern-title">News Disintegration (num → display, display, num)<a
     href="#patterns/scrying/chat@hexpose:get_message_indexed"
     class="permalink small"
     title="Permalink"
@@ -2010,7 +2010,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: dqqqaw</canvas>
   </details>
-      <p><br />Acts similarly to <a href="#patterns/scrying/chat@hexpose:get_message"><span style="color: #fc77be">News Reflection</span></a> but acts on the message sent n messages ago, up to sixty four messages ago.</p>
+      <p>Acts similarly to <a href="#patterns/scrying/chat@hexpose:get_message"><span style="color: #fc77be">News Reflection</span></a> but acts on the message sent n messages ago, up to sixty four messages ago.</p>
   </div>
 <br />
 </div>
@@ -2199,9 +2199,9 @@
       <p>Gets the relative ease of finding this enchantment. For example, common enchantments return 10 and are thus ten times more likely than very rare enchantments that return 1.</p>
   </div>
 <br />
-  <div id="patterns/scrying/enchantments@hexpose:can_item_support_enchantment" class="">
-<h4 class="pattern-title">Conjuring Distillation (item, enchantment type → boolean)<a
-    href="#patterns/scrying/enchantments@hexpose:can_item_support_enchantment"
+  <div id="patterns/scrying/enchantments@hexpose:enchantment_compatibility" class="">
+<h4 class="pattern-title">Conjuring Distillation (item/enchantment, enchantment → boolean)<a
+    href="#patterns/scrying/enchantments@hexpose:enchantment_compatibility"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -2252,7 +2252,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: aaqqadaqwqa</canvas>
   </details>
-      <p>Returns whether the item and its current enchantments can support the given enchantment type.</p>
+      <p>Returns whether the item and its current enchantments can support the given enchantment type, or if two enchantments can support each other.</p>
   </div>
 <br />
   <div id="patterns/scrying/enchantments@hexpose:enchantment_min_level" class="">
@@ -2498,7 +2498,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/scrying/entities@hexpose:entity_width" class="">
-<h4 class="pattern-title">Caliper&#39;s Purification (entity → number)<a
+<h4 class="pattern-title">Caliper&#39;s Purification (entity/entity type → number)<a
     href="#patterns/scrying/entities@hexpose:entity_width"
     class="permalink small"
     title="Permalink"
@@ -2551,6 +2551,62 @@
       >Your browser does not support visualizing patterns. Pattern code: dwe</canvas>
   </details>
       <p>Similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:get_entity_height"><span style="color: #fc77be">Stadiometer&#39;s Purification</span></a> but pushes the width of an entity rather than its height.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:body_yaw" class="">
+<h4 class="pattern-title">Shoulder Purification (entity → number)<a
+    href="#patterns/scrying/entities@hexpose:body_yaw"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="we"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: we</canvas>
+  </details>
+      <p>Pushes the angle that an entity&#39;s body is rotated in which may be separate from its head.</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:theodolite" class="">
@@ -2607,6 +2663,62 @@
       >Your browser does not support visualizing patterns. Pattern code: wqaa</canvas>
   </details>
       <p>Similar to <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#patterns/basics@hexcasting:get_entity_look"><span style="color: #fc77be">Alidade&#39;s Purification</span></a> but pushes the vector that points upwards from their head rather than the entity&#39;s facing vector.</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:absorption_hearts" class="">
+<h4 class="pattern-title">Absorption Purification (entity → number)<a
+    href="#patterns/scrying/entities@hexpose:absorption_hearts"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="waawedwdwd"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: waawedwdwd</canvas>
+  </details>
+      <p>Pushes the number of magical protective hearts a person has. I can think of these in terms of half-hearts.</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:get_health" class="">
@@ -3617,62 +3729,6 @@
       <p>Pushes the player that has tamed this animal, or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it is untamed or the player is out of ambit.</p>
   </div>
 <br />
-  <div id="patterns/scrying/entities@hexpose:is_monster" class="">
-<h4 class="pattern-title">Malevolence Purif. (entity → boolean)<a
-    href="#patterns/scrying/entities@hexpose:is_monster"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="details-collapsible">
-    <summary class="collapse-details collapse-spell"></summary>
-    <div class="dropdown spell-settings-dropdown">
-      <span
-        href=""
-        class="dropdown-toggle spell-settings-toggle"
-        data-toggle="dropdown"
-        role="button"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <i class="bi bi-gear-fill"></i>
-      </span>
-      <ul class="dropdown-menu">
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Renders</a>
-          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
-        </li>
-        <li class="dropdown-submenu">
-          <a
-            href=""
-            class="dropdown-toggle"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >Palettes</a>
-          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
-        </li>
-      </ul>
-    </div>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaedwaa"
-        data-start="north_east"
-        data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaedwaa</canvas>
-  </details>
-      <p>Pushes whether the given entity is considered inherently evil, i.e. a Snow Golem will attack it on sight. Iron Golems will also attack these creatures on sight, with the exception of Creepers.</p>
-  </div>
-<br />
   <div id="patterns/scrying/entities@hexpose:shooter" class="">
 <h4 class="pattern-title">Shooter Purification (entity → entity/null)<a
     href="#patterns/scrying/entities@hexpose:shooter"
@@ -3729,9 +3785,9 @@
       <p>Pushes the shooter of the given projectile entity or <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if it has no shooter or isn&#39;t a projectile. It also pushes <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> if the shooter is outside my ambit.</p>
   </div>
 <br />
-  <div id="patterns/scrying/entities@hexpose:absorption_hearts" class="">
-<h4 class="pattern-title">Absorption Purification (entity → number)<a
-    href="#patterns/scrying/entities@hexpose:absorption_hearts"
+  <div id="patterns/scrying/entities@hexpose:projectile_age" class="">
+<h4 class="pattern-title">Age Purification (entity → number)<a
+    href="#patterns/scrying/entities@hexpose:projectile_age"
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h4>
@@ -3777,12 +3833,68 @@
         class="spell-viz"
         width="216"
         height="216"
-        data-string="waawedwdwd"
+        data-string="wwaaw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waawedwdwd</canvas>
+      >Your browser does not support visualizing patterns. Pattern code: wwaaw</canvas>
   </details>
-      <p>Pushes the number of magical hearts this player has. I can think of these in terms of half-hearts.</p>
+      <p>Pushes the age of an entity in twentieths of a second although loses track after about ten seconds. Useful for selecting only newly fired projectiles perhaps?</p>
+  </div>
+<br />
+  <div id="patterns/scrying/entities@hexpose:is_monster" class="">
+<h4 class="pattern-title">Malevolence Purif. (entity → boolean)<a
+    href="#patterns/scrying/entities@hexpose:is_monster"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="details-collapsible">
+    <summary class="collapse-details collapse-spell"></summary>
+    <div class="dropdown spell-settings-dropdown">
+      <span
+        href=""
+        class="dropdown-toggle spell-settings-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="bi bi-gear-fill"></i>
+      </span>
+      <ul class="dropdown-menu">
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Renders</a>
+          <ul class="dropdown-menu dropdown-menu-left render-dropdowns"></ul>
+        </li>
+        <li class="dropdown-submenu">
+          <a
+            href=""
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Palettes</a>
+          <ul class="dropdown-menu dropdown-menu-left palette-dropdowns"></ul>
+        </li>
+      </ul>
+    </div>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaedwaa"
+        data-start="north_east"
+        data-per-world="False"
+      >Your browser does not support visualizing patterns. Pattern code: qaedwaa</canvas>
+  </details>
+      <p>Pushes whether the given entity is considered inherently evil, i.e. a Snow Golem will attack it on sight. Iron Golems will also attack these creatures on sight, with the exception of Creepers.</p>
   </div>
 <br />
 </div>
@@ -4104,7 +4216,7 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
   <div id="patterns/scrying/food@hexpose:get_player_hunger" class="">
-<h4 class="pattern-title">Hunger Purification (player entity → number)<a
+<h4 class="pattern-title">Hunger Purification (entity → number)<a
     href="#patterns/scrying/food@hexpose:get_player_hunger"
     class="permalink small"
     title="Permalink"
@@ -4160,7 +4272,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_player_saturation" class="">
-<h4 class="pattern-title">Stamina Purification (entity entity → number)<a
+<h4 class="pattern-title">Stamina Purification (entity → number)<a
     href="#patterns/scrying/food@hexpose:get_player_saturation"
     class="permalink small"
     title="Permalink"
@@ -4216,7 +4328,7 @@
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_hunger" class="">
-<h4 class="pattern-title">Calorie Purification (item type → number)<a
+<h4 class="pattern-title">Calorie Purification (item coerceable → number)<a
     href="#patterns/scrying/food@hexpose:get_hunger"
     class="permalink small"
     title="Permalink"
@@ -4268,11 +4380,11 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: adaqqqddqe</canvas>
   </details>
-      <p>Takes in an item type and pushes the amount it will fill me.</p>
+      <p>Pops an item type and pushes the amount it will fill me.</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_saturation" class="">
-<h4 class="pattern-title">Satiation Purification (item type → number)<a
+<h4 class="pattern-title">Satiation Purification (item coerceable → number)<a
     href="#patterns/scrying/food@hexpose:get_saturation"
     class="permalink small"
     title="Permalink"
@@ -4324,11 +4436,11 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: adaqqqddqw</canvas>
   </details>
-      <p>Takes in an item type and pushes the saturation value, which roughly affects how long it will fill me.</p>
+      <p>Pops an item type and pushes the saturation value, which roughly affects how long it will fill me.</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:is_meat" class="">
-<h4 class="pattern-title">Flesh Purification (item type → boolean)<a
+<h4 class="pattern-title">Flesh Purification (item coerceable → boolean)<a
     href="#patterns/scrying/food@hexpose:is_meat"
     class="permalink small"
     title="Permalink"
@@ -4380,11 +4492,11 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: adaqqqddaed</canvas>
   </details>
-      <p>Takes in an item type and pushes whether it&#39;s considered a meat. <span style="color: #b0b">Wolves</span> can eat meats.</p>
+      <p>Pops an item type and pushes whether it&#39;s considered a meat. <span style="color: #b0b">Wolves</span> can eat meats.</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:is_snack" class="">
-<h4 class="pattern-title">Dessert Purification (item type → boolean)<a
+<h4 class="pattern-title">Dessert Purification (item coerceable → boolean)<a
     href="#patterns/scrying/food@hexpose:is_snack"
     class="permalink small"
     title="Permalink"
@@ -4436,11 +4548,11 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: adaqqqddaq</canvas>
   </details>
-      <p>Takes in an item type and pushes whether it&#39;s a snack.</p>
+      <p>Pops an item type and pushes whether it&#39;s a snack.</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:edible" class="">
-<h4 class="pattern-title">Edibility Purification (item type → boolean)<a
+<h4 class="pattern-title">Edibility Purification (item coerceable → boolean)<a
     href="#patterns/scrying/food@hexpose:edible"
     class="permalink small"
     title="Permalink"
@@ -4492,7 +4604,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: adaqqqdd</canvas>
   </details>
-      <p>Takes in an item type and pushes whether I can eat it.</p>
+      <p>Pops an item type and pushes whether I can eat it.</p>
   </div>
 <br />
 </div>
@@ -4574,7 +4686,7 @@
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:create_stack" class="">
-<h4 class="pattern-title">Offer Distillation (item type, number → item)<a
+<h4 class="pattern-title">Offer Distillation (item coerceable, number → item)<a
     href="#patterns/scrying/item@hexpose:create_stack"
     class="permalink small"
     title="Permalink"
@@ -5018,11 +5130,11 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: qaqqwqqqw</canvas>
   </details>
-      <p>Takes in an item and pushes how many items are in it.</p>
+      <p>Pops an item and pushes how many items are in it.</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:count_max_stack" class="">
-<h4 class="pattern-title">Warehouse Purification (item type → number)<a
+<h4 class="pattern-title">Warehouse Purification (item coerceable → number)<a
     href="#patterns/scrying/item@hexpose:count_max_stack"
     class="permalink small"
     title="Permalink"
@@ -5074,11 +5186,11 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: edeeweeew</canvas>
   </details>
-      <p>Takes in an item and pushes how many items that can stack in it.</p>
+      <p>Pops an item type and pushes how many items that can stack in it at most.</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:damage_stack" class="">
-<h4 class="pattern-title">Deterioration Purif. (item → number)<a
+<h4 class="pattern-title">Deterioration Purif. (item coerceable → number)<a
     href="#patterns/scrying/item@hexpose:damage_stack"
     class="permalink small"
     title="Permalink"
@@ -5130,11 +5242,11 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: eeweeewdeq</canvas>
   </details>
-      <p>Takes in an item and pushes how much damage the item has sustained.</p>
+      <p>Pops an item and pushes how much damage the item has sustained.</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:damage_max_stack" class="">
-<h4 class="pattern-title">Fragility Purification (item type → number)<a
+<h4 class="pattern-title">Fragility Purification (item coerceable → number)<a
     href="#patterns/scrying/item@hexpose:damage_max_stack"
     class="permalink small"
     title="Permalink"
@@ -5186,7 +5298,7 @@
         data-per-world="False"
       >Your browser does not support visualizing patterns. Pattern code: qqwqqqwaqe</canvas>
   </details>
-      <p>Takes in an item and pushes how much durability the item can have at its peak.</p>
+      <p>Pops an item type and pushes how much durability the item can have at its peak.</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexcasting:readable/entity" class="">
