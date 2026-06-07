@@ -1,6 +1,5 @@
 package miyucomics.hexpose.iotas
 
-import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.IotaType
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
@@ -17,7 +16,7 @@ import net.minecraft.world.biome.Biome
 
 class BiomeIota(val biome: RegistryKey<Biome>) : Iota(TYPE, biome) {
 	override fun isTruthy() = true
-	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is BiomeIota) && this.biome == that.biome
+	override fun toleratesOther(that: Iota) = that is BiomeIota && this.biome == that.biome
 	override fun serialize(): NbtElement = NbtString.of(biome.value.toString())
 
 	companion object {
@@ -31,7 +30,7 @@ class BiomeIota(val biome: RegistryKey<Biome>) : Iota(TYPE, biome) {
 
 inline val RegistryKey<Biome>.asActionResult get() = listOf(BiomeIota(this))
 
-fun List<Iota>.getBiome(idx: Int, env: CastingEnvironment, argc: Int = 0): RegistryKey<Biome> {
+fun List<Iota>.getBiome(idx: Int, argc: Int = 0): RegistryKey<Biome> {
 	val x = this.getOrElse(idx) { throw MishapNotEnoughArgs(idx + 1, this.size) }
 	if (x is BiomeIota)
 		return x.biome

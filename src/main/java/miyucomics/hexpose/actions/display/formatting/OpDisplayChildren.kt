@@ -28,11 +28,11 @@ object OpDisplayChildren : Action {
 		if (!top.list.all { it is DisplayIota })
 			throw MishapInvalidIota.of(top, 0, "display_list")
 
-		val text = stack.removeAt(stack.lastIndex)
-		if (text !is DisplayIota)
-			throw MishapInvalidIota.ofType(text, 1, "display")
+		val display = stack.removeAt(stack.lastIndex)
+		if (display !is DisplayIota)
+			throw MishapInvalidIota.ofType(display, 1, "display")
 
-		stack.add(DisplayIota.createSanitized(text.getWithNewChildren(top.list.map { (it as DisplayIota).text })))
+		stack.add(DisplayIota.createSanitized(display.getWithNewChildren(top.list.map { (it as DisplayIota).text })))
 		return OperationResult(image.copy(stack = stack).withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }

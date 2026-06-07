@@ -26,7 +26,7 @@
 			"op_id": "hexpose:parse_display",
 			"anchor": "hexpose:parse_display",
 			"input": "display/string",
-			"output": "string",
+			"output": "string/display",
 			"text": "hexpose.page.parse_display.summary"
 		},
 		{

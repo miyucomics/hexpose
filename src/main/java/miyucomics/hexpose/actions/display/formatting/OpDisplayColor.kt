@@ -37,9 +37,9 @@ object OpDisplayColor : Action {
 		if (stack.size == 1)
 			throw MishapNotEnoughArgs(2, 1)
 
-		val text = stack[stack.lastIndex - 1]
-		if (text !is DisplayIota)
-			throw MishapInvalidIota.ofType(text, 1, "text")
+		val display = stack[stack.lastIndex - 1]
+		if (display !is DisplayIota)
+			throw MishapInvalidIota.ofType(display, 1, "text")
 
 		val color = when (val colorRaw = stack[stack.lastIndex]) {
 			is Vec3Iota -> TextColor.fromRgb(colorRaw.vec3.let {
@@ -53,7 +53,7 @@ object OpDisplayColor : Action {
 
 		stack.removeAt(stack.lastIndex)
 		stack.removeAt(stack.lastIndex)
-		stack.add(DisplayIota.createSanitized(text.text.copy().setStyle(text.text.style.withColor(color))))
+		stack.add(DisplayIota.createSanitized(display.text.copy().setStyle(display.text.style.withColor(color))))
 		return OperationResult(image.copy(stack = stack).withUsedOp(), listOf(), continuation, HexEvalSounds.NORMAL_EXECUTE)
 	}
 }

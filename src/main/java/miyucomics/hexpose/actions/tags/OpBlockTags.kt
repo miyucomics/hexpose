@@ -8,6 +8,8 @@ import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.iota.Vec3Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import miyucomics.hexpose.iotas.TagIota
+import miyucomics.hexpose.iotas.getBlockType
+import miyucomics.hexpose.utils.coerceBlockType
 import net.minecraft.entity.ItemEntity
 import net.minecraft.item.BlockItem
 import net.minecraft.registry.Registries
@@ -17,20 +19,6 @@ import ram.talia.moreiotas.api.casting.iota.ItemTypeIota
 
 object OpBlockTags : ConstMediaAction {
 	override val argc: Int = 1
-	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
-		val blockType = when (val iota = args[0]) {
-			is Vec3Iota -> {
-				env.assertVecInRange(iota.vec3)
-				env.world.getBlockState(BlockPos.ofFloored(iota.vec3)).block
-			}
-			is EntityIota if iota.entity is ItemEntity && ((iota.entity as ItemEntity).stack.item is BlockItem) -> {
-				env.assertEntityInRange(iota.entity)
-				((iota.entity as ItemEntity).stack.item as BlockItem).block
-			}
-			is ItemStackIota if iota.itemStack.item is BlockItem -> (iota.itemStack.item as BlockItem).block
-			is ItemTypeIota if iota.block != null -> iota.block
-			else -> throw MishapInvalidIota.of(iota, 0, "blocktype_coerceable")
-		}
-		return Registries.BLOCK.getEntry(blockType).streamTags().map(::TagIota).toList().asActionResult
-	}
+	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> =
+		Registries.BLOCK.getEntry(args.coerceBlockType(0, env, argc)).streamTags().map(::TagIota).toList().asActionResult
 }

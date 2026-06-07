@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier
 
 class EnchantmentIota(val enchantment: Enchantment) : Iota(TYPE, enchantment) {
 	override fun isTruthy() = true
-	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is EnchantmentIota) && this.enchantment == that.enchantment
+	override fun toleratesOther(that: Iota) = that is EnchantmentIota && this.enchantment == that.enchantment
 	override fun serialize(): NbtElement = NbtString.of(Registries.ENCHANTMENT.getId(this.enchantment).toString())
 
 	companion object {

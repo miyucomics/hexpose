@@ -56,9 +56,9 @@ import net.minecraft.util.Hand
 import net.minecraft.util.math.*
 import net.minecraft.util.math.random.ChunkRandom
 import ram.talia.moreiotas.api.asActionResult
+import kotlin.math.max
 
 object HexposeActions {
-	@JvmStatic
 	fun init() {
 		register("is_enlightened", "awqaqqq", HexDir.SOUTH_EAST, OpGetPlayerData {
 			val advancement = it.getServer()!!.advancementLoader[HexAPI.modLoc("enlightenment")]
@@ -88,8 +88,8 @@ object HexposeActions {
 
 		register("is_block_air", "edeeeee", HexDir.NORTH_EAST, OpGetBlockStateData { it.isAir.asActionResult })
 		register("is_block_replaceable", "eaqqqqqe", HexDir.NORTH_EAST, OpGetBlockStateData { it.isReplaceable.asActionResult })
-		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { block -> block.hardness.asActionResult })
-		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { block -> block.blastResistance.asActionResult })
+		register("block_hardness", "qaqqqqqeeeeedq", HexDir.EAST, OpGetBlockTypeData { it.hardness.asActionResult })
+		register("block_blast_resistance", "qaqqqqqewaawaawa", HexDir.EAST, OpGetBlockTypeData { it.blastResistance.asActionResult })
 		register("blockstate_rotation", "qaqqqqqwadeeed", HexDir.EAST, OpGetBlockStateData { state ->
 			val candidates = listOf(
 				Properties.FACING to { state.get(Properties.FACING).unitVector },
@@ -148,13 +148,16 @@ object HexposeActions {
 		})
 		register("get_enchantment_strength", "wdewwedwewdwdw", HexDir.EAST, OpGetEnchantmentStrength)
 		register("enchantment_weight", "waawdedwd", HexDir.NORTH_EAST, OpGetEnchantmentTypeData { it.rarity.weight.asActionResult })
-		register("can_item_support_enchantment", "aaqqadaqwqa", HexDir.WEST, OpGetEnchantmentCompat)
+		register("enchantment_compatibility", "aaqqadaqwqa", HexDir.WEST, OpGetEnchantmentCompat)
 		register("enchantment_min_level", "waqwqaqwaaw", HexDir.WEST, OpGetEnchantmentTypeData { it.minLevel.asActionResult })
 		register("enchantment_max_level", "wdewedqwaaw", HexDir.EAST, OpGetEnchantmentTypeData { it.maxLevel.asActionResult })
 		register("is_enchantment_cursed", "aeaqwqaqwaaw", HexDir.NORTH_WEST, OpGetEnchantmentTypeData { it.isCursed.asActionResult })
 		register("is_enchantment_treasure", "aqwqaeaqwddw", HexDir.WEST, OpGetEnchantmentTypeData { it.isTreasure.asActionResult })
 
-		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityData { entity -> entity.width.asActionResult })
+		register("shooter", "aadedade", HexDir.EAST, OpShooter)
+		register("projectile_age", "wwaaw", HexDir.NORTH_EAST, OpGetEntityData { entity -> max(200, entity.age).asActionResult })
+		register("entity_width", "dwe", HexDir.NORTH_WEST, OpGetEntityTypeData { entity -> entity.width.asActionResult })
+		register("body_yaw", "we", HexDir.NORTH_EAST, OpGetEntityData { entity -> entity.bodyYaw.asActionResult })
 		register("theodolite", "wqaa", HexDir.EAST, OpGetEntityData { entity ->
 			val upPitch = (-entity.pitch + 90) * (Math.PI.toFloat() / 180)
 			val yaw = -entity.headYaw * (Math.PI.toFloat() / 180)
@@ -185,7 +188,6 @@ object HexposeActions {
 		register("entity_name", "edeweedw", HexDir.SOUTH_WEST, OpGetEntityData { it.name.asActionResult })
 		register("pet_owner", "qdaqwawqeewde", HexDir.WEST, OpPetOwner)
 		register("is_monster", "qaedwaa", HexDir.NORTH_EAST, OpGetEntityData { (it is Monster).asActionResult })
-		register("shooter", "aadedade", HexDir.EAST, OpShooter)
 		register("absorption_hearts", "waawedwdwd", HexDir.NORTH_EAST, OpGetLivingEntityData { entity -> entity.absorptionAmount.asActionResult })
 
 		register("env_ambit", "wawaw", HexDir.EAST, OpGetAmbit)
@@ -291,8 +293,5 @@ object HexposeActions {
 	}
 
 	fun register(name: String, signature: String, startDir: HexDir, action: Action): ActionRegistryEntry =
-		Registry.register(
-			HexActions.REGISTRY, HexposeMain.id(name),
-			ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action)
-		)
+		Registry.register(HexActions.REGISTRY, HexposeMain.id(name), ActionRegistryEntry(HexPattern.fromAngles(signature, startDir), action))
 }

@@ -13,7 +13,7 @@ import ram.talia.moreiotas.api.asActionResult
 object OpVillagerTypeFromBiome : ConstMediaAction {
 	override val argc = 1
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
-		val type = VillagerType.BIOME_TO_TYPE[args.getBiome(0, env, argc)] ?: return listOf(NullIota())
+		val type = VillagerType.BIOME_TO_TYPE[args.getBiome(0)] ?: return listOf(NullIota())
 		return Registries.VILLAGER_TYPE.getId(type).wordify().asActionResult
 	}
 }

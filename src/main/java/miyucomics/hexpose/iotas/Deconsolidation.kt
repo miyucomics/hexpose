@@ -1,12 +1,15 @@
 package miyucomics.hexpose.iotas
 
+import at.petrak.hexcasting.api.casting.iota.EntityIota
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.casting.mishaps.MishapInvalidIota
 import at.petrak.hexcasting.api.casting.mishaps.MishapNotEnoughArgs
 import net.minecraft.block.Block
+import net.minecraft.entity.EntityType
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.Items
+import ram.talia.moreiotas.api.casting.iota.EntityTypeIota
 import ram.talia.moreiotas.api.casting.iota.ItemTypeIota
 
 class BlockTypeSubiota(val internalBlock: Block) : ItemTypeIota(internalBlock)

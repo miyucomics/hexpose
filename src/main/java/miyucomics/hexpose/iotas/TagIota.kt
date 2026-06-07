@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier
 
 class TagIota(val tag: TagKey<*>) : Iota(TYPE, tag) {
 	override fun isTruthy() = true
-	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is TagIota) && this.tag == that.tag
+	override fun toleratesOther(that: Iota) = that is TagIota && this.tag == that.tag
 	override fun serialize(): NbtElement = NbtCompound().apply {
 		putString("registry", tag.comp_326.registry.toString())
 		putString("tag", tag.id.toString())

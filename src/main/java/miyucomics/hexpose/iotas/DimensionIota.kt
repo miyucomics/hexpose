@@ -17,7 +17,7 @@ import net.minecraft.world.World
 
 class DimensionIota(val dimension: Identifier) : Iota(TYPE, dimension) {
 	override fun isTruthy() = true
-	override fun toleratesOther(that: Iota) = (typesMatch(this, that) && that is DimensionIota) && this.dimension == that.dimension
+	override fun toleratesOther(that: Iota) = that is DimensionIota && this.dimension == that.dimension
 	override fun serialize(): NbtElement = NbtString.of(this.dimension.toString())
 
 	companion object {
