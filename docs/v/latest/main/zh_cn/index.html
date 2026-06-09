@@ -77,7 +77,7 @@
       <ul class="nav navbar-nav navbar-right">
             <li>
     <a
-      href="https://github.com/miyucomics/hexpose/tree/1f8cf9d5142dcdbc6cb9b21cd1ea24560a281dcd"
+      href="https://github.com/miyucomics/hexpose/tree/7d6681ed484c3c7a0d5b30a5fef63dd7b840a08c"
         target="_blank"
       class="navbar-link"
       role="button"
@@ -453,7 +453,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p><a href="#patterns/displays"><span style="color: #8d6acc">文形 iota</span></a> 使用一套专用于文本及其样式的递归式编码模型。这类 iota 记录了文本、文本样式、<i>以及</i>子<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的信息；子文形也可具有子文形，且子文形的样式不必跟随父文形。子文形会按次序拼接在父文形后方。</p>
+    <p><a href="#patterns/displays"><span style="color: #8d6acc">文形 iota</span></a> 使用一套专用于文本及其样式的递归式编码模型。这类 iota 记录了文本、文本样式、以及<i>其他</i>子<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的信息；子文形也可具有子文形，且子文形的样式不必跟随父文形。读时子文形会按次序拼接在父文形的文本后方。</p>
 <br />
     <p>若子文学某属性的值未给定，则会继承父文形该样式的属性。例如，红色<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>的子文形也会是红色，除非子文形设置了其他颜色样式。之后，子文形会将最优先设置的颜色继承给<i>它</i>的子文形。</p>
 <br />
@@ -510,11 +510,11 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeee</canvas>
   </details>
-      <p>接受一个 iota，返回代表它的<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>。若传入<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>，则去除所有样式。</p>
+      <p>接受一个 iota，返回代表它的<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:parse_display" class="">
-<h4 class="pattern-title">计算器之纯化 (display/string → string/display)<a
+<h4 class="pattern-title">转记器之纯化 (display/string → string/display)<a
     href="#patterns/displays@hexpose:parse_display"
     class="permalink small"
     title="Permalink"
@@ -566,7 +566,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdewqqqwqqaeq</canvas>
   </details>
-      <p>返回根<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>对应的数，若无法解析为数则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+      <p>使用字符串创建无格式的文形，或是将文形的文本内容转换成字符串。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:compare_style" class="">
@@ -678,13 +678,13 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dwdeqqqqqdeee</canvas>
   </details>
-      <p>将<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>转换成一长串单个带样式字符组成的流，以便解析等功能使用。子文形也会经历此变换。</p>
+      <p>将<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>转换成一长串单个带样式字符组成的流。子文形也会经历此变换。</p>
   </div>
 <br />
     <p>和<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>交互的图案有着奇异的多面性。它们看上去像是馏化，但实际上是<i>策略</i>。</p><p>传入对应的参数后，这些图案会对其根<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>做出对应的改动（各页有附例）。</p><p>如果栈顶就只是一个<a href="#patterns/displays"><span style="color: #8d6acc">文形</span></a>，那么这些图案会返回对应样式当前的值。</p>
 <br />
   <div id="patterns/displays@hexpose:display_children" class="">
-<h4 class="pattern-title">解析之纯化 (display → list of displays)<a
+<h4 class="pattern-title">递归之策略 (display → list of displays)<a
     href="#patterns/displays@hexpose:display_children"
     class="permalink small"
     title="Permalink"
@@ -792,7 +792,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：awaqeeeeewded</canvas>
   </details>
-      <p>获取或设定文形的颜色，格式为各分量在 0 到 1 之间的向量。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
+      <p>获取或设定文本颜色，格式为各分量在 0 到 1 之间的向量。传入 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a> 可令其继承父文形。</p>
   </div>
 <br />
   <div id="patterns/displays@hexpose:display_font" class="">
@@ -1708,7 +1708,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qwqwqawdqqaqqdwaqwqwq</canvas>
   </details>
-      <p>返回给定位置向量处生物群系类别的标识。</p>
+      <p>返回给定位置向量处的生物群系类别。</p>
   </div>
 <br />
   <div id="patterns/scrying/world@hexpose:get_dimension" class="">
@@ -1764,7 +1764,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qwqwqwqwqwqqaedwaqd</canvas>
   </details>
-      <p>压入<span style="color: #b38ef3">咒术</span>施放时所处维度的标识。</p>
+      <p>压入<span style="color: #b38ef3">咒术</span>施放时所处的维度。</p>
   </div>
 <br />
   <div id="patterns/scrying/world@hexpose:get_moon" class="">
@@ -1990,7 +1990,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：aqwawqwqqwqwqwqwqwq</canvas>
   </details>
-      <p>检验<span style="color: #b0b">指南针</span>和<span style="color: #b0b">钟</span>可否在此维度运作。</p>
+      <p>检验<span style="color: #b0b">指南针</span>和<span style="color: #b0b">钟</span>可否在<span style="color: #b38ef3">咒术</span>施放时所处的维度中运作。</p>
   </div>
 <br />
 </div>
@@ -2254,7 +2254,7 @@
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:body_yaw" class="">
-<h4 class="pattern-title">Shoulder Purification (entity → number)<a
+<h4 class="pattern-title">转肩之纯化 (entity → number)<a
     href="#patterns/scrying/entities@hexpose:body_yaw"
     class="permalink small"
     title="Permalink"
@@ -2306,7 +2306,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：we</canvas>
   </details>
-      <p>Pushes the angle that an entity&#39;s body is rotated in which may be separate from its head.</p>
+      <p>返回实体躯干的相对实体头部的旋转角度。</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:theodolite" class="">
@@ -2418,7 +2418,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：waawedwdwd</canvas>
   </details>
-      <p>返回玩家的魔法心数。使用半颗心作为单位。</p>
+      <p>返回某人拥有的魔法保护心数。使用半颗心作为单位。</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:get_health" class="">
@@ -3486,7 +3486,7 @@
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:projectile_age" class="">
-<h4 class="pattern-title">Age Purification (entity → number)<a
+<h4 class="pattern-title">时限之纯化 (entity → number)<a
     href="#patterns/scrying/entities@hexpose:projectile_age"
     class="permalink small"
     title="Permalink"
@@ -3538,7 +3538,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：wwaaw</canvas>
   </details>
-      <p>Pushes the age of an entity in twentieths of a second although loses track after about ten seconds. Useful for selecting only newly fired projectiles perhaps?</p>
+      <p>返回实体的存在时间，以 1/20 秒计，但会在大约 10 秒后停止记录。大概，适合用来选择刚发射的弹射物？</p>
   </div>
 <br />
   <div id="patterns/scrying/entities@hexpose:is_monster" class="">
@@ -3951,7 +3951,7 @@
       <p>压入一个 0 到 1 的数，对应农作物的生长进度，对<span style="color: #b0b">蜂巢</span>、<span style="color: #b0b">堆肥桶</span>、<span style="color: #b0b">炼药锅</span>同样有效。奇怪的是，对<span style="color: #b0b">蛋糕</span>也有效。</p>
   </div>
 <br />
-    <p>每个方块都有很多<i>侧征</i>——将其与其他同种方块区分开来的简单特征，例如朝向、农作物的成熟度、门的开闭等。</p><p>自然提供了两个图案，允许<span style="color: #b38ef3">咒法学</span>读取和分析影响范围内各方块的侧征。</p>
+    <p>部分方块拥有一种或多种方块状态属性——具有简单名称的特征，可据此从同类方块中区分出特定方块。虽然这些属性无法告诉我两个<span style="color: #b0b">熔炉</span>是否在烧炼同种物品，但可以告诉我它们的朝向、它们是否在燃烧状态，或是告诉我农作物的成熟度，抑或是<span style="color: #b0b">栅栏门</span>是否被打开。</p><p>有两个图案可用于读取和分析方块属性。</p>
 <br />
   <div id="patterns/scrying/blocks@hexpose:block_slipperiness" class="">
 <h4 class="pattern-title">滑冰之纯化 (block type → number)<a
@@ -4118,7 +4118,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqeqqqwqaww</canvas>
   </details>
-      <p>返回所给方块的侧征列表。</p>
+      <p>返回所给方块的方块状态属性列表。</p>
   </div>
 <br />
   <div id="patterns/scrying/blocks@hexpose:query_blockstate" class="">
@@ -4174,10 +4174,10 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqqqeawa</canvas>
   </details>
-      <p>接受一个方块和一个侧征，返回该侧征的值。</p>
+      <p>接受一个方块和一个方块状态属性，若可行则返回该属性的值。</p>
   </div>
 <br />
-    <p>若方块没有给定侧征，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。大多数情况下，返回的结果很好理解：布尔值、方向向量、整数，总之是最合乎侧征的 iota。</p><p>某些关系到状态等方面的侧征给出的是看似随机但恒定的整数。如果侧征太过生僻，即会返回无意义的 iota。</p>
+    <p>若方块没有给定属性，则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。大多数情况下，返回的结果很好理解：布尔值、方向向量、字符串、整数，总之是最合乎属性数据的 iota。</p><p>如果属性太过生僻，则会返回无意义的 iota。</p>
 <br />
 </div>
 <div id="patterns/scrying/misc" class="entry">
@@ -4604,7 +4604,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawewawqwawadeeeee</canvas>
   </details>
-      <p>将村民的职业返回为标识。</p>
+      <p>将村民的职业返回为字符串。</p>
   </div>
 <br />
   <div id="patterns/scrying/villager@hexpose:villager_type" class="">
@@ -4660,7 +4660,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqaweqqqqqwded</canvas>
   </details>
-      <p>返回村民生长环境的文化类别，如沙漠、针叶林等。</p>
+      <p>返回村民所归属的大致文化类别。通常来说比生物群系范围要广，如所有沙漠归在同一类，所有丛林归在同一类等。</p>
   </div>
 <br />
   <div id="patterns/scrying/villager@hexpose:biome_to_villager" class="">
@@ -4716,7 +4716,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqawewwqqwwqwwqqww</canvas>
   </details>
-      <p>返回最适宜所给生物群系的村民文化类别，若无则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
+      <p>返回出生于所给生物群系的村民最可能归属的文化类别，若没有定论则返回 <a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#casting/influences"><span style="color: #8d6acc">Null</span></a>。</p>
   </div>
 <br />
 </div>
@@ -4737,7 +4737,7 @@
     class="permalink small"
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h3>
-    <p>自然似乎使用某种<i>标签</i>系统来给相似的方块、物品、实体归类。比如说，<span style="color: #8d6acc">骷髅</span>、<span style="color: #8d6acc">流浪者</span>、<span style="color: #8d6acc">凋灵骷髅</span>都有一个“minecraft:skeletons”标识。所有的<a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#items/staff"><span style="color: #b0b">法杖</span></a>共用一个标签，而所有的<span style="color: #b0b">音乐唱片</span>则共用另一个。</p>
+    <p>自然似乎使用某种<i>标签</i>系统来给相似的方块、物品、实体归类。比如说，<span style="color: #8d6acc">骷髅</span>、<span style="color: #8d6acc">流浪者</span>、<span style="color: #8d6acc">凋灵骷髅</span>都有一个“minecraft:skeletons”标签。所有的<a href="https://hexcasting.hexxy.media/v/0.11.2/1.0/en_us#items/staff"><span style="color: #b0b">法杖</span></a>共用一个标签，而所有的<span style="color: #b0b">音乐唱片</span>则共用另一个。</p>
 <br />
   <div id="patterns/scrying/tags@hexpose:entity_tags" class="">
 <h4 class="pattern-title">种属之纯化 (entity/entity type → list)<a
@@ -4792,7 +4792,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqqwqqd</canvas>
   </details>
-      <p>返回实体或实体标识所归属所有标签的列表。</p>
+      <p>返回实体或实体类型所归属所有标签的列表。</p>
   </div>
 <br />
   <div id="patterns/scrying/tags@hexpose:block_tags" class="">
@@ -4848,7 +4848,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqqqqwqqd</canvas>
   </details>
-      <p>返回向量处方块、掉落的方块、代表掉落方块的物品 iota，或方块标识所归属所有标签的列表。</p>
+      <p>返回向量处方块、掉落的方块、代表掉落方块的物品 iota，或方块类型所归属所有标签的列表。</p>
   </div>
 <br />
   <div id="patterns/scrying/tags@hexpose:item_tags" class="">
@@ -4904,7 +4904,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：aqawawqqqd</canvas>
   </details>
-      <p>返回掉落的物品、物品 iota，或物品标识所归属所有标签的列表。</p>
+      <p>返回掉落的物品、物品 iota，或物品类型所归属所有标签的列表。</p>
   </div>
 <br />
 </div>
@@ -5038,7 +5038,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqae</canvas>
   </details>
-      <p>由物品标识和组内物品数制造物品。</p>
+      <p>由物品类型和组内物品数制造物品。</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:get_mainhand" class="">
@@ -5430,7 +5430,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qaqqwqqqw</canvas>
   </details>
-      <p>接受一个物品，返回其中物品数量。</p>
+      <p>弹出一个物品，返回其中物品数量。</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:count_max_stack" class="">
@@ -5486,7 +5486,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：edeeweeew</canvas>
   </details>
-      <p>接受一个物品，返回其中最多可堆叠多少物品。</p>
+      <p>弹出一个物品类型，返回其中最多可堆叠多少物品。</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:damage_stack" class="">
@@ -5542,7 +5542,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：eeweeewdeq</canvas>
   </details>
-      <p>接受一个物品，返回物品所受的损坏值。</p>
+      <p>弹出一个物品，返回物品所受的损坏值。</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexpose:damage_max_stack" class="">
@@ -5598,7 +5598,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：qqwqqqwaqe</canvas>
   </details>
-      <p>接受一个物品，返回物品的耐久度上限。</p>
+      <p>弹出一个物品类型，返回物品的耐久度上限。</p>
   </div>
 <br />
   <div id="patterns/scrying/item@hexcasting:readable/entity" class="">
@@ -6830,7 +6830,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：dqqqaw</canvas>
   </details>
-      <p><br />与<a href="#patterns/scrying/chat@hexpose:get_message"><span style="color: #fc77be">新闻之精思</span></a>类似，但会作用于 n 次前发送的消息，最多可回溯 64 条消息。</p>
+      <p>与<a href="#patterns/scrying/chat@hexpose:get_message"><span style="color: #fc77be">新闻之精思</span></a>类似，但会作用于 n 次前发送的消息，最多可回溯 64 条消息。</p>
   </div>
 <br />
 </div>
@@ -7016,7 +7016,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：adaqqqddqe</canvas>
   </details>
-      <p>接受一个物品标识，返回它为我带来的饱腹感的量。</p>
+      <p>弹出一个物品类型，返回它为我带来的饱腹感的量。</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:get_saturation" class="">
@@ -7072,7 +7072,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：adaqqqddqw</canvas>
   </details>
-      <p>接受一个物品标识，返回其饱和度。这一数据大致与饱腹感的持续时间对应。</p>
+      <p>弹出一个物品类型，返回其饱和度。这一数据大致与饱腹感的持续时间对应。</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:is_meat" class="">
@@ -7128,7 +7128,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：adaqqqddaed</canvas>
   </details>
-      <p>接受一个物品标识，检验它是否是肉类，也即<span style="color: #b0b">狼</span>能否食用。</p>
+      <p>弹出一个物品类型，检验它是否是肉类，也即<span style="color: #b0b">狼</span>能否食用。</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:is_snack" class="">
@@ -7184,7 +7184,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：adaqqqddaq</canvas>
   </details>
-      <p>接受一个物品标识，检验它是否算作小食。</p>
+      <p>弹出一个物品类型，检验它是否算作小食。</p>
   </div>
 <br />
   <div id="patterns/scrying/food@hexpose:edible" class="">
@@ -7240,7 +7240,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：adaqqqdd</canvas>
   </details>
-      <p>接受一个物品标识，检验它是否可被我食用。</p>
+      <p>弹出一个物品类型，检验它是否可被我食用。</p>
   </div>
 <br />
 </div>
@@ -7482,7 +7482,7 @@
         data-per-world="False"
       >浏览器不支持图案的可视化。图案代码见此：aaqqadaqwqa</canvas>
   </details>
-      <p>检验物品及其当前魔咒是否支持所给魔咒类型。</p>
+      <p>检验物品及其当前魔咒是否支持所给魔咒类型，或两个魔咒是否相互兼容。</p>
   </div>
 <br />
   <div id="patterns/scrying/enchantments@hexpose:enchantment_min_level" class="">
